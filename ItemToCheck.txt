@@ -1,0 +1,8 @@
+RingOfCurse
+RingOfWallClimb
+RingOfWallJump
+RingOfParkour
+RingOfParkour2
+RingOfManaDrive
+MasterBandOfMana
+ElvenKingRing // only works with botania bauble

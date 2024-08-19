@@ -1,0 +1,15 @@
+{
+  "type": "botania:runic_altar",
+  "ingredients": [
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:gold_nugget"
+    }
+  ],
+  "mana": 1000,
+  "output": {
+    "item": "extrabotany_reborn:gilded_potato"
+  }
+}

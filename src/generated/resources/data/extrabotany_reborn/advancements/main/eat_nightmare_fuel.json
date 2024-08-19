@@ -1,0 +1,36 @@
+{
+  "parent": "extrabotany_reborn:main/root",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "item": {
+          "items": [
+            "extrabotany_reborn:nightmare_fuel"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.extrabotany_reborn:eat_nightmare_fuel.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "extrabotany_reborn:nightmare_fuel"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.extrabotany_reborn:eat_nightmare_fuel"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

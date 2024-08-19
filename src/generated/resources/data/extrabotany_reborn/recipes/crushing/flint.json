@@ -1,0 +1,13 @@
+{
+  "type": "extrabotany_reborn:crushing",
+  "hits": 10,
+  "ingredients": [
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:flint"
+  }
+}

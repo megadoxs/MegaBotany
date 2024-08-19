@@ -1,0 +1,13 @@
+{
+  "type": "extrabotany_reborn:crushing",
+  "hits": 10,
+  "ingredients": [
+    {
+      "item": "extrabotany_reborn:gilded_potato"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "extrabotany_reborn:gilded_mashed_potato"
+  }
+}

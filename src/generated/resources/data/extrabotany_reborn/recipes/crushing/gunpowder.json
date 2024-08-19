@@ -1,0 +1,13 @@
+{
+  "type": "extrabotany_reborn:crushing",
+  "hits": 10,
+  "ingredients": [
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:gunpowder"
+  }
+}

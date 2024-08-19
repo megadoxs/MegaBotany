@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "botania:manasteel_ingot"
+    },
+    "S": {
+      "item": "minecraft:shield"
+    }
+  },
+  "pattern": [
+    "M M",
+    "MSM",
+    "M M"
+  ],
+  "result": {
+    "item": "extrabotany_reborn:manasteel_shield"
+  },
+  "show_notification": true
+}

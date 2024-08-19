@@ -1,0 +1,13 @@
+{
+  "type": "extrabotany_reborn:crushing",
+  "hits": 10,
+  "ingredients": [
+    {
+      "item": "extrabotany_reborn:spirit_fuel"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "extrabotany_reborn:spirit_fragment"
+  }
+}

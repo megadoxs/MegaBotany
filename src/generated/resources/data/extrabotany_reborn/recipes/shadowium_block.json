@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    },
+    {
+      "item": "extrabotany_reborn:shadowium_ingot"
+    }
+  ],
+  "result": {
+    "item": "extrabotany_reborn:shadowium_block"
+  }
+}

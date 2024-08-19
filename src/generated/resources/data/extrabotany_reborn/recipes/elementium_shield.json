@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "botania:elementium_ingot"
+    },
+    "S": {
+      "item": "minecraft:shield"
+    }
+  },
+  "pattern": [
+    "E E",
+    "ESE",
+    "E E"
+  ],
+  "result": {
+    "item": "extrabotany_reborn:elementium_shield"
+  },
+  "show_notification": true
+}
