@@ -41,6 +41,8 @@ public class ModItems {
     public static final RegistryObject<Item> ELVEN_KING_RING = ITEMS.register("elven_king_ring", () -> new ElvenKingRing(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> GOD_CORE = ITEMS.register("god_core", () -> new CoreGod(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> JINGWEI_FEATHER = ITEMS.register("jingwei_feather", () -> new JingweiFeather(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PURE_DAISY_PENDANT = ITEMS.register("pure_daisy_pendant", () -> new PureDaisyPendant(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SUPER_CROWN = ITEMS.register("super_crown", () -> new SuperCrown(new Item.Properties().stacksTo(1)));
 
 
     public static final RegistryObject<Item> SPIRIT_FRAGMENT = ITEMS.register("spirit_fragment", () -> new Fuel(new Item.Properties(), Fuel.BurnTime.SPIRIT_FUEL/8));

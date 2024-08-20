@@ -44,7 +44,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 ModItems.WALL_JUMP_AMULET.get(),
                 ModItems.WALL_CLIMB_AMULET.get(),
                 ModItems.PARKOUR_AMULET.get(),
-                ModItems.PARKOUR_AMULET2.get()
+                ModItems.PARKOUR_AMULET2.get(),
+                ModItems.PURE_DAISY_PENDANT.get()
         );
 
         this.tag(ItemTags.create(new ResourceLocation("curios", "charm"))).add(
@@ -53,7 +54,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         );
 
         this.tag(ItemTags.create(new ResourceLocation("curios", "head"))).add(
-                ModItems.GOD_CORE.get()
+                ModItems.GOD_CORE.get(),
+                ModItems.SUPER_CROWN.get()
         );
     }
 }
