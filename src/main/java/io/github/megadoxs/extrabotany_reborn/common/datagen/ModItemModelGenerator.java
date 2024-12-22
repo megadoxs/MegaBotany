@@ -26,6 +26,18 @@ public class ModItemModelGenerator extends ItemModelProvider {
         simpleItem(ModItems.GILDED_MASHED_POTATO);
         simpleItem(ModItems.NATURE_ORB);
         simpleItem(ModItems.MASTER_BAND_OF_MANA);
+        simpleItem(ModItems.FROST_RING);
+        simpleItem(ModItems.CURSE_RING);
+        simpleItem(ModItems.WALL_JUMP_AMULET);
+        simpleItem(ModItems.WALL_CLIMB_AMULET);
+        simpleItem(ModItems.PARKOUR_AMULET);
+        simpleItem(ModItems.PARKOUR_AMULET2);
+        simpleItem(ModItems.MANA_DRIVE_RING);
+        simpleItem(ModItems.ELVEN_KING_RING);
+        simpleItem(ModItems.JINGWEI_FEATHER);
+        simpleItem(ModItems.PURE_DAISY_PENDANT);
+        simpleItem(ModItems.SUPER_CROWN);
+        simpleItem(ModItems.BOTTLED_FLAME);
 
         simpleItem(ModItems.MANASTEEL_HAMMER);
         simpleItem(ModItems.ELEMENTIUM_HAMMER);
@@ -34,7 +46,13 @@ public class ModItemModelGenerator extends ItemModelProvider {
         simpleItem(ModItems.PHOTONIUM_INGOT);
         simpleItem(ModItems.SHADOWIUM_INGOT);
         simpleItem(ModItems.ORICHALCOS_INGOT);
+        simpleItem(ModItems.TICKET);
         simpleItem(ModItems.GOD_CORE);
+
+        simpleItem(ModItems.ORICHALCOS_HELMET_FEMALE);
+        simpleItem(ModItems.ORICHALCOS_CHESTPLATE_FEMALE);
+        simpleItem(ModItems.ORICHALCOS_LEGGINGS_FEMALE);
+        simpleItem(ModItems.ORICHALCOS_BOOTS_FEMALE);
 
         simpleBlockItemBlockTexture(ModBlocks.BLOODY_ENCHANTRESS);
     }
@@ -42,10 +60,6 @@ public class ModItemModelGenerator extends ItemModelProvider {
     private ItemModelBuilder simpleItem(RegistryObject<Item> item){
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(ExtraBotany_Reborn.MOD_ID, "item/" + item.getId().getPath()));
     }
-
-//    private ItemModelBuilder shieldItem(RegistryObject<Item> item){
-//        return withExistingParent(item.getId().getPath(), new ResourceLocation())
-//    }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),

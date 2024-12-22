@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extrabotany_reborn:item/mana_drive_ring"
+  }
+}

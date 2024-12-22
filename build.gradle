@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = mod_version
@@ -88,25 +89,25 @@ repositories {
     maven {
         url = "https://maven.theillusivec4.top/"
     }
-    maven {
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
-    }
+}
+
+mixin {
+    add sourceSets.main, "extrabotany_reborn.refmap.json"
+    config "extrabotany_reborn.mixins.json"
+
+    debug.verbose = true
+    debug.export = true
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    //compileOnly fg.deobf("vazkii.botania:Botania:1.20.1-445-FORGE:api")
-    //runtimeOnly fg.deobf("vazkii.botania:Botania:1.20.1-445-FORGE")
-    implementation fg.deobf("vazkii.botania:Botania:1.20.1-445-FORGE")
+    compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE:api")
-    //runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE")
+    implementation fg.deobf("vazkii.botania:Botania:1.20.1-445-FORGE")
     implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE")
 
-    //runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.9.1+1.20.1")
-    //compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.9.1+1.20.1:api")
     implementation  fg.deobf("top.theillusivec4.curios:curios-forge:5.9.1+1.20.1")
 
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:15.8.0.18"))

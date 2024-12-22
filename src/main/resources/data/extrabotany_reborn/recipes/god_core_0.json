@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "extrabotany_reborn:item_upgrade",
   "pattern": [
     "SOS",
     "STS",
@@ -10,16 +10,13 @@
       "item": "extrabotany_reborn:orichalcos_ingot"
     },
     "T": {
-      "item": "botania:flight_tiara",
-      "nbt": "{variant:0}"
+      "item": "botania:flight_tiara"
     },
     "S": {
       "item": "botania:quartz_sunny"
     }
   },
   "result": {
-    "item": "extrabotany_reborn:god_core",
-    "nbt": "{variant:0}",
-    "count": 1
+    "item": "extrabotany_reborn:god_core"
   }
 }

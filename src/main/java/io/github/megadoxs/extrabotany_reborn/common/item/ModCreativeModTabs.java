@@ -34,6 +34,7 @@ public class ModCreativeModTabs {
                 output.accept(ModBlocks.SHADOWIUM_BLOCK.get());
                 output.accept(ModItems.ORICHALCOS_INGOT.get());
                 output.accept(ModBlocks.ORICHALCOS_BLOCK.get());
+                output.accept(ModItems.TICKET.get());
 
                 output.accept(ModItems.NIGHTMARE_FUEL.get());
                 output.accept(ModItems.SPIRIT_FUEL.get());
@@ -51,6 +52,16 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.PARKOUR_AMULET2.get());
                 output.accept(ModItems.MANA_DRIVE_RING.get());
                 output.accept(ModItems.ELVEN_KING_RING.get());
+                output.accept(ModItems.JINGWEI_FEATHER.get());
+                output.accept(ModItems.PURE_DAISY_PENDANT.get());
+                output.accept(ModItems.SUPER_CROWN.get());
+                output.accept(ModItems.BOTTLED_FLAME.get());
+                
+                output.accept(ModItems.ORICHALCOS_HELMET_FEMALE.get());
+                output.accept(ModItems.ORICHALCOS_CHESTPLATE_FEMALE.get());
+                output.accept(ModItems.ORICHALCOS_LEGGINGS_FEMALE.get());
+                output.accept(ModItems.ORICHALCOS_BOOTS_FEMALE.get());
+
 
                 ((CustomCreativeTabContents) ModItems.NATURE_ORB.get()).addToCreativeTab(ModItems.NATURE_ORB.get(), output); // don't like this implementation will make my own eventually
                 ((CustomCreativeTabContents) ModItems.GOD_CORE.get()).addToCreativeTab(ModItems.GOD_CORE.get(), output);

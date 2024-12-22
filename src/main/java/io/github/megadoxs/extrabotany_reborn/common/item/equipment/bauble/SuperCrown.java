@@ -1,10 +1,13 @@
 package io.github.megadoxs.extrabotany_reborn.common.item.equipment.bauble;
 
+import io.github.megadoxs.extrabotany_reborn.common.item.ModItems;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import top.theillusivec4.curios.api.CuriosApi;
+import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 
 public class SuperCrown extends BaubleItem {
@@ -16,34 +19,36 @@ public class SuperCrown extends BaubleItem {
     @SubscribeEvent
     public void onEntityDamaged(LivingHurtEvent evt) {
         if(evt.getEntity() instanceof Player player){
-            if(BaublesApi.isBaubleEquipped(player, ModItems.supercrown) != -1 && hasArmorSet(player))
-                evt.setAmount(Math.max(0, evt.getAmount() - 2));
-        }
-        else {
-            return;
+            if(CuriosApi.getCuriosInventory(player).resolve().get().isEquipped(ModItems.SUPER_CROWN.get()) && hasArmorSet(player)) // do I need to check?
+                evt.setAmount(Math.max(0, evt.getAmount() - 2)); // might change to be 10% damage reduction
         }
     }
 
+    // I don't like the way he checks if you have the armor set
     public boolean hasArmorSet(Player player) {
         return hasArmorSetItem(player, 0) && hasArmorSetItem(player, 1) && hasArmorSetItem(player, 2) && hasArmorSetItem(player, 3);
     }
 
     public boolean hasArmorSetItem(Player player, int i) {
-        if(player == null || player.getInventory() == null || player.getInventory().armor == null)
+        if(player == null)
             return false;
 
         ItemStack stack = player.getInventory().armor.get(3 - i);
         if(stack.isEmpty())
             return false;
 
-        switch(i) {
-            case 0: return stack.getItem() == ModItems.cosmhelm || stack.getItem() == ModItems.coshelmrevealing || stack.getItem() == ModItems.cmhelm || stack.getItem() == ModItems.cmhelmrevealing;
-            case 1: return stack.getItem() == ModItems.cosmchest || stack.getItem() == ModItems.cmchest || stack.getItem() == ModItems.cmchestdarkened;
-            case 2: return stack.getItem() == ModItems.cosmleg || stack.getItem() == ModItems.cmleg;
-            case 3: return stack.getItem() == ModItems.cosmboot || stack.getItem() == ModItems.cmboot;
-        }
+        return switch (i) {
+            case 0 ->
+                    stack.getItem() == BotaniaItems.manasteelHelm;
+            case 1 ->
+                    stack.getItem() == BotaniaItems.manasteelChest;
+            case 2 ->
+                    stack.getItem() == BotaniaItems.manasteelLegs;
+            case 3 ->
+                    stack.getItem() == BotaniaItems.manasteelBoots;
+            default -> false;
+        };
 
-        return false;
     }
 
 }

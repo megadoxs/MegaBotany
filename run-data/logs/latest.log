@@ -1,42 +1,135 @@
-[19août2024 19:03:41.931] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\megad\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, extrabotany_reborn, --all, --output, C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\src\generated\resources, --existing, C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\src\main\resources]
-[19août2024 19:03:41.944] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[19août2024 19:03:42.117] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[19août2024 19:03:42.183] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/megad/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[19août2024 19:03:42.553] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[19août2024 19:03:42.555] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[19août2024 19:03:42.558] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[19août2024 19:03:42.562] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[19août2024 19:03:42.704] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[19août2024 19:03:44.453] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[19août2024 19:03:44.468] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\megad\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, extrabotany_reborn, --all, --output, C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\src\generated\resources, --existing, C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\src\main\resources]
-[19août2024 19:03:44.818] [main/INFO] [mixin/]: Remapping refMap botania.refmap.json using C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
-[19août2024 19:03:44.822] [main/INFO] [mixin/]: Remapping refMap botania.refmap.json using C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
-[19août2024 19:03:44.824] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
-[19août2024 19:03:44.827] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using C:\Users\megad\Code\Minecraft\Mods\ExtraBotany_Reborn\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
-[19août2024 19:03:45.866] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [extrabotany_reborn]
-[19août2024 19:03:50.439] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[19août2024 19:03:50.441] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[19août2024 19:03:50.835] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[19août2024 19:03:50.841] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 4.772 ms
-[19août2024 19:03:51.685] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/megad/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[19août2024 19:03:51.685] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/megad/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[19août2024 19:03:51.995] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[19août2024 19:03:52.025] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 29 ms
-[19août2024 19:03:52.025] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
-[19août2024 19:03:52.047] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 20 ms
-[19août2024 19:03:52.047] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[19août2024 19:03:52.079] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 31 ms
-[19août2024 19:03:52.079] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: extrabotany_reborn
-[19août2024 19:03:52.185] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: extrabotany_reborn finished after 105 ms
-[19août2024 19:03:52.185] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: extrabotany_reborn
-[19août2024 19:03:52.196] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: extrabotany_reborn finished after 10 ms
-[19août2024 19:03:52.196] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id extrabotany_reborn
-[19août2024 19:03:52.219] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id extrabotany_reborn finished after 22 ms
-[19août2024 19:03:52.219] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id extrabotany_reborn
-[19août2024 19:03:52.223] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id extrabotany_reborn finished after 3 ms
-[19août2024 19:03:52.223] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Botania mana pool recipes
-[19août2024 19:03:52.237] [main/INFO] [net.minecraft.data.DataGenerator/]: Botania mana pool recipes finished after 13 ms
-[19août2024 19:03:52.237] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Botania runic altar recipes
-[19août2024 19:03:52.242] [main/INFO] [net.minecraft.data.DataGenerator/]: Botania runic altar recipes finished after 3 ms
-[19août2024 19:03:52.242] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 247 ms
-[19août2024 19:03:52.256] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 78, old count: 79, new count: 79, removed stale: 0, written: 1
+[02Oct.2024 11:25:00.325] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\megad\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, extrabotany_reborn, --all, --output, D:\ExtraBotany_Reborn\src\generated\resources, --existing, D:\ExtraBotany_Reborn\src\main\resources, --mixin.config, extrabotany_reborn.mixins.json]
+[02Oct.2024 11:25:00.343] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Amazon.com Inc.; OS Windows 11 arch amd64 version 10.0
+[02Oct.2024 11:25:00.599] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[02Oct.2024 11:25:00.715] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/megad/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[02Oct.2024 11:25:01.607] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[02Oct.2024 11:25:01.611] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[02Oct.2024 11:25:01.616] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[02Oct.2024 11:25:01.622] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\megad\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[02Oct.2024 11:25:01.865] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[02Oct.2024 11:25:05.752] [main/WARN] [mixin/]: Compatibility level JAVA_17 specified by botania_xplat.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[02Oct.2024 11:25:05.756] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[02Oct.2024 11:25:05.795] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\megad\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, extrabotany_reborn, --all, --output, D:\ExtraBotany_Reborn\src\generated\resources, --existing, D:\ExtraBotany_Reborn\src\main\resources]
+[02Oct.2024 11:25:05.933] [main/INFO] [mixin/]: Attempting to load Fernflower decompiler (Threaded mode)
+[02Oct.2024 11:25:05.936] [main/INFO] [mixin/]: Fernflower could not be loaded, exported classes will not be decompiled. NoClassDefFoundError: org/jetbrains/java/decompiler/main/extern/IResultSaver
+[02Oct.2024 11:25:07.153] [main/INFO] [mixin/]: Preparing mixins for MixinEnvironment[DEFAULT]
+[02Oct.2024 11:25:07.154] [main/INFO] [mixin/]: Selecting config extrabotany_reborn.mixins.json
+[02Oct.2024 11:25:07.160] [main/INFO] [mixin/]: Selecting config botania_xplat.mixins.json
+[02Oct.2024 11:25:07.862] [main/INFO] [mixin/]: Remapping refMap botania.refmap.json using D:\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
+[02Oct.2024 11:25:07.863] [main/INFO] [mixin/]: Selecting config botania_forge.mixins.json
+[02Oct.2024 11:25:07.868] [main/INFO] [mixin/]: Remapping refMap botania.refmap.json using D:\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
+[02Oct.2024 11:25:07.868] [main/INFO] [mixin/]: Selecting config curios.mixins.json
+[02Oct.2024 11:25:07.870] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using D:\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
+[02Oct.2024 11:25:07.870] [main/INFO] [mixin/]: Selecting config patchouli_xplat.mixins.json
+[02Oct.2024 11:25:07.872] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using D:\ExtraBotany_Reborn\build/createSrgToMcp/output.srg
+[02Oct.2024 11:25:07.872] [main/INFO] [mixin/]: Preparing extrabotany_reborn.mixins.json (2)
+[02Oct.2024 11:25:07.992] [main/INFO] [mixin/]: Preparing botania_xplat.mixins.json (71)
+[02Oct.2024 11:25:09.111] [main/INFO] [mixin/]: Preparing botania_forge.mixins.json (6)
+[02Oct.2024 11:25:09.137] [main/INFO] [mixin/]: Preparing curios.mixins.json (13)
+[02Oct.2024 11:25:09.176] [main/INFO] [mixin/]: Preparing patchouli_xplat.mixins.json (10)
+[02Oct.2024 11:25:09.362] [main/INFO] [mixin/]: Prepared 102 mixins in 2.206 sec (21.6ms avg) (0ms load, 0ms transform, 0ms plugin)
+[02Oct.2024 11:25:09.992] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [extrabotany_reborn]
+[02Oct.2024 11:25:10.011] [main/INFO] [mixin/]: Mixing BuiltInRegistriesForgeAccessor from botania_forge.mixins.json into net.minecraft.core.registries.BuiltInRegistries
+[02Oct.2024 11:25:10.020] [main/INFO] [mixin/]: Renaming @Invoker method callRegisterDefaulted(Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;Lnet/minecraft/core/registries/BuiltInRegistries$RegistryBootstrap;)Lnet/minecraft/core/DefaultedRegistry; to callRegisterDefaulted_$md$675ddc$0 in botania_forge.mixins.json:BuiltInRegistriesForgeAccessor
+[02Oct.2024 11:25:10.509] [main/INFO] [mixin/]: Mixing EntityAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.Entity
+[02Oct.2024 11:25:10.521] [main/INFO] [mixin/]: Mixing EntityMixin from botania_xplat.mixins.json into net.minecraft.world.entity.Entity
+[02Oct.2024 11:25:10.724] [main/INFO] [mixin/]: Mixing AccessorEntity from curios.mixins.json into net.minecraft.world.entity.Entity
+[02Oct.2024 11:25:11.056] [main/INFO] [mixin/]: Mixing LivingEntityAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.LivingEntity
+[02Oct.2024 11:25:11.062] [main/INFO] [mixin/]: Mixing MixinLivingEntity from curios.mixins.json into net.minecraft.world.entity.LivingEntity
+[02Oct.2024 11:25:11.309] [main/INFO] [mixin/]: Mixing ItemEntityAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.item.ItemEntity
+[02Oct.2024 11:25:11.325] [main/INFO] [mixin/]: Mixing ItemEntityMixin from botania_xplat.mixins.json into net.minecraft.world.entity.item.ItemEntity
+[02Oct.2024 11:25:11.463] [main/INFO] [mixin/]: Mixing PlayerMixin from extrabotany_reborn.mixins.json into net.minecraft.world.entity.player.Player
+[02Oct.2024 11:25:11.464] [main/WARN] [mixin/]: extrabotany_reborn.mixins.json:PlayerMixin: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[02Oct.2024 11:25:11.516] [main/INFO] [mixin/]: Mixing PlayerMixin from botania_xplat.mixins.json into net.minecraft.world.entity.player.Player
+[02Oct.2024 11:25:11.709] [main/INFO] [mixin/]: Mixing LevelAccessor from botania_xplat.mixins.json into net.minecraft.world.level.Level
+[02Oct.2024 11:25:11.777] [main/INFO] [mixin/]: Mixing ServerLevelMixin from botania_xplat.mixins.json into net.minecraft.server.level.ServerLevel
+[02Oct.2024 11:25:11.923] [main/INFO] [mixin/]: Mixing ItemMixin from botania_xplat.mixins.json into net.minecraft.world.item.Item
+[02Oct.2024 11:25:12.239] [main/INFO] [mixin/]: Mixing FireBlockAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.FireBlock
+[02Oct.2024 11:25:12.591] [main/INFO] [mixin/]: Mixing BushBlockMixin from botania_xplat.mixins.json into net.minecraft.world.level.block.BushBlock
+[02Oct.2024 11:25:12.664] [main/INFO] [mixin/]: Mixing DispenserBlockAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.DispenserBlock
+[02Oct.2024 11:25:12.665] [main/INFO] [mixin/]: Renaming @Accessor method getDispenserRegistry()Ljava/util/Map; to getDispenserRegistry_$md$675ddc$0 in botania_xplat.mixins.json:DispenserBlockAccessor
+[02Oct.2024 11:25:12.707] [main/INFO] [mixin/]: Mixing PistonBaseBlockMixin from botania_xplat.mixins.json into net.minecraft.world.level.block.piston.PistonBaseBlock
+[02Oct.2024 11:25:12.711] [main/INFO] [mixin/]: Mixing PistonBaseBlockAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.piston.PistonBaseBlock
+[02Oct.2024 11:25:12.821] [main/INFO] [mixin/]: Mixing FarmBlockMixin from botania_xplat.mixins.json into net.minecraft.world.level.block.FarmBlock
+[02Oct.2024 11:25:13.035] [main/INFO] [mixin/]: Mixing GrowingPlantBodyBlockMixin from botania_xplat.mixins.json into net.minecraft.world.level.block.GrowingPlantBodyBlock
+[02Oct.2024 11:25:13.149] [main/INFO] [mixin/]: Mixing MixinPowderSnowBlock from curios.mixins.json into net.minecraft.world.level.block.PowderSnowBlock
+[02Oct.2024 11:25:13.257] [main/INFO] [mixin/]: Mixing BlockPropertiesAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.state.BlockBehaviour$Properties
+[02Oct.2024 11:25:13.589] [main/INFO] [mixin/]: Mixing RandomizableContainerBlockEntityAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
+[02Oct.2024 11:25:14.294] [main/INFO] [mixin/]: Mixing AbstractFurnaceBlockEntityAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity
+[02Oct.2024 11:25:14.322] [main/INFO] [mixin/]: Mixing AbstractFurnaceBlockEntityForgeAccessor from botania_forge.mixins.json into net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity
+[02Oct.2024 11:25:14.525] [main/INFO] [mixin/]: Mixing MobAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.Mob
+[02Oct.2024 11:25:14.967] [main/INFO] [mixin/]: Mixing WitherEntityAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.boss.wither.WitherBoss
+[02Oct.2024 11:25:15.058] [main/INFO] [mixin/]: Mixing HopperBlockEntityAccessor from botania_xplat.mixins.json into net.minecraft.world.level.block.entity.HopperBlockEntity
+[02Oct.2024 11:25:15.059] [main/INFO] [mixin/]: Renaming @Invoker method botania_canInsert(Lnet/minecraft/world/Container;Lnet/minecraft/world/item/ItemStack;ILnet/minecraft/core/Direction;)Z to botania_canInsert_$md$675ddc$0 in botania_xplat.mixins.json:HopperBlockEntityAccessor
+[02Oct.2024 11:25:15.066] [main/INFO] [mixin/]: Renaming @Invoker method botania_canMerge(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z to botania_canMerge_$md$675ddc$1 in botania_xplat.mixins.json:HopperBlockEntityAccessor
+[02Oct.2024 11:25:15.335] [main/INFO] [mixin/]: Mixing AnimalAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.animal.Animal
+[02Oct.2024 11:25:15.869] [main/INFO] [mixin/]: Mixing LoomMenuMixin from botania_xplat.mixins.json into net.minecraft.world.inventory.LoomMenu
+[02Oct.2024 11:25:17.380] [main/INFO] [mixin/]: Mixing MixinShearsItem from curios.mixins.json into net.minecraft.world.item.ShearsItem
+[02Oct.2024 11:25:17.524] [main/INFO] [mixin/]: Mixing AbstractMinecartMixin from botania_xplat.mixins.json into net.minecraft.world.entity.vehicle.AbstractMinecart
+[02Oct.2024 11:25:18.970] [main/INFO] [mixin/]: Mixing ExperienceOrbAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.ExperienceOrb
+[02Oct.2024 11:25:19.005] [main/INFO] [mixin/]: Mixing BeeMixin from botania_xplat.mixins.json into net.minecraft.world.entity.animal.Bee
+[02Oct.2024 11:25:19.056] [main/INFO] [mixin/]: Mixing PollinateGoalMixin from botania_xplat.mixins.json into net.minecraft.world.entity.animal.Bee$BeePollinateGoal
+[02Oct.2024 11:25:19.058] [main/INFO] [mixin/]: Renaming synthetic method lambda$extendPredicate$0(Lnet/minecraft/world/level/block/state/BlockState;)Z to md675ddc$lambda$extendPredicate$0$0 in botania_xplat.mixins.json:PollinateGoalMixin
+[02Oct.2024 11:25:19.060] [main/WARN] [mixin/]: Write access to @Mutable @Final field VALID_POLLINATION_BLOCKS:Ljava/util/function/Predicate; in botania_xplat.mixins.json:PollinateGoalMixin::handler$zbd000$extendPredicate
+[02Oct.2024 11:25:19.085] [main/INFO] [mixin/]: Mixing HurtByTargetGoalAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal
+[02Oct.2024 11:25:19.140] [main/INFO] [mixin/]: Mixing NearestAttackableTargetGoalAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal
+[02Oct.2024 11:25:19.209] [main/INFO] [mixin/]: Mixing AbstractHorseAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.animal.horse.AbstractHorse
+[02Oct.2024 11:25:19.379] [main/INFO] [mixin/]: Mixing CreeperAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.monster.Creeper
+[02Oct.2024 11:25:19.383] [main/INFO] [mixin/]: Mixing CreeperMixin from botania_xplat.mixins.json into net.minecraft.world.entity.monster.Creeper
+[02Oct.2024 11:25:19.565] [main/INFO] [mixin/]: Mixing ThrowableProjectileMixin from botania_xplat.mixins.json into net.minecraft.world.entity.projectile.ThrowableProjectile
+[02Oct.2024 11:25:19.811] [main/INFO] [mixin/]: Mixing MushroomCowAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.animal.MushroomCow
+[02Oct.2024 11:25:20.023] [main/INFO] [mixin/]: Mixing BaseSpawnerMixin from botania_xplat.mixins.json into net.minecraft.world.level.BaseSpawner
+[02Oct.2024 11:25:20.252] [main/INFO] [mixin/]: Mixing ServerPlayerMixin from botania_xplat.mixins.json into net.minecraft.server.level.ServerPlayer
+[02Oct.2024 11:25:20.754] [main/INFO] [mixin/]: Mixing ProtectionEnchantmentMixin from botania_xplat.mixins.json into net.minecraft.world.item.enchantment.ProtectionEnchantment
+[02Oct.2024 11:25:20.860] [main/INFO] [mixin/]: Mixing StatsAccessor from botania_xplat.mixins.json into net.minecraft.stats.Stats
+[02Oct.2024 11:25:20.860] [main/INFO] [mixin/]: Renaming @Invoker method botania_callRegisterCustom(Ljava/lang/String;Lnet/minecraft/stats/StatFormatter;)Lnet/minecraft/resources/ResourceLocation; to botania_callRegisterCustom_$md$675ddc$0 in botania_xplat.mixins.json:StatsAccessor
+[02Oct.2024 11:25:20.981] [main/INFO] [mixin/]: Mixing InventoryAccessor from botania_xplat.mixins.json into net.minecraft.world.entity.player.Inventory
+[02Oct.2024 11:25:20.986] [main/INFO] [mixin/]: Mixing MixinInventory from curios.mixins.json into net.minecraft.world.entity.player.Inventory
+[02Oct.2024 11:25:21.052] [main/INFO] [mixin/]: Mixing LoomMenuPatternSlotMixin from botania_xplat.mixins.json into net.minecraft.world.inventory.LoomMenu$5
+[02Oct.2024 11:25:21.333] [main/INFO] [mixin/]: Mixing MixinApplyBonusCount from curios.mixins.json into net.minecraft.world.level.storage.loot.functions.ApplyBonusCount
+[02Oct.2024 11:25:22.033] [main/INFO] [mixin/]: Mixing BiomeAccessor from botania_xplat.mixins.json into net.minecraft.world.level.biome.Biome
+[02Oct.2024 11:25:22.574] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[02Oct.2024 11:25:22.575] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[02Oct.2024 11:25:22.625] [modloading-worker-0/INFO] [mixin/]: Mixing client.ModelBakeryForgeAccessor from botania_forge.mixins.json into net.minecraft.client.resources.model.ModelBakery
+[02Oct.2024 11:25:22.753] [modloading-worker-0/INFO] [mixin/]: Mixing client.AccessorKeyMapping from patchouli_xplat.mixins.json into net.minecraft.client.KeyMapping
+[02Oct.2024 11:25:22.754] [modloading-worker-0/INFO] [mixin/]: Renaming @Accessor method getAllKeyMappings()Ljava/util/Map; to getAllKeyMappings_$md$675ddc$0 in patchouli_xplat.mixins.json:client.AccessorKeyMapping
+[02Oct.2024 11:25:22.889] [modloading-worker-0/INFO] [mixin/]: Mixing client.MinecraftAccessor from botania_xplat.mixins.json into net.minecraft.client.Minecraft
+[02Oct.2024 11:25:22.980] [modloading-worker-0/INFO] [mixin/]: Mixing BotaniaGrassBlockForgeMixin from botania_forge.mixins.json into vazkii.botania.common.block.BotaniaGrassBlock
+[02Oct.2024 11:25:23.062] [modloading-worker-0/INFO] [mixin/]: Mixing client.ItemManasteelArmorForgeMixin from botania_forge.mixins.json into vazkii.botania.common.item.equipment.armor.manasteel.ManasteelArmorItem
+[02Oct.2024 11:25:23.129] [modloading-worker-0/INFO] [mixin/]: Mixing client.AccessorScreen from patchouli_xplat.mixins.json into net.minecraft.client.gui.screens.Screen
+[02Oct.2024 11:25:23.345] [modloading-worker-0/INFO] [mixin/]: Mixing client.ModelManagerAccessor from botania_xplat.mixins.json into net.minecraft.client.resources.model.ModelManager
+[02Oct.2024 11:25:23.365] [modloading-worker-0/INFO] [mixin/]: Mixing client.MixinInventoryScreen from patchouli_xplat.mixins.json into net.minecraft.client.gui.screens.inventory.InventoryScreen
+[02Oct.2024 11:25:23.441] [modloading-worker-0/INFO] [mixin/]: Mixing client.AbstractContainerScreenAccessor from botania_xplat.mixins.json into net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
+[02Oct.2024 11:25:24.204] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[02Oct.2024 11:25:24.240] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 21.42 ms
+[02Oct.2024 11:25:24.252] [modloading-worker-0/INFO] [mixin/]: Mixing RecipeManagerAccessor from botania_xplat.mixins.json into net.minecraft.world.item.crafting.RecipeManager
+[02Oct.2024 11:25:24.335] [modloading-worker-0/INFO] [mixin/]: Mixing CriteriaTriggersAccessor from botania_xplat.mixins.json into net.minecraft.advancements.CriteriaTriggers
+[02Oct.2024 11:25:25.696] [main/INFO] [mixin/]: Mixing client.ItemBlockWithSpecialRendererForgeMixin from botania_forge.mixins.json into vazkii.botania.common.item.block.BlockItemWithSpecialRenderer
+[02Oct.2024 11:25:26.380] [main/INFO] [mixin/]: Mixing SpawnPlacementsMixin from botania_xplat.mixins.json into net.minecraft.world.entity.SpawnPlacements
+[02Oct.2024 11:25:26.585] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/megad/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[02Oct.2024 11:25:26.587] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/megad/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.06.26-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[02Oct.2024 11:25:26.769] [main/INFO] [mixin/]: Mixing RecipeProviderAccessor from botania_xplat.mixins.json into net.minecraft.data.recipes.RecipeProvider
+[02Oct.2024 11:25:26.770] [main/INFO] [mixin/]: Renaming @Invoker method botania_condition([Lnet/minecraft/advancements/critereon/ItemPredicate;)Lnet/minecraft/advancements/critereon/InventoryChangeTrigger$TriggerInstance; to botania_condition_$md$675ddc$0 in botania_xplat.mixins.json:RecipeProviderAccessor
+[02Oct.2024 11:25:26.986] [main/INFO] [mixin/]: Mixing MixinNbtPredicate from curios.mixins.json into net.minecraft.advancements.critereon.NbtPredicate
+[02Oct.2024 11:25:27.342] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[02Oct.2024 11:25:27.471] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 128 ms
+[02Oct.2024 11:25:27.472] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[02Oct.2024 11:25:27.567] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 96 ms
+[02Oct.2024 11:25:27.567] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[02Oct.2024 11:25:27.576] [main/INFO] [mixin/]: Mixing LootTableMixin from botania_xplat.mixins.json into net.minecraft.world.level.storage.loot.LootTable
+[02Oct.2024 11:25:27.577] [main/INFO] [mixin/]: Renaming synthetic method lambda$filterDisposables$0(Lnet/minecraft/world/level/storage/loot/LootContext;Ljava/util/function/Consumer;Lnet/minecraft/world/item/ItemStack;)V to md675ddc$lambda$filterDisposables$0$0 in botania_xplat.mixins.json:LootTableMixin
+[02Oct.2024 11:25:27.658] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 90 ms
+[02Oct.2024 11:25:27.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: extrabotany_reborn
+[02Oct.2024 11:25:27.901] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: extrabotany_reborn finished after 242 ms
+[02Oct.2024 11:25:27.902] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: extrabotany_reborn
+[02Oct.2024 11:25:27.984] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: extrabotany_reborn finished after 82 ms
+[02Oct.2024 11:25:27.985] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id extrabotany_reborn
+[02Oct.2024 11:25:28.015] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id extrabotany_reborn finished after 29 ms
+[02Oct.2024 11:25:28.015] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id extrabotany_reborn
+[02Oct.2024 11:25:28.045] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id extrabotany_reborn finished after 29 ms
+[02Oct.2024 11:25:28.045] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Botania mana pool recipes
+[02Oct.2024 11:25:28.057] [main/INFO] [net.minecraft.data.DataGenerator/]: Botania mana pool recipes finished after 12 ms
+[02Oct.2024 11:25:28.058] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Botania runic altar recipes
+[02Oct.2024 11:25:28.082] [main/INFO] [net.minecraft.data.DataGenerator/]: Botania runic altar recipes finished after 24 ms
+[02Oct.2024 11:25:28.082] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 741 ms
+[02Oct.2024 11:25:28.125] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 111, old count: 111, new count: 112, removed stale: 0, written: 1

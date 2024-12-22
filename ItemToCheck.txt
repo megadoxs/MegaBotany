@@ -1,8 +1,14 @@
+Don't work the way I want them to or would like them to
+
 RingOfCurse
+RingOfManaDrive
+MasterBandOfMana
+ElvenKingRing // only works with botania bauble
+SuperCrown
+
+Need new textures
+
 RingOfWallClimb
 RingOfWallJump
 RingOfParkour
 RingOfParkour2
-RingOfManaDrive
-MasterBandOfMana
-ElvenKingRing // only works with botania bauble

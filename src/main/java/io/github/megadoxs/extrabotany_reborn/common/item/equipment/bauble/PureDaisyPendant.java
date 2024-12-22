@@ -1,8 +1,6 @@
 package io.github.megadoxs.extrabotany_reborn.common.item.equipment.bauble;
 
 import io.github.megadoxs.extrabotany_reborn.common.item.ModItems;
-import io.github.megadoxs.extrabotany_reborn.common.network.C2SPacket.MagicAuraPacket;
-import io.github.megadoxs.extrabotany_reborn.common.network.ModNetwork;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

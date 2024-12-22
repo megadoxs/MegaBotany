@@ -1,6 +1,8 @@
 package io.github.megadoxs.extrabotany_reborn.common.item;
 
 import io.github.megadoxs.extrabotany_reborn.common.ExtraBotany_Reborn;
+import io.github.megadoxs.extrabotany_reborn.common.item.equipment.armor.OrichalcosArmorItem;
+import io.github.megadoxs.extrabotany_reborn.common.item.equipment.armor.OrichalcosHelmetItem;
 import io.github.megadoxs.extrabotany_reborn.common.item.equipment.bauble.*;
 import io.github.megadoxs.extrabotany_reborn.common.item.equipment.shield.ElementiumShield;
 import io.github.megadoxs.extrabotany_reborn.common.item.equipment.shield.ManasteelShield;
@@ -11,6 +13,7 @@ import io.github.megadoxs.extrabotany_reborn.common.item.equipment.tool.hammer.T
 import io.github.megadoxs.extrabotany_reborn.common.item.food.ModFoods;
 import io.github.megadoxs.extrabotany_reborn.common.item.food.NightmareFuel;
 import io.github.megadoxs.extrabotany_reborn.item.fuel.Fuel;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -43,6 +46,13 @@ public class ModItems {
     public static final RegistryObject<Item> JINGWEI_FEATHER = ITEMS.register("jingwei_feather", () -> new JingweiFeather(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> PURE_DAISY_PENDANT = ITEMS.register("pure_daisy_pendant", () -> new PureDaisyPendant(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> SUPER_CROWN = ITEMS.register("super_crown", () -> new SuperCrown(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> BOTTLED_FLAME = ITEMS.register("bottled_flame", () -> new BottledFlame(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> ORICHALCOS_HELMET_FEMALE = ITEMS.register("orichalcos_helmet_female", () -> new OrichalcosHelmetItem(ArmorItem.Type.HELMET, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
+    public static final RegistryObject<Item> ORICHALCOS_CHESTPLATE_FEMALE = ITEMS.register("orichalcos_chestplate_female", () -> new OrichalcosArmorItem(ArmorItem.Type.CHESTPLATE, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
+    public static final RegistryObject<Item> ORICHALCOS_LEGGINGS_FEMALE = ITEMS.register("orichalcos_leggings_female", () -> new OrichalcosArmorItem(ArmorItem.Type.LEGGINGS, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
+    public static final RegistryObject<Item> ORICHALCOS_BOOTS_FEMALE = ITEMS.register("orichalcos_boots_female", () -> new OrichalcosArmorItem(ArmorItem.Type.BOOTS, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
+
 
 
     public static final RegistryObject<Item> SPIRIT_FRAGMENT = ITEMS.register("spirit_fragment", () -> new Fuel(new Item.Properties(), Fuel.BurnTime.SPIRIT_FUEL/8));
@@ -54,6 +64,7 @@ public class ModItems {
     public static final RegistryObject<Item> ORICHALCOS_INGOT = ITEMS.register("orichalcos_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SHADOWIUM_INGOT = ITEMS.register("shadowium_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PHOTONIUM_INGOT = ITEMS.register("photonium_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TICKET = ITEMS.register("ticket", () -> new Ticket(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus){

@@ -29,5 +29,4 @@ public class ModNetwork {
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player){
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), message);
     }
-
 }

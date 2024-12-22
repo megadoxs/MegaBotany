@@ -1,26 +1,34 @@
 package io.github.megadoxs.extrabotany_reborn.common;
 
 import com.mojang.logging.LogUtils;
+import io.github.megadoxs.extrabotany_reborn.client.model.ModLayerDefinition;
+import io.github.megadoxs.extrabotany_reborn.client.renderer.ExplosiveMissileRenderer;
+import io.github.megadoxs.extrabotany_reborn.client.renderer.GaiaGuardianIIIRenderer;
 import io.github.megadoxs.extrabotany_reborn.common.block.ModBlockEntities;
 import io.github.megadoxs.extrabotany_reborn.common.block.ModBlocks;
+import io.github.megadoxs.extrabotany_reborn.common.craft.ModRecipes;
 import io.github.megadoxs.extrabotany_reborn.common.effect.ModEffects;
 import io.github.megadoxs.extrabotany_reborn.common.entity.ModEntities;
 import io.github.megadoxs.extrabotany_reborn.common.item.ModCreativeModTabs;
 import io.github.megadoxs.extrabotany_reborn.common.item.ModItems;
+import io.github.megadoxs.extrabotany_reborn.common.item.equipment.armor.OrichalcosHelmetItem;
 import io.github.megadoxs.extrabotany_reborn.common.item.equipment.bauble.CoreGod;
 import io.github.megadoxs.extrabotany_reborn.common.network.ModNetwork;
-import io.github.megadoxs.extrabotany_reborn.common.recipe.ModRecipes;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.NoopRenderer;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +36,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import vazkii.botania.common.PlayerAccess;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ExtraBotany_Reborn.MOD_ID)
@@ -69,6 +78,20 @@ public class ExtraBotany_Reborn {
                 CoreGod.updatePlayerFlyStatus(player);
         });
 
+
+        // will be removed in 1.21.+ when my PR about AncientWillContainer is merged
+        bus.addListener(EventPriority.LOW, (CriticalHitEvent e) -> {
+            Event.Result result = e.getResult();
+            if (e.getEntity().level().isClientSide
+                    || result == Event.Result.DENY
+                    || result == Event.Result.DEFAULT && !e.isVanillaCritical()
+                    || !OrichalcosHelmetItem.hasOrichalcosArmorSet(e.getEntity())
+                    || !(e.getTarget() instanceof LivingEntity target)) {
+                return;
+            }
+            e.setDamageModifier(e.getDamageModifier() * OrichalcosHelmetItem.getCritDamageMult(e.getEntity()));
+            ((PlayerAccess) e.getEntity()).botania$setCritTarget(target);
+        });
         ModNetwork.register();
     }
 
@@ -87,9 +110,14 @@ public class ExtraBotany_Reborn {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
             EntityRenderers.register(ModEntities.AURA_FIRE.get(), NoopRenderer::new);
+            EntityRenderers.register(ModEntities.EXPLOSIVE_MISSILE.get(), ExplosiveMissileRenderer::new);
+            EntityRenderers.register(ModEntities.GAIA_GUARDIAN_III.get(), GaiaGuardianIIIRenderer::new);
+        }
 
+        @SubscribeEvent
+        public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions evt) {
+            ModLayerDefinition.init(evt::registerLayerDefinition);
         }
     }
 }

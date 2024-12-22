@@ -1,6 +1,5 @@
 {
   "type": "extrabotany_reborn:crushing",
-  "hits": 10,
   "ingredients": [
     {
       "item": "minecraft:cobblestone"
@@ -9,5 +8,6 @@
   "result": {
     "count": 1,
     "item": "minecraft:gravel"
-  }
+  },
+  "strikes": 10
 }

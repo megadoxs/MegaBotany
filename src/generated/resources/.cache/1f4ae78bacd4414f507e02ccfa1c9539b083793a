@@ -1,7 +1,7 @@
-// 1.20.1	2024-08-19T19:03:52.2445029	Tags for minecraft:item mod id extrabotany_reborn
+// 1.20.1	2024-08-21T09:01:39.3375916	Tags for minecraft:item mod id extrabotany_reborn
 c1709e5158254be890d32795b3b7d557b1aa66fc data/botania/tags/items/special_flowers.json
-b63cc749c65731b7e01805358b152a85b2780ad7 data/curios/tags/items/charm.json
-742acf5000b15a49330a7003bc62cdbf33bf1777 data/curios/tags/items/head.json
+782320a58580cbdf21d7c274a67cb235fa70df04 data/curios/tags/items/charm.json
+a7b35be7bdc490649b18b15a266ff4c645956720 data/curios/tags/items/head.json
 d4001fa628e1b7f9ed204a1da165fff2d1edbe95 data/curios/tags/items/necklace.json
 13fb48dd2deb48896de77570aacdbbab05b0bb9e data/curios/tags/items/ring.json
 e4425b043169f9bb63cfd41d7b05900cc51df021 data/extrabotany_reborn/tags/items/hammers.json

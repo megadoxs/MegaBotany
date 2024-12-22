@@ -1,7 +1,7 @@
 package io.github.megadoxs.extrabotany_reborn.common.block.entity_block;
 
 import io.github.megadoxs.extrabotany_reborn.common.block.ModBlockEntities;
-import io.github.megadoxs.extrabotany_reborn.common.recipe.CrushingRecipe;
+import io.github.megadoxs.extrabotany_reborn.common.craft.recipe.CrushingRecipe;
 import io.github.megadoxs.extrabotany_reborn.common.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -55,10 +55,9 @@ public class MortarBlockEntity extends BlockEntity {
 
         if (!storedItem.isEmpty()) {
             if (selectedItem.is(ModTags.Items.HAMMERS) && getCurrentRecipe().isPresent()) {
-                if (this.progress == getCurrentRecipe().get().getHits() - 1) {
-                    Containers.dropContents(this.level, this.worldPosition, NonNullList.of(ItemStack.EMPTY, getCurrentRecipe().get().getOutputs().toArray(new ItemStack[0])));
-                    for(int i = 0; i < itemHandler.getSlots(); i++)
-                        itemHandler.setStackInSlot(i, ItemStack.EMPTY);
+                if (this.progress == getCurrentRecipe().get().getStrikes() - 1) {
+                    Containers.dropContents(this.level, this.worldPosition, NonNullList.of(ItemStack.EMPTY, getCurrentRecipe().get().getResultItem(null)));
+                    itemHandler.setStackInSlot(0, ItemStack.EMPTY);
                     this.progress = 0;
                 }
                 else this.progress++;
@@ -82,13 +81,6 @@ public class MortarBlockEntity extends BlockEntity {
         setChanged();
     }
 
-    private boolean hasRecipe(ItemStack item){
-        SimpleContainer container = new SimpleContainer(1);
-        container.setItem(0, item);
-
-        return this.level.getRecipeManager().getRecipeFor(CrushingRecipe.Type.INSTANCE, container, level).isPresent();
-    }
-
     private Optional<CrushingRecipe> getCurrentRecipe(){
         SimpleContainer container = new SimpleContainer(1);
         container.setItem(0, this.itemHandler.getStackInSlot(0));
@@ -104,8 +96,7 @@ public class MortarBlockEntity extends BlockEntity {
         }
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-
-    // needs redo
+    
     public ItemStack getRenderStack(){
         return itemHandler.getStackInSlot(0);
     }

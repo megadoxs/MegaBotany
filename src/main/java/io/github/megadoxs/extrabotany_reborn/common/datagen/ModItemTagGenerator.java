@@ -50,7 +50,8 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.create(new ResourceLocation("curios", "charm"))).add(
                 ModItems.NATURE_ORB.get(),
-                ModItems.JINGWEI_FEATHER.get()
+                ModItems.JINGWEI_FEATHER.get(),
+                ModItems.BOTTLED_FLAME.get()
         );
 
         this.tag(ItemTags.create(new ResourceLocation("curios", "head"))).add(

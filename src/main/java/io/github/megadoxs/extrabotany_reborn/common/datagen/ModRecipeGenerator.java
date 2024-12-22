@@ -1,15 +1,17 @@
 package io.github.megadoxs.extrabotany_reborn.common.datagen;
 
 import io.github.megadoxs.extrabotany_reborn.common.block.ModBlocks;
+import io.github.megadoxs.extrabotany_reborn.common.craft.builder.CrushingRecipeBuilder;
 import io.github.megadoxs.extrabotany_reborn.common.item.ModItems;
-import io.github.megadoxs.extrabotany_reborn.common.recipe.CrushingRecipeBuilder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 import vazkii.botania.common.item.BotaniaItems;
+import vazkii.botania.data.recipes.NbtOutputResult;
 
 import java.util.function.Consumer;
 
@@ -116,29 +118,40 @@ public class ModRecipeGenerator extends RecipeProvider implements IConditionBuil
 
         CrushingRecipeBuilder.crushing(ModItems.GILDED_MASHED_POTATO.get())
                 .addIngredient(ModItems.GILDED_POTATO.get())
-                .hits(10)
+                .strikes(10)
                 .save(consumer);
 
         CrushingRecipeBuilder.crushing(ModItems.SPIRIT_FRAGMENT.get())
                 .addIngredient(ModItems.SPIRIT_FUEL.get())
-                .hits(10)
+                .strikes(10)
                 .save(consumer);
 
         CrushingRecipeBuilder.crushing(Blocks.GRAVEL.asItem())
                 .addIngredient(Blocks.COBBLESTONE.asItem())
-                .hits(10)
+                .strikes(10)
                 .save(consumer);
 
         CrushingRecipeBuilder.crushing(Items.FLINT)
                 .addIngredient(Blocks.GRAVEL.asItem())
-                .hits(10)
+                .strikes(10)
                 .save(consumer);
 
         CrushingRecipeBuilder.crushing(Items.GUNPOWDER)
                 .addIngredient(Items.FLINT)
-                .hits(10)
+                .strikes(10)
                 .save(consumer);
 
+        // needs to add item to craft the ones unique to the god's core
+        Item[] items = { Items.QUARTZ, BotaniaItems.darkQuartz, BotaniaItems.manaQuartz, BotaniaItems.blazeQuartz, BotaniaItems.lavenderQuartz, BotaniaItems.redQuartz, BotaniaItems.elfQuartz, BotaniaItems.sunnyQuartz };
+        for (int i = 0; i < items.length; i++) {
+            int godCoreType = i + 1;
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GOD_CORE.get())
+                    .requires(ModItems.GOD_CORE.get())
+                    .requires(items[i])
+                    .unlockedBy(getHasName(ModItems.GOD_CORE.get()), has(ModItems.GOD_CORE.get()))
+                    .save(NbtOutputResult.with(consumer, tag -> tag.putInt("variant", godCoreType)),
+                            "extrabotany_reborn:god_core_" + godCoreType);
+        }
 
         //ManaInfusionRecipe test = new ManaInfusionRecipe(new ResourceLocation("test"), new ItemStack(ModItems.NIGHTMARE_FUEL.get()), Ingredient.of(Items.COAL), 2000, null, null);
     }

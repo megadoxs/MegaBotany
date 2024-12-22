@@ -15,7 +15,24 @@
   "item.extrabotany_reborn.photonium_ingot": "Photonium Ingot",
   "item.extrabotany_reborn.shadowium_ingot": "Shadowium Ingot",
   "item.extrabotany_reborn.orichalcos_ingot": "Orichalcos Ingot",
+  "item.extrabotany_reborn.ticket": "Ticket",
+
   "item.extrabotany_reborn.god_core": "God's Core",
+  "item.extrabotany_reborn.curse_ring": "Curse Ring",
+  "item.extrabotany_reborn.wall_jump_amulet": "Wall Jump Amulet",
+  "item.extrabotany_reborn.wall_climb_amulet": "Wall climb Amulet",
+  "item.extrabotany_reborn.parkour_amulet": "Parkour Amulet",
+  "item.extrabotany_reborn.parkour_amulet2": "Parkour Amulet 2",
+  "item.extrabotany_reborn.mana_drive_ring": "Mana Drive Ring",
+  "item.extrabotany_reborn.elven_king_ring": "Elven King Ring",
+  "item.extrabotany_reborn.jingwei_feather": "Jinggwei Feather",
+  "item.extrabotany_reborn.pure_daisy_pendant": "Pure Daisy Pendant",
+  "item.extrabotany_reborn.super_crown": "Super Crown",
+  "item.extrabotany_reborn.bottled_flame": "Flame in a Bottle",
+  "item.extrabotany_reborn.orichalcos_helmet_female": "Pleiades Combat Maid Headgear",
+  "item.extrabotany_reborn.orichalcos_chestplate_female": "Pleiades Combat Maid Dress",
+  "item.extrabotany_reborn.orichalcos_leggings_female": "Pleiades Combat Maid Skirt",
+  "item.extrabotany_reborn.orichalcos_boots_female": "Pleiades Combat Maid Socks",
 
   "block.extrabotany_reborn.photonium_block": "Block of Photonium",
   "block.extrabotany_reborn.shadowium_block": "Block of Shadowium",
@@ -25,12 +42,18 @@
 
   "effect.extrabotany_reborn.blood_deficiency": "Blood Deficiency",
 
+  "armor.extrabotany_reborn.orichalcos_female.name": "Pleiades Comabat Maid Suit",
+  "armor.extrabotany_reborn.orichalcos_male.name": "",
+  "armor.extrabotany_reborn.orichalcos.desc0": "25% less Mana Cost on Mana Tools and Rods",
+  "armor.extrabotany_reborn.orichalcos.desc1": "Immune to all negative effects",
+
   "misc.extrabotany_reborn.natural_breath": "Nature's Breath",
   "misc.extrabotany_reborn.nature_orb_effect1": "Blessing Of Mana",
   "misc.extrabotany_reborn.nature_orb_effect2": "Blessing Of Regeneration",
   "misc.extrabotany_reborn.nature_orb_effect3": "Blessing Of Senro",
   "misc.extrabotany_reborn.activated": "Activated",
   "misc.extrabotany_reborn.deactivated": "Deactivated",
+  "misc.extrabotany_reborn.wings": "Wings",
   "misc.extrabotany_reborn.wings0": "Wings: No Wings",
   "misc.extrabotany_reborn.wings1": "Wings: Flügel",
   "misc.extrabotany_reborn.wings2": "Wings: One-Winged Angel",
@@ -42,6 +65,13 @@
   "misc.extrabotany_reborn.wings8": "Wings: Mega Ultra Chicken",
   "misc.extrabotany_reborn.wings9": "Wings: The One",
 
+  "misc.extrabotany_reborn.mode": "Mode",
+  "misc.extrabotany_reborn.bottled_flame.mode.0": "Right-Left",
+  "misc.extrabotany_reborn.bottled_flame.mode.1": "Right",
+  "misc.extrabotany_reborn.bottled_flame.mode.2": "Left",
+  "misc.extrabotany_reborn.bottled_flame.mode.3": "Bottom",
+  "misc.extrabotany_reborn.bottled_flame.mode.4": "Any",
+
   "wings_comment": "all of the wings unique to the God Core use the old name which are probably going to change",
   "misc.extrabotany_reborn.wings10": "Wings: Goddess",
   "misc.extrabotany_reborn.wings11": "Wings: Flandre",
@@ -49,5 +79,7 @@
   "misc.extrabotany_reborn.wings13": "Wings: Steampunk",
   "misc.extrabotany_reborn.wings14": "Wings: Jim",
 
-  "creativetab.extrabotany_reborn_tab": "ExtraBotany Reborn"
+  "creativetab.extrabotany_reborn_tab": "ExtraBotany Reborn",
+
+  "entity.extrabotany_reborn.gaia_guardian_iii": "Gaia Guardian III"
 }

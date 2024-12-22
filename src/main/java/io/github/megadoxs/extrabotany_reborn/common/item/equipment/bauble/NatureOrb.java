@@ -1,5 +1,6 @@
 package io.github.megadoxs.extrabotany_reborn.common.item.equipment.bauble;
 
+import io.github.megadoxs.extrabotany_reborn.api.item.INatureInfusable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
@@ -16,7 +17,7 @@ import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 
 import java.util.List;
 
-public class NatureOrb extends BaubleItem implements CustomCreativeTabContents {
+public class NatureOrb extends BaubleItem implements CustomCreativeTabContents, INatureInfusable {
 
     private static final String TAG_NATURAL_BREATH = "natural_breath";
     private static final int MAX_NATURAL_BREATH = 500000;
@@ -97,12 +98,16 @@ public class NatureOrb extends BaubleItem implements CustomCreativeTabContents {
 
     @Override
     public void addToCreativeTab(Item item, CreativeModeTab.Output output) {
-
         ItemStack stack = new ItemStack(this);
         output.accept(stack);
 
         ItemStack stack2 = new ItemStack(this);
         ItemNBTHelper.setInt(stack2, TAG_NATURAL_BREATH, MAX_NATURAL_BREATH);
         output.accept(stack2);
+    }
+
+    @Override
+    public int getMaxInfusionRate() {
+        return 500000;
     }
 }
