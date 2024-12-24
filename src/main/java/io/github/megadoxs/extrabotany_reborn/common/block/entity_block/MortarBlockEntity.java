@@ -29,11 +29,11 @@ import java.util.Optional;
 
 public class MortarBlockEntity extends BlockEntity {
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(){
+    private final ItemStackHandler itemHandler = new ItemStackHandler() {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if(!level.isClientSide()) {
+            if (!level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
         }
@@ -59,29 +59,24 @@ public class MortarBlockEntity extends BlockEntity {
                     Containers.dropContents(this.level, this.worldPosition, NonNullList.of(ItemStack.EMPTY, getCurrentRecipe().get().getResultItem(null)));
                     itemHandler.setStackInSlot(0, ItemStack.EMPTY);
                     this.progress = 0;
-                }
-                else this.progress++;
-            }
-            else {
+                } else this.progress++;
+            } else {
                 if (selectedItem.isEmpty()) {
                     int slot = player.getInventory().selected;
                     player.getInventory().add(slot, storedItem);
-                }
-                else player.getInventory().add(storedItem);
+                } else player.getInventory().add(storedItem);
 
                 itemHandler.setStackInSlot(0, ItemStack.EMPTY);
                 this.progress = 0;
             }
-        }
-        else if (!selectedItem.isEmpty()) {
+        } else if (!selectedItem.isEmpty()) {
             itemHandler.setStackInSlot(0, selectedItem);
             player.getInventory().removeFromSelected(false);
-        }
-        else return;
+        } else return;
         setChanged();
     }
 
-    private Optional<CrushingRecipe> getCurrentRecipe(){
+    private Optional<CrushingRecipe> getCurrentRecipe() {
         SimpleContainer container = new SimpleContainer(1);
         container.setItem(0, this.itemHandler.getStackInSlot(0));
 
@@ -96,8 +91,8 @@ public class MortarBlockEntity extends BlockEntity {
         }
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-    
-    public ItemStack getRenderStack(){
+
+    public ItemStack getRenderStack() {
         return itemHandler.getStackInSlot(0);
     }
 

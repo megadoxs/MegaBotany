@@ -1,19 +1,30 @@
 package io.github.megadoxs.extrabotany_reborn.common.block.flower.generating;
 
-import io.github.megadoxs.extrabotany_reborn.common.block.ModBlockEntities;
+import io.github.megadoxs.extrabotany_reborn.common.block.MegaBotanyFlowerBlocks;
 import io.github.megadoxs.extrabotany_reborn.common.effect.ModEffects;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraftforge.registries.ForgeRegistries;
+import vazkii.botania.api.BotaniaAPI;
+import vazkii.botania.api.BotaniaAPIClient;
+import vazkii.botania.api.block.WandHUD;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
+import vazkii.botania.client.core.helper.RenderHelper;
 import vazkii.botania.common.handler.BotaniaSounds;
+
+import java.util.Objects;
 
 public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
     private static final String TAG_BURN_TIME = "burnTime";
@@ -22,8 +33,9 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
 
     private int burnTime = 0;
     private int manaGeneration = 0;
+
     public BloodyEnchantressBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.BLOODY_ENCHANTRESS.get(), pos, state);
+        super(MegaBotanyFlowerBlocks.BLOODY_ENCHANTRESS, pos, state);
     }
 
     @Override
@@ -48,11 +60,11 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
         if (burnTime == 0) {
             if (getMana() < getMaxMana()) {
 
-                for(LivingEntity living : getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1)))){
-                    if(living instanceof Player player && player.isCreative())
+                for (LivingEntity living : getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(getEffectivePos().offset(-RANGE, -RANGE, -RANGE), getEffectivePos().offset(RANGE + 1, RANGE + 1, RANGE + 1)))) {
+                    if (living instanceof Player player && player.isCreative())
                         continue;
 
-                    if (burnTime != 0){
+                    if (burnTime != 0) {
                         break;
                     }
 
@@ -79,8 +91,13 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
     }
 
     @Override
+    public int getMana() {
+        return super.getMana();
+    }
+
+    @Override
     public int getColor() {
-        return 0x785000;
+        return 0x8B0000;
     }
 
     @Override

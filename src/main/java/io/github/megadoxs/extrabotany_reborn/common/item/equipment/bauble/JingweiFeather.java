@@ -20,6 +20,7 @@ import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 
 public class JingweiFeather extends BaubleItem {
     private static final String TAG_COOLDOWN = "cooldown";
+
     public JingweiFeather(Properties props) {
         super(props);
         MinecraftForge.EVENT_BUS.register(this);
@@ -27,15 +28,15 @@ public class JingweiFeather extends BaubleItem {
 
     @Override
     public void onWornTick(ItemStack stack, LivingEntity entity) {
-        if(entity instanceof Player player &&  inCooldown(player))
+        if (entity instanceof Player player && inCooldown(player))
             ItemNBTHelper.setInt(stack, TAG_COOLDOWN, ItemNBTHelper.getInt(stack, TAG_COOLDOWN, 100) - 1);
     }
 
     @SubscribeEvent
     public void leftClick(PlayerInteractEvent.LeftClickEmpty evt) {
-        if(getStack(evt.getEntity()) != ItemStack.EMPTY && !inCooldown(evt.getEntity()) && ManaItemHandler.instance().requestManaExact(new ItemStack(Items.APPLE), evt.getEntity(), 300, true)){
+        if (getStack(evt.getEntity()) != ItemStack.EMPTY && !inCooldown(evt.getEntity()) && ManaItemHandler.instance().requestManaExact(new ItemStack(Items.APPLE), evt.getEntity(), 300, true)) {
             ModNetwork.sendToServer(new MagicAuraPacket());
-            ItemNBTHelper.setInt(getStack(evt.getEntity()),TAG_COOLDOWN, 100);
+            ItemNBTHelper.setInt(getStack(evt.getEntity()), TAG_COOLDOWN, 100);
         }
     }
 
@@ -43,23 +44,23 @@ public class JingweiFeather extends BaubleItem {
     public void attackEntity(AttackEntityEvent evt) {
         if (!evt.getEntity().level().isClientSide() && getStack(evt.getEntity()) != ItemStack.EMPTY && !inCooldown(evt.getEntity()) && ManaItemHandler.instance().requestManaExact(new ItemStack(Items.APPLE), evt.getEntity(), 300, true)) {
             trySpawnMagicAura(evt.getEntity());
-            ItemNBTHelper.setInt(getStack(evt.getEntity()),TAG_COOLDOWN, 100);
+            ItemNBTHelper.setInt(getStack(evt.getEntity()), TAG_COOLDOWN, 100);
         }
     }
 
-    private boolean inCooldown(Player player){
+    private boolean inCooldown(Player player) {
         return ItemNBTHelper.getInt(getStack(player), TAG_COOLDOWN, 0) > 0;
     }
 
-    private ItemStack getStack(Player player){
-         if (CuriosApi.getCuriosInventory(player).resolve().isPresent())
-             if(CuriosApi.getCuriosInventory(player).resolve().get().findFirstCurio(ModItems.JINGWEI_FEATHER.get()).isPresent())
-                 return CuriosApi.getCuriosInventory(player).resolve().get().findFirstCurio(ModItems.JINGWEI_FEATHER.get()).get().stack();
-         return ItemStack.EMPTY;
+    private ItemStack getStack(Player player) {
+        if (CuriosApi.getCuriosInventory(player).resolve().isPresent())
+            if (CuriosApi.getCuriosInventory(player).resolve().get().findFirstCurio(ModItems.JINGWEI_FEATHER.get()).isPresent())
+                return CuriosApi.getCuriosInventory(player).resolve().get().findFirstCurio(ModItems.JINGWEI_FEATHER.get()).get().stack();
+        return ItemStack.EMPTY;
     }
 
     public static void trySpawnMagicAura(Player player) {
-        if (player.getInventory().getSelected().isEmpty()){
+        if (player.getInventory().getSelected().isEmpty()) {
             AuraFire aura = ModEntities.AURA_FIRE.get().create(player.level());
             aura.setOwner(player);
             aura.setPos(player.getX(), player.getY() + 1.5, player.getZ());

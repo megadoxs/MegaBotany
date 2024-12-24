@@ -14,6 +14,7 @@ import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 public class RingOfCurse extends BaubleItem {
 
     private static final int RANGE = 6; // will probably be reduced
+
     public RingOfCurse(Properties props) {
         super(props);
     }

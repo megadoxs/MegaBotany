@@ -27,7 +27,7 @@ public abstract class ArmorModelsMixin {
     private static Map<EquipmentSlot, ArmorModel> orichalcos_female = Collections.emptyMap();
 
     @SuppressWarnings("unchecked")
-    @Inject(method = "init", at = @At("HEAD"), remap=false)
+    @Inject(method = "init", at = @At("HEAD"), remap = false)
     private static void init(EntityRendererProvider.Context ctx, CallbackInfo ci) {
         try {
             Method makeMethod = ArmorModels.class.getDeclaredMethod("make", EntityRendererProvider.Context.class, ModelLayerLocation.class, ModelLayerLocation.class);
@@ -41,7 +41,7 @@ public abstract class ArmorModelsMixin {
         }
     }
 
-    @Inject(method = "get", at = @At("HEAD"), cancellable = true, remap=false)
+    @Inject(method = "get", at = @At("HEAD"), cancellable = true, remap = false)
     private static void get(ItemStack stack, CallbackInfoReturnable<ArmorModel> cir) {
         Item item = stack.getItem();
         if (item instanceof OrichalcosArmorItem armor) {

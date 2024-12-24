@@ -35,11 +35,11 @@ public class CrushingRecipe implements Recipe<Container> {
 
     @Override
     public boolean matches(Container container, Level level) {
-        if(level.isClientSide())
+        if (level.isClientSide())
             return false;
 
         ArrayList<ItemStack> containerItems = new ArrayList<>();
-        for(int i = 0; i < container.getContainerSize(); i++){
+        for (int i = 0; i < container.getContainerSize(); i++) {
             containerItems.add(container.getItem(i));
         }
         containerItems.remove(ItemStack.EMPTY);
@@ -91,7 +91,7 @@ public class CrushingRecipe implements Recipe<Container> {
         return Type.INSTANCE;
     }
 
-    public int getStrikes(){
+    public int getStrikes() {
         return strikes;
     }
 
@@ -110,7 +110,7 @@ public class CrushingRecipe implements Recipe<Container> {
         public CrushingRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
             JsonArray ingredients = GsonHelper.getAsJsonArray(jsonObject, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
-            for(int i = 0; i < inputs.size(); i++){
+            for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
@@ -124,7 +124,7 @@ public class CrushingRecipe implements Recipe<Container> {
         @Override
         public @Nullable CrushingRecipe fromNetwork(ResourceLocation resourceLocation, FriendlyByteBuf friendlyByteBuf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(friendlyByteBuf.readInt(), Ingredient.EMPTY);
-            for(int i = 0; i < inputs.size(); i++){
+            for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(friendlyByteBuf));
             }
 
@@ -138,7 +138,7 @@ public class CrushingRecipe implements Recipe<Container> {
         @Override
         public void toNetwork(FriendlyByteBuf friendlyByteBuf, CrushingRecipe crushingRecipe) {
             friendlyByteBuf.writeInt(crushingRecipe.input.size());
-            for(Ingredient ingredient : crushingRecipe.getIngredients()){
+            for (Ingredient ingredient : crushingRecipe.getIngredients()) {
                 ingredient.toNetwork(friendlyByteBuf);
             }
 

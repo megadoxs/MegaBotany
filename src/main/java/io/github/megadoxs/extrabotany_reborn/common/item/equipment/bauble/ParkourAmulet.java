@@ -24,13 +24,12 @@ public class ParkourAmulet extends BaubleItem {
         Proxy.INSTANCE.runOnClient(() -> () -> {
             if (entity == Minecraft.getInstance().player) {
                 LocalPlayer playerSp = (LocalPlayer) entity;
-                if(wallCollide)
+                if (wallCollide)
                     wallCollide = playerSp.horizontalCollision;
                 if (playerSp.onGround()) {
                     timesJumped = 0;
                     wallCollide = false;
-                }
-                else if(timesJumped < 3){
+                } else if (timesJumped < 3) {
                     if (timesJumped == 0) {
                         timesJumped = 1;
                         jumpDown = true;
@@ -50,7 +49,7 @@ public class ParkourAmulet extends BaubleItem {
                     playerSp.jumpFromGround();
                     ClientXplatAbstractions.INSTANCE.sendToServer(JumpPacket.INSTANCE);
                     timesJumped++;
-                    if(timesJumped > 1)
+                    if (timesJumped > 1)
                         wallCollide = true;
                 }
             }

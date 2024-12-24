@@ -25,6 +25,7 @@ public class MasterBandOfMana extends BaubleItem {
 
     private static final String TAG_MANA = "mana";
     private static final int MAX_MANA = 2000000000;
+
     public MasterBandOfMana(Properties props) {
         super(props);
     }
@@ -66,7 +67,6 @@ public class MasterBandOfMana extends BaubleItem {
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
         return new ManaItemProvider(stack);
     }
-
 
 
     public static class ManaItemImpl implements ManaItem {

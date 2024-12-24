@@ -14,12 +14,12 @@ public class ElvenKingRing extends BaubleItem {
 
     @Override
     public void onWornTick(ItemStack stack, LivingEntity entity) {
-        if(entity instanceof Player player)
-            for(int i = 0; i < player.getInventory().getContainerSize(); i++){
-                if(player.getInventory().getItem(i).getItem() instanceof BaubleBoxItem){
+        if (entity instanceof Player player)
+            for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+                if (player.getInventory().getItem(i).getItem() instanceof BaubleBoxItem) {
                     SimpleContainer boxInventory = BaubleBoxItem.getInventory(player.getInventory().getItem(i));
-                    for(int j = 0; j < getSize(); j++){
-                        if(boxInventory.getItem(j).getItem() instanceof BaubleItem item && !(boxInventory.getItem(j).getItem() instanceof ElvenKingRing))
+                    for (int j = 0; j < getSize(); j++) {
+                        if (boxInventory.getItem(j).getItem() instanceof BaubleItem item && !(boxInventory.getItem(j).getItem() instanceof ElvenKingRing))
                             item.onWornTick(boxInventory.getItem(j), entity);
                     }
                     break;
@@ -27,7 +27,7 @@ public class ElvenKingRing extends BaubleItem {
             }
     }
 
-    public int getSize(){
+    public int getSize() {
         return 3;
     }
 }

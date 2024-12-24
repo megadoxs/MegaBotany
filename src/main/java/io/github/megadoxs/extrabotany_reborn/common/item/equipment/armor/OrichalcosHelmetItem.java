@@ -128,9 +128,10 @@ public class OrichalcosHelmetItem extends OrichalcosArmorItem implements ManaDis
         return source;
     }
 
-    @SubscribeEvent // if you wear the full armor set you won't be affected by removable effects. This won't remove already applied effect to the entity
-    public void effectImmune(MobEffectEvent.Applicable event){ // will make it work for all entity that could wear the armor (zombie, skeleton, etc)
-        if(event.getEntity() instanceof Player player && hasArmorSet(player) && !event.getEffectInstance().getEffect().isBeneficial() && !event.getEffectInstance().getEffect().getCurativeItems().isEmpty())
+    @SubscribeEvent
+    // if you wear the full armor set you won't be affected by removable effects. This won't remove already applied effect to the entity
+    public void effectImmune(MobEffectEvent.Applicable event) { // will make it work for all entity that could wear the armor (zombie, skeleton, etc)
+        if (event.getEntity() instanceof Player player && hasArmorSet(player) && !event.getEffectInstance().getEffect().isBeneficial() && !event.getEffectInstance().getEffect().getCurativeItems().isEmpty())
             event.setResult(Event.Result.DENY);
     }
 }

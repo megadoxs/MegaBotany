@@ -12,15 +12,15 @@ public class MagicAuraPacket {
     public MagicAuraPacket() {
     }
 
-    public MagicAuraPacket(FriendlyByteBuf buf){
+    public MagicAuraPacket(FriendlyByteBuf buf) {
 
     }
 
-    public void toBytes(FriendlyByteBuf buf){
+    public void toBytes(FriendlyByteBuf buf) {
 
     }
 
-    public boolean handle(Supplier<NetworkEvent.Context> supplier){
+    public boolean handle(Supplier<NetworkEvent.Context> supplier) {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             JingweiFeather.trySpawnMagicAura(Objects.requireNonNull(context.getSender()));

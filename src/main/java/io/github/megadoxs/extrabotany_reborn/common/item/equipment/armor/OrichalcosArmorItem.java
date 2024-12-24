@@ -43,7 +43,7 @@ public class OrichalcosArmorItem extends ManasteelArmorItem {
             if (stack.isEmpty()) {
                 return false;
             } else {
-                if(version == Version.FEMALE){
+                if (version == Version.FEMALE) {
                     return switch (slot) {
                         case HEAD -> stack.is(ModItems.ORICHALCOS_HELMET_FEMALE.get());
                         case CHEST -> stack.is(ModItems.ORICHALCOS_CHESTPLATE_FEMALE.get());
@@ -51,8 +51,7 @@ public class OrichalcosArmorItem extends ManasteelArmorItem {
                         case FEET -> stack.is(ModItems.ORICHALCOS_BOOTS_FEMALE.get());
                         default -> false;
                     };
-                }
-                else{
+                } else {
                     // will contain the logic for the male version
                     return false;
                 }

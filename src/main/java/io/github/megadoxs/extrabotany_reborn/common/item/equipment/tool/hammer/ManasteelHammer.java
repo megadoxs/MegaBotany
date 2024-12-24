@@ -29,7 +29,7 @@ public class ManasteelHammer extends HammerItem implements CustomDamageItem {
         super(tier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
     }
 
-    public int getManaPerDamage(){
+    public int getManaPerDamage() {
         return manaPerDamage;
     }
 

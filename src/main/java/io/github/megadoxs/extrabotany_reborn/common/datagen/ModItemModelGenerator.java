@@ -1,15 +1,16 @@
 package io.github.megadoxs.extrabotany_reborn.common.datagen;
 
 import io.github.megadoxs.extrabotany_reborn.common.ExtraBotany_Reborn;
-import io.github.megadoxs.extrabotany_reborn.common.block.ModBlocks;
 import io.github.megadoxs.extrabotany_reborn.common.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelGenerator extends ItemModelProvider {
@@ -54,22 +55,27 @@ public class ModItemModelGenerator extends ItemModelProvider {
         simpleItem(ModItems.ORICHALCOS_LEGGINGS_FEMALE);
         simpleItem(ModItems.ORICHALCOS_BOOTS_FEMALE);
 
-        simpleBlockItemBlockTexture(ModBlocks.BLOODY_ENCHANTRESS);
+        for (Block b : ForgeRegistries.BLOCKS) {
+            ResourceLocation id = ForgeRegistries.BLOCKS.getKey(b);
+            if (ExtraBotany_Reborn.MOD_ID.equals(id.getNamespace()) && b instanceof FlowerBlock) {
+                simpleBlockItemBlockTexture(b);
+            }
+        }
     }
 
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item){
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(ExtraBotany_Reborn.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(ExtraBotany_Reborn.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(ExtraBotany_Reborn.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
-        return withExistingParent(item.getId().getPath(),
+    private ItemModelBuilder simpleBlockItemBlockTexture(Block item) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(item).getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(ExtraBotany_Reborn.MOD_ID,"block/" + item.getId().getPath()));
+                new ResourceLocation(ExtraBotany_Reborn.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(item).getPath()));
     }
 }

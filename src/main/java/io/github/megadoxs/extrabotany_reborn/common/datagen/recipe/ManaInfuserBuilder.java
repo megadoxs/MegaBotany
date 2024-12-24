@@ -19,13 +19,13 @@ public class ManaInfuserBuilder implements RecipeBuilder {
 
     private final int mana;
 
-    public ManaInfuserBuilder(ItemStack output, Ingredient input, int mana){
+    public ManaInfuserBuilder(ItemStack output, Ingredient input, int mana) {
         this.result = output;
         this.ingredient = input;
         this.mana = mana;
     }
 
-    public static ManaInfuserBuilder recipe(ItemStack output, Ingredient input, int mana){
+    public static ManaInfuserBuilder recipe(ItemStack output, Ingredient input, int mana) {
         return new ManaInfuserBuilder(output, input, mana);
     }
 

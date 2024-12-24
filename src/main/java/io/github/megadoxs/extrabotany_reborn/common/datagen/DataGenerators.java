@@ -1,7 +1,9 @@
 package io.github.megadoxs.extrabotany_reborn.common.datagen;
 
 import io.github.megadoxs.extrabotany_reborn.common.ExtraBotany_Reborn;
+import io.github.megadoxs.extrabotany_reborn.common.datagen.botania.FloatingFlowerModelGenerator;
 import io.github.megadoxs.extrabotany_reborn.common.datagen.botania.ManaInfusionRecipeGenerator;
+import io.github.megadoxs.extrabotany_reborn.common.datagen.botania.PottedPlantModelGenerator;
 import io.github.megadoxs.extrabotany_reborn.common.datagen.botania.RunicAltarRecipeGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -16,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 @Mod.EventBusSubscriber(modid = ExtraBotany_Reborn.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent event){
+    public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
@@ -29,11 +31,15 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStateGenerator(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelGenerator(packOutput, existingFileHelper));
 
-        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(), new ModBlockTagGenerator(packOutput, lookupProvider,existingFileHelper));
+        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(), new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
 
+        // all bellow are botania stuff
         // will probably be included inside the ModRecipeGenerator eventually
         generator.addProvider(event.includeServer(), new ManaInfusionRecipeGenerator(packOutput));
         generator.addProvider(event.includeServer(), new RunicAltarRecipeGenerator(packOutput));
+
+        generator.addProvider(event.includeClient(), new FloatingFlowerModelGenerator(packOutput));
+        generator.addProvider(event.includeClient(), new PottedPlantModelGenerator(packOutput));
     }
 }

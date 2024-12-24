@@ -17,16 +17,16 @@ public class ManaDriveRing extends BaubleItem {
 
     @Override
     public void onWornTick(ItemStack stack, LivingEntity entity) {
-        if(entity instanceof Player player){
+        if (entity instanceof Player player) {
             int range = 7; // lol will make it a static final variable
-            for(int x = -range; x < range; x++)
-                for(int y = -range; y < range; y++)
-                    for(int z = -range; z < range; z++) {
+            for (int x = -range; x < range; x++)
+                for (int y = -range; y < range; y++)
+                    for (int z = -range; z < range; z++) {
                         Vec3 playerPosition = player.position().add(x, y, z);
                         BlockEntity blockEntity = player.level().getBlockEntity(new BlockPos((int) playerPosition.x, (int) playerPosition.y, (int) playerPosition.z));
-                        if(blockEntity instanceof FunctionalFlowerBlockEntity flowerEntity) {
+                        if (blockEntity instanceof FunctionalFlowerBlockEntity flowerEntity) {
                             int manaToUse = flowerEntity.getMaxMana() - flowerEntity.getMana();
-                            if(ManaItemHandler.instance().requestManaExact(stack, player, manaToUse, true))
+                            if (ManaItemHandler.instance().requestManaExact(stack, player, manaToUse, true))
                                 flowerEntity.addMana(manaToUse);
                         }
                     }

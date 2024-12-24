@@ -8,7 +8,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
 public class ModLayerDefinition {
-    public static void init(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer){
+    public static void init(BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>> consumer) {
         consumer.accept(ModModelLayer.ORICHALCOS_FEMALE_OUTER_ARMOR, () -> LayerDefinition.create(ModelArmorOrichalcosFemale.createOutsideMesh(), 64, 128));
         consumer.accept(ModModelLayer.ORICHALCOS_FEMALE_INNER_ARMOR, () -> LayerDefinition.create(ModelArmorOrichalcosFemale.createInsideMesh(), 64, 128));
         consumer.accept(ModModelLayer.EXPLOSIVE_MISSILE, ExplosiveMissileRenderer::createSkullLayer);

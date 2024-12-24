@@ -16,7 +16,7 @@ public class NightmareFuel extends Fuel {
     @Override
     public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, Level level, LivingEntity living) {
         super.finishUsingItem(stack, level, living);
-        living.hurt(level.damageSources().magic(),6);
+        living.hurt(level.damageSources().magic(), 6);
 
         ItemStack item = new ItemStack(ModItems.SPIRIT_FUEL.get());
 

@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    ORICHALCOS("orichalcos", 26,  Map.of(ArmorItem.Type.BOOTS, 2, ArmorItem.Type.LEGGINGS, 5, ArmorItem.Type.CHESTPLATE, 6, ArmorItem.Type.HELMET, 2), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(ModItems.ORICHALCOS_INGOT.get()), 1f, 0f);
+    ORICHALCOS("orichalcos", 26, Map.of(ArmorItem.Type.BOOTS, 2, ArmorItem.Type.LEGGINGS, 5, ArmorItem.Type.CHESTPLATE, 6, ArmorItem.Type.HELMET, 2), 25, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(ModItems.ORICHALCOS_INGOT.get()), 1f, 0f);
     private final String name;
     private final int durabilityMultiplier;
     private final Map<ArmorItem.Type, Integer> damageReduction; //subject to change

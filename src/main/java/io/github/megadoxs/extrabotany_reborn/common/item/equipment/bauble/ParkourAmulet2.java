@@ -30,8 +30,7 @@ public class ParkourAmulet2 extends BaubleItem {
                         playerSp.setDeltaMovement(playerSp.getDeltaMovement().x, Math.max(playerSp.getDeltaMovement().y, 0.11F), playerSp.getDeltaMovement().z);
                     else if (playerSp.input.shiftKeyDown)
                         playerSp.setDeltaMovement(playerSp.getDeltaMovement().x, 0, playerSp.getDeltaMovement().z);
-                }
-                else if(timesJumped < 3){
+                } else if (timesJumped < 3) {
                     if (timesJumped == 0) {
                         timesJumped = 1;
                         jumpDown = true;

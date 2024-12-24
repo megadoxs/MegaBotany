@@ -30,7 +30,7 @@ public class AuraFire extends ThrowableProjectile {
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
-        if(getOwner() instanceof Player player){
+        if (getOwner() instanceof Player player) {
             float dmg = (float) (4 + player.getAttributeValue(Attributes.ATTACK_DAMAGE));
             result.getEntity().hurt(player.damageSources().playerAttack(player), dmg);
             player.setAbsorptionAmount(Math.min(10, player.getAbsorptionAmount() + 1F));
@@ -41,7 +41,7 @@ public class AuraFire extends ThrowableProjectile {
 
     @Override
     protected boolean canHitEntity(Entity pTarget) {
-        if(pTarget == getOwner())
+        if (pTarget == getOwner())
             return false;
         else
             return super.canHitEntity(pTarget);
@@ -53,5 +53,6 @@ public class AuraFire extends ThrowableProjectile {
     }
 
     @Override
-    protected void defineSynchedData() {}
+    protected void defineSynchedData() {
+    }
 }

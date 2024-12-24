@@ -1,7 +1,7 @@
 package io.github.megadoxs.extrabotany_reborn.common.datagen;
 
 import io.github.megadoxs.extrabotany_reborn.common.ExtraBotany_Reborn;
-import io.github.megadoxs.extrabotany_reborn.common.block.ModBlocks;
+import io.github.megadoxs.extrabotany_reborn.common.block.MegaBotanyFlowerBlocks;
 import io.github.megadoxs.extrabotany_reborn.common.item.ModItems;
 import io.github.megadoxs.extrabotany_reborn.common.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -9,9 +9,16 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
+import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
+import vazkii.botania.common.block.decor.FloatingFlowerBlock;
 import vazkii.botania.common.lib.BotaniaTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -23,8 +30,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(BotaniaTags.Items.SPECIAL_FLOWERS)
-                .add(ModBlocks.BLOODY_ENCHANTRESS.get().asItem());
+        this.tag(BotaniaTags.Items.GENERATING_SPECIAL_FLOWERS).add(
+                MegaBotanyFlowerBlocks.bloodyEnchantress.asItem(),
+                MegaBotanyFlowerBlocks.SunshineLily.asItem()
+        );
+
+        //only works because all floating flowers are specials
+        this.tag(BotaniaTags.Items.SPECIAL_FLOATING_FLOWERS).add(
+                ForgeRegistries.BLOCKS.getEntries().stream().filter( entry -> ExtraBotany_Reborn.MOD_ID.equals(entry.getKey().location().getNamespace()) && entry.getValue() instanceof FloatingFlowerBlock).map(entry -> entry.getValue().asItem()).toArray(Item[]::new)
+        );
 
         this.tag(ModTags.Items.HAMMERS).add(
                 ModItems.MANASTEEL_HAMMER.get(),

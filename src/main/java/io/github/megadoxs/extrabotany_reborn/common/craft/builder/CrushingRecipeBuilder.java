@@ -22,42 +22,43 @@ import static io.github.megadoxs.extrabotany_reborn.common.craft.ModRecipes.CRUS
 
 public class CrushingRecipeBuilder implements RecipeBuilder {
 
-    private final List<Ingredient> ingredients = Lists.newArrayList();;
+    private final List<Ingredient> ingredients = Lists.newArrayList();
+    ;
     private final ItemStack result;
     private int strikes;
 
-    private CrushingRecipeBuilder(ItemStack results){
+    private CrushingRecipeBuilder(ItemStack results) {
         this.result = results;
     }
 
-    public static CrushingRecipeBuilder crushing(ItemStack result){
+    public static CrushingRecipeBuilder crushing(ItemStack result) {
         return new CrushingRecipeBuilder(result);
     }
 
-    public static CrushingRecipeBuilder crushing(ItemLike item){
+    public static CrushingRecipeBuilder crushing(ItemLike item) {
         return new CrushingRecipeBuilder(new ItemStack(item));
     }
 
-    public static CrushingRecipeBuilder crushing(ItemLike item, int count){
+    public static CrushingRecipeBuilder crushing(ItemLike item, int count) {
         return new CrushingRecipeBuilder(new ItemStack(item, count));
     }
 
-    public CrushingRecipeBuilder addIngredients(Ingredient ...ingredients){
+    public CrushingRecipeBuilder addIngredients(Ingredient... ingredients) {
         this.ingredients.addAll(List.of(ingredients));
         return this;
     }
 
-    public CrushingRecipeBuilder addIngredient(Ingredient ingredient){
+    public CrushingRecipeBuilder addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);
         return this;
     }
 
-    public CrushingRecipeBuilder addIngredient(ItemLike item){
+    public CrushingRecipeBuilder addIngredient(ItemLike item) {
         this.ingredients.add(Ingredient.of(item));
         return this;
     }
 
-    public CrushingRecipeBuilder strikes(int strikes){
+    public CrushingRecipeBuilder strikes(int strikes) {
         this.strikes = strikes;
         return this;
     }
@@ -89,12 +90,12 @@ public class CrushingRecipeBuilder implements RecipeBuilder {
         consumer.accept(new CrushingRecipeBuilder.Result(this.result, this.ingredients, Math.max(this.strikes, 0), resourceLocation));
     }
 
-    public void isValid(){
+    public void isValid() {
         if (this.ingredients.isEmpty())
             throw new IllegalStateException("ingredients list for the crafting recipe cannot be empty");
     }
 
-    private static ResourceLocation getDefaultRecipeId(ItemLike item){
+    private static ResourceLocation getDefaultRecipeId(ItemLike item) {
         return new ResourceLocation("extrabotany_reborn", "crushing/" + item.asItem());
     }
 

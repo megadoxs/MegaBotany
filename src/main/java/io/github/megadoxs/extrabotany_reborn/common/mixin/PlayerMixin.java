@@ -21,8 +21,9 @@ import java.lang.reflect.Field;
 
 // will be removed in 1.21.+ when my PR about AncientWillContainer is merged
 
-@Mixin(value = Player.class, priority = 999)//loads before botania to make sure the value of terraWillCritTarget doesn't get set to null
-public abstract class PlayerMixin{
+@Mixin(value = Player.class, priority = 999)
+//loads before botania to make sure the value of terraWillCritTarget doesn't get set to null
+public abstract class PlayerMixin {
     @ModifyArg(
             method = "attack",
             at = @At(

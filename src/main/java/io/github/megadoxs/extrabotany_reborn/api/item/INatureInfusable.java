@@ -4,12 +4,12 @@ import net.minecraft.world.item.ItemStack;
 import vazkii.botania.common.helper.ItemNBTHelper;
 
 // will add a bar of nature infusion to every item that implements this interface
-public interface INatureInfusable{
+public interface INatureInfusable {
     String TAG_INFUSION_RATE = "infusion_rate";
     String TAG_INFUSED = "infused";
 
     default void infuse(ItemStack stack) {
-        if(getMaxInfusionRate() == getInfusionRate(stack) - 1)
+        if (getMaxInfusionRate() == getInfusionRate(stack) - 1)
             ItemNBTHelper.setBoolean(stack, TAG_INFUSED, true);
         else
             ItemNBTHelper.setInt(stack, TAG_INFUSION_RATE, getMaxInfusionRate() + 1);

@@ -16,7 +16,7 @@ public class ModEntities {
     // not done
     public static final RegistryObject<EntityType<GaiaGuardianIII>> GAIA_GUARDIAN_III = ENTITY_TYPES.register("gaia_guardian_iii", () -> EntityType.Builder.of(GaiaGuardianIII::new, MobCategory.MONSTER).sized(0.6F, 1.8F).fireImmune().build("gaia_guardian_iii"));
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }
 }

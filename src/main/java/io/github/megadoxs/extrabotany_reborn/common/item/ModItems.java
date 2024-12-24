@@ -54,8 +54,7 @@ public class ModItems {
     public static final RegistryObject<Item> ORICHALCOS_BOOTS_FEMALE = ITEMS.register("orichalcos_boots_female", () -> new OrichalcosArmorItem(ArmorItem.Type.BOOTS, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
 
 
-
-    public static final RegistryObject<Item> SPIRIT_FRAGMENT = ITEMS.register("spirit_fragment", () -> new Fuel(new Item.Properties(), Fuel.BurnTime.SPIRIT_FUEL/8));
+    public static final RegistryObject<Item> SPIRIT_FRAGMENT = ITEMS.register("spirit_fragment", () -> new Fuel(new Item.Properties(), Fuel.BurnTime.SPIRIT_FUEL / 8));
     public static final RegistryObject<Item> SPIRIT_FUEL = ITEMS.register("spirit_fuel", () -> new Fuel(new Item.Properties().food(ModFoods.SPIRIT_FUEL), Fuel.BurnTime.SPIRIT_FUEL));
     public static final RegistryObject<Item> NIGHTMARE_FUEL = ITEMS.register("nightmare_fuel", () -> new NightmareFuel(new Item.Properties().food(ModFoods.NIGHTMARE_FUEL), Fuel.BurnTime.NIGHTMARE_FUEL));
     public static final RegistryObject<Item> GILDED_POTATO = ITEMS.register("gilded_potato", () -> new Item(new Item.Properties()));
@@ -67,7 +66,7 @@ public class ModItems {
     public static final RegistryObject<Item> TICKET = ITEMS.register("ticket", () -> new Ticket(new Item.Properties()));
 
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
 }

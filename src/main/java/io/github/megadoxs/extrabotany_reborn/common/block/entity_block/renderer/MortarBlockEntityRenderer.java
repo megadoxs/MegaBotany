@@ -17,7 +17,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 
 public class MortarBlockEntityRenderer implements BlockEntityRenderer<MortarBlockEntity> {
-    public MortarBlockEntityRenderer(BlockEntityRendererProvider.Context context){}
+    public MortarBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
+    }
 
     @Override
     public void render(MortarBlockEntity mortarBlockEntity, float v, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, int i1) {
@@ -35,7 +36,7 @@ public class MortarBlockEntityRenderer implements BlockEntityRenderer<MortarBloc
         poseStack.popPose();
     }
 
-    private int getLightLevel(Level level, BlockPos blockPos){
+    private int getLightLevel(Level level, BlockPos blockPos) {
         int blight = level.getBrightness(LightLayer.BLOCK, blockPos);
         int slight = level.getBrightness(LightLayer.SKY, blockPos);
         return LightTexture.pack(blight, slight);

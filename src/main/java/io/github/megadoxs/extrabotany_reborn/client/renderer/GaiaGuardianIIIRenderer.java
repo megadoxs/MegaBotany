@@ -20,7 +20,7 @@ import vazkii.botania.client.core.helper.RenderHelper;
 import vazkii.botania.client.model.armor.ArmorModels;
 
 public class GaiaGuardianIIIRenderer extends HumanoidMobRenderer<GaiaGuardianIII, HumanoidModel<GaiaGuardianIII>> {
-    private final GaiaGuardianIIIRenderer.Model normalModel = (GaiaGuardianIIIRenderer.Model)this.getModel();
+    private final GaiaGuardianIIIRenderer.Model normalModel = (GaiaGuardianIIIRenderer.Model) this.getModel();
     private final GaiaGuardianIIIRenderer.Model slimModel;
 
     public GaiaGuardianIIIRenderer(EntityRendererProvider.Context ctx) {
@@ -32,8 +32,8 @@ public class GaiaGuardianIIIRenderer extends HumanoidMobRenderer<GaiaGuardianIII
     public void render(@NotNull GaiaGuardianIII dopple, float yaw, float partialTicks, PoseStack ms, MultiBufferSource buffers, int light) {
         ShaderInstance shader = CoreShaders.doppleganger();
         if (shader != null) {
-            shader.safeGetUniform("BotaniaGrainIntensity").set((0.025F + (float)dopple.hurtTime * 0.0425F) / 2.0F);
-            shader.safeGetUniform("BotaniaDisfiguration").set((float)dopple.hurtTime * 0.085F);
+            shader.safeGetUniform("BotaniaGrainIntensity").set((0.025F + (float) dopple.hurtTime * 0.0425F) / 2.0F);
+            shader.safeGetUniform("BotaniaDisfiguration").set((float) dopple.hurtTime * 0.085F);
         }
 
         Entity view = Minecraft.getInstance().getCameraEntity();

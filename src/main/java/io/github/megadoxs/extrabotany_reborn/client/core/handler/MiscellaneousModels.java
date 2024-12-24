@@ -33,7 +33,8 @@ public class MiscellaneousModels {
     private final Map<ResourceLocation, Consumer<BakedModel>> modelConsumers;
 
     public static final MiscellaneousModels INSTANCE = new MiscellaneousModels();
-    private MiscellaneousModels(){
+
+    private MiscellaneousModels() {
         this.modelConsumers = new HashMap<>();
         this.goddessWingIcons = getBakedModels(this.modelConsumers, goddessWingIconIds);
         this.elfWingIcons = getBakedModels(this.modelConsumers, elfWingIconIds);
@@ -61,7 +62,7 @@ public class MiscellaneousModels {
     private static BakedModel[] getBakedModels(Map<ResourceLocation, Consumer<BakedModel>> consumers, ResourceLocation[] ids) {
         BakedModel[] bakedModels = new BakedModel[ids.length];
 
-        for(int i = 0; i < ids.length; ++i) {
+        for (int i = 0; i < ids.length; ++i) {
             final int index = i;
             consumers.put(ids[i], (bakedModel) -> bakedModels[index] = bakedModel);
         }

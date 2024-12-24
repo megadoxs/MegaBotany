@@ -53,7 +53,7 @@ public class RunicAltarRecipeGenerator extends RunicAltarProvider {
             Ingredient[] var3 = this.inputs;
             int var4 = var3.length;
 
-            for(int var5 = 0; var5 < var4; ++var5) {
+            for (int var5 = 0; var5 < var4; ++var5) {
                 Ingredient ingr = var3[var5];
                 ingredients.add(ingr.toJson());
             }

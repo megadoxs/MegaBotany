@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEventBusClientEvents {
 
     @SubscribeEvent
-    public  static void registerBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event){
+    public static void registerBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.MORTAR.get(), MortarBlockEntityRenderer::new);
     }
 }

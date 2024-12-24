@@ -1,6 +1,11 @@
-// 1.20.1	2024-07-26T20:13:33.2180761	Loot Tables
+// 1.20.1	2024-12-23T23:03:48.9356056	Loot Tables
 e0947fe2a6129220480fa9e256b86850b6b75e29 data/extrabotany_reborn/loot_tables/blocks/bloody_enchantress.json
+2ceb6688bc3435994c28d4fd84a3ac0ed5a51aff data/extrabotany_reborn/loot_tables/blocks/floating_bloody_enchantress.json
+1f7586035173718ecd1668ddf8bacd2080167426 data/extrabotany_reborn/loot_tables/blocks/floating_sunshine_lily.json
 25afdd7c8582d5011eac13579e747150ababbfed data/extrabotany_reborn/loot_tables/blocks/mortar.json
 92b315a749f1b866be3004eef0b3278cecd059db data/extrabotany_reborn/loot_tables/blocks/orichalcos_block.json
 3690cf001e48b3a10aba3396f0a07467fd297077 data/extrabotany_reborn/loot_tables/blocks/photonium_block.json
+91044021b4053d2446694405e55459023b4a1b62 data/extrabotany_reborn/loot_tables/blocks/potted_bloody_enchantress.json
+275392193b949faf1bc565e6effb4e385eca19c3 data/extrabotany_reborn/loot_tables/blocks/potted_sunshine_lily.json
 aca914076c8e68026107efefee577d0c2e48be51 data/extrabotany_reborn/loot_tables/blocks/shadowium_block.json
+187ca451f3dc7c437022e141979d8e476eb8caf0 data/extrabotany_reborn/loot_tables/blocks/sunshine_lily.json

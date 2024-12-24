@@ -23,7 +23,7 @@ public class WallJumpAmulet extends BaubleItem {
         Proxy.INSTANCE.runOnClient(() -> () -> {
             if (entity == Minecraft.getInstance().player) {
                 LocalPlayer playerSp = (LocalPlayer) entity;
-                if(wallCollide)
+                if (wallCollide)
                     wallCollide = playerSp.horizontalCollision;
                 if (playerSp.onGround()) {
                     timesJumped = 0;
@@ -33,7 +33,7 @@ public class WallJumpAmulet extends BaubleItem {
                     playerSp.jumpFromGround();
                     ClientXplatAbstractions.INSTANCE.sendToServer(JumpPacket.INSTANCE);
                     timesJumped++;
-                    if(timesJumped > 1)
+                    if (timesJumped > 1)
                         wallCollide = true;
                 }
             }

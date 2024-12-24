@@ -15,11 +15,12 @@ import java.util.function.Consumer;
 public class ManasteelShield extends ShieldItem implements CustomDamageItem {
 
     private static final int manaPerDamage = 60;
+
     public ManasteelShield(Properties pProperties) {
         super(pProperties);
     }
 
-    public int getManaPerDamage(){
+    public int getManaPerDamage() {
         return manaPerDamage;
     }
 

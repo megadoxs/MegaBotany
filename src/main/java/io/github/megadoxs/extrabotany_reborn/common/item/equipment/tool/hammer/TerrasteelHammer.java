@@ -11,7 +11,7 @@ public class TerrasteelHammer extends ManasteelHammer {
     }
 
     @Override
-    public int getManaPerDamage(){
+    public int getManaPerDamage() {
         return manaPerDamage;
     }
 

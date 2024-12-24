@@ -159,13 +159,13 @@ public class GaiaArenaHelper {
         return trippedPositions;
     }
 
-    public static  List<Player> getPlayersInsideArena(Level world, BlockPos pos) {
+    public static List<Player> getPlayersInsideArena(Level world, BlockPos pos) {
         return PlayerHelper.getRealPlayersIn(world, getArenaBB(pos));
     }
 
-    public static  List<Entity> getEntitiesInsideArena(Level world, BlockPos pos) {
+    public static List<Entity> getEntitiesInsideArena(Level world, BlockPos pos) {
         return world.getEntitiesOfClass(Entity.class, getArenaBB(pos), (entity) -> {
-            if (entity instanceof GaiaGuardianIII){
+            if (entity instanceof GaiaGuardianIII) {
                 return false;
             }
             if (entity instanceof Projectile projectile) {
@@ -175,7 +175,7 @@ public class GaiaArenaHelper {
         });
     }
 
-    public static void SpawnArenaParticle(Level level, BlockPos source){
+    public static void SpawnArenaParticle(Level level, BlockPos source) {
         for (int i = 0; i < 360; i += 8) {
             float r = 0.6F;
             float g = 0F;

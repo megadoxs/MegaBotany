@@ -24,10 +24,11 @@ public class ModAdvancementGenerator extends ForgeAdvancementProvider {
         super(output, registries, existingFileHelper, List.of(new Advancements()));
     }
 
-    public static class Advancements implements AdvancementGenerator{
+    public static class Advancements implements AdvancementGenerator {
 
         public static final Advancement ROOT = Advancement.Builder.advancement().display(ModItems.TERRASTEEL_HAMMER.get(), Component.translatable("advancement.extrabotany_reborn:root"), Component.translatable("advancement.extrabotany_reborn:root.desc"), new ResourceLocation("botania:textures/block/livingwood_log.png"), FrameType.TASK, false, false, false).addCriterion("test", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(ModItems.NIGHTMARE_FUEL.get()).build())).build(new ResourceLocation("extrabotany_reborn:main/root"));
         public static final Advancement EAT_NIGHTMARE_FUEL = getAdvancement("eat_nightmare_fuel", ROOT, ModItems.NIGHTMARE_FUEL.get(), FrameType.TASK, getEatCriterion(ModItems.NIGHTMARE_FUEL.get()));
+
         @Override
         public void generate(HolderLookup.Provider provider, Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper) {
             consumer.accept(ROOT);
@@ -35,15 +36,14 @@ public class ModAdvancementGenerator extends ForgeAdvancementProvider {
         }
 
         //General Advancement
-        private static Advancement getAdvancement(String name, Advancement parent, ItemLike icon, FrameType frame, CriterionTriggerInstance criterion){
+        private static Advancement getAdvancement(String name, Advancement parent, ItemLike icon, FrameType frame, CriterionTriggerInstance criterion) {
             return Advancement.Builder.advancement().parent(parent).display(icon, Component.translatable("advancement.extrabotany_reborn:" + name), Component.translatable("advancement.extrabotany_reborn:" + name + ".desc"), null, frame, true, true, false).addCriterion("requirement", criterion).build(new ResourceLocation("extrabotany_reborn:main/" + name));
         }
 
-        public static CriterionTriggerInstance getEatCriterion(ItemLike item){
+        public static CriterionTriggerInstance getEatCriterion(ItemLike item) {
             return ConsumeItemTrigger.TriggerInstance.usedItem(item);
         }
     }
-
 
 
 }

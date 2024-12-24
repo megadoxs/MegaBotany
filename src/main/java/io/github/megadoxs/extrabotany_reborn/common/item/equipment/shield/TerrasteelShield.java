@@ -1,6 +1,6 @@
 package io.github.megadoxs.extrabotany_reborn.common.item.equipment.shield;
 
-public class TerrasteelShield extends ManasteelShield{
+public class TerrasteelShield extends ManasteelShield {
 
     private static final int manaPerDamage = 100;
 

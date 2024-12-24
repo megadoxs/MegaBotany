@@ -29,21 +29,21 @@ public class NatureOrb extends BaubleItem implements CustomCreativeTabContents, 
     @Override
     public void onWornTick(ItemStack stack, LivingEntity entity) {
         super.onWornTick(stack, entity);
-        if(entity instanceof Player player){
+        if (entity instanceof Player player) {
 
-            ManaItemHandler.instance().dispatchManaExact(stack, player, (int) Math.floor((double) getNaturalBreath(stack) /100000), true);
+            ManaItemHandler.instance().dispatchManaExact(stack, player, (int) Math.floor((double) getNaturalBreath(stack) / 100000), true);
 
-            if(getNaturalBreath(stack) > 300000){
+            if (getNaturalBreath(stack) > 300000) {
                 ManaItemHandler.instance().dispatchManaExact(stack, player, 1, true);
-                if(player.tickCount % 60 == 0)
+                if (player.tickCount % 60 == 0)
                     player.heal(1F);
             }
-            if(getNaturalBreath(stack) > 400000){
-                if(player.tickCount % 40 == 0){
+            if (getNaturalBreath(stack) > 400000) {
+                if (player.tickCount % 40 == 0) {
                     clearEffects(player);
                 }
             }
-            if(player.tickCount % 40 == 0){
+            if (player.tickCount % 40 == 0) {
                 addNaturalBreath(stack, -10);
             }
         }
@@ -58,15 +58,15 @@ public class NatureOrb extends BaubleItem implements CustomCreativeTabContents, 
         tooltip.add(Component.translatable("misc.extrabotany_reborn.nature_orb_effect3").withStyle(ChatFormatting.GRAY).append(": ").append(Component.translatable(getNaturalBreath(stack) < 40000 ? "misc.extrabotany_reborn.deactivated" : "misc.extrabotany_reborn.activated").withStyle(ChatFormatting.GREEN)));
     }
 
-    public void setNaturalBreath(ItemStack stack, int natural_breath){
+    public void setNaturalBreath(ItemStack stack, int natural_breath) {
         ItemNBTHelper.setInt(stack, TAG_NATURAL_BREATH, natural_breath);
     }
 
-    public void addNaturalBreath(ItemStack stack, int natural_breath){
+    public void addNaturalBreath(ItemStack stack, int natural_breath) {
         setNaturalBreath(stack, Math.min(Math.max(getNaturalBreath(stack) + natural_breath, 0), MAX_NATURAL_BREATH));
     }
 
-    public int getNaturalBreath(ItemStack stack){
+    public int getNaturalBreath(ItemStack stack) {
         return ItemNBTHelper.getInt(stack, TAG_NATURAL_BREATH, 0);
     }
 
@@ -88,12 +88,12 @@ public class NatureOrb extends BaubleItem implements CustomCreativeTabContents, 
 
     @Override
     public int getBarWidth(ItemStack pStack) {
-        return Math.round(13.0F * (float)getNaturalBreath(pStack)  / (float)MAX_NATURAL_BREATH);
+        return Math.round(13.0F * (float) getNaturalBreath(pStack) / (float) MAX_NATURAL_BREATH);
     }
 
     @Override
     public int getBarColor(ItemStack pStack) {
-        return Mth.hsvToRgb(MAX_NATURAL_BREATH/(float)getNaturalBreath(pStack) / 3.0F, 1.0F, 1.0F);
+        return Mth.hsvToRgb(MAX_NATURAL_BREATH / (float) getNaturalBreath(pStack) / 3.0F, 1.0F, 1.0F);
     }
 
     @Override

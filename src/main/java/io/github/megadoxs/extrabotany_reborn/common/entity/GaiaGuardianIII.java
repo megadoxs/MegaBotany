@@ -109,8 +109,7 @@ public class GaiaGuardianIII extends Monster implements IEntityAdditionalSpawnDa
                     CriteriaTriggers.SUMMONED_ENTITY.trigger(serverPlayer, e);
             }
             return true;
-        }
-        else
+        } else
             return false;
     }
 
@@ -233,12 +232,12 @@ public class GaiaGuardianIII extends Monster implements IEntityAdditionalSpawnDa
         if (players.isEmpty() && !level().players().isEmpty())
             discard();
         else {
-            for (Player player : players){
+            for (Player player : players) {
                 GaiaArenaHelper.keepPlayerInsideArena(player, source);
                 player.getAbilities().flying &= player.getAbilities().instabuild;
             }
 
-            for (Entity entity : entities){
+            for (Entity entity : entities) {
                 GaiaArenaHelper.keepEntityOutsideArena(entity, source);
             }
         }
@@ -248,7 +247,7 @@ public class GaiaGuardianIII extends Monster implements IEntityAdditionalSpawnDa
         for (Player nearbyPlayer : players) {
             if (nearbyPlayer instanceof ServerPlayer serverPlayer) {
                 Inventory playerInv = serverPlayer.getInventory(); // minecraft inventory
-                LazyOptional<ICuriosItemHandler> playerCurio =  CuriosApi.getCuriosInventory(serverPlayer); // curio inventory
+                LazyOptional<ICuriosItemHandler> playerCurio = CuriosApi.getCuriosInventory(serverPlayer); // curio inventory
 
                 // I feel like there is probably a better way to do all this
                 for (int i = 0; i < playerInv.items.size(); i++) {
@@ -258,15 +257,15 @@ public class GaiaGuardianIII extends Monster implements IEntityAdditionalSpawnDa
                     }
                 }
 
-                for(int i = 0; i < playerInv.armor.size(); i++){
-                    if (!playerInv.armor.get(i).isEmpty() & !GaiaArenaHelper.mods.contains(BuiltInRegistries.ITEM.getKey(playerInv.items.get(i).getItem()).getNamespace())){
+                for (int i = 0; i < playerInv.armor.size(); i++) {
+                    if (!playerInv.armor.get(i).isEmpty() & !GaiaArenaHelper.mods.contains(BuiltInRegistries.ITEM.getKey(playerInv.items.get(i).getItem()).getNamespace())) {
                         serverPlayer.drop(playerInv.armor.get(i), true, true).setPickUpDelay(10000);
                         playerInv.armor.set(i, ItemStack.EMPTY);
                     }
                 }
 
-                for(int i = 0; i < playerInv.offhand.size(); i++){
-                    if (!playerInv.offhand.get(i).isEmpty() & !GaiaArenaHelper.mods.contains(BuiltInRegistries.ITEM.getKey(playerInv.items.get(i).getItem()).getNamespace())){
+                for (int i = 0; i < playerInv.offhand.size(); i++) {
+                    if (!playerInv.offhand.get(i).isEmpty() & !GaiaArenaHelper.mods.contains(BuiltInRegistries.ITEM.getKey(playerInv.items.get(i).getItem()).getNamespace())) {
                         serverPlayer.drop(playerInv.offhand.get(i), true, true).setPickUpDelay(10000);
                         playerInv.offhand.set(i, ItemStack.EMPTY);
                     }
@@ -433,13 +432,13 @@ public class GaiaGuardianIII extends Monster implements IEntityAdditionalSpawnDa
         return l.size();
     }
 
-    public static AttributeSupplier.Builder createAttributes(){
+    public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 200);
     }
 
     @SubscribeEvent
-    public static void registerAttributes(EntityAttributeCreationEvent event){
+    public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.GAIA_GUARDIAN_III.get(), createAttributes().build());
     }
 

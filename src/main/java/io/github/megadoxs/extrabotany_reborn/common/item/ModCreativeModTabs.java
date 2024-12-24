@@ -1,6 +1,7 @@
 package io.github.megadoxs.extrabotany_reborn.common.item;
 
 import io.github.megadoxs.extrabotany_reborn.common.ExtraBotany_Reborn;
+import io.github.megadoxs.extrabotany_reborn.common.block.MegaBotanyFlowerBlocks;
 import io.github.megadoxs.extrabotany_reborn.common.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,10 @@ public class ModCreativeModTabs {
             .title(Component.translatable("creativetab.extrabotany_reborn_tab"))
             .displayItems((itemDisplayParameters, output) -> {
 
-                output.accept(ModBlocks.BLOODY_ENCHANTRESS.get());
+                output.accept(MegaBotanyFlowerBlocks.bloodyEnchantress);
+                output.accept(MegaBotanyFlowerBlocks.bloodyEnchantressFloating);
+                output.accept(MegaBotanyFlowerBlocks.SunshineLily);
+                output.accept(MegaBotanyFlowerBlocks.SunshineLilyFloating);
 
                 output.accept(ModItems.MANASTEEL_SHIELD.get());
                 output.accept(ModItems.ELEMENTIUM_SHIELD.get());
@@ -56,7 +60,7 @@ public class ModCreativeModTabs {
                 output.accept(ModItems.PURE_DAISY_PENDANT.get());
                 output.accept(ModItems.SUPER_CROWN.get());
                 output.accept(ModItems.BOTTLED_FLAME.get());
-                
+
                 output.accept(ModItems.ORICHALCOS_HELMET_FEMALE.get());
                 output.accept(ModItems.ORICHALCOS_CHESTPLATE_FEMALE.get());
                 output.accept(ModItems.ORICHALCOS_LEGGINGS_FEMALE.get());
@@ -66,9 +70,10 @@ public class ModCreativeModTabs {
                 ((CustomCreativeTabContents) ModItems.NATURE_ORB.get()).addToCreativeTab(ModItems.NATURE_ORB.get(), output); // don't like this implementation will make my own eventually
                 ((CustomCreativeTabContents) ModItems.GOD_CORE.get()).addToCreativeTab(ModItems.GOD_CORE.get(), output);
             })
+            .withSearchBar()
             .build());
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
 }

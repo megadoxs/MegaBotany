@@ -142,7 +142,7 @@ public class ModRecipeGenerator extends RecipeProvider implements IConditionBuil
                 .save(consumer);
 
         // needs to add item to craft the ones unique to the god's core
-        Item[] items = { Items.QUARTZ, BotaniaItems.darkQuartz, BotaniaItems.manaQuartz, BotaniaItems.blazeQuartz, BotaniaItems.lavenderQuartz, BotaniaItems.redQuartz, BotaniaItems.elfQuartz, BotaniaItems.sunnyQuartz };
+        Item[] items = {Items.QUARTZ, BotaniaItems.darkQuartz, BotaniaItems.manaQuartz, BotaniaItems.blazeQuartz, BotaniaItems.lavenderQuartz, BotaniaItems.redQuartz, BotaniaItems.elfQuartz, BotaniaItems.sunnyQuartz};
         for (int i = 0; i < items.length; i++) {
             int godCoreType = i + 1;
             ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GOD_CORE.get())

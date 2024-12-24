@@ -81,7 +81,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                 int cooldown = ItemNBTHelper.getInt(stack, "dashCooldown", 0);
                 if (!wasSprting && isSprinting && cooldown == 0) {
                     player.setDeltaMovement(player.getDeltaMovement().add(look.x, 0.0, look.z));
-                    player.level().playSound((Player)null, player.getX(), player.getY(), player.getZ(), BotaniaSounds.dash, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    player.level().playSound((Player) null, player.getX(), player.getY(), player.getZ(), BotaniaSounds.dash, SoundSource.PLAYERS, 1.0F, 1.0F);
                     ItemNBTHelper.setInt(stack, "dashCooldown", 80);
                     ItemNBTHelper.setBoolean(stack, "boostPending", true);
                 } else if (cooldown > 0) {
@@ -98,7 +98,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
 
                 if (doGlide) {
                     float mul = 0.6F;
-                    living.setDeltaMovement(look.x * (double)mul, Math.max(-0.15000000596046448, living.getDeltaMovement().y()), look.z * (double)mul);
+                    living.setDeltaMovement(look.x * (double) mul, Math.max(-0.15000000596046448, living.getDeltaMovement().y()), look.z * (double) mul);
                     living.fallDistance = 2.0F;
                 }
 
@@ -111,87 +111,87 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
     }
 
     public static void updatePlayerFlyStatus(Player player) {
-            ItemStack core = EquipmentHandler.findOrEmpty(ModItems.GOD_CORE.get(), player);
-            if (playersWithFlight.contains(playerStr(player))) {
-                if (shouldPlayerHaveFlight(player)) {
-                    player.getAbilities().mayfly = true;
-                    if (player.getAbilities().flying) {
-                        if (!player.level().isClientSide) {
-                            if (!player.isCreative() && !player.isSpectator()) {
-                                ManaItemHandler.instance().requestManaExact(core, player, 35, true);
-                            }
-                        } else if (Math.abs(player.getDeltaMovement().x()) > 0.1 || Math.abs(player.getDeltaMovement().z()) > 0.1) {
-                            double x = player.getX() - 0.5;
-                            double y = player.getY() - 0.5;
-                            double z = player.getZ() - 0.5;
-                            float r = 1.0F;
-                            float g = 1.0F;
-                            float b = 1.0F;
-                            int variant = getVariant(core);
-                            switch (variant) {
-                                case 2:
-                                    r = 0.1F;
-                                    g = 0.1F;
-                                    b = 0.1F;
-                                    break;
-                                case 3:
-                                    r = 0.0F;
-                                    g = 0.6F;
-                                    break;
-                                case 4:
-                                    g = 0.3F;
-                                    b = 0.3F;
-                                    break;
-                                case 5:
-                                    r = 0.6F;
-                                    g = 0.0F;
-                                    b = 0.6F;
-                                    break;
-                                case 6:
-                                    r = 0.4F;
-                                    g = 0.0F;
-                                    b = 0.0F;
-                                    break;
-                                case 7:
-                                    r = 0.2F;
-                                    g = 0.6F;
-                                    b = 0.2F;
-                                    break;
-                                case 8:
-                                    r = 0.85F;
-                                    g = 0.85F;
-                                    b = 0.0F;
-                                    break;
-                                case 9:
-                                    r = 0.0F;
-                                    b = 0.0F;
-                            }
+        ItemStack core = EquipmentHandler.findOrEmpty(ModItems.GOD_CORE.get(), player);
+        if (playersWithFlight.contains(playerStr(player))) {
+            if (shouldPlayerHaveFlight(player)) {
+                player.getAbilities().mayfly = true;
+                if (player.getAbilities().flying) {
+                    if (!player.level().isClientSide) {
+                        if (!player.isCreative() && !player.isSpectator()) {
+                            ManaItemHandler.instance().requestManaExact(core, player, 35, true);
+                        }
+                    } else if (Math.abs(player.getDeltaMovement().x()) > 0.1 || Math.abs(player.getDeltaMovement().z()) > 0.1) {
+                        double x = player.getX() - 0.5;
+                        double y = player.getY() - 0.5;
+                        double z = player.getZ() - 0.5;
+                        float r = 1.0F;
+                        float g = 1.0F;
+                        float b = 1.0F;
+                        int variant = getVariant(core);
+                        switch (variant) {
+                            case 2:
+                                r = 0.1F;
+                                g = 0.1F;
+                                b = 0.1F;
+                                break;
+                            case 3:
+                                r = 0.0F;
+                                g = 0.6F;
+                                break;
+                            case 4:
+                                g = 0.3F;
+                                b = 0.3F;
+                                break;
+                            case 5:
+                                r = 0.6F;
+                                g = 0.0F;
+                                b = 0.6F;
+                                break;
+                            case 6:
+                                r = 0.4F;
+                                g = 0.0F;
+                                b = 0.0F;
+                                break;
+                            case 7:
+                                r = 0.2F;
+                                g = 0.6F;
+                                b = 0.2F;
+                                break;
+                            case 8:
+                                r = 0.85F;
+                                g = 0.85F;
+                                b = 0.0F;
+                                break;
+                            case 9:
+                                r = 0.0F;
+                                b = 0.0F;
+                        }
 
-                            for(int i = 0; i < 2; ++i) {
-                                SparkleParticleData data = SparkleParticleData.sparkle(2.0F * (float)Math.random(), r, g, b, 20);
-                                player.level().addParticle(data, x + Math.random() * (double)player.getBbWidth(), y + Math.random() * 0.4, z + Math.random() * (double)player.getBbWidth(), 0.0, 0.0, 0.0);
-                            }
+                        for (int i = 0; i < 2; ++i) {
+                            SparkleParticleData data = SparkleParticleData.sparkle(2.0F * (float) Math.random(), r, g, b, 20);
+                            player.level().addParticle(data, x + Math.random() * (double) player.getBbWidth(), y + Math.random() * 0.4, z + Math.random() * (double) player.getBbWidth(), 0.0, 0.0, 0.0);
                         }
                     }
-                } else {
-                    if (!player.isSpectator() && !player.getAbilities().instabuild) {
-                        player.getAbilities().mayfly = false;
-                        player.getAbilities().flying = false;
-                        player.getAbilities().invulnerable = false;
-                    }
-
-                    playersWithFlight.remove(playerStr(player));
                 }
-            } else if (shouldPlayerHaveFlight(player)) {
-                playersWithFlight.add(playerStr(player));
-                player.getAbilities().mayfly = true;
+            } else {
+                if (!player.isSpectator() && !player.getAbilities().instabuild) {
+                    player.getAbilities().mayfly = false;
+                    player.getAbilities().flying = false;
+                    player.getAbilities().invulnerable = false;
+                }
+
+                playersWithFlight.remove(playerStr(player));
             }
+        } else if (shouldPlayerHaveFlight(player)) {
+            playersWithFlight.add(playerStr(player));
+            player.getAbilities().mayfly = true;
+        }
     }
 
     public static void playerLoggedOut(ServerPlayer player) {
-            String username = player.getGameProfile().getName();
-            playersWithFlight.remove(username + ":false");
-            playersWithFlight.remove(username + ":true");
+        String username = player.getGameProfile().getName();
+        playersWithFlight.remove(username + ":false");
+        playersWithFlight.remove(username + ":true");
     }
 
     private static boolean shouldPlayerHaveFlight(Player player) {
@@ -215,9 +215,9 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
 
     @Override
     public void addToCreativeTab(Item item, CreativeModeTab.Output output) {
-        for(int i = 0; i <= WING_TYPES; i++){
+        for (int i = 0; i <= WING_TYPES; i++) {
             ItemStack stack = new ItemStack(this);
-            if(i != 0)
+            if (i != 0)
                 ItemNBTHelper.setInt(stack, TAG_VARIANT, i);
             output.accept(stack);
         }
@@ -232,7 +232,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0.0, 0.5, 0.2);
 
-            for(int i = 0; i < 2; ++i) {
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
                 ms.translate(-1.0F, 0.0F, 0.0F);
@@ -262,7 +262,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(-0.8, 0.15, 0.25);
 
-            for(int i = 0; i < 2; ++i) {
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 if (i == 1) {
                     ms.mulPose(VecHelper.rotateY(180.0F));
@@ -282,7 +282,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0.0, -0.2, 0.2);
 
-            for(int i = 0; i < 2; ++i) {
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
                 ms.translate(-0.9, 0.0, 0.0);
@@ -299,7 +299,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0.0, -0.4, 0.2);
 
-            for(int i = 0; i < 2; ++i) {
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
                 ms.translate(-1.3, 0.0, 0.0);
@@ -316,7 +316,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0.0, 0.0, 0.2);
 
-            for(int i = 0; i < 2; ++i) {
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
                 ms.translate(-0.7, 0.0, 0.0);
@@ -333,7 +333,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0, 0.5, 0.2);
 
-            for(int i = 0; i < 2; ++i){
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 ms.translate(i == 0 ? -0.15 : 0.15, -0.2, -0.12); // wings location on the back
                 ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
@@ -353,8 +353,8 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0, 0.5, 0.2);
 
-            for(int i = 0; i < 2; ++i){
-                for(int j = 0; j < io.github.megadoxs.extrabotany_reborn.client.core.handler.MiscellaneousModels.INSTANCE.elfWingIcons.length; j++){
+            for (int i = 0; i < 2; ++i) {
+                for (int j = 0; j < io.github.megadoxs.extrabotany_reborn.client.core.handler.MiscellaneousModels.INSTANCE.elfWingIcons.length; j++) {
                     ms.pushPose();
                     ms.translate(i == 0 ? -0.15 : 0.15, 0, -0.05 + 0.01 * j);
                     ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
@@ -374,7 +374,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             bipedModel.body.translateAndRotate(ms);
             ms.translate(0, 0.5, 0.2);
 
-            for(int i = 0; i < 2; ++i){
+            for (int i = 0; i < 2; ++i) {
                 ms.pushPose();
                 ms.translate(i == 0 ? -wingDistance : wingDistance, -0.3, -0.05);
                 ms.mulPose(VecHelper.rotateY(i == 0 ? flap : 180.0F - flap));
@@ -392,7 +392,8 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             if (meta > 0) {
                 BakedModel model;
                 boolean var10000;
-                label48: {
+                label48:
+                {
                     if (meta < 10)
                         model = MiscellaneousModels.INSTANCE.tiaraWingIcons[meta - 1];
                     else
@@ -408,7 +409,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                 }
 
                 boolean flying = var10000;
-                float flap = 20.0F + (float)((Math.sin((double)((float)living.tickCount + partialTicks) * (double)(flying ? 0.4F : 0.2F)) + 0.5) * (double)(flying ? 30.0F : 5.0F));
+                float flap = 20.0F + (float) ((Math.sin((double) ((float) living.tickCount + partialTicks) * (double) (flying ? 0.4F : 0.2F)) + 0.5) * (double) (flying ? 30.0F : 5.0F));
                 float alpha;
                 int color;
                 switch (meta) {
@@ -434,14 +435,14 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                         renderBasic(bipedModel, model, stack, ms, buffers, light, flap);
                         break;
                     case 7:
-                        alpha = 0.5F + (float)Math.cos((double)((float)living.tickCount + partialTicks) * 0.30000001192092896) * 0.2F;
-                        color = 16777215 | (int)(alpha * 255.0F) << 24;
+                        alpha = 0.5F + (float) Math.cos((double) ((float) living.tickCount + partialTicks) * 0.30000001192092896) * 0.2F;
+                        color = 16777215 | (int) (alpha * 255.0F) << 24;
                         renderCustomColor(bipedModel, model, living, stack, ms, buffers, flap, color);
                         break;
                     case 9:
-                        flap = -((float)((Math.sin((double)((float)living.tickCount + partialTicks) * 0.20000000298023224) + 0.6000000238418579) * (double)(flying ? 12.0F : 5.0F)));
-                        alpha = 0.5F + (flying ? (float)Math.cos((double)((float)living.tickCount + partialTicks) * 0.30000001192092896) * 0.25F + 0.25F : 0.0F);
-                        color = 16777215 | (int)(alpha * 255.0F) << 24;
+                        flap = -((float) ((Math.sin((double) ((float) living.tickCount + partialTicks) * 0.20000000298023224) + 0.6000000238418579) * (double) (flying ? 12.0F : 5.0F)));
+                        alpha = 0.5F + (flying ? (float) Math.cos((double) ((float) living.tickCount + partialTicks) * 0.30000001192092896) * 0.25F + 0.25F : 0.0F);
+                        color = 16777215 | (int) (alpha * 255.0F) << 24;
                         renderCustomColor(bipedModel, model, living, stack, ms, buffers, flap, color);
                         break;
                     case 10:
@@ -478,7 +479,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                 Entity playerVehicle = player.getVehicle();
                 if (playerVehicle instanceof LivingEntity vehicle) {
                     if (vehicle.showVehicleHealth()) {
-                        return (Math.min(30, (int)((double)vehicle.getMaxHealth() + 0.5) / 2) - 1) / 10;
+                        return (Math.min(30, (int) ((double) vehicle.getMaxHealth() + 0.5) / 2) - 1) / 10;
                     }
                 }
 
@@ -500,10 +501,10 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             int last = left % segTime;
 
             int width;
-            for(width = 0; width < segs; ++width) {
+            for (width = 0; width < segs; ++width) {
                 float trans = 1.0F;
                 if (width == segs - 1) {
-                    trans = (float)last / (float)segTime;
+                    trans = (float) last / (float) segTime;
                     RenderSystem.enableBlend();
                     RenderSystem.blendFunc(770, 771);
                 }
