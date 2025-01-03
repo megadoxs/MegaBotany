@@ -1,7 +1,7 @@
 {
   "values": [
-    "extrabotany_reborn:photonium_block",
-    "extrabotany_reborn:shadowium_block",
-    "extrabotany_reborn:orichalcos_block"
+    "megabotany:photonium_block",
+    "megabotany:shadowium_block",
+    "megabotany:orichalcos_block"
   ]
 }

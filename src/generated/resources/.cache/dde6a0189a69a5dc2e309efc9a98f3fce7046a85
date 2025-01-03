@@ -1,7 +1,0 @@
-// 1.20.1	2024-12-23T23:03:48.9370768	Tags for minecraft:block mod id extrabotany_reborn
-b5018b14832d38dfc50658e17f2f9782ed0b6b14 data/botania/tags/blocks/generating_special_flowers.json
-5f080c7ff3e497450d8b40779f63172938369df8 data/botania/tags/blocks/special_floating_flowers.json
-d23e7501ff79c808adfda5d9cb2732bd59f8d03a data/minecraft/tags/blocks/flower_pots.json
-b4a506d0c993795e4de3c8418ddcf37ead157fa8 data/minecraft/tags/blocks/mineable/pickaxe.json
-5f080c7ff3e497450d8b40779f63172938369df8 data/minecraft/tags/blocks/mineable/shovel.json
-8e5db074135eb92107f38cf11ec9525e1f69a6b0 data/minecraft/tags/blocks/needs_iron_tool.json

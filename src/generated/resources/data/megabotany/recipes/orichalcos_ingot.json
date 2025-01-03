@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:orichalcos_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "megabotany:orichalcos_ingot"
+  }
+}

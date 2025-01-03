@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "megabotany:orichalcos_ingot"
+    }
+  ],
+  "result": {
+    "item": "megabotany:orichalcos_block"
+  }
+}

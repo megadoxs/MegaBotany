@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "item": "botania:livingwood_twig"
+    },
+    "M": {
+      "item": "botania:manasteel_ingot"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "MMM",
+    " L "
+  ],
+  "result": {
+    "item": "megabotany:manasteel_hammer"
+  },
+  "show_notification": true
+}

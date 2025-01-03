@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    },
+    {
+      "item": "megabotany:photonium_ingot"
+    }
+  ],
+  "result": {
+    "item": "megabotany:photonium_block"
+  }
+}

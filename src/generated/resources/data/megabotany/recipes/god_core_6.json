@@ -1,0 +1,19 @@
+{
+  "type": "botania:nbt_output_wrapper",
+  "nbt": "{variant:6}",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "category": "equipment",
+    "ingredients": [
+      {
+        "item": "megabotany:god_core"
+      },
+      {
+        "item": "botania:quartz_red"
+      }
+    ],
+    "result": {
+      "item": "megabotany:god_core"
+    }
+  }
+}

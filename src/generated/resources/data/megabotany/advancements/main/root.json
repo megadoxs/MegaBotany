@@ -1,0 +1,39 @@
+{
+  "criteria": {
+    "test": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:nightmare_fuel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "botania:textures/block/livingwood_log.png",
+    "description": {
+      "translate": "advancement.megabotany:root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:terrasteel_hammer",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.megabotany:root"
+    }
+  },
+  "requirements": [
+    [
+      "test"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

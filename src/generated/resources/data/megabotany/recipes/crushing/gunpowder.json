@@ -1,0 +1,13 @@
+{
+  "type": "megabotany:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:gunpowder"
+  },
+  "strikes": 10
+}

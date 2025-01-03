@@ -1,9 +1,9 @@
 {
   "values": [
-    "extrabotany_reborn:master_band_of_mana",
-    "extrabotany_reborn:frost_ring",
-    "extrabotany_reborn:curse_ring",
-    "extrabotany_reborn:mana_drive_ring",
-    "extrabotany_reborn:elven_king_ring"
+    "megabotany:master_band_of_mana",
+    "megabotany:frost_ring",
+    "megabotany:curse_ring",
+    "megabotany:mana_drive_ring",
+    "megabotany:elven_king_ring"
   ]
 }

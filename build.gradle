@@ -21,6 +21,8 @@ println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty '
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
 
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
     copyIdeResources = true
 
     runs {
@@ -92,8 +94,8 @@ repositories {
 }
 
 mixin {
-    add sourceSets.main, "extrabotany_reborn.refmap.json"
-    config "extrabotany_reborn.mixins.json"
+    add sourceSets.main, "megabotany.refmap.json"
+    config "megabotany.mixins.json"
 
     debug.verbose = true
     debug.export = true
@@ -105,7 +107,7 @@ dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("vazkii.botania:Botania:1.20.1-445-FORGE")
+    implementation fg.deobf("vazkii.botania:Botania:1.20.1-446-FORGE")
     implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE")
 
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:5.9.1+1.20.1")

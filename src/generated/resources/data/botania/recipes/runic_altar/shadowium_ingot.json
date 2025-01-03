@@ -2,16 +2,16 @@
   "type": "botania:runic_altar",
   "ingredients": [
     {
-      "item": "extrabotany_reborn:nightmare_fuel"
+      "item": "megabotany:nightmare_fuel"
     },
     {
-      "item": "extrabotany_reborn:nightmare_fuel"
+      "item": "megabotany:nightmare_fuel"
     },
     {
-      "item": "extrabotany_reborn:nightmare_fuel"
+      "item": "megabotany:nightmare_fuel"
     },
     {
-      "item": "extrabotany_reborn:gilded_mashed_potato"
+      "item": "megabotany:gilded_mashed_potato"
     },
     {
       "item": "botania:elementium_ingot"
@@ -19,6 +19,6 @@
   ],
   "mana": 4000,
   "output": {
-    "item": "extrabotany_reborn:shadowium_ingot"
+    "item": "megabotany:shadowium_ingot"
   }
 }

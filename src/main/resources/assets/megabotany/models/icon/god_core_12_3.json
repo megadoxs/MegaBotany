@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "megabotany:item/god_core_wings_3_3"
+  }
+}

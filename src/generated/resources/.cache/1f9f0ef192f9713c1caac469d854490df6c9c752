@@ -1,0 +1,10 @@
+// 1.20.1	2025-01-03T00:50:17.1323045	Tags for minecraft:item mod id megabotany
+d1f6edc1240529ba93831fbd1194de2c53aba053 data/botania/tags/items/functional_special_flowers.json
+d292977886d23f9dc7a4c7a499012a346051e6b2 data/botania/tags/items/generating_special_flowers.json
+30a83a47e896062b0f858f34c7bf8ce856b52b0e data/botania/tags/items/mini_flowers.json
+cfb13bcd72435e2f0fa9916c14311fe99d010052 data/botania/tags/items/special_floating_flowers.json
+9e450ac94cd7e3334436759f2808f2893e2182b7 data/curios/tags/items/charm.json
+e0b2e706ee4bf4205484c06870e836a8237902f2 data/curios/tags/items/head.json
+b26af8ee9540877533a1171d476be6eb252e18ee data/curios/tags/items/necklace.json
+fdca3f6af66c482d0749c73517d57dbe4ae9b587 data/curios/tags/items/ring.json
+40ede0d5918a6fce1e7b2d557b30be0274e74a9a data/megabotany/tags/items/hammers.json

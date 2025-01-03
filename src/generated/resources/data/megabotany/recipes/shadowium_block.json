@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    },
+    {
+      "item": "megabotany:shadowium_ingot"
+    }
+  ],
+  "result": {
+    "item": "megabotany:shadowium_block"
+  }
+}

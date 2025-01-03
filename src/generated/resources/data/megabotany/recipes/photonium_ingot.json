@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:photonium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "megabotany:photonium_ingot"
+  }
+}

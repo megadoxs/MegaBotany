@@ -1,0 +1,22 @@
+{
+  "type": "megabotany:item_upgrade",
+  "pattern": [
+    "SOS",
+    "STS",
+    "SSS"
+  ],
+  "key": {
+    "O": {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    "T": {
+      "item": "botania:flight_tiara"
+    },
+    "S": {
+      "item": "botania:quartz_sunny"
+    }
+  },
+  "result": {
+    "item": "megabotany:god_core"
+  }
+}

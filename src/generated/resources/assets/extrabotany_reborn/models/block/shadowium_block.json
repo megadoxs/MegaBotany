@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "extrabotany_reborn:block/shadowium_block"
-  }
-}

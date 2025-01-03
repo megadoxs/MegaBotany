@@ -1,6 +1,21 @@
 {
   "values": [
-    "extrabotany_reborn:floating_bloody_enchantress",
-    "extrabotany_reborn:floating_sunshine_lily"
+    "megabotany:floating_bloody_enchantress",
+    "megabotany:floating_sunshine_lily",
+    "megabotany:floating_moonlight_lily",
+    "megabotany:floating_omniviolet",
+    "megabotany:floating_edelweiss",
+    "megabotany:floating_tinkle",
+    "megabotany:floating_bell_flower",
+    "megabotany:floating_reikar_lily",
+    "megabotany:floating_stonesia",
+    "megabotany:floating_gemini_orchid",
+    "megabotany:floating_enchanted_orchid",
+    "megabotany:floating_mirrortunia",
+    "megabotany:floating_annoying_flower",
+    "megabotany:floating_necrofleur",
+    "megabotany:floating_necrofleur_chibi",
+    "megabotany:floating_stardust_lotus",
+    "megabotany:floating_manalinkium"
   ]
 }

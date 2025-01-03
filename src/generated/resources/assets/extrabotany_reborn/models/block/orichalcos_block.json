@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "extrabotany_reborn:block/orichalcos_block"
-  }
-}

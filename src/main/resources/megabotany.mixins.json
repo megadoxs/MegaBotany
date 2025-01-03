@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "io.github.megadoxs.megabotany.common.mixin",
+  "mixins": [
+    "ArmorModelsMixin",
+    "LightningBoltMixin",
+    "ManaBurstEntityMixin",
+    "ManaSpreaderBlockEntityMixin",
+    "PlayerMixin",
+    "ServerLevelMixin",
+    "WandOfTheForestItemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

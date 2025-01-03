@@ -12,3 +12,10 @@ RingOfWallClimb
 RingOfWallJump
 RingOfParkour
 RingOfParkour2
+
+flowers will need balancing, day & night < Bell < Hydro < Tinkle < Reikar
+BloodyEnchantress should be more like a Gourmaryllis
+I don't like Edelweiss generating mana from snowman kills
+bell flower texture and name are highly likely to change
+remove chunk loading from stardust and manalink
+optimise their use of the getBlock() & isValid() methods
