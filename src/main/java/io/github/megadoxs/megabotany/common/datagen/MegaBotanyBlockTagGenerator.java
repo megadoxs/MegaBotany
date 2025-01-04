@@ -1,8 +1,8 @@
 package io.github.megadoxs.megabotany.common.datagen;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
-import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
+import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;

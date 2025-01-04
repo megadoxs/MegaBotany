@@ -18,7 +18,7 @@ import java.util.Map;
 @Mixin(ManaSpreaderBlockEntity.class)
 public abstract class ManaSpreaderBlockEntityMixin {
     @Unique
-    private Map<BlockPos, Boolean> manalinkiums = new HashMap<>();
+    private final Map<BlockPos, Boolean> manalinkiums = new HashMap<>();
 
     @Shadow(remap = false)
     private List<ManaBurstEntity.PositionProperties> lastTentativeBurst;

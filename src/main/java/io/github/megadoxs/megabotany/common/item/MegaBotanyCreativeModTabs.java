@@ -1,8 +1,8 @@
 package io.github.megadoxs.megabotany.common.item;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
-import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
+import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -15,7 +15,7 @@ import vazkii.botania.common.item.CustomCreativeTabContents;
 public class MegaBotanyCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MegaBotany.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> EXTRABOTANY_REBORN = CREATIVE_MODE_TABS.register("megabotany_tab", () -> CreativeModeTab.builder()
+    public static final RegistryObject<CreativeModeTab> MEGABOTANY = CREATIVE_MODE_TABS.register("megabotany_tab", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(MegaBotanyItems.NATURE_ORB.get()))
             .title(Component.translatable("creativetab.megabotany_tab"))
             .displayItems((itemDisplayParameters, output) -> {

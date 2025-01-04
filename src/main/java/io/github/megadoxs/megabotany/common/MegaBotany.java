@@ -5,10 +5,10 @@ import com.mojang.logging.LogUtils;
 import io.github.megadoxs.megabotany.client.model.MegaBotanyLayerDefinition;
 import io.github.megadoxs.megabotany.client.renderer.ExplosiveMissileRenderer;
 import io.github.megadoxs.megabotany.client.renderer.GaiaGuardianIIIRenderer;
-import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
-import io.github.megadoxs.megabotany.common.block.MegaBotanyPOITypes;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlockEntities;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
+import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
+import io.github.megadoxs.megabotany.common.block.MegaBotanyPOITypes;
 import io.github.megadoxs.megabotany.common.crafting.MegaBotanyRecipes;
 import io.github.megadoxs.megabotany.common.effect.MegaBotanyEffects;
 import io.github.megadoxs.megabotany.common.entity.MegaBotanyEntities;
@@ -85,7 +85,7 @@ public class MegaBotany {
 
         bind(Registries.BLOCK, MegaBotanyFlowerBlocks::registerBlocks);
         bindForItems(MegaBotanyFlowerBlocks::registerItemBlocks);
-        bind(Registries.BLOCK_ENTITY_TYPE, MegaBotanyFlowerBlocks::registerTEs);
+        bind(Registries.BLOCK_ENTITY_TYPE, MegaBotanyFlowerBlocks::registerBlockEntity);
 
         MegaBotanyCreativeModTabs.register(modEventBus);
 
@@ -177,6 +177,11 @@ public class MegaBotany {
 
             var bus = MinecraftForge.EVENT_BUS;
             bus.addGenericListener(BlockEntity.class, MegaBotany::attachBeCapabilities);
+        }
+
+        @SubscribeEvent
+        public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            MegaBotanyFlowerBlocks.registerBlockEntityRenderer(event);
         }
 
         @SubscribeEvent

@@ -41,8 +41,7 @@ public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
                 emitParticle(ParticleTypes.FLAME, 0.4 + Math.random() * 0.2, 0.7, 0.4 + Math.random() * 0.2, 0.0D, 0.0D, 0.0D);
             }
             return;
-        }
-        else if (burnTime > 0 && ticksExisted % 2 == 0) {
+        } else if (burnTime > 0 && ticksExisted % 2 == 0) {
             addMana(manaGeneration);
             sync();
         }

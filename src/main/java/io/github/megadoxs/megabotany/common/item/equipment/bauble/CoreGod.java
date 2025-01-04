@@ -81,7 +81,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                 int cooldown = ItemNBTHelper.getInt(stack, "dashCooldown", 0);
                 if (!wasSprting && isSprinting && cooldown == 0) {
                     player.setDeltaMovement(player.getDeltaMovement().add(look.x, 0.0, look.z));
-                    player.level().playSound((Player) null, player.getX(), player.getY(), player.getZ(), BotaniaSounds.dash, SoundSource.PLAYERS, 1.0F, 1.0F);
+                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(), BotaniaSounds.dash, SoundSource.PLAYERS, 1.0F, 1.0F);
                     ItemNBTHelper.setInt(stack, "dashCooldown", 80);
                     ItemNBTHelper.setBoolean(stack, "boostPending", true);
                 } else if (cooldown > 0) {

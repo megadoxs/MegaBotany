@@ -12,12 +12,14 @@ import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import vazkii.botania.api.block.WandHUD;
 import vazkii.botania.api.block_entity.BindableSpecialFlowerBlockEntity;
 import vazkii.botania.api.block_entity.FunctionalFlowerBlockEntity;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
+import vazkii.botania.client.render.block_entity.SpecialFlowerBlockEntityRenderer;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.block.FloatingSpecialFlowerBlock;
 import vazkii.botania.common.block.block_entity.BotaniaBlockEntities;
@@ -116,7 +118,7 @@ public class MegaBotanyFlowerBlocks {
     public static final BlockEntityType<NecrofleurBlockEntity> NECROFLEUR = ForgeXplatImpl.INSTANCE.createBlockEntityType(NecrofleurBlockEntity::new, necrofleur, necrofleurFloating);
     public static final BlockEntityType<NecrofleurBlockEntity.Mini> NECROFLEUR_CHIBI = ForgeXplatImpl.INSTANCE.createBlockEntityType(NecrofleurBlockEntity.Mini::new, necrofleurChibi, necrofleurChibiFloating);
     public static final BlockEntityType<StardustLotusBlockEntity> STARDUST_LOTUS = ForgeXplatImpl.INSTANCE.createBlockEntityType(StardustLotusBlockEntity::new, stardustLotus, stardustLotusFloating);
-    public static final BlockEntityType<ManalinkiumBlockEntity> MANALINKIUM = ForgeXplatImpl.INSTANCE.createBlockEntityType(ManalinkiumBlockEntity::new, manalinkium, manalinkium);
+    public static final BlockEntityType<ManalinkiumBlockEntity> MANALINKIUM = ForgeXplatImpl.INSTANCE.createBlockEntityType(ManalinkiumBlockEntity::new, manalinkium, manalinkiumFloating);
 
     private static ResourceLocation floating(ResourceLocation orig) {
         return new ResourceLocation(orig.getNamespace(), "floating_" + orig.getPath());
@@ -206,7 +208,7 @@ public class MegaBotanyFlowerBlocks {
         r.accept(manalinkiumPotted, potted(new ResourceLocation("megabotany", "manalinkium")));
     }
 
-    public static void registerTEs(BiConsumer<BlockEntityType<?>, ResourceLocation> r) {
+    public static void registerBlockEntity(BiConsumer<BlockEntityType<?>, ResourceLocation> r) {
         r.accept(BLOODY_ENCHANTRESS, getId(bloodyEnchantress));
         r.accept(SUNSHINE_LILY, getId(sunshineLily));
         r.accept(MOONLIGHT_LILY, getId(moonlightLily));
@@ -224,6 +226,26 @@ public class MegaBotanyFlowerBlocks {
         r.accept(NECROFLEUR_CHIBI, getId(necrofleurChibi));
         r.accept(STARDUST_LOTUS, getId(stardustLotus));
         r.accept(MANALINKIUM, getId(manalinkium));
+    }
+
+    public static void registerBlockEntityRenderer(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(BLOODY_ENCHANTRESS, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(SUNSHINE_LILY, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(MOONLIGHT_LILY, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(OMNIVIOLET, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(EDELWEISS, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(TINKLE, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(BELL_FLOWER, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(REIKAR_LILY, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(STONESIA, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(GEMINI_ORCHID, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ENCHANTED_ORCHID, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(MIRRORTUNIA, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ANNOYING_FLOWER, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(NECROFLEUR, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(NECROFLEUR_CHIBI, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(STARDUST_LOTUS, SpecialFlowerBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(MANALINKIUM, SpecialFlowerBlockEntityRenderer::new);
     }
 
     public static void registerItemBlocks(BiConsumer<Item, ResourceLocation> r) {

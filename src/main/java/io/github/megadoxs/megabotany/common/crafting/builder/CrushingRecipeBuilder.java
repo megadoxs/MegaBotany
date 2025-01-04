@@ -23,7 +23,6 @@ import static io.github.megadoxs.megabotany.common.crafting.MegaBotanyRecipes.CR
 public class CrushingRecipeBuilder implements RecipeBuilder {
 
     private final List<Ingredient> ingredients = Lists.newArrayList();
-    ;
     private final ItemStack result;
     private int strikes;
 

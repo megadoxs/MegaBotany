@@ -21,7 +21,7 @@ import java.util.Optional;
 public class TinkleBlockEntity extends GeneratingFlowerBlockEntity {
     public static final int RANGE = 8;
 
-    private HashMap<ServerPlayer, Boolean> Oldplayers = new HashMap<>();
+    private final HashMap<ServerPlayer, Boolean> Oldplayers = new HashMap<>();
 
     public TinkleBlockEntity(BlockPos pos, BlockState state) {
         super(MegaBotanyFlowerBlocks.TINKLE, pos, state);

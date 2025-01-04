@@ -65,7 +65,7 @@ public class GaiaGuardianIII extends Monster implements IEntityAdditionalSpawnDa
 
     private static final TagKey<Block> BLACKLIST = BotaniaTags.Blocks.GAIA_BREAK_BLACKLIST;
     private final ServerBossEvent bossInfo = (ServerBossEvent) new ServerBossEvent(MegaBotanyEntities.GAIA_GUARDIAN_III.get().getDescription(), BossEvent.BossBarColor.PINK, BossEvent.BossBarOverlay.PROGRESS).setCreateWorldFog(true);
-    private UUID bossInfoUUID = bossInfo.getId();
+    private final UUID bossInfoUUID = bossInfo.getId();
     private int playerCount;
     private final ArrayList<UUID> playerUUIDS = new ArrayList<>();
     private BlockPos source = ManaBurst.NO_SOURCE;
