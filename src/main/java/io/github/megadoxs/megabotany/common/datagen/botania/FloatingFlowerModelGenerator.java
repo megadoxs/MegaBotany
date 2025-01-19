@@ -60,6 +60,6 @@ public class FloatingFlowerModelGenerator implements DataProvider {
 
     @Override
     public String getName() {
-        return "ExtraBotany: Floating Flower Models";
+        return "MegaBotany: Floating Flower Models";
     }
 }

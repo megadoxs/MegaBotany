@@ -19,3 +19,5 @@ I don't like Edelweiss generating mana from snowman kills
 bell flower texture and name are highly likely to change
 remove chunk loading from stardust and manalink
 optimise their use of the getBlock() & isValid() methods
+
+do I give achilled shield second's form from extrabotany?? change name also.

@@ -16,10 +16,16 @@ import io.github.megadoxs.megabotany.common.item.MegaBotanyCreativeModTabs;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosHelmetItem;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.CoreGod;
+import io.github.megadoxs.megabotany.common.item.relic.AFORing;
+import io.github.megadoxs.megabotany.common.item.relic.AchilledShield;
+import io.github.megadoxs.megabotany.common.item.relic.Excaliber;
+import io.github.megadoxs.megabotany.common.item.relic.Failnaught;
 import io.github.megadoxs.megabotany.common.network.MegaBotanyNetwork;
+import io.github.megadoxs.megabotany.common.util.MegaBotanyItemProperties;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.NoopRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -57,10 +63,13 @@ import org.slf4j.Logger;
 import vazkii.botania.api.BotaniaForgeCapabilities;
 import vazkii.botania.api.BotaniaForgeClientCapabilities;
 import vazkii.botania.api.block.WandHUD;
+import vazkii.botania.api.item.Relic;
 import vazkii.botania.api.mana.ManaReceiver;
 import vazkii.botania.common.PlayerAccess;
 import vazkii.botania.common.helper.ItemNBTHelper;
+import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.common.item.WandOfTheForestItem;
+import vazkii.botania.common.item.relic.*;
 import vazkii.botania.forge.CapabilityUtil;
 
 import java.util.*;
@@ -120,6 +129,7 @@ public class MegaBotany {
         });
 
         bus.addGenericListener(BlockEntity.class, this::attachBeCaps);
+        bus.addGenericListener(ItemStack.class, this::attachItemCaps);
         // will be removed in 1.21.+ when my PR about AncientWillContainer is merged
         bus.addListener(EventPriority.LOW, (CriticalHitEvent e) -> {
             Event.Result result = e.getResult();
@@ -144,6 +154,22 @@ public class MegaBotany {
         }
     }
 
+    private void attachItemCaps(AttachCapabilitiesEvent<ItemStack> e) {
+        var stack = e.getObject();
+
+        var makeRelic = RELIC.get().get(stack.getItem());
+        if (makeRelic != null) {
+            e.addCapability(prefix("relic"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.RELIC, makeRelic.apply(stack)));
+        }
+    }
+
+    private static final Supplier<Map<Item, Function<ItemStack, Relic>>> RELIC = Suppliers.memoize(() -> Map.of(
+            MegaBotanyItems.FAILNAUGHT.get(), Failnaught::makeRelic,
+            MegaBotanyItems.EXCALIBER.get(), Excaliber::makeRelic,
+            MegaBotanyItems.ACHILLED_SHIELD.get(), AchilledShield::makeRelic,
+            MegaBotanyItems.ALL_FOR_ONE.get(), AFORing::makeRelic
+    ));
+
     private static <T> void bind(ResourceKey<Registry<T>> registry, Consumer<BiConsumer<T, ResourceLocation>> source) {
         FMLJavaModLoadingContext.get().getModEventBus().addListener((RegisterEvent event) -> {
             if (registry.equals(event.getRegistryKey())) {
@@ -161,16 +187,13 @@ public class MegaBotany {
         });
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-    }
-
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            MegaBotanyItemProperties.addItemProperties((item, id, prop) -> ItemProperties.register(item.asItem(), id, prop));
+
             EntityRenderers.register(MegaBotanyEntities.AURA_FIRE.get(), NoopRenderer::new);
             EntityRenderers.register(MegaBotanyEntities.EXPLOSIVE_MISSILE.get(), ExplosiveMissileRenderer::new);
             EntityRenderers.register(MegaBotanyEntities.GAIA_GUARDIAN_III.get(), GaiaGuardianIIIRenderer::new);

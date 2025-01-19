@@ -83,6 +83,11 @@ public class CrushingRecipe implements Recipe<Container> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return input;
+    }
+
+    @Override
     public RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
@@ -138,7 +143,7 @@ public class CrushingRecipe implements Recipe<Container> {
 
         @Override
         public void toNetwork(FriendlyByteBuf friendlyByteBuf, CrushingRecipe crushingRecipe) {
-            friendlyByteBuf.writeInt(crushingRecipe.input.size());
+            friendlyByteBuf.writeInt(crushingRecipe.getIngredients().size());
             for (Ingredient ingredient : crushingRecipe.getIngredients()) {
                 ingredient.toNetwork(friendlyByteBuf);
             }

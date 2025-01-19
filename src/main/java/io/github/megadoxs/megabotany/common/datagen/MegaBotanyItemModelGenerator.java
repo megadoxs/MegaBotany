@@ -41,9 +41,13 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
         simpleItem(MegaBotanyItems.SUPER_CROWN);
         simpleItem(MegaBotanyItems.BOTTLED_FLAME);
 
-        simpleItem(MegaBotanyItems.MANASTEEL_HAMMER);
-        simpleItem(MegaBotanyItems.ELEMENTIUM_HAMMER);
-        simpleItem(MegaBotanyItems.TERRASTEEL_HAMMER);
+        handheldItem(MegaBotanyItems.MANASTEEL_HAMMER);
+        handheldItem(MegaBotanyItems.ELEMENTIUM_HAMMER);
+        handheldItem(MegaBotanyItems.TERRASTEEL_HAMMER);
+        handheldItem(MegaBotanyItems.WALKING_CANE);
+
+        handheldItem(MegaBotanyItems.EXCALIBER);
+        simpleItem(MegaBotanyItems.ALL_FOR_ONE);
 
         simpleItem(MegaBotanyItems.PHOTONIUM_INGOT);
         simpleItem(MegaBotanyItems.SHADOWIUM_INGOT);
@@ -66,6 +70,10 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld")).texture("layer0", new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {

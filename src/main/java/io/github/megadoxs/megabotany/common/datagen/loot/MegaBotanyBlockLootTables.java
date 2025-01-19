@@ -36,6 +36,7 @@ public class MegaBotanyBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(MegaBotanyBlocks.ORICHALCOS_BLOCK.get());
 
         this.dropSelf(MegaBotanyBlocks.MORTAR.get());
+        this.dropSelf(MegaBotanyBlocks.PEDESTAL.get());
 
         //TODO all the flowers should save their important nbt, this current system doesn't do that
         for (Block b : ForgeRegistries.BLOCKS) {

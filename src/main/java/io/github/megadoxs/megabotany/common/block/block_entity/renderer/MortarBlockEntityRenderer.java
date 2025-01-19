@@ -26,11 +26,10 @@ public class MortarBlockEntityRenderer implements BlockEntityRenderer<MortarBloc
         ItemStack itemStack = mortarBlockEntity.getRenderStack();
 
         poseStack.pushPose();
-        poseStack.translate(0.5f, 1f, 0.5f);
+        poseStack.translate(0.6f, 0.2f, 0.5f);
 
-        float rotationAngle = (mortarBlockEntity.getLevel().getGameTime() % 3600);
-
-        poseStack.mulPose(Axis.YP.rotationDegrees(rotationAngle));
+        poseStack.mulPose(Axis.YP.rotationDegrees(-90));
+        poseStack.mulPose(Axis.XP.rotationDegrees(90));
 
         itemRenderer.renderStatic(itemStack, ItemDisplayContext.GROUND, getLightLevel(mortarBlockEntity.getLevel(), mortarBlockEntity.getBlockPos()), OverlayTexture.NO_OVERLAY, poseStack, multiBufferSource, mortarBlockEntity.getLevel(), 1);
         poseStack.popPose();

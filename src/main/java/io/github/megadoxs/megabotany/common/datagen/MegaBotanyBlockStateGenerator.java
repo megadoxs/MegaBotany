@@ -27,6 +27,7 @@ public class MegaBotanyBlockStateGenerator extends BlockStateProvider {
         blockWithItem(MegaBotanyBlocks.ORICHALCOS_BLOCK);
 
         simpleBlock(MegaBotanyBlocks.MORTAR.get(), new ModelFile.UncheckedModelFile(modLoc("block/mortar")));
+        simpleBlock(MegaBotanyBlocks.PEDESTAL.get(), new ModelFile.UncheckedModelFile(modLoc("block/pedestal")));
 
         //Item models are already registered in ModItemModelGenerator
         for (Block b : ForgeRegistries.BLOCKS) {

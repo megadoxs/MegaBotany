@@ -3,10 +3,12 @@
   "minVersion": "0.8.5",
   "package": "io.github.megadoxs.megabotany.common.mixin",
   "mixins": [
+    "AbstractArrowMixin",
     "ArmorModelsMixin",
     "LightningBoltMixin",
     "ManaBurstEntityMixin",
     "ManaSpreaderBlockEntityMixin",
+    "MonocleMixin",
     "PlayerMixin",
     "ServerLevelMixin",
     "WandOfTheForestItemMixin"

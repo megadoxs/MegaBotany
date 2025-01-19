@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-03T00:50:17.1297987	Block States: megabotany
+// 1.20.1	2025-01-06T15:13:23.4839056	Block States: megabotany
 314673433d57c085d5741f0baf72c5a0db65f106 assets/megabotany/blockstates/annoying_flower.json
 da009c5a2fa80a69dbac22a641a1b158dc8f0942 assets/megabotany/blockstates/bell_flower.json
 ddc01b28aab4791977994bdc8f436cee026712e1 assets/megabotany/blockstates/bloody_enchantress.json
@@ -30,6 +30,7 @@ ef7bb73d58be843b99b93c241f4982b145c973ef assets/megabotany/blockstates/moonlight
 3f59dada4c61f7c87978d30c32074eaaddfd97d3 assets/megabotany/blockstates/necrofleur_chibi.json
 0b0029c16334c0d0ef0d80f2209b548f9da64f0b assets/megabotany/blockstates/omniviolet.json
 ea43f0715d80b30f7de1cbcab23aa687951b38d4 assets/megabotany/blockstates/orichalcos_block.json
+0a0f733ef5ef2cee693c00a30a356017b0c6d700 assets/megabotany/blockstates/pedestal.json
 a3399ead58461c9ac8cb2e214e49c2cf481becae assets/megabotany/blockstates/photonium_block.json
 18bea1317241a06a79dd0575125148b5247398e9 assets/megabotany/blockstates/potted_annoying_flower.json
 7aff0ec741f35a1ff780270ad00d187682c9a6a0 assets/megabotany/blockstates/potted_bell_flower.json

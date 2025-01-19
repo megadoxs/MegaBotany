@@ -11,7 +11,6 @@ import net.minecraft.world.level.block.Block;
 public class MegaBotanyTags {
     public static class Blocks {
 
-
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(MegaBotany.MOD_ID, name));
         }

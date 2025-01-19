@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-03T00:50:17.1333432	Loot Tables
+// 1.20.1	2025-01-06T15:13:23.4869338	Loot Tables
 3057beb95f1e7a2234f47d985c1f54fc4da14425 data/megabotany/loot_tables/blocks/annoying_flower.json
 c94e2e20a1ce5127cfd91ec44723adccc99a3a4e data/megabotany/loot_tables/blocks/bell_flower.json
 7c34ce93aa2f7c260dff0caeb092897c00a95d77 data/megabotany/loot_tables/blocks/bloody_enchantress.json
@@ -30,6 +30,7 @@ c5c8ae82865df0a968c2fba3f8c4db455899a061 data/megabotany/loot_tables/blocks/necr
 240fc36c8a3e67c754949c4ac584f0eea5ebed4e data/megabotany/loot_tables/blocks/necrofleur_chibi.json
 cef73648687f51490bd2be14d4495c422795d22a data/megabotany/loot_tables/blocks/omniviolet.json
 79499d7f2851b60837fb3e71fc6d5681fcfbdd6e data/megabotany/loot_tables/blocks/orichalcos_block.json
+0b2d89c298886ab37493bb1a5230b8421a087772 data/megabotany/loot_tables/blocks/pedestal.json
 df348bd3fcb8dcbac2adca5ac954d2fc3fd2a2b8 data/megabotany/loot_tables/blocks/photonium_block.json
 e9a3402aacd4c87479d08d5bd35322a157b20c45 data/megabotany/loot_tables/blocks/potted_annoying_flower.json
 850afb2e4447cc77a575807852eff1b81c780fef data/megabotany/loot_tables/blocks/potted_bell_flower.json

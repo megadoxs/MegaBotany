@@ -68,7 +68,8 @@ public class MegaBotanyItemTagGenerator extends ItemTagsProvider {
                 MegaBotanyItems.FROST_RING.get(),
                 MegaBotanyItems.CURSE_RING.get(),
                 MegaBotanyItems.MANA_DRIVE_RING.get(),
-                MegaBotanyItems.ELVEN_KING_RING.get()
+                MegaBotanyItems.ELVEN_KING_RING.get(),
+                MegaBotanyItems.ALL_FOR_ONE.get()
         );
 
         this.tag(ItemTags.create(new ResourceLocation("curios", "necklace"))).add(

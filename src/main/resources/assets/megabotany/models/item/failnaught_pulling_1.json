@@ -1,0 +1,6 @@
+{
+  "parent": "megabotany:item/failnaught",
+  "textures": {
+    "layer0": "megabotany:item/failnaught_pulling_1"
+  }
+}

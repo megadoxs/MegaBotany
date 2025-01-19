@@ -61,6 +61,12 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.MANASTEEL_HAMMER.get());
                 output.accept(MegaBotanyItems.ELEMENTIUM_HAMMER.get());
                 output.accept(MegaBotanyItems.TERRASTEEL_HAMMER.get());
+                output.accept(MegaBotanyItems.WALKING_CANE.get());
+
+                output.accept(MegaBotanyItems.FAILNAUGHT.get());
+                output.accept(MegaBotanyItems.EXCALIBER.get());
+                output.accept(MegaBotanyItems.ACHILLED_SHIELD.get());
+                output.accept(MegaBotanyItems.ALL_FOR_ONE.get());
 
                 output.accept(MegaBotanyItems.PHOTONIUM_INGOT.get());
                 output.accept(MegaBotanyBlocks.PHOTONIUM_BLOCK.get());
@@ -74,6 +80,7 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.SPIRIT_FUEL.get());
                 output.accept(MegaBotanyItems.SPIRIT_FRAGMENT.get());
                 output.accept(MegaBotanyBlocks.MORTAR.get());
+                output.accept(MegaBotanyBlocks.PEDESTAL.get());
                 output.accept(MegaBotanyItems.GILDED_POTATO.get());
                 output.accept(MegaBotanyItems.GILDED_MASHED_POTATO.get());
                 output.accept(MegaBotanyItems.FRIED_CHICKEN.get());

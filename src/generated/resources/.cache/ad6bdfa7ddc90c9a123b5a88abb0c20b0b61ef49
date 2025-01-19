@@ -1,13 +1,15 @@
-// 1.20.1	2025-01-03T00:50:17.1343501	Item Models: megabotany
+// 1.20.1	2025-01-19T14:17:51.5810631	Item Models: megabotany
+84f168cea30551cc1ccb4d1a11b076e624c775b4 assets/megabotany/models/item/all_for_one.json
 70d95eccea4a636483716a2bb614d247207e8879 assets/megabotany/models/item/annoying_flower.json
 b61b947a55020db3f9102eafa734d3eb89a30855 assets/megabotany/models/item/bell_flower.json
 8adb0b46865712609e6d57188cc181af11b17600 assets/megabotany/models/item/bloody_enchantress.json
 8822fb216ca2d24349bb5c8b585368be454052af assets/megabotany/models/item/bottled_flame.json
 161a2a05f547fc5d622f227e7a050a5ab3265585 assets/megabotany/models/item/curse_ring.json
 1fde6785390ad016634addd41cc99e642ff11617 assets/megabotany/models/item/edelweiss.json
-aca7253c028ff80cd1b5ca1a8f8c40c128dc3da8 assets/megabotany/models/item/elementium_hammer.json
+ff0c57bf2eeaefd6111a0b7195a7ce03370cd029 assets/megabotany/models/item/elementium_hammer.json
 6d8cd726eae225c382bd2869e70af3ce44975770 assets/megabotany/models/item/elven_king_ring.json
 54920704f7e5f046c36eea4880877a125d8514f7 assets/megabotany/models/item/enchanted_orchid.json
+8248dc09a34b40a34f50d70adc641c69a6725bf0 assets/megabotany/models/item/excaliber.json
 22632d91cb4a47d35e33b480e33ec3e5d8bf65b3 assets/megabotany/models/item/fried_chicken.json
 942960041e242f4e27da40c568dbf966341dbd06 assets/megabotany/models/item/frost_ring.json
 12f431816846d075507882052d91780245829848 assets/megabotany/models/item/gemini_orchid.json
@@ -16,7 +18,7 @@ aca7253c028ff80cd1b5ca1a8f8c40c128dc3da8 assets/megabotany/models/item/elementiu
 76dd866334715ca0fbc1adb9813030e557706eab assets/megabotany/models/item/god_core.json
 7d945581310dca2e5aa6a3f1f2911ff148357017 assets/megabotany/models/item/jingwei_feather.json
 d413d67350511b074516f1f1ab7a6415b12e565d assets/megabotany/models/item/manalinkium.json
-efd0e31064087e3964232fecdcde5be77879dfb5 assets/megabotany/models/item/manasteel_hammer.json
+84c9f7630a80ea8ea96f2dce1e6bc1567d1f33a3 assets/megabotany/models/item/manasteel_hammer.json
 42aa0e97759c3bb75c84707ae45c43e8f1c95f45 assets/megabotany/models/item/mana_drive_ring.json
 30ec3298a0b4981869079a1b869b79b5445db6c7 assets/megabotany/models/item/master_band_of_mana.json
 501b55c456626459c6a98597fce97cfe8e69f893 assets/megabotany/models/item/mirrortunia.json
@@ -43,8 +45,9 @@ b649cd7494b0f7e35cf1d541796d9368c797df20 assets/megabotany/models/item/spirit_fu
 04442d09c1fe17bbcb052512a24b42da9cce9baf assets/megabotany/models/item/stonesia.json
 be781a9a7ef53068b68186cb136dd68bd2a75581 assets/megabotany/models/item/sunshine_lily.json
 b3478cd747f2b9f7db4e13ea29ebd3c5729dfe53 assets/megabotany/models/item/super_crown.json
-4fb6ef74c0263784652d1bcc5daefeb69f2028f6 assets/megabotany/models/item/terrasteel_hammer.json
+804b712133ea5e7741b94df4b2449a905a129b35 assets/megabotany/models/item/terrasteel_hammer.json
 f86fe6dc350d1f24e8cda7e681d9ecebb1dbdab3 assets/megabotany/models/item/ticket.json
 3205dfdba47f7cca8e0496ef1c66aaed88002188 assets/megabotany/models/item/tinkle.json
+45e9144c59dd8952c0c6529d1f7477fb3c25096a assets/megabotany/models/item/walking_cane.json
 a9bad15b1748e04bbf48756738c598ea0a51300e assets/megabotany/models/item/wall_climb_amulet.json
 7838ea9da230e66b2ed89d2c63e75588a436f004 assets/megabotany/models/item/wall_jump_amulet.json

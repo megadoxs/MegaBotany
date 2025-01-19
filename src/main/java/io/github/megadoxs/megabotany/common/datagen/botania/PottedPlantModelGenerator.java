@@ -55,6 +55,6 @@ public class PottedPlantModelGenerator implements DataProvider {
     @NotNull
     @Override
     public String getName() {
-        return "ExtraBotany: potted plant models";
+        return "MegaBotany: potted plant models";
     }
 }
