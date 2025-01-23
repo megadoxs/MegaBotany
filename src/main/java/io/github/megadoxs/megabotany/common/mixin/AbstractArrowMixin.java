@@ -32,7 +32,7 @@ public abstract class AbstractArrowMixin {
         } else {
             damagesource = self.damageSources().arrow(self, entity1);
             if (entity1 instanceof LivingEntity) {
-                ((LivingEntity)entity1).setLastHurtMob(entity);
+                ((LivingEntity) entity1).setLastHurtMob(entity);
             }
         }
 

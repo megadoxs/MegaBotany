@@ -16,6 +16,7 @@ import io.github.megadoxs.megabotany.common.item.MegaBotanyCreativeModTabs;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosHelmetItem;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.CoreGod;
+import io.github.megadoxs.megabotany.common.item.equipment.bauble.MasterBandOfMana;
 import io.github.megadoxs.megabotany.common.item.relic.AFORing;
 import io.github.megadoxs.megabotany.common.item.relic.AchilledShield;
 import io.github.megadoxs.megabotany.common.item.relic.Excaliber;
@@ -49,7 +50,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -64,12 +64,13 @@ import vazkii.botania.api.BotaniaForgeCapabilities;
 import vazkii.botania.api.BotaniaForgeClientCapabilities;
 import vazkii.botania.api.block.WandHUD;
 import vazkii.botania.api.item.Relic;
+import vazkii.botania.api.mana.ManaItem;
 import vazkii.botania.api.mana.ManaReceiver;
 import vazkii.botania.common.PlayerAccess;
 import vazkii.botania.common.helper.ItemNBTHelper;
 import vazkii.botania.common.item.BotaniaItems;
+import vazkii.botania.common.item.ManaMirrorItem;
 import vazkii.botania.common.item.WandOfTheForestItem;
-import vazkii.botania.common.item.relic.*;
 import vazkii.botania.forge.CapabilityUtil;
 
 import java.util.*;
@@ -161,6 +162,12 @@ public class MegaBotany {
         if (makeRelic != null) {
             e.addCapability(prefix("relic"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.RELIC, makeRelic.apply(stack)));
         }
+
+        var makeManaItem = MANA_ITEM.get().get(stack.getItem());
+        if (makeManaItem != null) {
+            e.addCapability(prefix("mana_item"),
+                    CapabilityUtil.makeProvider(BotaniaForgeCapabilities.MANA_ITEM, makeManaItem.apply(stack)));
+        }
     }
 
     private static final Supplier<Map<Item, Function<ItemStack, Relic>>> RELIC = Suppliers.memoize(() -> Map.of(
@@ -168,6 +175,11 @@ public class MegaBotany {
             MegaBotanyItems.EXCALIBER.get(), Excaliber::makeRelic,
             MegaBotanyItems.ACHILLED_SHIELD.get(), AchilledShield::makeRelic,
             MegaBotanyItems.ALL_FOR_ONE.get(), AFORing::makeRelic
+    ));
+
+    private static final Supplier<Map<Item, Function<ItemStack, ManaItem>>> MANA_ITEM = Suppliers.memoize(() -> Map.of(
+            BotaniaItems.manaMirror, ManaMirrorItem.ManaItemImpl::new,
+            MegaBotanyItems.MASTER_BAND_OF_MANA.get(), MasterBandOfMana.MasterManaImpl::new
     ));
 
     private static <T> void bind(ResourceKey<Registry<T>> registry, Consumer<BiConsumer<T, ResourceLocation>> source) {

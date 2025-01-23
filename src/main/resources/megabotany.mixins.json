@@ -5,6 +5,7 @@
   "mixins": [
     "AbstractArrowMixin",
     "ArmorModelsMixin",
+    "EquipmentHandlerMixin",
     "LightningBoltMixin",
     "ManaBurstEntityMixin",
     "ManaSpreaderBlockEntityMixin",

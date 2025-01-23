@@ -71,8 +71,8 @@ public class Excaliber extends SwordItem implements LensEffectItem {
         return true;
     }
 
-    public boolean trySpawnBurst(LivingEntity entity){
-        if(entity instanceof Player player && player.getAttackStrengthScale(0.5f) == 1f && !player.level().isClientSide()) {
+    public boolean trySpawnBurst(LivingEntity entity) {
+        if (entity instanceof Player player && player.getAttackStrengthScale(0.5f) == 1f && !player.level().isClientSide()) {
             ManaBurstEntity projectile = new ManaBurstEntity(player);
 
             projectile.setColor(0xFFFF20);
@@ -93,7 +93,8 @@ public class Excaliber extends SwordItem implements LensEffectItem {
     }
 
     @Override
-    public void apply(ItemStack stack, BurstProperties props, Level level) {}
+    public void apply(ItemStack stack, BurstProperties props, Level level) {
+    }
 
     @Override
     public boolean collideBurst(ManaBurst burst, HitResult pos, boolean isManaBlock, boolean shouldKill, ItemStack stack) {
@@ -103,32 +104,32 @@ public class Excaliber extends SwordItem implements LensEffectItem {
     @Override
     public void updateBurst(ManaBurst burst, ItemStack stack) {
         ThrowableProjectile projectile = burst.entity();
-        if (projectile.level().isClientSide) {
+        if (projectile.level().isClientSide || projectile.getOwner() == null) {
             return;
         }
 
         AABB axis = new AABB(projectile.getX(), projectile.getY(), projectile.getZ(), projectile.xOld, projectile.yOld, projectile.zOld).inflate(1);
         List<LivingEntity> entities = projectile.level().getEntitiesOfClass(LivingEntity.class, axis);
         for (LivingEntity living : entities) {
-            if(projectile.getOwner() != null && living instanceof Player player && player.is(projectile.getOwner()))
+            if (living instanceof Player player && player.is(projectile.getOwner()))
                 continue;
 
             if (living.hurtTime == 0) {
-                if (!burst.isFake()){
+                if (!burst.isFake()) {
                     double damage = 10D;
 
                     int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, stack);
                     if (j > 0) {
-                        damage += ((double)j * (double)2.5F + (double)0.5F);
+                        damage += ((double) j * (double) 2.5F + (double) 0.5F);
                     }
 
                     int knockback = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, stack);
 
-                    living.hurt(projectile.getOwner() != null ? projectile.damageSources().indirectMagic(projectile, projectile.getOwner()) : projectile.damageSources().magic(), (float) damage);
+                    living.hurt(projectile.damageSources().indirectMagic(projectile, projectile.getOwner()), (float) damage);
 
                     if (knockback > 0) {
                         double d0 = Math.max(0.0D, 1.0D - living.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-                        Vec3 vec3 = projectile.getDeltaMovement().multiply(1.0D, 0.0D, 1.0D).normalize().scale((double)knockback * 0.6D * d0);
+                        Vec3 vec3 = projectile.getDeltaMovement().multiply(1.0D, 0.0D, 1.0D).normalize().scale((double) knockback * 0.6D * d0);
                         if (vec3.lengthSqr() > 0.0D) {
                             living.push(vec3.x, 0.1D, vec3.z);
                         }
@@ -146,9 +147,9 @@ public class Excaliber extends SwordItem implements LensEffectItem {
         //subject to change
         Level level = burst.entity().level();
 
-        if(!level.isClientSide() && burst.entity().tickCount % 10 == 0) {
+        if (!level.isClientSide() && burst.entity().tickCount % 10 == 0) {
             LivingEntity target = level.getEntitiesOfClass(LivingEntity.class, burst.entity().getBoundingBox().inflate(10)).stream().filter(entity -> burst.entity().getOwner() == null || !burst.entity().getOwner().is(entity)).min(Comparator.comparingDouble(player -> player.position().distanceTo(burst.entity().position()))).orElse(null);
-            if(target != null) {
+            if (target != null) {
                 burst.entity().setDeltaMovement(target.position().subtract(burst.entity().position()).normalize().scale(5));
             }
         }

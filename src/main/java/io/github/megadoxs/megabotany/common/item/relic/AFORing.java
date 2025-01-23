@@ -37,6 +37,7 @@ public class AFORing extends ElvenKingRing {
 
     @Override
     public void onWornTick(ItemStack stack, LivingEntity entity) {
+        super.onWornTick(stack, entity);
         var relic = XplatAbstractions.INSTANCE.findRelic(stack);
         if (relic != null && entity instanceof Player ePlayer)
             relic.tickBinding(ePlayer);
@@ -45,7 +46,7 @@ public class AFORing extends ElvenKingRing {
     @Override
     public boolean canEquip(ItemStack stack, LivingEntity entity) {
         var relic = XplatAbstractions.INSTANCE.findRelic(stack);
-        return entity instanceof Player player && relic != null && relic.isRightPlayer(player);
+        return entity instanceof Player player && relic != null && relic.isRightPlayer(player) && super.canEquip(stack, entity);
     }
 
     @Override

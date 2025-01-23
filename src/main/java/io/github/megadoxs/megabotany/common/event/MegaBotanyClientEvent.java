@@ -11,11 +11,11 @@ import net.minecraftforge.fml.common.Mod;
 public class MegaBotanyClientEvent {
     @SubscribeEvent
     public static void onComputeFovModifierEvent(ComputeFovModifierEvent event) {
-        if(event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == MegaBotanyItems.FAILNAUGHT.get()){
+        if (event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == MegaBotanyItems.FAILNAUGHT.get()) {
             float fovModifier = 1f;
             int tickUsingItem = event.getPlayer().getTicksUsingItem();
-            float delatTicks = (float) tickUsingItem /20;
-            if(delatTicks > 1f)
+            float delatTicks = (float) tickUsingItem / 20;
+            if (delatTicks > 1f)
                 delatTicks = 1f;
             else
                 delatTicks *= delatTicks;

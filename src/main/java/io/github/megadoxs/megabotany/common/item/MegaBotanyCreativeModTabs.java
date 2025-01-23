@@ -85,7 +85,6 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.GILDED_MASHED_POTATO.get());
                 output.accept(MegaBotanyItems.FRIED_CHICKEN.get());
 
-                output.accept(MegaBotanyItems.MASTER_BAND_OF_MANA.get());
                 output.accept(MegaBotanyItems.FROST_RING.get());
                 output.accept(MegaBotanyItems.CURSE_RING.get());
                 output.accept(MegaBotanyItems.WALL_JUMP_AMULET.get());
@@ -105,6 +104,7 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.ORICHALCOS_BOOTS_FEMALE.get());
 
 
+                ((CustomCreativeTabContents) MegaBotanyItems.MASTER_BAND_OF_MANA.get()).addToCreativeTab(MegaBotanyItems.MASTER_BAND_OF_MANA.get(), output);
                 ((CustomCreativeTabContents) MegaBotanyItems.NATURE_ORB.get()).addToCreativeTab(MegaBotanyItems.NATURE_ORB.get(), output); // don't like this implementation will make my own eventually
                 ((CustomCreativeTabContents) MegaBotanyItems.GOD_CORE.get()).addToCreativeTab(MegaBotanyItems.GOD_CORE.get(), output);
             })
