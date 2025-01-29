@@ -29,6 +29,9 @@ public abstract class ManaBurstEntityMixin {
     protected abstract void onHit(HitResult hitResult);
 
     @Shadow(remap = false)
+    protected abstract boolean onReceiverImpact(ManaReceiver receiver);
+
+    @Shadow(remap = false)
     private BlockPos lastCollision;
 
     @Shadow(remap = false)
@@ -58,10 +61,6 @@ public abstract class ManaBurstEntityMixin {
     private void onHitBlock(BlockHitResult hit, CallbackInfo ci) {
         ManaBurstEntity self = (ManaBurstEntity) (Object) this;
 
-        try {
-            Method onReceiverImpact = ManaBurstEntity.class.getDeclaredMethod("onReceiverImpact", ManaReceiver.class);
-            onReceiverImpact.setAccessible(true);
-
             BlockPos collidePos = hit.getBlockPos();
             if (collidePos.equals(lastCollision)) {
                 return;
@@ -89,7 +88,7 @@ public abstract class ManaBurstEntityMixin {
             ci.cancel();
 
             if (!self.isFake() && !noParticles && !self.level().isClientSide) {
-                if (receiver != null && receiver.canReceiveManaFromBursts() && (boolean) onReceiverImpact.invoke(self, receiver)) {
+                if (receiver != null && receiver.canReceiveManaFromBursts() && onReceiverImpact(receiver)) {
                     if (tile instanceof ThrottledPacket throttledPacket) {
                         throttledPacket.markDispatchable();
                     } else if (tile != null) {
@@ -99,8 +98,5 @@ public abstract class ManaBurstEntityMixin {
             }
 
             self.discard();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

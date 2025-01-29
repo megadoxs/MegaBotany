@@ -107,7 +107,6 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
 
             ItemNBTHelper.setBoolean(stack, "flying", flying);
         }
-
     }
 
     public static void updatePlayerFlyStatus(Player player) {

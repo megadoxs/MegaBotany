@@ -1,5 +1,7 @@
 package io.github.megadoxs.megabotany.common.util;
 
+import io.github.megadoxs.megabotany.api.item.InfiniteBrewItem;
+import io.github.megadoxs.megabotany.common.MegaBotany;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.resources.ResourceLocation;
@@ -18,5 +20,13 @@ public class MegaBotanyItemProperties {
         };
         consumer.accept(MegaBotanyItems.FAILNAUGHT.get(), new ResourceLocation("pulling"), pulling);
         consumer.accept(MegaBotanyItems.FAILNAUGHT.get(), new ResourceLocation("pull"), pull);
+
+        ClampedItemPropertyFunction chargeGetter = (stack, world, entity, seed) -> {
+            InfiniteBrewItem item = ((InfiniteBrewItem) stack.getItem());
+            return item.getCharge(stack);
+        };
+        consumer.accept(MegaBotanyItems.INFINITE_BREW.get(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), chargeGetter);
+        consumer.accept(MegaBotanyItems.INFINITE_SPLASH_BREW.get(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), chargeGetter);
+        consumer.accept(MegaBotanyItems.INFINITE_LINGERING_BREW.get(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), chargeGetter);
     }
 }

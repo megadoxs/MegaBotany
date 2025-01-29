@@ -87,7 +87,6 @@ public class MegaBotanyBlockTagGenerator extends BlockTagsProvider {
                 MegaBotanyFlowerBlocks.manalinkiumPotted
         );
 
-        //TODO probably can replace with a link tot the special_floating_flowers
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 MegaBotanyFlowerBlocks.bloodyEnchantressFloating,
                 MegaBotanyFlowerBlocks.sunshineLilyFloating,

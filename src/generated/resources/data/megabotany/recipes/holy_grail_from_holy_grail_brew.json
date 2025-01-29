@@ -1,0 +1,12 @@
+{
+  "type": "megabotany:relic",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:holy_grail_brew"
+    }
+  ],
+  "result": {
+    "item": "megabotany:holy_grail"
+  }
+}

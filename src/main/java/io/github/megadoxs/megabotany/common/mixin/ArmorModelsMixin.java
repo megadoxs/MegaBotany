@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -20,10 +21,10 @@ import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Map;
 
-@Debug(export = true)
 @Mixin(ArmorModels.class)
 public abstract class ArmorModelsMixin {
 
+    @Unique
     private static Map<EquipmentSlot, ArmorModel> orichalcos_female = Collections.emptyMap();
 
     @SuppressWarnings("unchecked")

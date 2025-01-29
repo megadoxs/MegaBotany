@@ -63,10 +63,13 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.TERRASTEEL_HAMMER.get());
                 output.accept(MegaBotanyItems.WALKING_CANE.get());
 
+                output.accept(MegaBotanyItems.PANDORA_BOX.get());
                 output.accept(MegaBotanyItems.FAILNAUGHT.get());
                 output.accept(MegaBotanyItems.EXCALIBER.get());
                 output.accept(MegaBotanyItems.ACHILLED_SHIELD.get());
                 output.accept(MegaBotanyItems.ALL_FOR_ONE.get());
+                output.accept(MegaBotanyItems.INFINITE_DRINK.get());
+                output.accept(MegaBotanyItems.ABSOLUTION_PENDANT.get());
 
                 output.accept(MegaBotanyItems.PHOTONIUM_INGOT.get());
                 output.accept(MegaBotanyBlocks.PHOTONIUM_BLOCK.get());
@@ -103,10 +106,13 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.ORICHALCOS_LEGGINGS_FEMALE.get());
                 output.accept(MegaBotanyItems.ORICHALCOS_BOOTS_FEMALE.get());
 
-
+                // don't like this implementation will make my own eventually
                 ((CustomCreativeTabContents) MegaBotanyItems.MASTER_BAND_OF_MANA.get()).addToCreativeTab(MegaBotanyItems.MASTER_BAND_OF_MANA.get(), output);
-                ((CustomCreativeTabContents) MegaBotanyItems.NATURE_ORB.get()).addToCreativeTab(MegaBotanyItems.NATURE_ORB.get(), output); // don't like this implementation will make my own eventually
+                ((CustomCreativeTabContents) MegaBotanyItems.NATURE_ORB.get()).addToCreativeTab(MegaBotanyItems.NATURE_ORB.get(), output);
                 ((CustomCreativeTabContents) MegaBotanyItems.GOD_CORE.get()).addToCreativeTab(MegaBotanyItems.GOD_CORE.get(), output);
+                ((CustomCreativeTabContents) MegaBotanyItems.INFINITE_BREW.get()).addToCreativeTab(MegaBotanyItems.INFINITE_BREW.get(), output);
+                ((CustomCreativeTabContents) MegaBotanyItems.INFINITE_SPLASH_BREW.get()).addToCreativeTab(MegaBotanyItems.INFINITE_SPLASH_BREW.get(), output);
+                ((CustomCreativeTabContents) MegaBotanyItems.INFINITE_LINGERING_BREW.get()).addToCreativeTab(MegaBotanyItems.INFINITE_LINGERING_BREW.get(), output);
             })
             .withSearchBar()
             .build());

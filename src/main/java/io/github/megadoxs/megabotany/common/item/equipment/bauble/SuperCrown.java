@@ -19,7 +19,7 @@ public class SuperCrown extends BaubleItem {
     @SubscribeEvent
     public void onEntityDamaged(LivingHurtEvent evt) {
         if (evt.getEntity() instanceof Player player) {
-            if (CuriosApi.getCuriosInventory(player).resolve().get().isEquipped(MegaBotanyItems.SUPER_CROWN.get()) && hasArmorSet(player)) // do I need to check?
+            if (CuriosApi.getCuriosInventory(player).resolve().get().isEquipped(MegaBotanyItems.SUPER_CROWN.get()) && hasArmorSet(player))
                 evt.setAmount(Math.max(0, evt.getAmount() - 2)); // might change to be 10% damage reduction
         }
     }

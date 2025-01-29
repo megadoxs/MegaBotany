@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -48,6 +49,10 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
 
         handheldItem(MegaBotanyItems.EXCALIBER);
         simpleItem(MegaBotanyItems.ALL_FOR_ONE);
+        simpleItem(MegaBotanyItems.INFINITE_DRINK);
+        potionItem(MegaBotanyItems.INFINITE_BREW.getId().getPath(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), 0, 1, 0.1f,  MegaBotanyItems.INFINITE_DRINK.getId().getPath(), MegaBotanyItems.INFINITE_BREW.getId().getPath());
+        simpleItem(MegaBotanyItems.INFINITE_SPLASH_BREW);
+        simpleItem(MegaBotanyItems.PANDORA_BOX);
 
         simpleItem(MegaBotanyItems.PHOTONIUM_INGOT);
         simpleItem(MegaBotanyItems.SHADOWIUM_INGOT);
@@ -66,6 +71,28 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
                 simpleBlockItemBlockTexture(b);
             }
         }
+    }
+
+    private ItemModelBuilder potionItem(String item, ResourceLocation predicate, float min, float max, float increment, String... textures) {
+        ItemModelBuilder itemModelBuilder = withExistingParent(item, new ResourceLocation("item/generated"));
+
+        for (int i = 0; i < textures.length; i++) {
+            itemModelBuilder.texture("layer" + i, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[i]));
+        }
+
+        for (float i = min; Math.floor(i * 10.0)/10.0 < max; i += increment) {
+            String modelPath = item + "_" + (int) (i/increment);
+            ItemModelBuilder model =  withExistingParent(modelPath, new ResourceLocation("item/generated"));
+            for (int j = 0; j < textures.length; j++) {
+                if(j == textures.length -1)
+                    model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j] + "_" + (int) ((Math.floor(i * 10.0)/10.0)/increment)));
+                else
+                    model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j]));
+            }
+            itemModelBuilder.override().predicate(predicate, (float) (Math.floor(i * 10.0)/10.0)).model(new ModelFile.ExistingModelFile(new ResourceLocation(MegaBotany.MOD_ID, "item/" + modelPath), existingFileHelper));
+        }
+
+        return itemModelBuilder;
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

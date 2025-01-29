@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-19T14:17:51.5810631	Item Models: megabotany
+// 1.20.1	2025-01-29T00:20:03.3902197	Item Models: megabotany
 84f168cea30551cc1ccb4d1a11b076e624c775b4 assets/megabotany/models/item/all_for_one.json
 70d95eccea4a636483716a2bb614d247207e8879 assets/megabotany/models/item/annoying_flower.json
 b61b947a55020db3f9102eafa734d3eb89a30855 assets/megabotany/models/item/bell_flower.json
@@ -16,6 +16,19 @@ ff0c57bf2eeaefd6111a0b7195a7ce03370cd029 assets/megabotany/models/item/elementiu
 62b8923535653cba2db7c1971581600308584479 assets/megabotany/models/item/gilded_mashed_potato.json
 9d22e80f0a4fce47c083710dbd987109aaff8ced assets/megabotany/models/item/gilded_potato.json
 76dd866334715ca0fbc1adb9813030e557706eab assets/megabotany/models/item/god_core.json
+f92312fdf4c16b126f4cd05c6de61f300221cd65 assets/megabotany/models/item/holy_grail.json
+24b41051d5347685cc44e60249e28963f8c7b22a assets/megabotany/models/item/holy_grail_brew.json
+fdb6d350bb27728e338530af8ddad6524bc13fab assets/megabotany/models/item/holy_grail_brew_0.json
+fdb6d350bb27728e338530af8ddad6524bc13fab assets/megabotany/models/item/holy_grail_brew_1.json
+14e3263888b56d89e37250b39114f3c9e22db502 assets/megabotany/models/item/holy_grail_brew_2.json
+0a541f5d55bc89a594fb5b9e0a2b7ed42ed82fad assets/megabotany/models/item/holy_grail_brew_3.json
+eac5ed228485c3aad7f8622c2bec2dd139a29049 assets/megabotany/models/item/holy_grail_brew_4.json
+26e031f63ada1a4c46590dcacc5f3b9a6ae0ecc9 assets/megabotany/models/item/holy_grail_brew_5.json
+bcdc3be3bc4da728d85b570f60ebaea7610c865a assets/megabotany/models/item/holy_grail_brew_6.json
+3db70a169f7a1777348c442d383d55c0818d2a8f assets/megabotany/models/item/holy_grail_brew_7.json
+df0a22d31b7b959fd61595e8f34b143596e93af1 assets/megabotany/models/item/holy_grail_brew_8.json
+0531b6fd45f51726e83cefcadf61e2029c1c9ca0 assets/megabotany/models/item/holy_grail_brew_9.json
+f2ef4e06b0b50c8d54e40bd40419495c95aa4dcf assets/megabotany/models/item/holy_hand_grenade.json
 7d945581310dca2e5aa6a3f1f2911ff148357017 assets/megabotany/models/item/jingwei_feather.json
 d413d67350511b074516f1f1ab7a6415b12e565d assets/megabotany/models/item/manalinkium.json
 84c9f7630a80ea8ea96f2dce1e6bc1567d1f33a3 assets/megabotany/models/item/manasteel_hammer.json
@@ -33,6 +46,7 @@ c81953b8ed593f604e6a743e454794f4689815ee assets/megabotany/models/item/orichalco
 c0af31f5cc402ae93d6c26e9a530f618cbbc54a6 assets/megabotany/models/item/orichalcos_helmet_female.json
 c196b9caa497d668d874d118993859d0c68c7c49 assets/megabotany/models/item/orichalcos_ingot.json
 4c8d4c852c1265012fa97de42cb3a1cce43a8c34 assets/megabotany/models/item/orichalcos_leggings_female.json
+bcd1b70ca13d606cd08908ae86a860fc114d25a7 assets/megabotany/models/item/pandora_box.json
 9d822e7c2c33470880532c2d1d12130a11ef9eac assets/megabotany/models/item/parkour_amulet.json
 60ced53aee8d2e01fc0e2cf09af6f286754a3478 assets/megabotany/models/item/parkour_amulet2.json
 72a072c2b6af85e33e671806dbbaaeaaaa069009 assets/megabotany/models/item/photonium_ingot.json

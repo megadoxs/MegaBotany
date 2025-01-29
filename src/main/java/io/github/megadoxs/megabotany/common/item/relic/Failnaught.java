@@ -1,11 +1,14 @@
 package io.github.megadoxs.megabotany.common.item.relic;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
+import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -13,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -57,6 +61,14 @@ public class Failnaught extends BowItem implements LensEffectItem {
     }
 
     @Override
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+        var relic = XplatAbstractions.INSTANCE.findRelic(pPlayer.getItemInHand(pHand));
+        if((ManaItemHandler.instance().requestManaExactForTool(pPlayer.getItemInHand(pHand), pPlayer, manaCost, false) && relic != null && relic.isRightPlayer(pPlayer)) || pPlayer.getAbilities().instabuild)
+            return ItemUtils.startUsingInstantly(pLevel, pPlayer, pHand);
+        return InteractionResultHolder.pass(pPlayer.getItemInHand(pHand));
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flags) {
         RelicImpl.addDefaultTooltip(stack, tooltip);
     }
@@ -70,7 +82,7 @@ public class Failnaught extends BowItem implements LensEffectItem {
                 return;
             }
 
-            if (ManaItemHandler.instance().requestManaExactForTool(pStack, player, manaCost, false)) {
+            if (ManaItemHandler.instance().requestManaExactForTool(pStack, player, manaCost, false) || player.getAbilities().instabuild) {
                 float f = getPowerForTime(i);
                 if (!((double) f < 0.1)) {
                     if (!pLevel.isClientSide) {
@@ -89,8 +101,10 @@ public class Failnaught extends BowItem implements LensEffectItem {
                         pLevel.addFreshEntity(projectile);
                     }
 
-                    pLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    if(!player.getAbilities().instabuild)
+                        ManaItemHandler.instance().requestManaExactForTool(pStack, player, manaCost, true);
 
+                    pLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
                     player.awardStat(Stats.ITEM_USED.get(this));
                 }
             }
@@ -98,7 +112,7 @@ public class Failnaught extends BowItem implements LensEffectItem {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "challenge/failnaught"));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.FAILNAUGHT.getId().getPath()));
     }
 
     @Override

@@ -13,6 +13,7 @@ public class MegaBotanyEntities {
 
     public static final RegistryObject<EntityType<AuraFire>> AURA_FIRE = ENTITY_TYPES.register("aura_fire", () -> EntityType.Builder.of(AuraFire::new, MobCategory.MISC).sized(0, 0).build("aura_fire"));
     public static final RegistryObject<EntityType<Missile>> EXPLOSIVE_MISSILE = ENTITY_TYPES.register("missile", () -> EntityType.Builder.<Missile>of(Missile::new, MobCategory.MISC).sized(0.2f, 0.2f).build("missile"));
+    public static final RegistryObject<EntityType<ThrownBrew>> THROWN_BREW = ENTITY_TYPES.register("thrown_brew", () -> EntityType.Builder.<ThrownBrew>of(ThrownBrew::new, MobCategory.MISC).sized(0.5f, 0.5f).build("thrown_brew"));
     // not done
     public static final RegistryObject<EntityType<GaiaGuardianIII>> GAIA_GUARDIAN_III = ENTITY_TYPES.register("gaia_guardian_iii", () -> EntityType.Builder.of(GaiaGuardianIII::new, MobCategory.MONSTER).sized(0.6F, 1.8F).fireImmune().build("gaia_guardian_iii"));
 

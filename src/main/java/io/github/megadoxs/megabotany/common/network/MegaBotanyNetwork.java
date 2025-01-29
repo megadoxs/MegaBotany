@@ -1,6 +1,7 @@
 package io.github.megadoxs.megabotany.common.network;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
+import io.github.megadoxs.megabotany.common.network.C2SPacket.ExcaliberLeftClickPacket;
 import io.github.megadoxs.megabotany.common.network.C2SPacket.MagicAuraPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,6 +22,7 @@ public class MegaBotanyNetwork {
 
     public static void register() {
         INSTANCE.messageBuilder(MagicAuraPacket.class, id(), NetworkDirection.PLAY_TO_SERVER).decoder(MagicAuraPacket::new).encoder(MagicAuraPacket::toBytes).consumerMainThread(MagicAuraPacket::handle).add();
+        INSTANCE.messageBuilder(ExcaliberLeftClickPacket.class, id(), NetworkDirection.PLAY_TO_SERVER).decoder(ExcaliberLeftClickPacket::new).encoder(ExcaliberLeftClickPacket::toBytes).consumerMainThread(ExcaliberLeftClickPacket::handle).add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

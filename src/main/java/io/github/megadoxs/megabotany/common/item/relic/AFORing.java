@@ -1,6 +1,7 @@
 package io.github.megadoxs.megabotany.common.item.relic;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
+import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.ElvenKingRing;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -55,6 +56,6 @@ public class AFORing extends ElvenKingRing {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "challenge/afo_ring"));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.ALL_FOR_ONE.getId().getPath()));
     }
 }

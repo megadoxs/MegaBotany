@@ -1,8 +1,11 @@
 package io.github.megadoxs.megabotany.common.item.relic;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
+import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -44,7 +47,7 @@ public class AchilledShield extends ShieldItem {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "challenge/achilled_shield"));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.ACHILLED_SHIELD.getId().getPath()));
     }
 
     @SubscribeEvent
@@ -62,6 +65,14 @@ public class AchilledShield extends ShieldItem {
 
             event.setShieldTakesDamage(false);
         }
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        var relic = XplatAbstractions.INSTANCE.findRelic(pPlayer.getItemInHand(pUsedHand));
+        if(relic != null && relic.isRightPlayer(pPlayer))
+            return super.use(pLevel, pPlayer, pUsedHand);
+        return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
     }
 
     @Override

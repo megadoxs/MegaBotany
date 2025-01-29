@@ -14,10 +14,7 @@ import io.github.megadoxs.megabotany.common.item.equipment.tool.hammer.Terrastee
 import io.github.megadoxs.megabotany.common.item.food.MegaBotanyFoods;
 import io.github.megadoxs.megabotany.common.item.food.NightmareFuel;
 import io.github.megadoxs.megabotany.common.item.fuel.Fuel;
-import io.github.megadoxs.megabotany.common.item.relic.AFORing;
-import io.github.megadoxs.megabotany.common.item.relic.AchilledShield;
-import io.github.megadoxs.megabotany.common.item.relic.Excaliber;
-import io.github.megadoxs.megabotany.common.item.relic.Failnaught;
+import io.github.megadoxs.megabotany.common.item.relic.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -35,7 +32,7 @@ public class MegaBotanyItems {
     public static final RegistryObject<Item> MANASTEEL_HAMMER = ITEMS.register("manasteel_hammer", () -> new ManasteelHammer(new Item.Properties().defaultDurability(400)));
     public static final RegistryObject<Item> ELEMENTIUM_HAMMER = ITEMS.register("elementium_hammer", () -> new ElementiumHammer(new Item.Properties().defaultDurability(900)));
     public static final RegistryObject<Item> TERRASTEEL_HAMMER = ITEMS.register("terrasteel_hammer", () -> new TerrasteelHammer(new Item.Properties().defaultDurability(3000)));
-    //public static final RegistryObject<Item> TERRASTEEL_HAMMER = ITEMS.register("terrasteel_hammer", () -> new TerrasteelHammer(new Item.Properties().defaultDurability(3000)));// ultimate hammer?!?
+    //public static final RegistryObject<Item> ULTIMATE_HAMMER = ITEMS.register("terrasteel_hammer", () -> new TerrasteelHammer(new Item.Properties().defaultDurability(3000)));// ultimate hammer?!?
     public static final RegistryObject<Item> WALKING_CANE = ITEMS.register("walking_cane", () -> new WalkingCane(new Item.Properties().defaultDurability(64)));
 
     //relics
@@ -43,6 +40,12 @@ public class MegaBotanyItems {
     public static final RegistryObject<Item> EXCALIBER = ITEMS.register("excaliber", () -> new Excaliber(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
     public static final RegistryObject<Item> ACHILLED_SHIELD = ITEMS.register("achilled_shield", () -> new AchilledShield(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
     public static final RegistryObject<Item> ALL_FOR_ONE = ITEMS.register("all_for_one", () -> new AFORing(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final RegistryObject<Item> INFINITE_DRINK = ITEMS.register("holy_grail", () -> new InfiniteDrink(new Item.Properties()));
+    public static final RegistryObject<Item> INFINITE_BREW = ITEMS.register("holy_grail_brew", () -> new InfiniteBrew(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> INFINITE_SPLASH_BREW = ITEMS.register("holy_hand_grenade", () -> new InfiniteSplashBrew(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> INFINITE_LINGERING_BREW = ITEMS.register("infinite_lingering_brew", () -> new InfiniteLingeringBrew(new Item.Properties().stacksTo(1))); //placeholder name
+    public static final RegistryObject<Item> ABSOLUTION_PENDANT = ITEMS.register("absolution_pendant", () -> new DamageNullification(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1))); //placeholder name
+    public static final RegistryObject<Item> PANDORA_BOX = ITEMS.register("pandora_box", () -> new PandoraBox(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
 
     public static final RegistryObject<Item> NATURE_ORB = ITEMS.register("nature_orb", () -> new NatureOrb(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
     public static final RegistryObject<Item> MASTER_BAND_OF_MANA = ITEMS.register("master_band_of_mana", () -> new MasterBandOfMana(new Item.Properties().stacksTo(1)));

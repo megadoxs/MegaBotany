@@ -14,7 +14,7 @@ import vazkii.botania.api.mana.ManaItemHandler;
 
 public class AuraFire extends ThrowableProjectile {
 
-    public AuraFire(EntityType<? extends ThrowableProjectile> pEntityType, Level pLevel) {
+    public AuraFire(EntityType<? extends AuraFire> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 

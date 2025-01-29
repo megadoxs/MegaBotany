@@ -20,11 +20,8 @@ public class MagicAuraPacket {
 
     }
 
-    public boolean handle(Supplier<NetworkEvent.Context> supplier) {
+    public void handle(Supplier<NetworkEvent.Context> supplier) {
         NetworkEvent.Context context = supplier.get();
-        context.enqueueWork(() -> {
-            JingweiFeather.trySpawnMagicAura(Objects.requireNonNull(context.getSender()));
-        });
-        return true;
+        context.enqueueWork(() -> JingweiFeather.trySpawnMagicAura(Objects.requireNonNull(context.getSender())));
     }
 }

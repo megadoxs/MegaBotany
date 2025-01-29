@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_holy_grail_brew": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:holy_grail_brew"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "megabotany:holy_grail_from_holy_grail_brew"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_holy_grail_brew",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "megabotany:holy_grail_from_holy_grail_brew"
+    ]
+  },
+  "sends_telemetry_event": false
+}

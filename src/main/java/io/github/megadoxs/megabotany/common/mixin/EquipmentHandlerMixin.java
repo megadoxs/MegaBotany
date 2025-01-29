@@ -24,7 +24,7 @@ public abstract class EquipmentHandlerMixin {
     @Inject(method = "findOrEmpty(Lnet/minecraft/world/item/Item;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;", at = @At("HEAD"), cancellable = true, remap = false)
     private static void injectFindOrEmptyItem(Item item, LivingEntity living, CallbackInfoReturnable<ItemStack> cir) {
         if (living instanceof Player player) {
-            Optional<SlotResult> slotResult = CuriosApi.getCuriosInventory(player).orElse(null).findFirstCurio(curio -> curio.getItem() instanceof ElvenKingRing);
+            Optional<SlotResult> slotResult = CuriosApi.getCuriosInventory(player).resolve().flatMap(handler -> handler.findFirstCurio(curio -> curio.getItem() instanceof ElvenKingRing));
 
             if (slotResult.isEmpty() || !(slotResult.get().stack().getItem() instanceof ElvenKingRing ring)) {
                 return;
@@ -47,7 +47,7 @@ public abstract class EquipmentHandlerMixin {
     @Inject(method = "findOrEmpty(Ljava/util/function/Predicate;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;", at = @At("HEAD"), cancellable = true, remap = false)
     private static void injectFindOrEmptyPredicate(Predicate<ItemStack> pred, LivingEntity living, CallbackInfoReturnable<ItemStack> cir) {
         if (living instanceof Player player) {
-            Optional<SlotResult> slotResult = CuriosApi.getCuriosInventory(player).orElse(null).findFirstCurio(curio -> curio.getItem() instanceof ElvenKingRing);
+            Optional<SlotResult> slotResult = CuriosApi.getCuriosInventory(player).resolve().flatMap(handler -> handler.findFirstCurio(curio -> curio.getItem() instanceof ElvenKingRing));
 
             if (slotResult.isEmpty() || !(slotResult.get().stack().getItem() instanceof ElvenKingRing ring)) {
                 return;

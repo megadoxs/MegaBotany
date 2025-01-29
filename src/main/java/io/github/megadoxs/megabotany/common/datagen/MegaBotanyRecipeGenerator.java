@@ -1,10 +1,13 @@
 package io.github.megadoxs.megabotany.common.datagen;
 
+import io.github.megadoxs.megabotany.common.MegaBotany;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import io.github.megadoxs.megabotany.common.crafting.builder.CrushingRecipeBuilder;
+import io.github.megadoxs.megabotany.common.crafting.recipe.RelicRecipe;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -12,6 +15,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.data.recipes.NbtOutputResult;
+import vazkii.botania.data.recipes.WrapperResult;
 
 import java.util.function.Consumer;
 
@@ -152,6 +156,21 @@ public class MegaBotanyRecipeGenerator extends RecipeProvider implements ICondit
                     .save(NbtOutputResult.with(consumer, tag -> tag.putInt("variant", godCoreType)),
                             "megabotany:god_core_" + godCoreType);
         }
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MegaBotanyItems.INFINITE_DRINK.get())
+                .requires(MegaBotanyItems.INFINITE_BREW.get())
+                .unlockedBy(getHasName(MegaBotanyItems.INFINITE_BREW.get()), has(MegaBotanyItems.INFINITE_BREW.get()))
+                .save(WrapperResult.ofType(RelicRecipe.SERIALIZER, consumer), new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.INFINITE_DRINK.getId().getPath() + "_from_" + MegaBotanyItems.INFINITE_BREW.getId().getPath()));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MegaBotanyItems.INFINITE_DRINK.get())
+                .requires(MegaBotanyItems.INFINITE_SPLASH_BREW.get())
+                .unlockedBy(getHasName(MegaBotanyItems.INFINITE_SPLASH_BREW.get()), has(MegaBotanyItems.INFINITE_SPLASH_BREW.get()))
+                .save(WrapperResult.ofType(RelicRecipe.SERIALIZER, consumer), new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.INFINITE_DRINK.getId().getPath() + "_from_" + MegaBotanyItems.INFINITE_SPLASH_BREW.getId().getPath()));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MegaBotanyItems.INFINITE_DRINK.get())
+                .requires(MegaBotanyItems.INFINITE_LINGERING_BREW.get())
+                .unlockedBy(getHasName(MegaBotanyItems.INFINITE_LINGERING_BREW.get()), has(MegaBotanyItems.INFINITE_LINGERING_BREW.get()))
+                .save(WrapperResult.ofType(RelicRecipe.SERIALIZER, consumer), new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.INFINITE_DRINK.getId().getPath() + "_from_" + MegaBotanyItems.INFINITE_LINGERING_BREW.getId().getPath()));
 
         //ManaInfusionRecipe test = new ManaInfusionRecipe(new ResourceLocation("test"), new ItemStack(ModItems.NIGHTMARE_FUEL.get()), Ingredient.of(Items.COAL), 2000, null, null);
     }

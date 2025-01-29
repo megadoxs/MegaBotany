@@ -1,9 +1,15 @@
 package io.github.megadoxs.megabotany.common.item.relic;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
+import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
+import io.github.megadoxs.megabotany.common.network.C2SPacket.ExcaliberLeftClickPacket;
+import io.github.megadoxs.megabotany.common.network.MegaBotanyNetwork;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -18,6 +24,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import vazkii.botania.api.BotaniaAPI;
 import vazkii.botania.api.internal.ManaBurst;
 import vazkii.botania.api.item.Relic;
@@ -26,13 +37,17 @@ import vazkii.botania.api.mana.LensEffectItem;
 import vazkii.botania.api.mana.ManaReceiver;
 import vazkii.botania.common.entity.ManaBurstEntity;
 import vazkii.botania.common.handler.BotaniaSounds;
+import vazkii.botania.common.item.equipment.tool.terrasteel.TerraBladeItem;
 import vazkii.botania.common.item.relic.RelicImpl;
+import vazkii.botania.network.serverbound.LeftClickPacket;
+import vazkii.botania.xplat.ClientXplatAbstractions;
 import vazkii.botania.xplat.XplatAbstractions;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
+@Mod.EventBusSubscriber(modid = "megabotany", bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class Excaliber extends SwordItem implements LensEffectItem {
     public Excaliber(Properties props) {
         super(BotaniaAPI.instance().getTerrasteelItemTier(), 6, -2.4f, props);
@@ -54,25 +69,26 @@ public class Excaliber extends SwordItem implements LensEffectItem {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "challenge/excaliber"));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.EXCALIBER.getId().getPath()));
     }
 
-    @Override
-    public boolean onEntitySwing(ItemStack stack, LivingEntity entity) {
-        return trySpawnBurst(entity);
+    @SubscribeEvent
+    public static void LeftClick(PlayerInteractEvent.LeftClickEmpty event){
+        if(event.getItemStack().getItem() instanceof Excaliber)
+            MegaBotanyNetwork.sendToServer(new ExcaliberLeftClickPacket());
     }
 
-    @Override
-    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        if (pAttacker instanceof Player) {
-            trySpawnBurst(pAttacker);
+    @SubscribeEvent
+    public static InteractionResult attackEntity(AttackEntityEvent event){
+        if (!event.getEntity().level().isClientSide) {
+            trySpawnBurst(event.getEntity(), event.getEntity().getAttackStrengthScale(0));
         }
-
-        return true;
+        return InteractionResult.PASS;
     }
 
-    public boolean trySpawnBurst(LivingEntity entity) {
-        if (entity instanceof Player player && player.getAttackStrengthScale(0.5f) == 1f && !player.level().isClientSide()) {
+    public static void trySpawnBurst(Player player, float attackStrength) {
+        var relic = XplatAbstractions.INSTANCE.findRelic(player.getMainHandItem());
+        if (attackStrength == 1 && relic != null && relic.isRightPlayer(player)) {
             ManaBurstEntity projectile = new ManaBurstEntity(player);
 
             projectile.setColor(0xFFFF20);
@@ -85,11 +101,8 @@ public class Excaliber extends SwordItem implements LensEffectItem {
             projectile.setSourceLens(player.getMainHandItem());
 
             player.level().addFreshEntity(projectile);
-
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), BotaniaSounds.terraBlade, SoundSource.PLAYERS, 1F, 1F);
-            return true;
         }
-        return false;
     }
 
     @Override

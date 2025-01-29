@@ -1,0 +1,69 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "megabotany:item/holy_grail_brew_0",
+      "predicate": {
+        "megabotany:charge": 0.0
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_1",
+      "predicate": {
+        "megabotany:charge": 0.1
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_2",
+      "predicate": {
+        "megabotany:charge": 0.2
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_3",
+      "predicate": {
+        "megabotany:charge": 0.3
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_4",
+      "predicate": {
+        "megabotany:charge": 0.4
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_5",
+      "predicate": {
+        "megabotany:charge": 0.5
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_6",
+      "predicate": {
+        "megabotany:charge": 0.6
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_7",
+      "predicate": {
+        "megabotany:charge": 0.7
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_8",
+      "predicate": {
+        "megabotany:charge": 0.8
+      }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_9",
+      "predicate": {
+        "megabotany:charge": 0.9
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "megabotany:item/holy_grail",
+    "layer1": "megabotany:item/holy_grail_brew"
+  }
+}

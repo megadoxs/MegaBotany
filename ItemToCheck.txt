@@ -21,3 +21,7 @@ remove chunk loading from stardust and manalink
 optimise their use of the getBlock() & isValid() methods
 
 do I give achilled shield second's form from extrabotany?? change name also.
+
+Shield need some fixing on how the player see it being used
+infinite splash and absolution pendant are temporary names
+holy hand grenade, infinite splash and absolution pendant have not textures

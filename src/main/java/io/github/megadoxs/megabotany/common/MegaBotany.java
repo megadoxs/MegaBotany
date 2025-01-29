@@ -2,6 +2,7 @@ package io.github.megadoxs.megabotany.common;
 
 import com.google.common.base.Suppliers;
 import com.mojang.logging.LogUtils;
+import io.github.megadoxs.megabotany.client.core.handler.ColorHandler;
 import io.github.megadoxs.megabotany.client.model.MegaBotanyLayerDefinition;
 import io.github.megadoxs.megabotany.client.renderer.ExplosiveMissileRenderer;
 import io.github.megadoxs.megabotany.client.renderer.GaiaGuardianIIIRenderer;
@@ -17,15 +18,13 @@ import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosHelmetItem;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.CoreGod;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.MasterBandOfMana;
-import io.github.megadoxs.megabotany.common.item.relic.AFORing;
-import io.github.megadoxs.megabotany.common.item.relic.AchilledShield;
-import io.github.megadoxs.megabotany.common.item.relic.Excaliber;
-import io.github.megadoxs.megabotany.common.item.relic.Failnaught;
+import io.github.megadoxs.megabotany.common.item.relic.*;
 import io.github.megadoxs.megabotany.common.network.MegaBotanyNetwork;
 import io.github.megadoxs.megabotany.common.util.MegaBotanyItemProperties;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.NoopRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -44,6 +43,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -68,8 +68,6 @@ import vazkii.botania.api.mana.ManaItem;
 import vazkii.botania.api.mana.ManaReceiver;
 import vazkii.botania.common.PlayerAccess;
 import vazkii.botania.common.helper.ItemNBTHelper;
-import vazkii.botania.common.item.BotaniaItems;
-import vazkii.botania.common.item.ManaMirrorItem;
 import vazkii.botania.common.item.WandOfTheForestItem;
 import vazkii.botania.forge.CapabilityUtil;
 
@@ -165,8 +163,7 @@ public class MegaBotany {
 
         var makeManaItem = MANA_ITEM.get().get(stack.getItem());
         if (makeManaItem != null) {
-            e.addCapability(prefix("mana_item"),
-                    CapabilityUtil.makeProvider(BotaniaForgeCapabilities.MANA_ITEM, makeManaItem.apply(stack)));
+            e.addCapability(prefix("mana_item"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.MANA_ITEM, makeManaItem.apply(stack)));
         }
     }
 
@@ -174,11 +171,16 @@ public class MegaBotany {
             MegaBotanyItems.FAILNAUGHT.get(), Failnaught::makeRelic,
             MegaBotanyItems.EXCALIBER.get(), Excaliber::makeRelic,
             MegaBotanyItems.ACHILLED_SHIELD.get(), AchilledShield::makeRelic,
-            MegaBotanyItems.ALL_FOR_ONE.get(), AFORing::makeRelic
+            MegaBotanyItems.ALL_FOR_ONE.get(), AFORing::makeRelic,
+            MegaBotanyItems.INFINITE_DRINK.get(), InfiniteDrink::makeRelic,
+            MegaBotanyItems.INFINITE_BREW.get(), InfiniteBrew::makeRelic,
+            MegaBotanyItems.INFINITE_SPLASH_BREW.get(), InfiniteBrew::makeRelic,
+            MegaBotanyItems.INFINITE_LINGERING_BREW.get(), InfiniteBrew::makeRelic,
+            MegaBotanyItems.ABSOLUTION_PENDANT.get(), DamageNullification::makeRelic,
+            MegaBotanyItems.PANDORA_BOX.get(), PandoraBox::makeRelic
     ));
 
     private static final Supplier<Map<Item, Function<ItemStack, ManaItem>>> MANA_ITEM = Suppliers.memoize(() -> Map.of(
-            BotaniaItems.manaMirror, ManaMirrorItem.ManaItemImpl::new,
             MegaBotanyItems.MASTER_BAND_OF_MANA.get(), MasterBandOfMana.MasterManaImpl::new
     ));
 
@@ -209,6 +211,7 @@ public class MegaBotany {
             EntityRenderers.register(MegaBotanyEntities.AURA_FIRE.get(), NoopRenderer::new);
             EntityRenderers.register(MegaBotanyEntities.EXPLOSIVE_MISSILE.get(), ExplosiveMissileRenderer::new);
             EntityRenderers.register(MegaBotanyEntities.GAIA_GUARDIAN_III.get(), GaiaGuardianIIIRenderer::new);
+            EntityRenderers.register(MegaBotanyEntities.THROWN_BREW.get(), ThrownItemRenderer::new);
 
             var bus = MinecraftForge.EVENT_BUS;
             bus.addGenericListener(BlockEntity.class, MegaBotany::attachBeCapabilities);
@@ -222,6 +225,11 @@ public class MegaBotany {
         @SubscribeEvent
         public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions evt) {
             MegaBotanyLayerDefinition.init(evt::registerLayerDefinition);
+        }
+
+        @SubscribeEvent
+        public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+            ColorHandler.submitItems(event::register);
         }
     }
 

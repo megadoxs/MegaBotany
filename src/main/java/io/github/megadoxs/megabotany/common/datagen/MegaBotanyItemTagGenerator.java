@@ -77,7 +77,8 @@ public class MegaBotanyItemTagGenerator extends ItemTagsProvider {
                 MegaBotanyItems.WALL_CLIMB_AMULET.get(),
                 MegaBotanyItems.PARKOUR_AMULET.get(),
                 MegaBotanyItems.PARKOUR_AMULET2.get(),
-                MegaBotanyItems.PURE_DAISY_PENDANT.get()
+                MegaBotanyItems.PURE_DAISY_PENDANT.get(),
+                MegaBotanyItems.ABSOLUTION_PENDANT.get()
         );
 
         this.tag(ItemTags.create(new ResourceLocation("curios", "charm"))).add(
