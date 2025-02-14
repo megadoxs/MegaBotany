@@ -7,9 +7,7 @@ import io.github.megadoxs.megabotany.common.network.MegaBotanyNetwork;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -24,7 +22,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -37,10 +34,7 @@ import vazkii.botania.api.mana.LensEffectItem;
 import vazkii.botania.api.mana.ManaReceiver;
 import vazkii.botania.common.entity.ManaBurstEntity;
 import vazkii.botania.common.handler.BotaniaSounds;
-import vazkii.botania.common.item.equipment.tool.terrasteel.TerraBladeItem;
 import vazkii.botania.common.item.relic.RelicImpl;
-import vazkii.botania.network.serverbound.LeftClickPacket;
-import vazkii.botania.xplat.ClientXplatAbstractions;
 import vazkii.botania.xplat.XplatAbstractions;
 
 import java.util.Comparator;
@@ -73,13 +67,13 @@ public class Excaliber extends SwordItem implements LensEffectItem {
     }
 
     @SubscribeEvent
-    public static void LeftClick(PlayerInteractEvent.LeftClickEmpty event){
-        if(event.getItemStack().getItem() instanceof Excaliber)
+    public static void LeftClick(PlayerInteractEvent.LeftClickEmpty event) {
+        if (event.getItemStack().getItem() instanceof Excaliber)
             MegaBotanyNetwork.sendToServer(new ExcaliberLeftClickPacket());
     }
 
     @SubscribeEvent
-    public static InteractionResult attackEntity(AttackEntityEvent event){
+    public static InteractionResult attackEntity(AttackEntityEvent event) {
         if (!event.getEntity().level().isClientSide) {
             trySpawnBurst(event.getEntity(), event.getEntity().getAttackStrengthScale(0));
         }

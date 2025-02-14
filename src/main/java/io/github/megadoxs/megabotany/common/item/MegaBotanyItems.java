@@ -14,6 +14,8 @@ import io.github.megadoxs.megabotany.common.item.equipment.tool.hammer.Terrastee
 import io.github.megadoxs.megabotany.common.item.food.MegaBotanyFoods;
 import io.github.megadoxs.megabotany.common.item.food.NightmareFuel;
 import io.github.megadoxs.megabotany.common.item.fuel.Fuel;
+import io.github.megadoxs.megabotany.common.item.lens.ManaLens;
+import io.github.megadoxs.megabotany.common.item.lens.SmeltLens;
 import io.github.megadoxs.megabotany.common.item.relic.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -22,6 +24,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vazkii.botania.common.item.lens.LensItem;
 
 public class MegaBotanyItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MegaBotany.MOD_ID);
@@ -80,6 +83,9 @@ public class MegaBotanyItems {
     public static final RegistryObject<Item> SHADOWIUM_INGOT = ITEMS.register("shadowium_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PHOTONIUM_INGOT = ITEMS.register("photonium_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TICKET = ITEMS.register("ticket", () -> new Ticket(new Item.Properties()));
+
+    public static final RegistryObject<Item> SMELTING_LENS = ITEMS.register("smelting_lens", () -> new LensItem(new Item.Properties().stacksTo(16), new SmeltLens(), LensItem.PROP_DAMAGE | LensItem.PROP_TOUCH | LensItem.PROP_INTERACTION));
+    public static final RegistryObject<Item> MANA_LENS = ITEMS.register("mana_lens", () -> new LensItem(new Item.Properties().stacksTo(16), new ManaLens(), LensItem.PROP_TOUCH | LensItem.PROP_INTERACTION));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -31,18 +31,21 @@ public class MegaBotanyBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(MegaBotanyBlocks.PHOTONIUM_BLOCK.get());
-        this.dropSelf(MegaBotanyBlocks.SHADOWIUM_BLOCK.get());
-        this.dropSelf(MegaBotanyBlocks.ORICHALCOS_BLOCK.get());
+        dropSelf(MegaBotanyBlocks.PHOTONIUM_BLOCK.get());
+        dropSelf(MegaBotanyBlocks.SHADOWIUM_BLOCK.get());
+        dropSelf(MegaBotanyBlocks.ORICHALCOS_BLOCK.get());
 
-        this.dropSelf(MegaBotanyBlocks.MORTAR.get());
-        this.dropSelf(MegaBotanyBlocks.PEDESTAL.get());
+        dropSelf(MegaBotanyBlocks.MORTAR.get());
+        dropSelf(MegaBotanyBlocks.PEDESTAL.get());
+
+        dropSelf(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get());
+        dropSelf(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get());
 
         //TODO all the flowers should save their important nbt, this current system doesn't do that
         for (Block b : ForgeRegistries.BLOCKS) {
             ResourceLocation id = ForgeRegistries.BLOCKS.getKey(b);
             if (MegaBotany.MOD_ID.equals(id.getNamespace()) && (b instanceof FlowerBlock || b instanceof FloatingFlowerBlock)) {
-                this.dropSelf(b);
+                dropSelf(b);
             }
         }
 
@@ -50,7 +53,7 @@ public class MegaBotanyBlockLootTables extends BlockLootSubProvider {
         for (Block b : ForgeRegistries.BLOCKS) {
             ResourceLocation id = ForgeRegistries.BLOCKS.getKey(b);
             if (MegaBotany.MOD_ID.equals(id.getNamespace()) && b instanceof FlowerPotBlock) {
-                this.add(b, createPotAndPlantItemTable(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), id.getPath().replace("potted_", "")))));
+                add(b, createPotAndPlantItemTable(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id.getNamespace(), id.getPath().replace("potted_", "")))));
             }
         }
     }

@@ -21,8 +21,6 @@ import vazkii.botania.common.block.block_entity.mana.ThrottledPacket;
 import vazkii.botania.common.entity.ManaBurstEntity;
 import vazkii.botania.xplat.XplatAbstractions;
 
-import java.lang.reflect.Method;
-
 @Mixin(ManaBurstEntity.class)
 public abstract class ManaBurstEntityMixin {
     @Shadow
@@ -57,46 +55,47 @@ public abstract class ManaBurstEntityMixin {
         }
     }
 
+    //TODO this can probably be simplified
     @Inject(method = "onHitBlock", at = @At("HEAD"), cancellable = true)
     private void onHitBlock(BlockHitResult hit, CallbackInfo ci) {
         ManaBurstEntity self = (ManaBurstEntity) (Object) this;
 
-            BlockPos collidePos = hit.getBlockPos();
-            if (collidePos.equals(lastCollision)) {
-                return;
-            }
+        BlockPos collidePos = hit.getBlockPos();
+        if (collidePos.equals(lastCollision)) {
+            return;
+        }
 
-            BlockEntity tile = self.level().getBlockEntity(collidePos);
-            BlockState state = self.level().getBlockState(collidePos);
+        BlockEntity tile = self.level().getBlockEntity(collidePos);
+        BlockState state = self.level().getBlockState(collidePos);
 
-            var ghost = XplatAbstractions.INSTANCE.findManaGhost(self.level(), collidePos, state, tile);
-            var ghostBehaviour = ghost != null ? ghost.getGhostBehaviour() : ManaCollisionGhost.Behaviour.RUN_ALL;
+        var ghost = XplatAbstractions.INSTANCE.findManaGhost(self.level(), collidePos, state, tile);
+        var ghostBehaviour = ghost != null ? ghost.getGhostBehaviour() : ManaCollisionGhost.Behaviour.RUN_ALL;
 
-            if (ghostBehaviour == ManaCollisionGhost.Behaviour.SKIP_ALL || !state.is(MegaBotanyFlowerBlocks.manalinkium)) {
-                return;
-            }
+        if (ghostBehaviour == ManaCollisionGhost.Behaviour.SKIP_ALL || !state.is(MegaBotanyFlowerBlocks.manalinkium)) {
+            return;
+        }
 
-            BlockPos sourcePos = self.getBurstSourceBlockPos();
-            if (!self.hasLeftSource() && collidePos.equals(sourcePos)) {
-                return;
-            }
+        BlockPos sourcePos = self.getBurstSourceBlockPos();
+        if (!self.hasLeftSource() && collidePos.equals(sourcePos)) {
+            return;
+        }
 
-            var receiver = XplatAbstractions.INSTANCE.findManaReceiver(self.level(), collidePos, state, tile, hit.getDirection());
-            collidedTile = receiver;
+        var receiver = XplatAbstractions.INSTANCE.findManaReceiver(self.level(), collidePos, state, tile, hit.getDirection());
+        collidedTile = receiver;
 
-            self.setCollidedAt(collidePos);
-            ci.cancel();
+        self.setCollidedAt(collidePos);
+        ci.cancel();
 
-            if (!self.isFake() && !noParticles && !self.level().isClientSide) {
-                if (receiver != null && receiver.canReceiveManaFromBursts() && onReceiverImpact(receiver)) {
-                    if (tile instanceof ThrottledPacket throttledPacket) {
-                        throttledPacket.markDispatchable();
-                    } else if (tile != null) {
-                        VanillaPacketDispatcher.dispatchTEToNearbyPlayers(tile);
-                    }
+        if (!self.isFake() && !noParticles && !self.level().isClientSide) {
+            if (receiver != null && receiver.canReceiveManaFromBursts() && onReceiverImpact(receiver)) {
+                if (tile instanceof ThrottledPacket throttledPacket) {
+                    throttledPacket.markDispatchable();
+                } else if (tile != null) {
+                    VanillaPacketDispatcher.dispatchTEToNearbyPlayers(tile);
                 }
             }
+        }
 
-            self.discard();
+        self.discard();
     }
 }

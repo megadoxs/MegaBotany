@@ -7,7 +7,7 @@ import vazkii.botania.client.core.handler.ClientTickHandler;
 import vazkii.botania.client.render.ColorHandler.ItemHandlerConsumer;
 
 public class ColorHandler {
-    public static void submitItems(ItemHandlerConsumer items){
+    public static void submitItems(ItemHandlerConsumer items) {
         items.register((s, t) -> {
             if (t != 1) {
                 return -1;

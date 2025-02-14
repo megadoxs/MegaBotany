@@ -3,7 +3,6 @@ package io.github.megadoxs.megabotany.common.datagen;
 import io.github.megadoxs.megabotany.common.entity.MegaBotanyEntities;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.*;
@@ -16,7 +15,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
-import org.checkerframework.checker.units.qual.A;
 import vazkii.botania.common.advancements.RelicBindTrigger;
 import vazkii.botania.common.block.BotaniaBlocks;
 

@@ -1,5 +1,6 @@
 package io.github.megadoxs.megabotany.client.core.handler;
 
+import io.github.megadoxs.megabotany.common.MegaBotany;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,19 +17,23 @@ import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = "megabotany", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = MegaBotany.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MiscellaneousModels {
-    private static final ResourceLocation[] goddessWingIconIds = IntStream.range(1, 3).mapToObj((i) -> new ResourceLocation("megabotany", ("icon/god_core_10_" + i))).toArray(ResourceLocation[]::new);
-    private static final ResourceLocation[] elfWingIconIds = IntStream.range(1, 8).mapToObj((i) -> new ResourceLocation("megabotany", ("icon/god_core_12_" + i))).toArray(ResourceLocation[]::new);
-    private static final ResourceLocation flandreWingIconId = new ResourceLocation("megabotany:icon/god_core_11");
-    private static final ResourceLocation steamPunkWingIconId = new ResourceLocation("megabotany:icon/god_core_13");
-    private static final ResourceLocation jimWingIconId = new ResourceLocation("megabotany:icon/god_core_14");
+    private static final ResourceLocation[] goddessWingIconIds = IntStream.range(1, 3).mapToObj((i) -> new ResourceLocation(MegaBotany.MOD_ID, ("icon/god_core_10_" + i))).toArray(ResourceLocation[]::new);
+    private static final ResourceLocation[] elfWingIconIds = IntStream.range(1, 8).mapToObj((i) -> new ResourceLocation(MegaBotany.MOD_ID, ("icon/god_core_12_" + i))).toArray(ResourceLocation[]::new);
+    private static final ResourceLocation flandreWingIconId = new ResourceLocation(MegaBotany.MOD_ID, "icon/god_core_11");
+    private static final ResourceLocation steamPunkWingIconId = new ResourceLocation(MegaBotany.MOD_ID, "icon/god_core_13");
+    private static final ResourceLocation jimWingIconId = new ResourceLocation(MegaBotany.MOD_ID, "icon/god_core_14");
+    private static final ResourceLocation redstoneElvenSpreaderCoreID = new ResourceLocation(MegaBotany.MOD_ID, "block/redstone_elven_spreader_core");
+    private static final ResourceLocation redstoneGaiaSpreaderCoreID = new ResourceLocation(MegaBotany.MOD_ID, "block/redstone_gaia_spreader_core");
 
     public final BakedModel[] goddessWingIcons;
     public final BakedModel[] elfWingIcons;
     public BakedModel flandreWingIcon;
     public BakedModel steamPunkWingIcon;
     public BakedModel jimWingIcon;
+    public BakedModel redstoneElvenSpreaderCore;
+    public BakedModel redstoneGaiaSpreaderCore;
 
     private final Map<ResourceLocation, Consumer<BakedModel>> modelConsumers;
 
@@ -41,6 +46,8 @@ public class MiscellaneousModels {
         this.modelConsumers.put(flandreWingIconId, (bakedModel) -> this.flandreWingIcon = bakedModel);
         this.modelConsumers.put(steamPunkWingIconId, (bakedModel) -> this.steamPunkWingIcon = bakedModel);
         this.modelConsumers.put(jimWingIconId, (bakedModel) -> this.jimWingIcon = bakedModel);
+        modelConsumers.put(redstoneElvenSpreaderCoreID, (bakedModel) -> this.redstoneElvenSpreaderCore = bakedModel);
+        modelConsumers.put(redstoneGaiaSpreaderCoreID, (bakedModel) -> this.redstoneGaiaSpreaderCore = bakedModel);
     }
 
     @SubscribeEvent

@@ -24,7 +24,7 @@ public abstract class AbstractArrowMixin {
         Entity entity = pResult.getEntity();
         AbstractArrow self = (AbstractArrow) (Object) this;
 
-        //replace by capture local?
+        //TODO replace by capture local?
         Entity entity1 = self.getOwner();
         DamageSource damagesource;
         if (entity1 == null) {

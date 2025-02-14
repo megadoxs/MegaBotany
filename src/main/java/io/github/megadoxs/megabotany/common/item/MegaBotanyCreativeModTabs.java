@@ -84,6 +84,8 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.SPIRIT_FRAGMENT.get());
                 output.accept(MegaBotanyBlocks.MORTAR.get());
                 output.accept(MegaBotanyBlocks.PEDESTAL.get());
+                output.accept(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get());
+                output.accept(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get());
                 output.accept(MegaBotanyItems.GILDED_POTATO.get());
                 output.accept(MegaBotanyItems.GILDED_MASHED_POTATO.get());
                 output.accept(MegaBotanyItems.FRIED_CHICKEN.get());
@@ -100,6 +102,9 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.PURE_DAISY_PENDANT.get());
                 output.accept(MegaBotanyItems.SUPER_CROWN.get());
                 output.accept(MegaBotanyItems.BOTTLED_FLAME.get());
+
+                output.accept(MegaBotanyItems.SMELTING_LENS.get());
+                output.accept(MegaBotanyItems.MANA_LENS.get());
 
                 output.accept(MegaBotanyItems.ORICHALCOS_HELMET_FEMALE.get());
                 output.accept(MegaBotanyItems.ORICHALCOS_CHESTPLATE_FEMALE.get());

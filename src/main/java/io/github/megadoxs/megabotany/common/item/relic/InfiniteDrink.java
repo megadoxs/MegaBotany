@@ -30,7 +30,7 @@ public class InfiniteDrink extends Item implements BrewContainer {
         ItemStack brewStack = new ItemStack(MegaBotanyItems.INFINITE_BREW.get());
         BaseBrewItem.setBrew(brewStack, brew);
 
-        if(stack.getTag() != null && stack.getTag().contains("soulbindUUID")){
+        if (stack.getTag() != null && stack.getTag().contains("soulbindUUID")) {
             CompoundTag tag = new CompoundTag();
             tag.put("soulbindUUID", stack.getTag().get("soulbindUUID"));
             brewStack.setTag(tag);

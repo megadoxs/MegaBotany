@@ -16,7 +16,7 @@ import vazkii.botania.xplat.XplatAbstractions;
 @Mixin(KeyOfTheKingsLawItem.class)
 public class KeyOfTheKingsLawMixin {
     @Inject(method = "use", at = @At("HEAD"), cancellable = true, remap = false)
-    private void use(Level world, Player player, @NotNull InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir){
+    private void use(Level world, Player player, @NotNull InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
         var relic = XplatAbstractions.INSTANCE.findRelic(player.getItemInHand(hand));
         if (relic == null || !relic.isRightPlayer(player))
             cir.setReturnValue(InteractionResultHolder.pass(player.getItemInHand(hand)));

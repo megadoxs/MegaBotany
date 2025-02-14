@@ -6,7 +6,7 @@
   "item.megabotany.elementium_hammer": "Elementium Hammer",
   "item.megabotany.terrasteel_hammer": "Terrasteel Hammer",
   "item.megabotany.walking_cane": "Walking Cane",
-  "item.megabotany.pendora_box": "Pandora's Box",
+  "item.megabotany.pandora_box": "Pandora's Box",
   "item.megabotany.holy_grail": "Holy Grail",
   "item.megabotany.failnaught": "Failnaught",
   "item.megabotany.excaliber": "Excaliber",
@@ -21,6 +21,10 @@
   "item.megabotany.master_band_of_mana": "Master Band of Mana",
   "item.megabotany.nature_orb": "Nature's Orb",
   "item.megabotany.frost_ring": "Jack Frost's Ring",
+  "item.megabotany.smelting_lens": "Smelting Lens",
+  "item.megabotany.smelting_lens.short": "Smelting",
+  "item.megabotany.mana_lens": "Mana Infusion Lens",
+  "item.megabotany.mana_lens.short": "Mana Infusion",
   "item.megabotany.photonium_ingot": "Photonium Ingot",
   "item.megabotany.shadowium_ingot": "Shadowium Ingot",
   "item.megabotany.orichalcos_ingot": "Orichalcos Ingot",
@@ -131,5 +135,7 @@
   "block.megabotany.potted_sunshine_lily": "Potted Sunshine Lily",
   "block.megabotany.tinkle": "Tinkle",
   "block.megabotany.floating_tinkle": "Floating Tinkle",
-  "block.megabotany.potted_tinkle": "Potted Tinkle"
+  "block.megabotany.potted_tinkle": "Potted Tinkle",
+  "block.megabotany.redstone_elven_spreader": "Pulse Elven Mana Spreader",
+  "block.megabotany.redstone_gaia_spreader": "Pulse Gaia Mana Spreader"
 }

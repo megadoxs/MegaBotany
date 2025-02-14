@@ -63,7 +63,7 @@ public class Failnaught extends BowItem implements LensEffectItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         var relic = XplatAbstractions.INSTANCE.findRelic(pPlayer.getItemInHand(pHand));
-        if((ManaItemHandler.instance().requestManaExactForTool(pPlayer.getItemInHand(pHand), pPlayer, manaCost, false) && relic != null && relic.isRightPlayer(pPlayer)) || pPlayer.getAbilities().instabuild)
+        if ((ManaItemHandler.instance().requestManaExactForTool(pPlayer.getItemInHand(pHand), pPlayer, manaCost, false) && relic != null && relic.isRightPlayer(pPlayer)) || pPlayer.getAbilities().instabuild)
             return ItemUtils.startUsingInstantly(pLevel, pPlayer, pHand);
         return InteractionResultHolder.pass(pPlayer.getItemInHand(pHand));
     }
@@ -101,7 +101,7 @@ public class Failnaught extends BowItem implements LensEffectItem {
                         pLevel.addFreshEntity(projectile);
                     }
 
-                    if(!player.getAbilities().instabuild)
+                    if (!player.getAbilities().instabuild)
                         ManaItemHandler.instance().requestManaExactForTool(pStack, player, manaCost, true);
 
                     pLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);

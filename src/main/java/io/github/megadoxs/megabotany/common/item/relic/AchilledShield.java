@@ -70,7 +70,7 @@ public class AchilledShield extends ShieldItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         var relic = XplatAbstractions.INSTANCE.findRelic(pPlayer.getItemInHand(pUsedHand));
-        if(relic != null && relic.isRightPlayer(pPlayer))
+        if (relic != null && relic.isRightPlayer(pPlayer))
             return super.use(pLevel, pPlayer, pUsedHand);
         return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
     }

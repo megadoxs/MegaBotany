@@ -8,10 +8,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.item.crafting.ShapelessRecipe;
 import org.jetbrains.annotations.NotNull;
-import vazkii.botania.common.helper.ItemNBTHelper;
 import vazkii.botania.common.item.relic.RelicImpl;
 import vazkii.botania.xplat.XplatAbstractions;
 
@@ -30,7 +28,7 @@ public class RelicRecipe extends ShapelessRecipe {
             if (relic instanceof RelicImpl) {
                 //tag is copy from RelicImpl TAG_SOULBIND_UUID
                 //Should always have a value when used in crafting
-                if(stack.getTag() != null && stack.getTag().contains("soulbindUUID")){
+                if (stack.getTag() != null && stack.getTag().contains("soulbindUUID")) {
                     CompoundTag tag = new CompoundTag();
                     tag.put("soulbindUUID", stack.getTag().get("soulbindUUID"));
                     out.setTag(tag);

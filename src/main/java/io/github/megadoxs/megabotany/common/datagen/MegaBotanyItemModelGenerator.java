@@ -50,7 +50,9 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
         handheldItem(MegaBotanyItems.EXCALIBER);
         simpleItem(MegaBotanyItems.ALL_FOR_ONE);
         simpleItem(MegaBotanyItems.INFINITE_DRINK);
-        potionItem(MegaBotanyItems.INFINITE_BREW.getId().getPath(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), 0, 1, 0.1f,  MegaBotanyItems.INFINITE_DRINK.getId().getPath(), MegaBotanyItems.INFINITE_BREW.getId().getPath());
+
+        // all these items will need the same kind of model as the first one
+        potionItem(MegaBotanyItems.INFINITE_BREW.getId().getPath(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), 0, 1, 0.1f, MegaBotanyItems.INFINITE_DRINK.getId().getPath(), MegaBotanyItems.INFINITE_BREW.getId().getPath());
         simpleItem(MegaBotanyItems.INFINITE_SPLASH_BREW);
         simpleItem(MegaBotanyItems.PANDORA_BOX);
 
@@ -59,6 +61,9 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
         simpleItem(MegaBotanyItems.ORICHALCOS_INGOT);
         simpleItem(MegaBotanyItems.TICKET);
         simpleItem(MegaBotanyItems.GOD_CORE);
+
+        simpleItem(MegaBotanyItems.SMELTING_LENS);
+        simpleItem(MegaBotanyItems.MANA_LENS);
 
         simpleItem(MegaBotanyItems.ORICHALCOS_HELMET_FEMALE);
         simpleItem(MegaBotanyItems.ORICHALCOS_CHESTPLATE_FEMALE);
@@ -80,16 +85,16 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
             itemModelBuilder.texture("layer" + i, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[i]));
         }
 
-        for (float i = min; Math.floor(i * 10.0)/10.0 < max; i += increment) {
-            String modelPath = item + "_" + (int) (i/increment);
-            ItemModelBuilder model =  withExistingParent(modelPath, new ResourceLocation("item/generated"));
+        for (float i = min; Math.floor(i * 10.0) / 10.0 < max; i += increment) {
+            String modelPath = item + "_" + (int) (i / increment);
+            ItemModelBuilder model = withExistingParent(modelPath, new ResourceLocation("item/generated"));
             for (int j = 0; j < textures.length; j++) {
-                if(j == textures.length -1)
-                    model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j] + "_" + (int) ((Math.floor(i * 10.0)/10.0)/increment)));
+                if (j == textures.length - 1)
+                    model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j] + "_" + (int) ((Math.floor(i * 10.0) / 10.0) / increment)));
                 else
                     model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j]));
             }
-            itemModelBuilder.override().predicate(predicate, (float) (Math.floor(i * 10.0)/10.0)).model(new ModelFile.ExistingModelFile(new ResourceLocation(MegaBotany.MOD_ID, "item/" + modelPath), existingFileHelper));
+            itemModelBuilder.override().predicate(predicate, (float) (Math.floor(i * 10.0) / 10.0)).model(new ModelFile.ExistingModelFile(new ResourceLocation(MegaBotany.MOD_ID, "item/" + modelPath), existingFileHelper));
         }
 
         return itemModelBuilder;

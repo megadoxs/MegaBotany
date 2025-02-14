@@ -26,8 +26,10 @@ public class MegaBotanyBlockStateGenerator extends BlockStateProvider {
         blockWithItem(MegaBotanyBlocks.SHADOWIUM_BLOCK);
         blockWithItem(MegaBotanyBlocks.ORICHALCOS_BLOCK);
 
-        simpleBlock(MegaBotanyBlocks.MORTAR.get(), new ModelFile.UncheckedModelFile(modLoc("block/mortar")));
-        simpleBlock(MegaBotanyBlocks.PEDESTAL.get(), new ModelFile.UncheckedModelFile(modLoc("block/pedestal")));
+        noModelBlock(MegaBotanyBlocks.MORTAR);
+        noModelBlock(MegaBotanyBlocks.PEDESTAL);
+        noModelBlock(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER);
+        noModelBlock(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER);
 
         //Item models are already registered in ModItemModelGenerator
         for (Block b : ForgeRegistries.BLOCKS) {
@@ -45,9 +47,15 @@ public class MegaBotanyBlockStateGenerator extends BlockStateProvider {
                 simpleBlock(b, new ModelFile.UncheckedModelFile(modLoc("block/" + id.getPath())));
             }
         }
+
+
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll((blockRegistryObject.get())));
+    }
+
+    private void noModelBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(new ResourceLocation(MegaBotany.MOD_ID, "block/" + blockRegistryObject.getId().getPath())));
     }
 }

@@ -13,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
+import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.data.recipes.NbtOutputResult;
 import vazkii.botania.data.recipes.WrapperResult;
@@ -171,6 +172,33 @@ public class MegaBotanyRecipeGenerator extends RecipeProvider implements ICondit
                 .requires(MegaBotanyItems.INFINITE_LINGERING_BREW.get())
                 .unlockedBy(getHasName(MegaBotanyItems.INFINITE_LINGERING_BREW.get()), has(MegaBotanyItems.INFINITE_LINGERING_BREW.get()))
                 .save(WrapperResult.ofType(RelicRecipe.SERIALIZER, consumer), new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.INFINITE_DRINK.getId().getPath() + "_from_" + MegaBotanyItems.INFINITE_LINGERING_BREW.getId().getPath()));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get())
+                .requires(BotaniaBlocks.elvenSpreader)
+                .requires(Items.REDSTONE)
+                .unlockedBy(getHasName(BotaniaBlocks.elvenSpreader), has(BotaniaBlocks.elvenSpreader))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get())
+                .requires(BotaniaBlocks.gaiaSpreader)
+                .requires(Items.REDSTONE)
+                .unlockedBy(getHasName(BotaniaBlocks.gaiaSpreader), has(BotaniaBlocks.gaiaSpreader))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BotaniaBlocks.manaSpreader)
+                .requires(BotaniaBlocks.redstoneSpreader)
+                .unlockedBy(getHasName(BotaniaBlocks.redstoneSpreader), has(BotaniaBlocks.redstoneSpreader))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BotaniaBlocks.elvenSpreader)
+                .requires(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get())
+                .unlockedBy(getHasName(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get()), has(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BotaniaBlocks.gaiaSpreader)
+                .requires(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get())
+                .unlockedBy(getHasName(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get()), has(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get()))
+                .save(consumer);
 
         //ManaInfusionRecipe test = new ManaInfusionRecipe(new ResourceLocation("test"), new ItemStack(ModItems.NIGHTMARE_FUEL.get()), Ingredient.of(Items.COAL), 2000, null, null);
     }

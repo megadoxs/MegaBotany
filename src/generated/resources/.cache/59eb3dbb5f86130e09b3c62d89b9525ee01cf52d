@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-06T15:13:23.4869338	Loot Tables
+// 1.20.1	2025-01-31T20:20:30.6073543	Loot Tables
 3057beb95f1e7a2234f47d985c1f54fc4da14425 data/megabotany/loot_tables/blocks/annoying_flower.json
 c94e2e20a1ce5127cfd91ec44723adccc99a3a4e data/megabotany/loot_tables/blocks/bell_flower.json
 7c34ce93aa2f7c260dff0caeb092897c00a95d77 data/megabotany/loot_tables/blocks/bloody_enchantress.json
@@ -48,6 +48,8 @@ b15dd716006f7f35d5770dc871e2ce34c89d1446 data/megabotany/loot_tables/blocks/pott
 f05ca69ea01de8d8f4e0256bf321a1eb29931492 data/megabotany/loot_tables/blocks/potted_stonesia.json
 7abaa7b5e71bba5e9aca74a3e553b7d4d05ce1f1 data/megabotany/loot_tables/blocks/potted_sunshine_lily.json
 6ba3ee89ad47719a35c6fe4109f71e67a4640d8a data/megabotany/loot_tables/blocks/potted_tinkle.json
+63559d3acb9b96cd326aa2639f73973abc8db185 data/megabotany/loot_tables/blocks/redstone_elven_spreader.json
+c235c603d73b800cd5956a1a3ed7d8243d501c88 data/megabotany/loot_tables/blocks/redstone_gaia_spreader.json
 f0a6ef87e829c3a8b5213abbc7ff2521ad27245a data/megabotany/loot_tables/blocks/reikar_lily.json
 088520042dbf7a93e63a075b11596195f4ecfce0 data/megabotany/loot_tables/blocks/shadowium_block.json
 161eca29276b82cec6c02049f5d3b9351acdf9f2 data/megabotany/loot_tables/blocks/stardust_lotus.json

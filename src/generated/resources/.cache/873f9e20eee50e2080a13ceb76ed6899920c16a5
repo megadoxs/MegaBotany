@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-06T15:13:23.4839056	Block States: megabotany
+// 1.20.1	2025-02-02T23:51:59.3509517	Block States: megabotany
 314673433d57c085d5741f0baf72c5a0db65f106 assets/megabotany/blockstates/annoying_flower.json
 da009c5a2fa80a69dbac22a641a1b158dc8f0942 assets/megabotany/blockstates/bell_flower.json
 ddc01b28aab4791977994bdc8f436cee026712e1 assets/megabotany/blockstates/bloody_enchantress.json
@@ -48,6 +48,8 @@ a17561654feee9bd4ddce629c03d1eb6c34f1bc4 assets/megabotany/blockstates/potted_om
 3f83735df045d6ff7b6bf6ee7dff9cf9b013f48e assets/megabotany/blockstates/potted_stonesia.json
 07bfcb95de3d7443b9b0187e185d24cc5439097c assets/megabotany/blockstates/potted_sunshine_lily.json
 3b6a41387ada0da92f12d1d98ba261ac1b26e691 assets/megabotany/blockstates/potted_tinkle.json
+83e95354d9c126400e833ccc754c77d548f3a5c4 assets/megabotany/blockstates/redstone_elven_spreader.json
+bcc021bcebc7fc3884035392011c1fe9d7e5afdc assets/megabotany/blockstates/redstone_gaia_spreader.json
 0d464ae099add33322851c1d006fa24d51c2cdf0 assets/megabotany/blockstates/reikar_lily.json
 c339c2a5cf8c85a981028626c9e2d4fa5ec42129 assets/megabotany/blockstates/shadowium_block.json
 6013cb87f3fdb8a9444bc75576a5802f0c14639b assets/megabotany/blockstates/stardust_lotus.json

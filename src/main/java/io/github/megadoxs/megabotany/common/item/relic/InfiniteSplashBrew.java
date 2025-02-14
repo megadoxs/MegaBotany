@@ -52,7 +52,7 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         var relic = XplatAbstractions.INSTANCE.findRelic(itemstack);
-        if (ItemNBTHelper.getFloat(itemstack, TAG_CHARGE, 1) == 1 && relic != null && relic.isRightPlayer(pPlayer)){
+        if (ItemNBTHelper.getFloat(itemstack, TAG_CHARGE, 1) == 1 && relic != null && relic.isRightPlayer(pPlayer)) {
             if (!pLevel.isClientSide) {
                 ThrownBrew thrownBrew = new ThrownBrew(pLevel, pPlayer);
                 thrownBrew.setItem(itemstack);
@@ -73,11 +73,11 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int pSlotId, boolean pIsSelected) {
-        if(!level.isClientSide){
+        if (!level.isClientSide) {
             if (entity instanceof Player player) {
-                if(ItemNBTHelper.getFloat(stack, TAG_CHARGE, 1) != 1 && entity.tickCount % 20 == 0) {
-                    int manaCost = (int) (DEFAULT_MANA_COST * Math.pow(2, ItemNBTHelper.getInt(stack, TAG_USES, 0) - 1)/10);
-                    if(ManaItemHandler.instance().requestManaExactForTool(stack, player, manaCost, false)){
+                if (ItemNBTHelper.getFloat(stack, TAG_CHARGE, 1) != 1 && entity.tickCount % 20 == 0) {
+                    int manaCost = (int) (DEFAULT_MANA_COST * Math.pow(2, ItemNBTHelper.getInt(stack, TAG_USES, 0) - 1) / 10);
+                    if (ManaItemHandler.instance().requestManaExactForTool(stack, player, manaCost, false)) {
                         ManaItemHandler.instance().requestManaExactForTool(stack, player, manaCost, true);
                         ItemNBTHelper.setFloat(stack, TAG_CHARGE, ItemNBTHelper.getFloat(stack, TAG_CHARGE, 0) + 0.1f);
                     }
@@ -90,7 +90,7 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
             }
 
             int day = (int) Math.floorDiv(level.getDayTime(), 24000);
-            if(day != ItemNBTHelper.getInt(stack, TAG_DAY, 0))
+            if (day != ItemNBTHelper.getInt(stack, TAG_DAY, 0))
                 ItemNBTHelper.setInt(stack, TAG_USES, 0);
             ItemNBTHelper.setInt(stack, TAG_DAY, day);
         }
@@ -107,7 +107,7 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
         ItemStack brewStack = new ItemStack(MegaBotanyItems.INFINITE_LINGERING_BREW.get());
         BaseBrewItem.setBrew(brewStack, brew);
 
-        if(stack.getTag() != null && stack.getTag().contains("soulbindUUID")){
+        if (stack.getTag() != null && stack.getTag().contains("soulbindUUID")) {
             CompoundTag tag = new CompoundTag();
             tag.put("soulbindUUID", stack.getTag().get("soulbindUUID"));
             brewStack.setTag(tag);

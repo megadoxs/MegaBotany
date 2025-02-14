@@ -127,12 +127,6 @@
         "blocking": 1
       },
       "model": "megabotany:item/achilled_shield_blocking"
-    },
-    {
-      "predicate": {
-        "release": 1
-      },
-      "model": "megabotnay:item/achilled_shield_released"
     }
   ]
 }
