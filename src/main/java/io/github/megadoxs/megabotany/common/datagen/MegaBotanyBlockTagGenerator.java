@@ -3,8 +3,10 @@ package io.github.megadoxs.megabotany.common.datagen;
 import io.github.megadoxs.megabotany.common.MegaBotany;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
+import io.github.megadoxs.megabotany.common.util.MegaBotanyTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -122,5 +124,8 @@ public class MegaBotanyBlockTagGenerator extends BlockTagsProvider {
                 MegaBotanyBlocks.SHADOWIUM_BLOCK.get(),
                 MegaBotanyBlocks.ORICHALCOS_BLOCK.get()
         );
+
+        this.tag(MegaBotanyTags.Blocks.GAIA_ILLEGAL_BLOCKS).addOptional(new ResourceLocation("openblocks", "beartrap"));
+        this.tag(MegaBotanyTags.Blocks.GAIA_ILLEGAL_BLOCKS).addOptional(new ResourceLocation("thaumictinkerer", "magnet"));
     }
 }

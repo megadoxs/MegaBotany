@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "openblocks:beartrap",
+      "required": false
+    },
+    {
+      "id": "thaumictinkerer:magnet",
+      "required": false
+    }
+  ]
+}

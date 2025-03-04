@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
 
 @Mixin(ManaSpreaderBlockEntity.WandHud.class)
-public class ManaSpeaderBlockEntityWandHudMixin {
+public class ManaSpreaderBlockEntityWandHudMixin {
 
     @Final
     @Shadow(remap = false)

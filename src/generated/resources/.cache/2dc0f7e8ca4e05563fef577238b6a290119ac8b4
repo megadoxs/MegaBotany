@@ -1,8 +1,9 @@
-// 1.20.1	2025-01-07T18:21:16.5733552	Tags for minecraft:block mod id megabotany
+// 1.20.1	2025-03-03T22:40:07.8715703	Tags for minecraft:block mod id megabotany
 1c20b21b13be1f87badf28ac19c159b11a6ac41f data/botania/tags/blocks/functional_special_flowers.json
 4b1ebee627e1ee81251b5072694da98844325043 data/botania/tags/blocks/generating_special_flowers.json
 30a83a47e896062b0f858f34c7bf8ce856b52b0e data/botania/tags/blocks/mini_flowers.json
 cfb13bcd72435e2f0fa9916c14311fe99d010052 data/botania/tags/blocks/special_floating_flowers.json
+249b840b962a46012aa1d93e4bf29f7a4dbaa7ae data/megabotany/tags/blocks/gaia_illegal_blocks.json
 423f00775fc1a294866ce61a0a1a1be663776b13 data/minecraft/tags/blocks/dead_bush_may_place_on.json
 c67e0fd33fa9d867b3e969ab7d4849f310a8f4e0 data/minecraft/tags/blocks/flower_pots.json
 c3f9aabf9f8903ec934f8b027de717c371a0d050 data/minecraft/tags/blocks/mineable/pickaxe.json

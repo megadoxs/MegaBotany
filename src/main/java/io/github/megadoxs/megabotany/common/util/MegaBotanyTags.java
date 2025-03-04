@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class MegaBotanyTags {
     public static class Blocks {
+        public static final TagKey<Block> GAIA_ILLEGAL_BLOCKS = tag("gaia_illegal_blocks");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation(MegaBotany.MOD_ID, name));

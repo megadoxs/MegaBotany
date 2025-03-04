@@ -30,10 +30,19 @@ public class GaiaGuardianIIIRenderer extends HumanoidMobRenderer<GaiaGuardianIII
     }
 
     public void render(@NotNull GaiaGuardianIII dopple, float yaw, float partialTicks, PoseStack ms, MultiBufferSource buffers, int light) {
+        int invulTime = dopple.getInvulnerableTime();
         ShaderInstance shader = CoreShaders.doppleganger();
         if (shader != null) {
-            shader.safeGetUniform("BotaniaGrainIntensity").set((0.025F + (float) dopple.hurtTime * 0.0425F) / 2.0F);
-            shader.safeGetUniform("BotaniaDisfiguration").set((float) dopple.hurtTime * 0.085F);
+            float grainIntensity, disfiguration;
+            if (invulTime > 0) {
+                grainIntensity = invulTime > 20 ? 1F : invulTime * 0.05F;
+                disfiguration = grainIntensity * 0.3F;
+            } else {
+                disfiguration = (0.025F + dopple.hurtTime * ((1F - 0.15F) / 20F)) / 2F;
+                grainIntensity = 0.05F + dopple.hurtTime * ((1F - 0.15F) / 10F);
+            }
+            shader.safeGetUniform("BotaniaGrainIntensity").set(grainIntensity);
+            shader.safeGetUniform("BotaniaDisfiguration").set(disfiguration);
         }
 
         Entity view = Minecraft.getInstance().getCameraEntity();

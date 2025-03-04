@@ -1,4 +1,10 @@
-// 1.20.1	2025-01-28T22:15:08.8990248	Recipes
+// 1.20.1	2025-02-14T01:47:29.9845	Recipes
+3f01828d07ef570c2535f632a54c331ad53b6480 data/botania/advancements/recipes/misc/elven_spreader.json
+c106f8b30ce88e7c593569d4739ca28ceb9bd02a data/botania/advancements/recipes/misc/gaia_spreader.json
+14abe3718d4d1742dce196576f192df3688faf9e data/botania/advancements/recipes/misc/mana_spreader.json
+6ac45394b36d17906b8c839bd8e4d601fee6556c data/botania/recipes/elven_spreader.json
+98d36cca7e03d777d52ff34663589a74b0c02a21 data/botania/recipes/gaia_spreader.json
+0cf7a241c3bf8be75b677fd7822054a2739d22cc data/botania/recipes/mana_spreader.json
 e23e64f2ec11c3a39cfba37200f9bd3e8da45f8f data/megabotany/advancements/recipes/combat/elementium_hammer.json
 8c5ad4a2c95c8484aab8f66755f382fa175f2132 data/megabotany/advancements/recipes/combat/elementium_shield.json
 41b757e956a05bfc2e3f474a8da47c773ad5253b data/megabotany/advancements/recipes/combat/manasteel_hammer.json
@@ -14,6 +20,8 @@ f2aa2cdea02fa3fabe3d1591fccaeae6c3eb5149 data/megabotany/advancements/recipes/mi
 d2bae45a8810d1aaa9665f902a2df862e63b9bd1 data/megabotany/advancements/recipes/misc/nature_orb.json
 fe52c627154af8bbbecd769c56c1cd8be9937ace data/megabotany/advancements/recipes/misc/orichalcos_ingot.json
 4fcef557e8653c4d056eb04d72f7fa228b0fc8e6 data/megabotany/advancements/recipes/misc/photonium_ingot.json
+3730fb545c31d808dcd9bfe2f7193a13e0de4c94 data/megabotany/advancements/recipes/misc/redstone_elven_spreader.json
+fc411a5b19840523fed3a09debb916561d0df7d3 data/megabotany/advancements/recipes/misc/redstone_gaia_spreader.json
 12ba6955d46811922afb449b149d6b20c1aa959e data/megabotany/advancements/recipes/misc/shadowium_ingot.json
 be53b5e28f4e761592e8798de34013349847bc06 data/megabotany/advancements/recipes/tools/god_core_1.json
 62a0e54e816ad3a2b6d9e73f9f0493ad26e1a5fd data/megabotany/advancements/recipes/tools/god_core_2.json
@@ -48,6 +56,8 @@ c03b9eda6bab26534d6a265cbfb077749b2f7f79 data/megabotany/recipes/holy_grail_from
 e09247532de4cefb2180ac2d10c87a41f32a5d06 data/megabotany/recipes/orichalcos_ingot.json
 1246751a0e5fc8c833a644de32c9d43cbe388d64 data/megabotany/recipes/photonium_block.json
 3cecfba5b102823efff01c1112200b728f35dfe5 data/megabotany/recipes/photonium_ingot.json
+f7fda1273c9451c5a3d9b2605d85e15e0402cd77 data/megabotany/recipes/redstone_elven_spreader.json
+41228f4cbe834b8162c07c29790ecdb1d54a90cc data/megabotany/recipes/redstone_gaia_spreader.json
 b9fad5655410348c95d146baf41414f4c859d08d data/megabotany/recipes/shadowium_block.json
 f96ca45ed8603257b45f785d2f798f004e7ad7b7 data/megabotany/recipes/shadowium_ingot.json
 25c8f9f4ce9bd153516c97e3601daed5c44b2bbb data/megabotany/recipes/terrasteel_hammer.json

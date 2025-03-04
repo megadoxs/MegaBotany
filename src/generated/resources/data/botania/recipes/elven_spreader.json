@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:redstone_elven_spreader"
+    }
+  ],
+  "result": {
+    "item": "botania:elven_spreader"
+  }
+}

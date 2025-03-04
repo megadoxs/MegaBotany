@@ -4,8 +4,9 @@ import com.google.common.base.Suppliers;
 import com.mojang.logging.LogUtils;
 import io.github.megadoxs.megabotany.client.core.handler.ColorHandler;
 import io.github.megadoxs.megabotany.client.model.MegaBotanyLayerDefinition;
-import io.github.megadoxs.megabotany.client.renderer.ExplosiveMissileRenderer;
+import io.github.megadoxs.megabotany.client.renderer.GaiaGuardianBossBarHandler;
 import io.github.megadoxs.megabotany.client.renderer.GaiaGuardianIIIRenderer;
+import io.github.megadoxs.megabotany.client.renderer.LandMineRenderer;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlockEntities;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
@@ -42,6 +43,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.CustomizeGuiOverlayEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -209,12 +211,20 @@ public class MegaBotany {
             MegaBotanyItemProperties.addItemProperties((item, id, prop) -> ItemProperties.register(item.asItem(), id, prop));
 
             EntityRenderers.register(MegaBotanyEntities.AURA_FIRE.get(), NoopRenderer::new);
-            EntityRenderers.register(MegaBotanyEntities.EXPLOSIVE_MISSILE.get(), ExplosiveMissileRenderer::new);
+            EntityRenderers.register(MegaBotanyEntities.LAND_MINE.get(), LandMineRenderer::new);
             EntityRenderers.register(MegaBotanyEntities.GAIA_GUARDIAN_III.get(), GaiaGuardianIIIRenderer::new);
             EntityRenderers.register(MegaBotanyEntities.THROWN_BREW.get(), ThrownItemRenderer::new);
 
             var bus = MinecraftForge.EVENT_BUS;
             bus.addGenericListener(BlockEntity.class, MegaBotany::attachBeCapabilities);
+            bus.addListener((CustomizeGuiOverlayEvent.BossEventProgress e) -> {
+                var result = GaiaGuardianBossBarHandler.onBarRender(e.getGuiGraphics(), e.getX(), e.getY(),
+                        e.getBossEvent(), true);
+                result.ifPresent(increment -> {
+                    e.setCanceled(true);
+                    e.setIncrement(increment);
+                });
+            });
         }
 
         @SubscribeEvent

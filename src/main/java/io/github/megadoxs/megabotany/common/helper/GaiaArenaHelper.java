@@ -2,12 +2,14 @@ package io.github.megadoxs.megabotany.common.helper;
 
 import com.google.common.collect.ImmutableList;
 import io.github.megadoxs.megabotany.common.entity.GaiaGuardianIII;
+import io.github.megadoxs.megabotany.common.util.MegaBotanyTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
@@ -137,14 +139,14 @@ public class GaiaArenaHelper {
                     BlockState state = world.getBlockState(pos);
 
                     boolean allowBlockHere = y < 0;
-                    boolean isBlockHere = !state.getCollisionShape(world, pos).isEmpty();
+                    boolean isBlockHere = !state.getCollisionShape(world, pos).isEmpty() && !state.is(MegaBotanyTags.Blocks.GAIA_ILLEGAL_BLOCKS);
 
                     if (allowBlockHere && isBlockHere) //floor is here! good
                     {
                         hasFloor = true;
                     }
 
-                    if (y == 0 && !hasFloor) //column is entirely missing floor
+                    if (y == 0 && !hasFloor) //column is entirely missing floor or is invalid block
                     {
                         trippedPositions.add(pos.below());
                     }
@@ -159,13 +161,20 @@ public class GaiaArenaHelper {
         return trippedPositions;
     }
 
+    public static boolean isBlockPosInsideArena(BlockPos source, BlockPos pos) {
+        return MathHelper.pointDistanceSpace(
+                pos.getX(), pos.getY(), pos.getZ(),
+                source.getX(), source.getY(), source.getZ()
+        ) <= ARENA_RANGE;
+    }
+
     public static List<Player> getPlayersInsideArena(Level world, BlockPos pos) {
         return PlayerHelper.getRealPlayersIn(world, getArenaBB(pos));
     }
 
     public static List<Entity> getEntitiesInsideArena(Level world, BlockPos pos) {
         return world.getEntitiesOfClass(Entity.class, getArenaBB(pos), (entity) -> {
-            if (entity instanceof GaiaGuardianIII) {
+            if (entity instanceof GaiaGuardianIII || entity instanceof ItemEntity) {
                 return false;
             }
             if (entity instanceof Projectile projectile) {
@@ -193,19 +202,48 @@ public class GaiaArenaHelper {
         }
     }
 
-    public static void keepPlayerInsideArena(Player player, BlockPos source) {
-        if (MathHelper.pointDistanceSpace(player.getX(), player.getY(), player.getZ(), source.getX() + 0.5, source.getY() + 0.5, source.getZ() + 0.5) >= ARENA_RANGE) {
-            Vec3 sourceVector = new Vec3(source.getX() + 0.5, source.getY() + 0.5, source.getZ() + 0.5);
-            Vec3 playerVector = VecHelper.fromEntityCenter(player);
-            Vec3 motion = sourceVector.subtract(playerVector).normalize();
+    public static void particles(Entity entity, BlockPos source) {
+        Level level = entity.level();
 
-            player.setDeltaMovement(motion.x, 0.2, motion.z);
-            player.hurtMarked = true;
+        Vec3 pos = VecHelper.fromEntityCenter(entity).subtract(0, 0.2, 0);
+        for (BlockPos arr : PYLON_LOCATIONS) {
+            Vec3 pylonPos = new Vec3(source.getX() + arr.getX(), source.getY() + arr.getY(), source.getZ() + arr.getZ());
+            double worldTime = entity.tickCount;
+            worldTime /= 5;
+
+            float rad = 0.75F + (float) Math.random() * 0.05F;
+            double xp = pylonPos.x + 0.5 + Math.cos(worldTime) * rad;
+            double zp = pylonPos.z + 0.5 + Math.sin(worldTime) * rad;
+
+            Vec3 partPos = new Vec3(xp, pylonPos.y, zp);
+            Vec3 mot = pos.subtract(partPos).scale(0.04);
+
+            float r = 0.7F + (float) Math.random() * 0.3F;
+            float g = (float) Math.random() * 0.3F;
+            float b = 0.7F + (float) Math.random() * 0.3F;
+
+            WispParticleData data = WispParticleData.wisp(0.25F + (float) Math.random() * 0.1F, r, g, b, 1);
+            level.addParticle(data, partPos.x, partPos.y, partPos.z, 0, -(-0.075F - (float) Math.random() * 0.015F), 0);
+            WispParticleData data1 = WispParticleData.wisp(0.4F, r, g, b);
+            level.addParticle(data1, partPos.x, partPos.y, partPos.z, (float) mot.x, (float) mot.y, (float) mot.z);
         }
     }
 
-    // W.I.P. will keep player that died inside the arena from reentering the arena. Should also write a taunting message in chat to the player for having lost.
-    public static void keepEntityOutsideArena(Entity entity, BlockPos source) {
+    public static void keepInsideArena(Entity entity, BlockPos source) {
+        if (MathHelper.pointDistanceSpace(entity.getX(), entity.getY(), entity.getZ(), source.getX() + 0.5, source.getY() + 0.5, source.getZ() + 0.5) >= ARENA_RANGE) {
+            Vec3 sourceVector = new Vec3(source.getX() + 0.5, source.getY() + 0.5, source.getZ() + 0.5);
+            Vec3 playerVector = VecHelper.fromEntityCenter(entity);
+            Vec3 motion = sourceVector.subtract(playerVector).normalize();
+
+            if (entity.getY() - source.getY() < 4)
+                entity.setDeltaMovement(motion.x, 0.2, motion.z);
+            else
+                entity.setDeltaMovement(motion.x, motion.y, motion.z);
+            entity.hurtMarked = true;
+        }
+    }
+
+    public static void keepOutsideArena(Entity entity, BlockPos source) {
         if (MathHelper.pointDistanceSpace(entity.getX(), entity.getY(), entity.getZ(), source.getX() + 0.5, source.getY() + 0.5, source.getZ() + 0.5) <= ARENA_RANGE) {
             Vec3 sourceVector = new Vec3(source.getX() + 0.5, source.getY() + 0.5, source.getZ() + 0.5);
             Vec3 playerVector = VecHelper.fromEntityCenter(entity);

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_elven_spreader": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "botania:elven_spreader"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "megabotany:redstone_elven_spreader"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_elven_spreader",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "megabotany:redstone_elven_spreader"
+    ]
+  },
+  "sends_telemetry_event": false
+}
