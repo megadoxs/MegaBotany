@@ -133,9 +133,8 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
                 continue;
             }
             ItemStack stack = new ItemStack(this);
-            ItemNBTHelper.setString(stack, TAG_BREW_KEY, brew.toString());
+            BaseBrewItem.setBrew(stack, brew);
             output.accept(stack);
-
         }
     }
 }
