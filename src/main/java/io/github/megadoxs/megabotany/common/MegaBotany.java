@@ -16,7 +16,9 @@ import io.github.megadoxs.megabotany.common.effect.MegaBotanyEffects;
 import io.github.megadoxs.megabotany.common.entity.MegaBotanyEntities;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyCreativeModTabs;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
-import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.orichalcos.OrichalcosHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.photonium.PhotoniumHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.shadowium.ShadowiumHelmetItem;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.CoreGod;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.MasterBandOfMana;
 import io.github.megadoxs.megabotany.common.item.relic.*;
@@ -33,6 +35,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -137,11 +140,19 @@ public class MegaBotany {
             if (e.getEntity().level().isClientSide
                     || result == Event.Result.DENY
                     || result == Event.Result.DEFAULT && !e.isVanillaCritical()
-                    || !OrichalcosHelmetItem.hasOrichalcosArmorSet(e.getEntity())
+                    || (!OrichalcosHelmetItem.hasOrichalcosArmorSet(e.getEntity()) && !ShadowiumHelmetItem.hasShadowiumArmorSet(e.getEntity()) && !PhotoniumHelmetItem.hasPhotoniumArmorSet(e.getEntity()))
                     || !(e.getTarget() instanceof LivingEntity target)) {
                 return;
             }
-            e.setDamageModifier(e.getDamageModifier() * OrichalcosHelmetItem.getCritDamageMult(e.getEntity()));
+
+            Item item = e.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem();
+
+            if(item instanceof OrichalcosHelmetItem)
+                e.setDamageModifier(e.getDamageModifier() * OrichalcosHelmetItem.getCritDamageMult(e.getEntity()));
+            else if(item instanceof ShadowiumHelmetItem)
+                e.setDamageModifier(e.getDamageModifier() * ShadowiumHelmetItem.getCritDamageMult(e.getEntity()));
+            else if(item instanceof PhotoniumHelmetItem)
+                e.setDamageModifier(e.getDamageModifier() * PhotoniumHelmetItem.getCritDamageMult(e.getEntity()));
             ((PlayerAccess) e.getEntity()).botania$setCritTarget(target);
         });
         MegaBotanyNetwork.register();

@@ -65,6 +65,21 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
         simpleItem(MegaBotanyItems.SMELTING_LENS);
         simpleItem(MegaBotanyItems.MANA_LENS);
 
+        simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_HELMET);
+        simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_CHESTPLATE);
+        simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_LEGGINGS);
+        simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_BOOTS);
+
+        simpleItem(MegaBotanyItems.SHADOWIUM_HELMET);
+        simpleItem(MegaBotanyItems.SHADOWIUM_CHESTPLATE);
+        simpleItem(MegaBotanyItems.SHADOWIUM_LEGGINGS);
+        simpleItem(MegaBotanyItems.SHADOWIUM_BOOTS);
+
+        simpleItem(MegaBotanyItems.PHOTONIUM_HELMET);
+        simpleItem(MegaBotanyItems.PHOTONIUM_CHESTPLATE);
+        simpleItem(MegaBotanyItems.PHOTONIUM_LEGGINGS);
+        simpleItem(MegaBotanyItems.PHOTONIUM_BOOTS);
+
         simpleItem(MegaBotanyItems.ORICHALCOS_HELMET_FEMALE);
         simpleItem(MegaBotanyItems.ORICHALCOS_CHESTPLATE_FEMALE);
         simpleItem(MegaBotanyItems.ORICHALCOS_LEGGINGS_FEMALE);

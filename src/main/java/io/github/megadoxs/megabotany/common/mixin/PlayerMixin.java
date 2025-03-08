@@ -1,6 +1,8 @@
 package io.github.megadoxs.megabotany.common.mixin;
 
-import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.orichalcos.OrichalcosHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.photonium.PhotoniumHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.shadowium.ShadowiumHelmetItem;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -37,10 +39,22 @@ public abstract class PlayerMixin {
             terraWillCritTargetField.setAccessible(true);
             LivingEntity terraWillCritTarget = (LivingEntity) terraWillCritTargetField.get(this);
 
-            if (terraWillCritTargetField.get(this) != null && source.getEntity() instanceof Player player && player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof OrichalcosHelmetItem) {
-                DamageSource newSource = OrichalcosHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
-                terraWillCritTargetField.set(this, null);
-                return newSource;
+            if (terraWillCritTargetField.get(this) != null && source.getEntity() instanceof Player player) {
+                if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof OrichalcosHelmetItem) {
+                    DamageSource newSource = OrichalcosHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
+                    terraWillCritTargetField.set(this, null);
+                    return newSource;
+                }
+                else if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ShadowiumHelmetItem){
+                    DamageSource newSource = ShadowiumHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
+                    terraWillCritTargetField.set(this, null);
+                    return newSource;
+                }
+                else if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof PhotoniumHelmetItem){
+                    DamageSource newSource = PhotoniumHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
+                    terraWillCritTargetField.set(this, null);
+                    return newSource;
+                }
             }
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();

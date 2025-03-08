@@ -1,8 +1,14 @@
 package io.github.megadoxs.megabotany.common.item;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
-import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosArmorItem;
-import io.github.megadoxs.megabotany.common.item.equipment.armor.OrichalcosHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.manaweavedSteel.ManaweavedSteelArmorItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.manaweavedSteel.ManaweavedSteelHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.orichalcos.OrichalcosArmorItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.orichalcos.OrichalcosHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.photonium.PhotoniumArmorItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.photonium.PhotoniumHelmetItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.shadowium.ShadowiumArmorItem;
+import io.github.megadoxs.megabotany.common.item.equipment.armor.shadowium.ShadowiumHelmetItem;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.*;
 import io.github.megadoxs.megabotany.common.item.equipment.shield.ElementiumShield;
 import io.github.megadoxs.megabotany.common.item.equipment.shield.ManasteelShield;
@@ -66,11 +72,25 @@ public class MegaBotanyItems {
     public static final RegistryObject<Item> SUPER_CROWN = ITEMS.register("super_crown", () -> new SuperCrown(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> BOTTLED_FLAME = ITEMS.register("bottled_flame", () -> new BottledFlame(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> MANAWEAVEDSTEEL_HELMET = ITEMS.register("manaweavedsteel_helmet", () -> new ManaweavedSteelHelmetItem(ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> MANAWEAVEDSTEEL_CHESTPLATE = ITEMS.register("manaweavedsteel_chestplate", () -> new ManaweavedSteelArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> MANAWEAVEDSTEEL_LEGGINGS = ITEMS.register("manaweavedsteel_leggings", () -> new ManaweavedSteelArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> MANAWEAVEDSTEEL_BOOTS = ITEMS.register("manaweavedsteel_boots", () -> new ManaweavedSteelArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> PHOTONIUM_HELMET = ITEMS.register("photonium_helmet", () -> new PhotoniumHelmetItem(ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> PHOTONIUM_CHESTPLATE = ITEMS.register("photonium_chestplate", () -> new PhotoniumArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> PHOTONIUM_LEGGINGS = ITEMS.register("photonium_leggings", () -> new PhotoniumArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> PHOTONIUM_BOOTS = ITEMS.register("photonium_boots", () -> new PhotoniumArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> SHADOWIUM_HELMET = ITEMS.register("shadowium_helmet", () -> new ShadowiumHelmetItem(ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> SHADOWIUM_CHESTPLATE = ITEMS.register("shadowium_chestplate", () -> new ShadowiumArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> SHADOWIUM_LEGGINGS = ITEMS.register("shadowium_leggings", () -> new ShadowiumArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> SHADOWIUM_BOOTS = ITEMS.register("shadowium_boots", () -> new ShadowiumArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+
     public static final RegistryObject<Item> ORICHALCOS_HELMET_FEMALE = ITEMS.register("orichalcos_helmet_female", () -> new OrichalcosHelmetItem(ArmorItem.Type.HELMET, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
     public static final RegistryObject<Item> ORICHALCOS_CHESTPLATE_FEMALE = ITEMS.register("orichalcos_chestplate_female", () -> new OrichalcosArmorItem(ArmorItem.Type.CHESTPLATE, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
     public static final RegistryObject<Item> ORICHALCOS_LEGGINGS_FEMALE = ITEMS.register("orichalcos_leggings_female", () -> new OrichalcosArmorItem(ArmorItem.Type.LEGGINGS, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
     public static final RegistryObject<Item> ORICHALCOS_BOOTS_FEMALE = ITEMS.register("orichalcos_boots_female", () -> new OrichalcosArmorItem(ArmorItem.Type.BOOTS, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
-
 
     public static final RegistryObject<Item> SPIRIT_FRAGMENT = ITEMS.register("spirit_fragment", () -> new Fuel(new Item.Properties(), Fuel.BurnTime.SPIRIT_FUEL / 8));
     public static final RegistryObject<Item> SPIRIT_FUEL = ITEMS.register("spirit_fuel", () -> new Fuel(new Item.Properties().food(MegaBotanyFoods.SPIRIT_FUEL), Fuel.BurnTime.SPIRIT_FUEL));

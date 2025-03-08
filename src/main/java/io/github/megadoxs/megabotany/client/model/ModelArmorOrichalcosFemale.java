@@ -16,15 +16,15 @@ public class ModelArmorOrichalcosFemale {
         root.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.ZERO);
 
         //leggings
-        PartDefinition pantsAnchor = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2), PartPose.offset(0.0F, 0.0F, 0.0F));
-        root.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.offset(-2F, 12F, 0F));
-        root.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.offset(2F, 12F, 0F));
-        pantsAnchor.addOrReplaceChild("b2", CubeListBuilder.create().texOffs(1, 32).addBox(0F, 0F, 0F, 6, 4, 1), PartPose.offsetAndRotation(-3F, 9F, -2F, -0.5235988F, 0F, 0F));
-        pantsAnchor.addOrReplaceChild("b1", CubeListBuilder.create().texOffs(16, 32).addBox(0F, 0F, 0F, 6, 4, 1), PartPose.offsetAndRotation(-3F, 9F, 1F, 0.5235988F, 0F, 0F));
-        pantsAnchor.addOrReplaceChild("a4", CubeListBuilder.create().texOffs(1, 38).addBox(0F, 0F, 0F, 1, 5, 4), PartPose.offsetAndRotation(3F, 9F, -2F, 0F, 0F, -0.3490659F));
-        pantsAnchor.addOrReplaceChild("a3", CubeListBuilder.create().texOffs(1, 48).addBox(0F, 0F, 0F, 8, 5, 1), PartPose.offsetAndRotation(-4F, 9F, -2F, -0.3490659F, 0F, 0F));
-        pantsAnchor.addOrReplaceChild("a2", CubeListBuilder.create().texOffs(12, 38).addBox(0F, 0F, 0F, 1, 5, 4), PartPose.offsetAndRotation(-4F, 9F, -2F, 0F, 0F, 0.3490659F));
-        pantsAnchor.addOrReplaceChild("a1", CubeListBuilder.create().texOffs(20, 48).addBox(0F, 0F, 0F, 8, 5, 1), PartPose.offsetAndRotation(-4F, 9F, 1F, 0.3490659F, 0F, 0F));
+        PartDefinition skirt = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-1.0F, 0.0F, -1.0F, 2, 2, 2), PartPose.offset(0.0F, 0.0F, 0.0F));
+        root.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.ZERO);
+        root.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.ZERO);
+        skirt.addOrReplaceChild("front", CubeListBuilder.create().texOffs(1, 48).addBox(0F, 0F, 0F, 8, 5, 1), PartPose.offsetAndRotation(-4F, 9F, -2F, -0.3490659F, 0F, 0F));
+        skirt.addOrReplaceChild("back", CubeListBuilder.create().texOffs(20, 48).addBox(0F, 0F, 0F, 8, 5, 1), PartPose.offsetAndRotation(-4F, 9F, 1F, 0.3490659F, 0F, 0F));
+        skirt.addOrReplaceChild("left", CubeListBuilder.create().texOffs(1, 38).addBox(0F, 0F, 0F, 1, 5, 4), PartPose.offsetAndRotation(3F, 9F, -2F, 0F, 0F, -0.3490659F));
+        skirt.addOrReplaceChild("right", CubeListBuilder.create().texOffs(12, 38).addBox(0F, 0F, 0F, 1, 5, 4), PartPose.offsetAndRotation(-4F, 9F, -2F, 0F, 0F, 0.3490659F));
+        skirt.addOrReplaceChild("front_apron", CubeListBuilder.create().texOffs(1, 32).addBox(0F, 0F, 0F, 6, 4, 1), PartPose.offsetAndRotation(-3F, 9F, -2F, -0.5235988F, 0F, 0F));
+        skirt.addOrReplaceChild("back_apron", CubeListBuilder.create().texOffs(16, 32).addBox(0F, 0F, 0F, 6, 4, 1), PartPose.offsetAndRotation(-3F, 9F, 1F, 0.5235988F, 0F, 0F));
 
         return mesh;
     }
@@ -38,7 +38,7 @@ public class ModelArmorOrichalcosFemale {
         PartDefinition head = root.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.ZERO);
         head.addOrReplaceChild("left_ear", CubeListBuilder.create().texOffs(1, 55).mirror().addBox(0, 0, 0, 3, 3, 2, deformation), PartPose.offsetAndRotation(3, -10.8f, -3, 0, 0, 0.9075712F));
         head.addOrReplaceChild("right_ear", CubeListBuilder.create().texOffs(1, 55).mirror().addBox(0, 0, 0, 3, 3, 2, deformation), PartPose.offsetAndRotation(-5, -8.5f, -3, 0, 0, -0.9075712F));
-        head.addOrReplaceChild("headBand", CubeListBuilder.create().texOffs(1, 61).addBox(0, 0, 0, 10, 4, 1), PartPose.offset(-5, -9, -2));
+        head.addOrReplaceChild("head_band", CubeListBuilder.create().texOffs(1, 61).addBox(0, 0, 0, 10, 4, 1), PartPose.offset(-5, -9, -2));
         root.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
 
         //chestplate

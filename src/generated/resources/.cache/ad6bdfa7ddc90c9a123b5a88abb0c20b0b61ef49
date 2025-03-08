@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-31T20:20:30.6113561	Item Models: megabotany
+// 1.20.1	2025-03-05T01:02:02.0593369	Item Models: megabotany
 84f168cea30551cc1ccb4d1a11b076e624c775b4 assets/megabotany/models/item/all_for_one.json
 70d95eccea4a636483716a2bb614d247207e8879 assets/megabotany/models/item/annoying_flower.json
 b61b947a55020db3f9102eafa734d3eb89a30855 assets/megabotany/models/item/bell_flower.json
@@ -32,6 +32,10 @@ f2ef4e06b0b50c8d54e40bd40419495c95aa4dcf assets/megabotany/models/item/holy_hand
 7d945581310dca2e5aa6a3f1f2911ff148357017 assets/megabotany/models/item/jingwei_feather.json
 d413d67350511b074516f1f1ab7a6415b12e565d assets/megabotany/models/item/manalinkium.json
 84c9f7630a80ea8ea96f2dce1e6bc1567d1f33a3 assets/megabotany/models/item/manasteel_hammer.json
+d6adc489e68fa5e4d168068058a8ca8451f5adc4 assets/megabotany/models/item/manaweavedsteel_boots.json
+43ca836bec23877767967316ea8f68745cf5dd8f assets/megabotany/models/item/manaweavedsteel_chestplate.json
+47707a48f273d30d7d761011d60486bdc50182b9 assets/megabotany/models/item/manaweavedsteel_helmet.json
+0be142575b3616ead46628a19c878537b9e37a88 assets/megabotany/models/item/manaweavedsteel_leggings.json
 42aa0e97759c3bb75c84707ae45c43e8f1c95f45 assets/megabotany/models/item/mana_drive_ring.json
 cece84fff59f9477cfe9c153caae6e7ccccdc16c assets/megabotany/models/item/mana_lens.json
 30ec3298a0b4981869079a1b869b79b5445db6c7 assets/megabotany/models/item/master_band_of_mana.json
@@ -50,10 +54,18 @@ c196b9caa497d668d874d118993859d0c68c7c49 assets/megabotany/models/item/orichalco
 bcd1b70ca13d606cd08908ae86a860fc114d25a7 assets/megabotany/models/item/pandora_box.json
 9d822e7c2c33470880532c2d1d12130a11ef9eac assets/megabotany/models/item/parkour_amulet.json
 60ced53aee8d2e01fc0e2cf09af6f286754a3478 assets/megabotany/models/item/parkour_amulet2.json
+34c3ac21d3939e1e6876eeb14f2c3312585f7bf1 assets/megabotany/models/item/photonium_boots.json
+6b729270fcf7873a8b7bd521503892788f285546 assets/megabotany/models/item/photonium_chestplate.json
+92cb7a2b8185ff38d18f1467279e237569ac141a assets/megabotany/models/item/photonium_helmet.json
 72a072c2b6af85e33e671806dbbaaeaaaa069009 assets/megabotany/models/item/photonium_ingot.json
+5a9df800d3ae60bd2633bf8b5d773cf1cb8ce65c assets/megabotany/models/item/photonium_leggings.json
 6b32e11494c26b9be61c7ff45f4c97b59c088dc1 assets/megabotany/models/item/pure_daisy_pendant.json
 28006112b924fc87c3bb3daa6893af1417dc82a9 assets/megabotany/models/item/reikar_lily.json
+8c790cf13f6191a27c0579c6153a4c69868d8193 assets/megabotany/models/item/shadowium_boots.json
+56b974b31ddf4c69767a81949e0eda8faf713246 assets/megabotany/models/item/shadowium_chestplate.json
+90fd36b311d6dfbe18400a0a44891729f60b680c assets/megabotany/models/item/shadowium_helmet.json
 b377623e03ab54daf24e5bd09f94610fc933bdde assets/megabotany/models/item/shadowium_ingot.json
+fbc95933e8ee9d2541899a7b147f8b3a21656883 assets/megabotany/models/item/shadowium_leggings.json
 c61eca5eb5393d24d27226d9a8c93989c741928d assets/megabotany/models/item/smelting_lens.json
 6043e13c9acd6942d5e30e5184d9c4f3e19b2195 assets/megabotany/models/item/spirit_fragment.json
 b649cd7494b0f7e35cf1d541796d9368c797df20 assets/megabotany/models/item/spirit_fuel.json

@@ -106,6 +106,21 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.SMELTING_LENS.get());
                 output.accept(MegaBotanyItems.MANA_LENS.get());
 
+                output.accept(MegaBotanyItems.MANAWEAVEDSTEEL_HELMET.get());
+                output.accept(MegaBotanyItems.MANAWEAVEDSTEEL_CHESTPLATE.get());
+                output.accept(MegaBotanyItems.MANAWEAVEDSTEEL_LEGGINGS.get());
+                output.accept(MegaBotanyItems.MANAWEAVEDSTEEL_BOOTS.get());
+
+                output.accept(MegaBotanyItems.SHADOWIUM_HELMET.get());
+                output.accept(MegaBotanyItems.SHADOWIUM_CHESTPLATE.get());
+                output.accept(MegaBotanyItems.SHADOWIUM_LEGGINGS.get());
+                output.accept(MegaBotanyItems.SHADOWIUM_BOOTS.get());
+
+                output.accept(MegaBotanyItems.PHOTONIUM_HELMET.get());
+                output.accept(MegaBotanyItems.PHOTONIUM_CHESTPLATE.get());
+                output.accept(MegaBotanyItems.PHOTONIUM_LEGGINGS.get());
+                output.accept(MegaBotanyItems.PHOTONIUM_BOOTS.get());
+
                 output.accept(MegaBotanyItems.ORICHALCOS_HELMET_FEMALE.get());
                 output.accept(MegaBotanyItems.ORICHALCOS_CHESTPLATE_FEMALE.get());
                 output.accept(MegaBotanyItems.ORICHALCOS_LEGGINGS_FEMALE.get());
