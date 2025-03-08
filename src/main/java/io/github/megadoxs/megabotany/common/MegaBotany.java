@@ -147,11 +147,11 @@ public class MegaBotany {
 
             Item item = e.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem();
 
-            if(item instanceof OrichalcosHelmetItem)
+            if (item instanceof OrichalcosHelmetItem)
                 e.setDamageModifier(e.getDamageModifier() * OrichalcosHelmetItem.getCritDamageMult(e.getEntity()));
-            else if(item instanceof ShadowiumHelmetItem)
+            else if (item instanceof ShadowiumHelmetItem)
                 e.setDamageModifier(e.getDamageModifier() * ShadowiumHelmetItem.getCritDamageMult(e.getEntity()));
-            else if(item instanceof PhotoniumHelmetItem)
+            else if (item instanceof PhotoniumHelmetItem)
                 e.setDamageModifier(e.getDamageModifier() * PhotoniumHelmetItem.getCritDamageMult(e.getEntity()));
             ((PlayerAccess) e.getEntity()).botania$setCritTarget(target);
         });

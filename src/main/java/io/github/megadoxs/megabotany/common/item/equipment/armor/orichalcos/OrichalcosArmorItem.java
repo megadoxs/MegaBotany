@@ -29,6 +29,7 @@ public class OrichalcosArmorItem extends ManasteelArmorItem {
     protected static final AttributeModifier ATTACK_BOOST = new AttributeModifier(BOOST_UUID, "Attack Boost", 2, AttributeModifier.Operation.ADDITION);
     protected static final AttributeModifier SPEED_BOOST = new AttributeModifier(BOOST_UUID, "Speed Boost", 0.1, AttributeModifier.Operation.ADDITION);
     protected static final AttributeModifier HEALTH_BOOST = new AttributeModifier(BOOST_UUID, "Health Boost", 20, AttributeModifier.Operation.ADDITION);
+
     public OrichalcosArmorItem(Type type, Version version, Properties props) {
         super(type, MegaBotanyArmorMaterials.ORICHALCOS, props);
         this.version = version;
@@ -41,7 +42,7 @@ public class OrichalcosArmorItem extends ManasteelArmorItem {
 
     @Override
     public ItemStack[] getArmorSetStacks() {
-        return switch (version){
+        return switch (version) {
             case FEMALE -> femaleArmorSet.get();
             case MALE -> null; // will be replaced with maleArmorSet.get();
         };
@@ -89,10 +90,10 @@ public class OrichalcosArmorItem extends ManasteelArmorItem {
         super.appendHoverText(stack, world, list, flags);
         list.add(CommonComponents.EMPTY);
         list.add(Component.translatable("armor.megabotany.orichalcos.set_bonus").withStyle(ChatFormatting.GRAY));
-        list.add(Component.translatable("attribute.modifier.plus." + ARMOR_BOOST.getOperation().toValue(), ((int) ARMOR_BOOST.getAmount()/4), Component.translatable(Attributes.ARMOR.getDescriptionId())).withStyle(ChatFormatting.BLUE));
-        list.add(Component.translatable("attribute.modifier.plus." + ATTACK_BOOST.getOperation().toValue(), ATTACK_BOOST.getAmount()/4, Component.translatable(Attributes.ATTACK_DAMAGE.getDescriptionId())).withStyle(ChatFormatting.BLUE));
-        list.add(Component.translatable("attribute.modifier.plus." + SPEED_BOOST.getOperation().toValue(), SPEED_BOOST.getAmount()/4, Component.translatable(Attributes.MOVEMENT_SPEED.getDescriptionId())).withStyle(ChatFormatting.BLUE));
-        list.add(Component.translatable("attribute.modifier.plus." + HEALTH_BOOST.getOperation().toValue(), ((int) HEALTH_BOOST.getAmount()/4), Component.translatable(Attributes.MAX_HEALTH.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + ARMOR_BOOST.getOperation().toValue(), ((int) ARMOR_BOOST.getAmount() / 4), Component.translatable(Attributes.ARMOR.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + ATTACK_BOOST.getOperation().toValue(), ATTACK_BOOST.getAmount() / 4, Component.translatable(Attributes.ATTACK_DAMAGE.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + SPEED_BOOST.getOperation().toValue(), SPEED_BOOST.getAmount() / 4, Component.translatable(Attributes.MOVEMENT_SPEED.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + HEALTH_BOOST.getOperation().toValue(), ((int) HEALTH_BOOST.getAmount() / 4), Component.translatable(Attributes.MAX_HEALTH.getDescriptionId())).withStyle(ChatFormatting.BLUE));
     }
 
     @Override

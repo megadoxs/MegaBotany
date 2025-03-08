@@ -16,7 +16,7 @@ public class ModelArmorPhotonium {
 
         //leggings
         root.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);
-        PartDefinition right_leg = root.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.offset(1.9f, 12,0));
+        PartDefinition right_leg = root.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.offset(1.9f, 12, 0));
         right_leg.addOrReplaceChild("1", CubeListBuilder.create().texOffs(112, 112).addBox(-2, 0, -2, 4, 12, 4), PartPose.ZERO);
         right_leg.addOrReplaceChild("2", CubeListBuilder.create().texOffs(108, 61).addBox(-2.5f, -0.5f, -2.5f, 5, 13, 5), PartPose.ZERO);
         right_leg.addOrReplaceChild("3", CubeListBuilder.create().texOffs(98, 61).addBox(-2, 1, -3.5f, 4, 5, 1), PartPose.ZERO);
@@ -39,7 +39,7 @@ public class ModelArmorPhotonium {
         head.addOrReplaceChild("left_center_bar", CubeListBuilder.create().texOffs(8, 23).addBox(0.5f, -6, -5, 1, 5, 1), PartPose.ZERO);
         PartDefinition plates = head.addOrReplaceChild("plates", CubeListBuilder.create(), PartPose.offsetAndRotation(0, -8.5f, -2, 0, 0.7854f, 0));
         plates.addOrReplaceChild("1", CubeListBuilder.create().texOffs(0, 49).addBox(-3, -0.5f, -3, 6, 1, 6), PartPose.ZERO);
-        plates.addOrReplaceChild("2",  CubeListBuilder.create().texOffs(0, 56).addBox(-3, -1.5f, -2, 5, 1, 5), PartPose.ZERO);
+        plates.addOrReplaceChild("2", CubeListBuilder.create().texOffs(0, 56).addBox(-3, -1.5f, -2, 5, 1, 5), PartPose.ZERO);
         plates.addOrReplaceChild("3", CubeListBuilder.create().texOffs(0, 65).addBox(-1, -2.5f, 1, 2, 1, 3), PartPose.ZERO);
         plates.addOrReplaceChild("4", CubeListBuilder.create().texOffs(0, 74).addBox(-3, -0.5f, 3, 4, 1, 1), PartPose.ZERO);
         plates.addOrReplaceChild("5", CubeListBuilder.create().texOffs(0, 69).addBox(-4, -0.5f, -1, 1, 1, 4), PartPose.ZERO);
@@ -49,7 +49,7 @@ public class ModelArmorPhotonium {
         plates.addOrReplaceChild("9", CubeListBuilder.create().texOffs(0, 42).addBox(-2.5f, 0.5f, -3.5f, 6, 1, 6), PartPose.ZERO);
 
         head.addOrReplaceChild("bang1", CubeListBuilder.create().texOffs(12, 22).addBox(-0.25f, -6.25f, -1, 1, 6, 1), PartPose.offsetAndRotation(2, 0, -4, 0, 0, 0.1745f));
-        head.addOrReplaceChild("bang2", CubeListBuilder.create().texOffs(0, 22).addBox(-0.75f, -6.25f, 0, 1, 6, 1), PartPose.offsetAndRotation(-2, 0, -5,0, 0, -0.1745f));
+        head.addOrReplaceChild("bang2", CubeListBuilder.create().texOffs(0, 22).addBox(-0.75f, -6.25f, 0, 1, 6, 1), PartPose.offsetAndRotation(-2, 0, -5, 0, 0, -0.1745f));
         head.addOrReplaceChild("ear1", CubeListBuilder.create().texOffs(16, 18).addBox(-1, -1, -2, 1, 3, 3), PartPose.offsetAndRotation(5.5f, -4, 0, 0.7854f, 0, 0));
         head.addOrReplaceChild("ear2", CubeListBuilder.create().texOffs(16, 24).addBox(-11, -1, -2, 1, 3, 3), PartPose.offsetAndRotation(5.5f, -4, 0, 0.7854f, 0, 0));
         head.addOrReplaceChild("hair1", CubeListBuilder.create().texOffs(35, 0).addBox(-1.5f, -0.5f, 0.25f, 3, 0, 4), PartPose.offsetAndRotation(0, -9.5f, 2, 0.1745f, -0.3491f, 0));
@@ -96,8 +96,8 @@ public class ModelArmorPhotonium {
 
         PartDefinition left_arm = root.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.offset(5, 2, 0));
         left_arm.addOrReplaceChild("1", CubeListBuilder.create().texOffs(108, 48).addBox(-1.25f, 2.5f, -2.5f, 5, 8, 5, true), PartPose.ZERO);
-        left_arm.addOrReplaceChild("2", CubeListBuilder.create().texOffs(98, 48).addBox(3.25f, 2, -2, 1, 6, 4,true), PartPose.ZERO);
-        left_arm.addOrReplaceChild("bone", CubeListBuilder.create().texOffs(100, 25).addBox(-1.75f, -4, -3.5f, 7, 5, 7,true), PartPose.rotation(0, 0, -0.3491f));
+        left_arm.addOrReplaceChild("2", CubeListBuilder.create().texOffs(98, 48).addBox(3.25f, 2, -2, 1, 6, 4, true), PartPose.ZERO);
+        left_arm.addOrReplaceChild("bone", CubeListBuilder.create().texOffs(100, 25).addBox(-1.75f, -4, -3.5f, 7, 5, 7, true), PartPose.rotation(0, 0, -0.3491f));
         left_arm.addOrReplaceChild("hand", CubeListBuilder.create().texOffs(104, 37).addBox(-2, 0, -3, 6, 4, 6, true), PartPose.rotation(0, 0, -0.1745f));
 
         PartDefinition right_arm = root.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.offset(-5, 2, 0));

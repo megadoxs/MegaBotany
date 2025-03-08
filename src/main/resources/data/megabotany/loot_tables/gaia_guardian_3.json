@@ -3,15 +3,25 @@
     {
       "name": "relics",
       "conditions": [
-        { "condition": "botania:killed_by_player" },
-        { "condition": "botania:enable_relics" }
+        {
+          "condition": "botania:killed_by_player"
+        },
+        {
+          "condition": "botania:enable_relics"
+        }
       ],
       "rolls": 1,
-      "entries": [{
-        "type": "item",
-        "name": "megabotany:pandora_box",
-        "functions": [{ "function": "botania:bind_uuid" }]
-      }]
+      "entries": [
+        {
+          "type": "item",
+          "name": "megabotany:pandora_box",
+          "functions": [
+            {
+              "function": "botania:bind_uuid"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

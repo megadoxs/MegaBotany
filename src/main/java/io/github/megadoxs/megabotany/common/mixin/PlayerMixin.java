@@ -40,17 +40,15 @@ public abstract class PlayerMixin {
             LivingEntity terraWillCritTarget = (LivingEntity) terraWillCritTargetField.get(this);
 
             if (terraWillCritTargetField.get(this) != null && source.getEntity() instanceof Player player) {
-                if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof OrichalcosHelmetItem) {
+                if (player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof OrichalcosHelmetItem) {
                     DamageSource newSource = OrichalcosHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
                     terraWillCritTargetField.set(this, null);
                     return newSource;
-                }
-                else if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ShadowiumHelmetItem){
+                } else if (player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof ShadowiumHelmetItem) {
                     DamageSource newSource = ShadowiumHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
                     terraWillCritTargetField.set(this, null);
                     return newSource;
-                }
-                else if(player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof PhotoniumHelmetItem){
+                } else if (player.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof PhotoniumHelmetItem) {
                     DamageSource newSource = PhotoniumHelmetItem.onEntityAttacked(source, amount, player, terraWillCritTarget);
                     terraWillCritTargetField.set(this, null);
                     return newSource;

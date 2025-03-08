@@ -75,7 +75,7 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int pSlotId, boolean pIsSelected) {
         if (!level.isClientSide) {
             if (entity instanceof Player player) {
-                if (ItemNBTHelper.getFloat(stack, TAG_CHARGE, 1) != 1 && entity.tickCount % 20 == 0) {
+                if (ItemNBTHelper.getFloat(stack, TAG_CHARGE, 1) < 1 && entity.tickCount % 20 == 0) {
                     int manaCost = (int) (DEFAULT_MANA_COST * Math.pow(2, ItemNBTHelper.getInt(stack, TAG_USES, 0) - 1) / 10);
                     if (ManaItemHandler.instance().requestManaExactForTool(stack, player, manaCost, false)) {
                         ManaItemHandler.instance().requestManaExactForTool(stack, player, manaCost, true);

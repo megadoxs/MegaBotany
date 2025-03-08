@@ -18,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vazkii.botania.client.model.armor.ArmorModel;
 import vazkii.botania.client.model.armor.ArmorModels;
-import vazkii.botania.common.item.equipment.armor.manaweave.ManaweaveArmorItem;
 
 import java.lang.reflect.Method;
 import java.util.Collections;
@@ -56,19 +55,16 @@ public abstract class ArmorModelsMixin {
     @Inject(method = "get", at = @At("HEAD"), cancellable = true, remap = false)
     private static void get(ItemStack stack, CallbackInfoReturnable<ArmorModel> cir) {
         Item item = stack.getItem();
-        if (item instanceof ManaweavedSteelArmorItem armor){
+        if (item instanceof ManaweavedSteelArmorItem armor) {
             cir.setReturnValue(manaweavedsteel.get(armor.getEquipmentSlot()));
             cir.cancel();
-        }
-        else if (item instanceof ShadowiumArmorItem armor) {
+        } else if (item instanceof ShadowiumArmorItem armor) {
             cir.setReturnValue(shadowium.get(armor.getEquipmentSlot()));
             cir.cancel();
-        }
-        else if (item instanceof PhotoniumArmorItem armor) {
+        } else if (item instanceof PhotoniumArmorItem armor) {
             cir.setReturnValue(photonium.get(armor.getEquipmentSlot()));
             cir.cancel();
-        }
-        else if (item instanceof OrichalcosArmorItem armor) {
+        } else if (item instanceof OrichalcosArmorItem armor) {
             cir.setReturnValue(orichalcos_female.get(armor.getEquipmentSlot()));
             cir.cancel();
         }

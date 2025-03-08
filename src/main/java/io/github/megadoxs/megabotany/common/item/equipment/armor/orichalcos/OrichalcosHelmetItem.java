@@ -21,7 +21,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -36,7 +35,6 @@ import vazkii.botania.common.helper.ItemNBTHelper;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = MegaBotany.MOD_ID)
 public class OrichalcosHelmetItem extends OrichalcosArmorItem implements ManaDiscountArmor, AncientWillContainer {
@@ -108,11 +106,11 @@ public class OrichalcosHelmetItem extends OrichalcosArmorItem implements ManaDis
     }
 
     @SubscribeEvent
-    public static void onEquipmentChange(LivingEquipmentChangeEvent event){
-        if(event.getEntity() instanceof ServerPlayer player && event.getSlot().getType() == EquipmentSlot.Type.ARMOR && (event.getFrom().getItem() instanceof OrichalcosArmorItem || event.getTo().getItem() instanceof OrichalcosArmorItem)){
+    public static void onEquipmentChange(LivingEquipmentChangeEvent event) {
+        if (event.getEntity() instanceof ServerPlayer player && event.getSlot().getType() == EquipmentSlot.Type.ARMOR && (event.getFrom().getItem() instanceof OrichalcosArmorItem || event.getTo().getItem() instanceof OrichalcosArmorItem)) {
             AttributeMap attributes = player.getAttributes();
             Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();
-            if(OrichalcosHelmetItem.hasOrichalcosArmorSet(player)){
+            if (OrichalcosHelmetItem.hasOrichalcosArmorSet(player)) {
                 if (!attributes.hasModifier(Attributes.ARMOR, BOOST_UUID))
                     attributeModifiers.put(Attributes.ARMOR, ARMOR_BOOST);
                 if (!attributes.hasModifier(Attributes.ATTACK_DAMAGE, BOOST_UUID))
@@ -122,13 +120,12 @@ public class OrichalcosHelmetItem extends OrichalcosArmorItem implements ManaDis
                 if (!attributes.hasModifier(Attributes.MAX_HEALTH, BOOST_UUID))
                     attributeModifiers.put(Attributes.MAX_HEALTH, HEALTH_BOOST);
 
-                if(!attributeModifiers.isEmpty()){
+                if (!attributeModifiers.isEmpty()) {
                     attributes.addTransientAttributeModifiers(attributeModifiers);
                     player.heal(20);
                     player.connection.send(new ClientboundSetHealthPacket(player.getHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
                 }
-            }
-            else {
+            } else {
                 if (attributes.hasModifier(Attributes.ARMOR, BOOST_UUID))
                     attributeModifiers.put(Attributes.ARMOR, ARMOR_BOOST);
                 if (attributes.hasModifier(Attributes.ATTACK_DAMAGE, BOOST_UUID))

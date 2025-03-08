@@ -27,6 +27,7 @@ public class PhotoniumArmorItem extends ManasteelArmorItem {
     protected static final AttributeModifier DAY_ATTACK_BOOST = new AttributeModifier(BOOST_UUID, "Day Attack Boost", 2, AttributeModifier.Operation.ADDITION);
     protected static final AttributeModifier DAY_SPEED_BOOST = new AttributeModifier(BOOST_UUID, "Day Speed Boost", 0.1, AttributeModifier.Operation.ADDITION);
     protected static final AttributeModifier DAY_HEALTH_BOOST = new AttributeModifier(BOOST_UUID, "Day Health Boost", 20, AttributeModifier.Operation.ADDITION);
+
     public PhotoniumArmorItem(Type type, Properties props) {
         super(type, MegaBotanyArmorMaterials.PHOTONIUM, props);
     }
@@ -79,9 +80,9 @@ public class PhotoniumArmorItem extends ManasteelArmorItem {
         super.appendHoverText(stack, world, list, flags);
         list.add(CommonComponents.EMPTY);
         list.add(Component.translatable("armor.megabotany.photonium.set_bonus").withStyle(ChatFormatting.GRAY));
-        list.add(Component.translatable("attribute.modifier.plus." + DAY_ARMOR_BOOST.getOperation().toValue(), ((int) DAY_ARMOR_BOOST.getAmount()/4), Component.translatable(Attributes.ARMOR.getDescriptionId())).withStyle(ChatFormatting.BLUE));
-        list.add(Component.translatable("attribute.modifier.plus." + DAY_ATTACK_BOOST.getOperation().toValue(), DAY_ATTACK_BOOST.getAmount()/4, Component.translatable(Attributes.ATTACK_DAMAGE.getDescriptionId())).withStyle(ChatFormatting.BLUE));
-        list.add(Component.translatable("attribute.modifier.plus." + DAY_SPEED_BOOST.getOperation().toValue(), DAY_SPEED_BOOST.getAmount()/4, Component.translatable(Attributes.MOVEMENT_SPEED.getDescriptionId())).withStyle(ChatFormatting.BLUE));
-        list.add(Component.translatable("attribute.modifier.plus." + DAY_HEALTH_BOOST.getOperation().toValue(), ((int) DAY_HEALTH_BOOST.getAmount()/4), Component.translatable(Attributes.MAX_HEALTH.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + DAY_ARMOR_BOOST.getOperation().toValue(), ((int) DAY_ARMOR_BOOST.getAmount() / 4), Component.translatable(Attributes.ARMOR.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + DAY_ATTACK_BOOST.getOperation().toValue(), DAY_ATTACK_BOOST.getAmount() / 4, Component.translatable(Attributes.ATTACK_DAMAGE.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + DAY_SPEED_BOOST.getOperation().toValue(), DAY_SPEED_BOOST.getAmount() / 4, Component.translatable(Attributes.MOVEMENT_SPEED.getDescriptionId())).withStyle(ChatFormatting.BLUE));
+        list.add(Component.translatable("attribute.modifier.plus." + DAY_HEALTH_BOOST.getOperation().toValue(), ((int) DAY_HEALTH_BOOST.getAmount() / 4), Component.translatable(Attributes.MAX_HEALTH.getDescriptionId())).withStyle(ChatFormatting.BLUE));
     }
 }

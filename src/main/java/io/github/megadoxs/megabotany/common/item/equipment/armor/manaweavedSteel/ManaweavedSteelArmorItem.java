@@ -18,6 +18,7 @@ import java.util.function.Supplier;
 
 public class ManaweavedSteelArmorItem extends ManasteelArmorItem {
     private static final Supplier<ItemStack[]> armorSet = Suppliers.memoize(() -> new ItemStack[]{new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_HELMET.get()), new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_CHESTPLATE.get()), new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_LEGGINGS.get()), new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_BOOTS.get())});
+
     public ManaweavedSteelArmorItem(Type type, Properties props) {
         super(type, MegaBotanyArmorMaterials.MANAWEAVEDSTEEL, props);
     }

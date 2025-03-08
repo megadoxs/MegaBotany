@@ -5,7 +5,6 @@ import com.google.common.collect.Multimap;
 import io.github.megadoxs.megabotany.common.MegaBotany;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetHealthPacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -32,7 +31,8 @@ import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.BotaniaDamageTypes;
 import vazkii.botania.common.helper.ItemNBTHelper;
 
-import java.util.*;
+import java.util.List;
+import java.util.Locale;
 
 @Mod.EventBusSubscriber(modid = MegaBotany.MOD_ID)
 public class PhotoniumHelmetItem extends PhotoniumArmorItem implements ManaDiscountArmor, AncientWillContainer {
@@ -113,17 +113,16 @@ public class PhotoniumHelmetItem extends PhotoniumArmorItem implements ManaDisco
                 if ((!attributes.hasModifier(Attributes.MAX_HEALTH, BOOST_UUID) && isDay) || (attributes.hasModifier(Attributes.MAX_HEALTH, BOOST_UUID) && !isDay))
                     attributeModifiers.put(Attributes.MAX_HEALTH, DAY_HEALTH_BOOST);
 
-                if(!attributeModifiers.isEmpty()){
-                    if (isDay){
+                if (!attributeModifiers.isEmpty()) {
+                    if (isDay) {
                         attributes.addTransientAttributeModifiers(attributeModifiers);
                         player.heal(20);
                         player.connection.send(new ClientboundSetHealthPacket(player.getHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
-                    }
-                    else {
-                        float health = player.getHealth()/player.getMaxHealth();
+                    } else {
+                        float health = player.getHealth() / player.getMaxHealth();
                         attributes.removeAttributeModifiers(attributeModifiers);
-                        player.setHealth(health*player.getMaxHealth());
-                        player.connection.send(new ClientboundSetHealthPacket(health*player.getMaxHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
+                        player.setHealth(health * player.getMaxHealth());
+                        player.connection.send(new ClientboundSetHealthPacket(health * player.getMaxHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
                     }
                 }
             }
@@ -131,8 +130,8 @@ public class PhotoniumHelmetItem extends PhotoniumArmorItem implements ManaDisco
     }
 
     @SubscribeEvent
-    public static void onEquipmentChange(LivingEquipmentChangeEvent event){
-        if(event.getEntity() instanceof ServerPlayer player && event.getSlot().getType() == EquipmentSlot.Type.ARMOR && event.getFrom().getItem() instanceof PhotoniumArmorItem item && !item.hasArmorSet(player)){
+    public static void onEquipmentChange(LivingEquipmentChangeEvent event) {
+        if (event.getEntity() instanceof ServerPlayer player && event.getSlot().getType() == EquipmentSlot.Type.ARMOR && event.getFrom().getItem() instanceof PhotoniumArmorItem item && !item.hasArmorSet(player)) {
             AttributeMap attributes = player.getAttributes();
             Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();
             if (attributes.hasModifier(Attributes.ARMOR, BOOST_UUID))
@@ -144,10 +143,10 @@ public class PhotoniumHelmetItem extends PhotoniumArmorItem implements ManaDisco
             if (attributes.hasModifier(Attributes.MAX_HEALTH, BOOST_UUID))
                 attributeModifiers.put(Attributes.MAX_HEALTH, DAY_HEALTH_BOOST);
 
-            float health = player.getHealth()/player.getMaxHealth();
+            float health = player.getHealth() / player.getMaxHealth();
             attributes.removeAttributeModifiers(attributeModifiers);
-            player.setHealth(health*player.getMaxHealth());
-            player.connection.send(new ClientboundSetHealthPacket(health*player.getMaxHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
+            player.setHealth(health * player.getMaxHealth());
+            player.connection.send(new ClientboundSetHealthPacket(health * player.getMaxHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
         }
     }
 
