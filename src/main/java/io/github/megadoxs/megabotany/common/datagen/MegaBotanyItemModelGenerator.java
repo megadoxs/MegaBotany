@@ -69,11 +69,13 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
         simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_CHESTPLATE);
         simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_LEGGINGS);
         simpleItem(MegaBotanyItems.MANAWEAVEDSTEEL_BOOTS);
+        simpleItem(MegaBotanyItems.SHORT_PHOTONIUM_SWORD);
 
         simpleItem(MegaBotanyItems.SHADOWIUM_HELMET);
         simpleItem(MegaBotanyItems.SHADOWIUM_CHESTPLATE);
         simpleItem(MegaBotanyItems.SHADOWIUM_LEGGINGS);
         simpleItem(MegaBotanyItems.SHADOWIUM_BOOTS);
+        simpleItem(MegaBotanyItems.SHADOWIUM_KATANA);
 
         simpleItem(MegaBotanyItems.PHOTONIUM_HELMET);
         simpleItem(MegaBotanyItems.PHOTONIUM_CHESTPLATE);

@@ -115,11 +115,13 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.SHADOWIUM_CHESTPLATE.get());
                 output.accept(MegaBotanyItems.SHADOWIUM_LEGGINGS.get());
                 output.accept(MegaBotanyItems.SHADOWIUM_BOOTS.get());
+                output.accept(MegaBotanyItems.SHADOWIUM_KATANA.get());
 
                 output.accept(MegaBotanyItems.PHOTONIUM_HELMET.get());
                 output.accept(MegaBotanyItems.PHOTONIUM_CHESTPLATE.get());
                 output.accept(MegaBotanyItems.PHOTONIUM_LEGGINGS.get());
                 output.accept(MegaBotanyItems.PHOTONIUM_BOOTS.get());
+                output.accept(MegaBotanyItems.SHORT_PHOTONIUM_SWORD.get());
 
                 output.accept(MegaBotanyItems.ORICHALCOS_HELMET_FEMALE.get());
                 output.accept(MegaBotanyItems.ORICHALCOS_CHESTPLATE_FEMALE.get());

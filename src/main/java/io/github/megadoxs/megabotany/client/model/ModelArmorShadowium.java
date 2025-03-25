@@ -68,7 +68,7 @@ public class ModelArmorShadowium {
         body.addOrReplaceChild("book", CubeListBuilder.create().mirror().texOffs(0, 93).addBox(0, 0, 0, 4, 6, 2, deformation), PartPose.offsetAndRotation(1, 1.2f, 2.7f, 0, 0, 0.7853982f));
         body.addOrReplaceChild("back", CubeListBuilder.create().mirror().texOffs(0, 102).addBox(0, 0, 0, 6, 10, 1, deformation), PartPose.offset(-3, 1, 1.7f));
         PartDefinition left_arm = root.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.ZERO);
-        left_arm.addOrReplaceChild("1", CubeListBuilder.create().mirror().texOffs(15, 85).addBox(0, 0, 0, 5, 2, 5, deformation), PartPose.offsetAndRotation(-2, -3, -2.5f, 0, 0, -0.1745329f));
+        left_arm.addOrReplaceChild("1", CubeListBuilder.create().mirror().texOffs(15, 84).addBox(0, 0, 0, 5, 2, 5, deformation), PartPose.offsetAndRotation(-2, -3, -2.5f, 0, 0, -0.1745329f));
         left_arm.addOrReplaceChild("2", CubeListBuilder.create().mirror().texOffs(60, 84).addBox(0, 0, 0, 1, 5, 4, deformation), PartPose.offsetAndRotation(1.7f, -2, -2, 0, 0, -0.3490659f));
         left_arm.addOrReplaceChild("3", CubeListBuilder.create().mirror().texOffs(49, 84).addBox(0, 0, 0, 1, 6, 4, deformation), PartPose.offsetAndRotation(1.7f, -1, -2, 0, 0, -0.1745329f));
         left_arm.addOrReplaceChild("4", CubeListBuilder.create().mirror().texOffs(36, 84).addBox(0, 0, 0, 2, 5, 4, new CubeDeformation(0.25f)), PartPose.offset(0.8f, 3.2f, -2));

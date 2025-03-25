@@ -13,6 +13,8 @@ import io.github.megadoxs.megabotany.common.item.equipment.bauble.*;
 import io.github.megadoxs.megabotany.common.item.equipment.shield.ElementiumShield;
 import io.github.megadoxs.megabotany.common.item.equipment.shield.ManasteelShield;
 import io.github.megadoxs.megabotany.common.item.equipment.shield.TerrasteelShield;
+import io.github.megadoxs.megabotany.common.item.equipment.tool.PhotoniumSword;
+import io.github.megadoxs.megabotany.common.item.equipment.tool.ShadowiumKatana;
 import io.github.megadoxs.megabotany.common.item.equipment.tool.WalkingCane;
 import io.github.megadoxs.megabotany.common.item.equipment.tool.hammer.ElementiumHammer;
 import io.github.megadoxs.megabotany.common.item.equipment.tool.hammer.ManasteelHammer;
@@ -81,11 +83,13 @@ public class MegaBotanyItems {
     public static final RegistryObject<Item> PHOTONIUM_CHESTPLATE = ITEMS.register("photonium_chestplate", () -> new PhotoniumArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> PHOTONIUM_LEGGINGS = ITEMS.register("photonium_leggings", () -> new PhotoniumArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> PHOTONIUM_BOOTS = ITEMS.register("photonium_boots", () -> new PhotoniumArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> SHORT_PHOTONIUM_SWORD = ITEMS.register("photonium_sword", () -> new PhotoniumSword(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SHADOWIUM_HELMET = ITEMS.register("shadowium_helmet", () -> new ShadowiumHelmetItem(ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> SHADOWIUM_CHESTPLATE = ITEMS.register("shadowium_chestplate", () -> new ShadowiumArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> SHADOWIUM_LEGGINGS = ITEMS.register("shadowium_leggings", () -> new ShadowiumArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> SHADOWIUM_BOOTS = ITEMS.register("shadowium_boots", () -> new ShadowiumArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> SHADOWIUM_KATANA = ITEMS.register("shadowium_katana", () -> new ShadowiumKatana(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> ORICHALCOS_HELMET_FEMALE = ITEMS.register("orichalcos_helmet_female", () -> new OrichalcosHelmetItem(ArmorItem.Type.HELMET, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));
     public static final RegistryObject<Item> ORICHALCOS_CHESTPLATE_FEMALE = ITEMS.register("orichalcos_chestplate_female", () -> new OrichalcosArmorItem(ArmorItem.Type.CHESTPLATE, OrichalcosArmorItem.Version.FEMALE, new Item.Properties()));

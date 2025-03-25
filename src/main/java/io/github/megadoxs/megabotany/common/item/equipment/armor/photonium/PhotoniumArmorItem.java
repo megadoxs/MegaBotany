@@ -1,7 +1,7 @@
 package io.github.megadoxs.megabotany.common.item.equipment.armor.photonium;
 
 import com.google.common.base.Suppliers;
-import io.github.megadoxs.megabotany.api.item.MegaBotanyArmorMaterials;
+import io.github.megadoxs.megabotany.api.item.MegaBotanyArmorMaterial;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
@@ -29,7 +29,7 @@ public class PhotoniumArmorItem extends ManasteelArmorItem {
     protected static final AttributeModifier DAY_HEALTH_BOOST = new AttributeModifier(BOOST_UUID, "Day Health Boost", 20, AttributeModifier.Operation.ADDITION);
 
     public PhotoniumArmorItem(Type type, Properties props) {
-        super(type, MegaBotanyArmorMaterials.PHOTONIUM, props);
+        super(type, MegaBotanyArmorMaterial.PHOTONIUM, props);
     }
 
     @Override

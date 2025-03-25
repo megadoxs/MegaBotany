@@ -2,6 +2,7 @@ package io.github.megadoxs.megabotany.common.item.relic;
 
 import io.github.megadoxs.megabotany.api.item.InfiniteBrewItem;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -110,6 +111,12 @@ public class InfiniteBrew extends Item implements BrewItem, BrewContainer, Infin
                 ItemNBTHelper.setInt(stack, TAG_USES, 0);
             ItemNBTHelper.setInt(stack, TAG_DAY, day);
         }
+    }
+
+    @NotNull
+    @Override
+    public Component getName(@NotNull ItemStack stack) {
+        return Component.translatable(getDescriptionId(), Component.translatable(getBrew(stack).getTranslationKey(stack)));
     }
 
     @Override

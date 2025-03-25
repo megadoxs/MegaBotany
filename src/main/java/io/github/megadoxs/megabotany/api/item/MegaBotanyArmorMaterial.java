@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public enum MegaBotanyArmorMaterials implements ArmorMaterial {
+public enum MegaBotanyArmorMaterial implements ArmorMaterial {
     MANAWEAVEDSTEEL("manaweavedsteel", 20, Map.of(ArmorItem.Type.BOOTS, 2, ArmorItem.Type.LEGGINGS, 5, ArmorItem.Type.CHESTPLATE, 6, ArmorItem.Type.HELMET, 2), 30, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(ItemStack.EMPTY), 1, 0), //TODO set a repair ingredient
     SHADOWIUM("shadowium", 40, Map.of(ArmorItem.Type.BOOTS, 4, ArmorItem.Type.LEGGINGS, 7, ArmorItem.Type.CHESTPLATE, 10, ArmorItem.Type.HELMET, 4), 26, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(MegaBotanyItems.SHADOWIUM_INGOT.get()), 5, 0.2f),
     PHOTONIUM("photonium", 40, Map.of(ArmorItem.Type.BOOTS, 4, ArmorItem.Type.LEGGINGS, 7, ArmorItem.Type.CHESTPLATE, 10, ArmorItem.Type.HELMET, 4), 26, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(MegaBotanyItems.PHOTONIUM_INGOT.get()), 5, 0.2f),
@@ -27,7 +27,7 @@ public enum MegaBotanyArmorMaterials implements ArmorMaterial {
     private final float toughness;
     private final float knockbackResistance;
 
-    MegaBotanyArmorMaterials(String name, int durabilityMultiplier, Map<ArmorItem.Type, Integer> damageReduction, int enchantability, SoundEvent equipSound, Supplier<Ingredient> repairItem, float toughness, float knockbackResistance) {
+    MegaBotanyArmorMaterial(String name, int durabilityMultiplier, Map<ArmorItem.Type, Integer> damageReduction, int enchantability, SoundEvent equipSound, Supplier<Ingredient> repairItem, float toughness, float knockbackResistance) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.damageReduction = damageReduction;

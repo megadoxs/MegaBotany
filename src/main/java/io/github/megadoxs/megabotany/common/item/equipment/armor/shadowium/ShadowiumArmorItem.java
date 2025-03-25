@@ -1,7 +1,7 @@
 package io.github.megadoxs.megabotany.common.item.equipment.armor.shadowium;
 
 import com.google.common.base.Suppliers;
-import io.github.megadoxs.megabotany.api.item.MegaBotanyArmorMaterials;
+import io.github.megadoxs.megabotany.api.item.MegaBotanyArmorMaterial;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
@@ -29,7 +29,7 @@ public class ShadowiumArmorItem extends ManasteelArmorItem {
     protected static final AttributeModifier NIGHT_HEALTH_BOOST = new AttributeModifier(BOOST_UUID, "Night Health Boost", 20, AttributeModifier.Operation.ADDITION);
 
     public ShadowiumArmorItem(Type type, Properties props) {
-        super(type, MegaBotanyArmorMaterials.SHADOWIUM, props);
+        super(type, MegaBotanyArmorMaterial.SHADOWIUM, props);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package io.github.megadoxs.megabotany.common.item.relic;
 
+import io.github.megadoxs.megabotany.api.item.MegaBotanyItemTier;
 import io.github.megadoxs.megabotany.common.MegaBotany;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import io.github.megadoxs.megabotany.common.network.C2SPacket.ExcaliberLeftClickPacket;
@@ -41,10 +42,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
-@Mod.EventBusSubscriber(modid = "megabotany", bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = MegaBotany.MOD_ID)
 public class Excaliber extends SwordItem implements LensEffectItem {
     public Excaliber(Properties props) {
-        super(BotaniaAPI.instance().getTerrasteelItemTier(), 6, -2.4f, props);
+        super(MegaBotanyItemTier.RELIC, 6, -2.4f, props);
     }
 
     @Override

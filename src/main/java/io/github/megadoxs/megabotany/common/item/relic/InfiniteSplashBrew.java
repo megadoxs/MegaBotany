@@ -96,6 +96,12 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
         }
     }
 
+    @NotNull
+    @Override
+    public Component getName(@NotNull ItemStack stack) {
+        return Component.translatable(getDescriptionId(), Component.translatable(getBrew(stack).getTranslationKey(stack)));
+    }
+
     @Override
     public void appendHoverText(@NotNull ItemStack stack, Level world, @NotNull List<Component> list, @NotNull TooltipFlag flags) {
         RelicImpl.addDefaultTooltip(stack, list);

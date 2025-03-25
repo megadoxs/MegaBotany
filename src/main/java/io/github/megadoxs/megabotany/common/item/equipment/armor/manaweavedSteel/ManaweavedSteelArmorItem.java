@@ -1,7 +1,7 @@
 package io.github.megadoxs.megabotany.common.item.equipment.armor.manaweavedSteel;
 
 import com.google.common.base.Suppliers;
-import io.github.megadoxs.megabotany.api.item.MegaBotanyArmorMaterials;
+import io.github.megadoxs.megabotany.api.item.MegaBotanyArmorMaterial;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -20,7 +20,7 @@ public class ManaweavedSteelArmorItem extends ManasteelArmorItem {
     private static final Supplier<ItemStack[]> armorSet = Suppliers.memoize(() -> new ItemStack[]{new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_HELMET.get()), new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_CHESTPLATE.get()), new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_LEGGINGS.get()), new ItemStack(MegaBotanyItems.MANAWEAVEDSTEEL_BOOTS.get())});
 
     public ManaweavedSteelArmorItem(Type type, Properties props) {
-        super(type, MegaBotanyArmorMaterials.MANAWEAVEDSTEEL, props);
+        super(type, MegaBotanyArmorMaterial.MANAWEAVEDSTEEL, props);
     }
 
     @Override
