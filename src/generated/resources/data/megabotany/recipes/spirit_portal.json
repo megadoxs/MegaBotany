@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "botania:dreamwood_logs"
+    },
+    "E": {
+      "item": "botania:life_essence"
+    }
+  },
+  "pattern": [
+    "DED",
+    "DED",
+    "DED"
+  ],
+  "result": {
+    "item": "megabotany:spirit_portal"
+  },
+  "show_notification": true
+}

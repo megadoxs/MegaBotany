@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class MegaBotanyRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MegaBotany.MOD_ID);
 
-    public static final RegistryObject<RecipeSerializer<CrushingRecipe>> CRUSHING_SERIALIZER = SERIALIZERS.register("crushing", () -> CrushingRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<SpiritTradeRecipe>> SPIRIT_TRADE_SERIALIZER = SERIALIZERS.register("spirit_trade", () -> SpiritTradeRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<ItemUpgradeRecipe>> ITEM_UPGRADE_SERIALIZER = SERIALIZERS.register("item_upgrade", () -> ItemUpgradeRecipe.SERIALIZER);
     public static final RegistryObject<RecipeSerializer<RelicRecipe>> RELIC_SERIALIZER = SERIALIZERS.register("relic", () -> RelicRecipe.SERIALIZER);
     public static final RegistryObject<RecipeSerializer<GeminiOrchidSourceRecipe>> GEMINI_ORCHID_SERIALIZER = SERIALIZERS.register("gemini_orchid_source", () -> GeminiOrchidSourceRecipe.Serializer.INSTANCE);

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "botania:rune_air"
+    },
+    "E": {
+      "item": "botania:elementium_ingot"
+    },
+    "M": {
+      "item": "botania:rune_mana"
+    }
+  },
+  "pattern": [
+    "ME ",
+    "E E",
+    " EA"
+  ],
+  "result": {
+    "item": "megabotany:mana_drive_ring"
+  },
+  "show_notification": true
+}

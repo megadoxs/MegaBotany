@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-31T20:20:30.6073543	Loot Tables
+// 1.20.1	2025-04-26T21:42:18.8088911	Loot Tables
 3057beb95f1e7a2234f47d985c1f54fc4da14425 data/megabotany/loot_tables/blocks/annoying_flower.json
 c94e2e20a1ce5127cfd91ec44723adccc99a3a4e data/megabotany/loot_tables/blocks/bell_flower.json
 7c34ce93aa2f7c260dff0caeb092897c00a95d77 data/megabotany/loot_tables/blocks/bloody_enchantress.json
@@ -25,7 +25,6 @@ c7f2577ce0a4b8f2d5f205b589c54d941e839854 data/megabotany/loot_tables/blocks/floa
 9eeb850d3cd3b6cc09db2a26c0cddf5205b4d2dc data/megabotany/loot_tables/blocks/manalinkium.json
 acab93bf90223afb0411b111bb0024875b6bb695 data/megabotany/loot_tables/blocks/mirrortunia.json
 e42ddfca081ee473cdbaf8c8b55605a62fa40206 data/megabotany/loot_tables/blocks/moonlight_lily.json
-3eae530cc5e353f4c91a351fb7c23699a003467d data/megabotany/loot_tables/blocks/mortar.json
 c5c8ae82865df0a968c2fba3f8c4db455899a061 data/megabotany/loot_tables/blocks/necrofleur.json
 240fc36c8a3e67c754949c4ac584f0eea5ebed4e data/megabotany/loot_tables/blocks/necrofleur_chibi.json
 cef73648687f51490bd2be14d4495c422795d22a data/megabotany/loot_tables/blocks/omniviolet.json
@@ -52,6 +51,7 @@ f05ca69ea01de8d8f4e0256bf321a1eb29931492 data/megabotany/loot_tables/blocks/pott
 c235c603d73b800cd5956a1a3ed7d8243d501c88 data/megabotany/loot_tables/blocks/redstone_gaia_spreader.json
 f0a6ef87e829c3a8b5213abbc7ff2521ad27245a data/megabotany/loot_tables/blocks/reikar_lily.json
 088520042dbf7a93e63a075b11596195f4ecfce0 data/megabotany/loot_tables/blocks/shadowium_block.json
+bd033160b5d26e232ec9a3839b4ca1015ca503b7 data/megabotany/loot_tables/blocks/spirit_portal.json
 161eca29276b82cec6c02049f5d3b9351acdf9f2 data/megabotany/loot_tables/blocks/stardust_lotus.json
 488c44b346f5883c9136aae02811e06930d1346e data/megabotany/loot_tables/blocks/stonesia.json
 4f117cc6231a2a9bb9b980ab8959adb604d11a4a data/megabotany/loot_tables/blocks/sunshine_lily.json

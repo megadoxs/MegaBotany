@@ -1,10 +1,10 @@
-// 1.20.1	2025-01-28T23:25:19.6205588	Tags for minecraft:item mod id megabotany
+// 1.20.1	2025-04-22T12:19:03.7085663	Tags for minecraft:item mod id megabotany
 d1f6edc1240529ba93831fbd1194de2c53aba053 data/botania/tags/items/functional_special_flowers.json
 d292977886d23f9dc7a4c7a499012a346051e6b2 data/botania/tags/items/generating_special_flowers.json
 30a83a47e896062b0f858f34c7bf8ce856b52b0e data/botania/tags/items/mini_flowers.json
 cfb13bcd72435e2f0fa9916c14311fe99d010052 data/botania/tags/items/special_floating_flowers.json
 9e450ac94cd7e3334436759f2808f2893e2182b7 data/curios/tags/items/charm.json
 e0b2e706ee4bf4205484c06870e836a8237902f2 data/curios/tags/items/head.json
-c0a08ab75fc5bd367c6169dca6121d6b13e6cde0 data/curios/tags/items/necklace.json
-7690739aee0fbdbdc3dadc68ee1e34048c384539 data/curios/tags/items/ring.json
-40ede0d5918a6fce1e7b2d557b30be0274e74a9a data/megabotany/tags/items/hammers.json
+fc0d0f58aabf589ea315c8a26f90a94bbf8d5cb7 data/curios/tags/items/necklace.json
+5058af85f81b3e81a17c93578cf9f34d5d97e96b data/curios/tags/items/ring.json
+ad7f838c751c5be9719cde2462340a4dff82b71d data/megabotany/tags/items/mana_fuel.json

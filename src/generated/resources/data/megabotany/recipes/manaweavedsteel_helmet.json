@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "botania:life_essence"
+    },
+    "H": {
+      "item": "botania:manaweave_helmet"
+    },
+    "S": {
+      "item": "botania:manasteel_ingot"
+    }
+  },
+  "pattern": [
+    "ESE",
+    "SHS"
+  ],
+  "result": {
+    "item": "megabotany:manaweavedsteel_helmet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "botania:manaweave_boots"
+    },
+    "E": {
+      "item": "botania:life_essence"
+    },
+    "S": {
+      "item": "botania:manasteel_ingot"
+    }
+  },
+  "pattern": [
+    "ESE",
+    "SBS"
+  ],
+  "result": {
+    "item": "megabotany:manaweavedsteel_boots"
+  },
+  "show_notification": true
+}

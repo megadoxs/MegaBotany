@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "O": {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    "P": {
+      "item": "botania:rune_pride"
+    }
+  },
+  "pattern": [
+    "GOG",
+    "GPG"
+  ],
+  "result": {
+    "item": "megabotany:super_crown"
+  },
+  "show_notification": true
+}

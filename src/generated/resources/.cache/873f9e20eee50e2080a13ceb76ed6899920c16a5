@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-02T23:51:59.3509517	Block States: megabotany
+// 1.20.1	2025-04-29T14:16:44.9397854	Block States: megabotany
 314673433d57c085d5741f0baf72c5a0db65f106 assets/megabotany/blockstates/annoying_flower.json
 da009c5a2fa80a69dbac22a641a1b158dc8f0942 assets/megabotany/blockstates/bell_flower.json
 ddc01b28aab4791977994bdc8f436cee026712e1 assets/megabotany/blockstates/bloody_enchantress.json
@@ -25,7 +25,6 @@ f21dc4763428332f997a93bb12b6905fbc702bdb assets/megabotany/blockstates/floating_
 604d1c84566421fba30e9a5c8f2ecd130e7fe5e1 assets/megabotany/blockstates/manalinkium.json
 971067b2ee6c2698a6eafaa342aaab8b39ebf9df assets/megabotany/blockstates/mirrortunia.json
 ef7bb73d58be843b99b93c241f4982b145c973ef assets/megabotany/blockstates/moonlight_lily.json
-3726573e4e5a83a0215ddcc5b7b5f4fd93393362 assets/megabotany/blockstates/mortar.json
 863f1fa5ecd34140eff94ab81f7f8b50837d19c2 assets/megabotany/blockstates/necrofleur.json
 3f59dada4c61f7c87978d30c32074eaaddfd97d3 assets/megabotany/blockstates/necrofleur_chibi.json
 0b0029c16334c0d0ef0d80f2209b548f9da64f0b assets/megabotany/blockstates/omniviolet.json
@@ -52,6 +51,7 @@ a17561654feee9bd4ddce629c03d1eb6c34f1bc4 assets/megabotany/blockstates/potted_om
 bcc021bcebc7fc3884035392011c1fe9d7e5afdc assets/megabotany/blockstates/redstone_gaia_spreader.json
 0d464ae099add33322851c1d006fa24d51c2cdf0 assets/megabotany/blockstates/reikar_lily.json
 c339c2a5cf8c85a981028626c9e2d4fa5ec42129 assets/megabotany/blockstates/shadowium_block.json
+9311b9191176b887d72963b347c340ce2eed13a4 assets/megabotany/blockstates/spirit_portal.json
 6013cb87f3fdb8a9444bc75576a5802f0c14639b assets/megabotany/blockstates/stardust_lotus.json
 7875c53907599dca5795eeaafd38884d16ab2cdf assets/megabotany/blockstates/stonesia.json
 3db927dd29c943a042e3b7333d8bf7e66853b569 assets/megabotany/blockstates/sunshine_lily.json
@@ -72,6 +72,8 @@ f49074d014601b05955b404f968b3be887cff4ea assets/megabotany/models/block/orichalc
 f38b33f2d360b3187d13dc9602b8ce96ad728a66 assets/megabotany/models/block/photonium_block.json
 5d3797fbc5ffee11c4e9e30c6d7531d2e600b97c assets/megabotany/models/block/reikar_lily.json
 e7b35935f7457748b6395c548a9f9486cf8bafb8 assets/megabotany/models/block/shadowium_block.json
+5a854a026c6e2bed9c807360075a7e8b4e4cd298 assets/megabotany/models/block/spirit_portal.json
+900de606b2983948390f3efc08d8f1c8fb829f60 assets/megabotany/models/block/spirit_portal_activated.json
 5a627ae17acf7e764295570bb7ef326ae636087e assets/megabotany/models/block/stardust_lotus.json
 ee0ae8fcba6c6fffeb9c3a33848f4b8872319e44 assets/megabotany/models/block/stonesia.json
 0830cc5475002ab713aa132a7726f640c062e0d1 assets/megabotany/models/block/sunshine_lily.json
@@ -79,3 +81,4 @@ c8517725a8271d5d35f3259df007e4857704f158 assets/megabotany/models/block/tinkle.j
 c17b0084083cca8eb52aaf118860a0032bf12490 assets/megabotany/models/item/orichalcos_block.json
 32b32d001af5a80435a58935ea3be0c784cc34c8 assets/megabotany/models/item/photonium_block.json
 06d1e47f0b7dab828bbdf447e1f31a3b0ca363ae assets/megabotany/models/item/shadowium_block.json
+73cf5a90e69b4e7dff8fa2bb7b3aff46c213b270 assets/megabotany/models/item/spirit_portal.json

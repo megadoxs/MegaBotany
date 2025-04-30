@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "megabotany:redstone_gaia_spreader"
+    }
+  ],
+  "result": {
+    "item": "botania:gaia_spreader"
+  }
+}

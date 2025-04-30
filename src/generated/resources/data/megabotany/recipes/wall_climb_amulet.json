@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "botania:rune_earth"
+    },
+    "M": {
+      "item": "botania:manasteel_ingot"
+    },
+    "V": {
+      "item": "minecraft:vine"
+    }
+  },
+  "pattern": [
+    "VM ",
+    "M M",
+    " ME"
+  ],
+  "result": {
+    "item": "megabotany:wall_climb_amulet"
+  },
+  "show_notification": true
+}

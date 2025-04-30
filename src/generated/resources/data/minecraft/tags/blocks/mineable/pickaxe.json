@@ -2,7 +2,6 @@
   "values": [
     "megabotany:photonium_block",
     "megabotany:shadowium_block",
-    "megabotany:orichalcos_block",
-    "megabotany:mortar"
+    "megabotany:orichalcos_block"
   ]
 }

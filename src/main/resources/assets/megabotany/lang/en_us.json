@@ -6,6 +6,7 @@
   "item.megabotany.elementium_hammer": "Elementium Hammer",
   "item.megabotany.terrasteel_hammer": "Terrasteel Hammer",
   "item.megabotany.walking_cane": "Walking Cane",
+  "item.megabotany.medal_of_heroism": "Medal of Heroism",
   "item.megabotany.pandora_box": "Pandora's Box",
   "item.megabotany.absolution_pendant": "Absolution Pendant",
   "item.megabotany.holy_grail": "Holy Grail",
@@ -23,6 +24,7 @@
   "item.megabotany.gilded_mashed_potato": "Gilded Mashed Potato",
   "item.megabotany.fried_chicken": "Fried Chicken",
   "item.megabotany.master_band_of_mana": "Master Band of Mana",
+  "item.megabotany.earth_essence": "Earth's Essence",
   "item.megabotany.nature_orb": "Nature's Orb",
   "item.megabotany.frost_ring": "Jack Frost's Ring",
   "item.megabotany.smelting_lens": "Smelting Lens",
@@ -34,13 +36,10 @@
   "item.megabotany.orichalcos_ingot": "Orichalcos Ingot",
   "item.megabotany.ticket": "Ticket",
   "item.megabotany.god_core": "God's Core",
-  "item.megabotany.curse_ring": "Curse Ring",
   "item.megabotany.wall_jump_amulet": "Wall Jump Amulet",
   "item.megabotany.wall_climb_amulet": "Wall climb Amulet",
-  "item.megabotany.parkour_amulet": "Parkour Amulet",
-  "item.megabotany.parkour_amulet2": "Parkour Amulet 2",
+  "item.megabotany.jump_amulet": "Jump Amulet",
   "item.megabotany.mana_drive_ring": "Mana Drive Ring",
-  "item.megabotany.elven_king_ring": "Elven King Ring",
   "item.megabotany.jingwei_feather": "Jinggwei Feather",
   "item.megabotany.pure_daisy_pendant": "Pure Daisy Pendant",
   "item.megabotany.super_crown": "Super Crown",
@@ -166,6 +165,9 @@
   "block.megabotany.tinkle": "Tinkle",
   "block.megabotany.floating_tinkle": "Floating Tinkle",
   "block.megabotany.potted_tinkle": "Potted Tinkle",
+  "block.megabotany.spirit_portal": "Spirit Gateway Core",
   "block.megabotany.redstone_elven_spreader": "Pulse Elven Mana Spreader",
-  "block.megabotany.redstone_gaia_spreader": "Pulse Gaia Mana Spreader"
+  "block.megabotany.redstone_gaia_spreader": "Pulse Gaia Mana Spreader",
+
+  "megabotany.category.spiritology": "Spiritology"
 }

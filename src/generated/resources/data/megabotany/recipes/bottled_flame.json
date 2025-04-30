@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "botania:mana_glass"
+    },
+    "P": {
+      "item": "botania:red_petal"
+    },
+    "T": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "MTM",
+    "MMM"
+  ],
+  "result": {
+    "item": "megabotany:bottled_flame"
+  },
+  "show_notification": true
+}

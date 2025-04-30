@@ -58,9 +58,6 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.MANASTEEL_SHIELD.get());
                 output.accept(MegaBotanyItems.ELEMENTIUM_SHIELD.get());
                 output.accept(MegaBotanyItems.TERRASTEEL_SHIELD.get());
-                output.accept(MegaBotanyItems.MANASTEEL_HAMMER.get());
-                output.accept(MegaBotanyItems.ELEMENTIUM_HAMMER.get());
-                output.accept(MegaBotanyItems.TERRASTEEL_HAMMER.get());
                 output.accept(MegaBotanyItems.WALKING_CANE.get());
 
                 output.accept(MegaBotanyItems.PANDORA_BOX.get());
@@ -78,26 +75,22 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyItems.ORICHALCOS_INGOT.get());
                 output.accept(MegaBotanyBlocks.ORICHALCOS_BLOCK.get());
                 output.accept(MegaBotanyItems.TICKET.get());
+                output.accept(MegaBotanyItems.EARTH_ESSENCE.get());
+                output.accept(MegaBotanyItems.MEDAL_OF_HEROISM.get());
 
                 output.accept(MegaBotanyItems.NIGHTMARE_FUEL.get());
                 output.accept(MegaBotanyItems.SPIRIT_FUEL.get());
-                output.accept(MegaBotanyItems.SPIRIT_FRAGMENT.get());
-                output.accept(MegaBotanyBlocks.MORTAR.get());
                 output.accept(MegaBotanyBlocks.PEDESTAL.get());
+                output.accept(MegaBotanyBlocks.SPIRIT_PORTAL.get());
                 output.accept(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get());
                 output.accept(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get());
-                output.accept(MegaBotanyItems.GILDED_POTATO.get());
-                output.accept(MegaBotanyItems.GILDED_MASHED_POTATO.get());
                 output.accept(MegaBotanyItems.FRIED_CHICKEN.get());
 
-                output.accept(MegaBotanyItems.FROST_RING.get());
-                output.accept(MegaBotanyItems.CURSE_RING.get());
                 output.accept(MegaBotanyItems.WALL_JUMP_AMULET.get());
                 output.accept(MegaBotanyItems.WALL_CLIMB_AMULET.get());
-                output.accept(MegaBotanyItems.PARKOUR_AMULET.get());
-                output.accept(MegaBotanyItems.PARKOUR_AMULET2.get());
+                output.accept(MegaBotanyItems.JUMP_AMULET.get());
+                output.accept(MegaBotanyItems.FROST_RING.get());
                 output.accept(MegaBotanyItems.MANA_DRIVE_RING.get());
-                output.accept(MegaBotanyItems.ELVEN_KING_RING.get());
                 output.accept(MegaBotanyItems.JINGWEI_FEATHER.get());
                 output.accept(MegaBotanyItems.PURE_DAISY_PENDANT.get());
                 output.accept(MegaBotanyItems.SUPER_CROWN.get());

@@ -19,6 +19,9 @@
     "ManaSpreaderBlockMixin",
     "MonocleMixin",
     "PlayerMixin",
+    "PylonBlockEntityAccessor",
+    "PylonBlockEntityMixin",
+    "PylonBlockVariantMixin",
     "ServerLevelMixin",
     "WandOfTheForestItemMixin"
   ],

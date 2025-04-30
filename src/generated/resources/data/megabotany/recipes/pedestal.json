@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "botania:livingrock"
+    }
+  },
+  "pattern": [
+    "RRR",
+    " R ",
+    "RRR"
+  ],
+  "result": {
+    "item": "megabotany:pedestal"
+  },
+  "show_notification": true
+}

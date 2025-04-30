@@ -1,0 +1,38 @@
+{
+  "parent": "megabotany:main/root",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:nightmare_fuel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.megabotany:obtain_nightmare_fuel.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:nightmare_fuel"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:obtain_nightmare_fuel"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

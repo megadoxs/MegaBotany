@@ -22,6 +22,7 @@ import io.github.megadoxs.megabotany.common.item.equipment.armor.shadowium.Shado
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.CoreGod;
 import io.github.megadoxs.megabotany.common.item.equipment.bauble.MasterBandOfMana;
 import io.github.megadoxs.megabotany.common.item.relic.*;
+import io.github.megadoxs.megabotany.common.loot.MegaBotanyLootModifiers;
 import io.github.megadoxs.megabotany.common.network.MegaBotanyNetwork;
 import io.github.megadoxs.megabotany.common.util.MegaBotanyItemProperties;
 import net.minecraft.ChatFormatting;
@@ -68,6 +69,7 @@ import org.slf4j.Logger;
 import vazkii.botania.api.BotaniaForgeCapabilities;
 import vazkii.botania.api.BotaniaForgeClientCapabilities;
 import vazkii.botania.api.block.WandHUD;
+import vazkii.botania.api.block.Wandable;
 import vazkii.botania.api.item.Relic;
 import vazkii.botania.api.mana.ManaItem;
 import vazkii.botania.api.mana.ManaReceiver;
@@ -106,6 +108,8 @@ public class MegaBotany {
         MegaBotanyBlocks.register(modEventBus);
         MegaBotanyBlockEntities.register(modEventBus);
         MegaBotanyPOITypes.register(modEventBus);
+
+        MegaBotanyLootModifiers.register(modEventBus);
 
         MegaBotanyEffects.register(modEventBus);
         MegaBotanyEntities.register(modEventBus);
@@ -163,6 +167,11 @@ public class MegaBotany {
 
         if (be.getType() == MegaBotanyFlowerBlocks.MANALINKIUM) {
             e.addCapability(prefix("mana_receiver"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.MANA_RECEIVER, (ManaReceiver) be));
+        }
+
+
+        if (be.getType() == MegaBotanyBlockEntities.SPIRIT_PORTAL.get()) {
+            e.addCapability(prefix("wandable"), CapabilityUtil.makeProvider(BotaniaForgeCapabilities.WANDABLE, (Wandable) be));
         }
     }
 

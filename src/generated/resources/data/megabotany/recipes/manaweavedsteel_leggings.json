@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "botania:life_essence"
+    },
+    "L": {
+      "item": "botania:manaweave_leggings"
+    },
+    "S": {
+      "item": "botania:manasteel_ingot"
+    }
+  },
+  "pattern": [
+    "ESE",
+    "SLS"
+  ],
+  "result": {
+    "item": "megabotany:manaweavedsteel_leggings"
+  },
+  "show_notification": true
+}

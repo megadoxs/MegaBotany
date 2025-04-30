@@ -1,0 +1,18 @@
+{
+  "type": "megabotany:spirit_trade",
+  "day_output": [
+    {
+      "item": "megabotany:spirit_fuel"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "night_output": [
+    {
+      "item": "megabotany:nightmare_fuel"
+    }
+  ]
+}

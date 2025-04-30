@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "megabotany:item/parkour_amulet2"
-  }
-}

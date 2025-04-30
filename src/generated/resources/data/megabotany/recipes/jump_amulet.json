@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "botania:rune_earth"
+    },
+    "M": {
+      "item": "botania:manasteel_ingot"
+    },
+    "P": {
+      "item": "minecraft:rabbit_foot"
+    }
+  },
+  "pattern": [
+    "PM ",
+    "M M",
+    " ME"
+  ],
+  "result": {
+    "item": "megabotany:jump_amulet"
+  },
+  "show_notification": true
+}

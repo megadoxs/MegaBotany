@@ -18,9 +18,7 @@ public class MegaBotanyTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> HAMMERS = tag("hammers");
-        public static final TagKey<Item> MORTAR_INGREDIENTS = tag("mortar_ingredients");
-
+        public static final TagKey<Item> MANA_FUEL = tag("mana_fuel");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MegaBotany.MOD_ID, name));

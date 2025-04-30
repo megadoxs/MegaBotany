@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "botania:life_essence"
+    },
+    "G": {
+      "item": "botania:gaia_ingot"
+    },
+    "P": {
+      "item": "megabotany:photonium_ingot"
+    },
+    "S": {
+      "item": "megabotany:shadowium_ingot"
+    }
+  },
+  "pattern": [
+    "ESE",
+    "PGP",
+    "ESE"
+  ],
+  "result": {
+    "item": "megabotany:ticket"
+  },
+  "show_notification": true
+}

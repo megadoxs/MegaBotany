@@ -1,0 +1,15 @@
+{
+  "type": "botania:mana_upgrade_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    {
+      "item": "botania:mana_ring_greater"
+    }
+  ],
+  "result": {
+    "item": "megabotany:master_band_of_mana"
+  }
+}

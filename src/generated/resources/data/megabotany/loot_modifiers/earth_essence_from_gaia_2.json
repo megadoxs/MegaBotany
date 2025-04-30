@@ -1,0 +1,26 @@
+{
+  "type": "megabotany:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "botania:gaia_guardian_2"
+    },
+    {
+      "condition": "botania:true_guardian_killer"
+    }
+  ],
+  "count": 6,
+  "functions": [
+    {
+      "add": false,
+      "conditions": [
+        {
+          "condition": "botania:true_guardian_killer"
+        }
+      ],
+      "count": 8.0,
+      "function": "minecraft:set_count"
+    }
+  ],
+  "id": "megabotany:earth_essence"
+}

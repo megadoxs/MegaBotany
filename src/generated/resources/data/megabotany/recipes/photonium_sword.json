@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "L": {
+      "item": "botania:livingwood_twig"
+    },
+    "S": {
+      "item": "megabotany:photonium_ingot"
+    }
+  },
+  "pattern": [
+    "S",
+    "S",
+    "L"
+  ],
+  "result": {
+    "item": "megabotany:photonium_sword"
+  },
+  "show_notification": true
+}

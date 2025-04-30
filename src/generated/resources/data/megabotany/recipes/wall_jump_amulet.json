@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "botania:rune_earth"
+    },
+    "M": {
+      "item": "botania:manasteel_ingot"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    "SM ",
+    "M M",
+    " ME"
+  ],
+  "result": {
+    "item": "megabotany:wall_jump_amulet"
+  },
+  "show_notification": true
+}

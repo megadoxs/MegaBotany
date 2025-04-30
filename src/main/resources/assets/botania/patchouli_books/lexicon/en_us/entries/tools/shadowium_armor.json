@@ -1,0 +1,33 @@
+{
+  "name": "megabotany.entry.shadowiumArmor",
+  "category": "botania:tools",
+  "icon": "megabotany:shadowium_helmet",
+  "priority": true,
+  "advancement": "megabotany:main/obtain_shadowium_ingot",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.shadowiumArmor0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.shadowiumArmor1",
+      "recipe": "megabotany:shadowium_helmet"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.shadowiumArmor2",
+      "recipe": "megabotany:shadowium_chestplate"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.shadowiumArmor3",
+      "recipe": "megabotany:shadowium_leggings"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.shadowiumArmor4",
+      "recipe": "megabotany:shadowium_boots"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "megabotany:main/kill_gaia_iii",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:orichalcos_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.megabotany:obtain_orichalcos_ingot.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:orichalcos_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:obtain_orichalcos_ingot"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "botania:elementium_ingot"
+    },
+    "M": {
+      "item": "botania:mana_string"
+    },
+    "P": {
+      "item": "botania:pure_daisy"
+    }
+  },
+  "pattern": [
+    "EME",
+    "MPM",
+    "PMP"
+  ],
+  "result": {
+    "item": "megabotany:pure_daisy_pendant"
+  },
+  "show_notification": true
+}

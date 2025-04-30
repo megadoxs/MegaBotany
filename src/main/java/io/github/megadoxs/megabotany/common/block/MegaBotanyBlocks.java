@@ -2,8 +2,9 @@ package io.github.megadoxs.megabotany.common.block;
 
 import io.github.megadoxs.megabotany.api.RedstoneSpreader;
 import io.github.megadoxs.megabotany.common.MegaBotany;
-import io.github.megadoxs.megabotany.common.block.block_entity.MortarBlock;
+//import io.github.megadoxs.megabotany.common.block.block_entity.MortarBlock;
 import io.github.megadoxs.megabotany.common.block.block_entity.PedestalBlock;
+import io.github.megadoxs.megabotany.common.block.block_entity.SpiritPortalBlock;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
@@ -17,6 +18,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.block.mana.ManaSpreaderBlock;
 
 import java.util.function.Supplier;
@@ -28,7 +30,7 @@ public class MegaBotanyBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MegaBotany.MOD_ID);
 
-    public static final RegistryObject<Block> MORTAR = registerBlock("mortar", () -> new MortarBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> SPIRIT_PORTAL = registerBlock("spirit_portal", () -> new SpiritPortalBlock(BlockBehaviour.Properties.copy(BotaniaBlocks.alfPortal)));
     public static final RegistryObject<Block> PEDESTAL = registerBlock("pedestal", () -> new PedestalBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
 
     public static final RegistryObject<Block> PHOTONIUM_BLOCK = registerBlock("photonium_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));

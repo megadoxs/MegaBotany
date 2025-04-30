@@ -1,16 +1,19 @@
 {
   "criteria": {
-    "test": {
+    "kill_gaia_2": {
       "conditions": {
-        "items": [
+        "entity": [
           {
-            "items": [
-              "megabotany:nightmare_fuel"
-            ]
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "botania:doppleganger",
+              "nbt": "{hardMode:1b}"
+            }
           }
         ]
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:player_killed_entity"
     }
   },
   "display": {
@@ -22,8 +25,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "megabotany:terrasteel_hammer",
-      "nbt": "{Damage:0}"
+      "item": "megabotany:earth_essence"
     },
     "show_toast": false,
     "title": {
@@ -32,7 +34,7 @@
   },
   "requirements": [
     [
-      "test"
+      "kill_gaia_2"
     ]
   ],
   "sends_telemetry_event": true
