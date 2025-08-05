@@ -22,10 +22,12 @@ import vazkii.botania.common.helper.VecHelper;
 import java.util.Objects;
 
 public class SpiritPortalBlockEntityRenderer implements BlockEntityRenderer<SpiritPortalBlockEntity> {
-    private final TextureAtlasSprite portalSprite;
+    private final TextureAtlasSprite daySprite;
+    private final TextureAtlasSprite nightSprite;
 
     public SpiritPortalBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
-        this.portalSprite = Objects.requireNonNull(Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(new ResourceLocation("megabotany:block/spirit_portal_swirl")));
+        daySprite = Objects.requireNonNull(Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(new ResourceLocation("megabotany:block/spirit_portal_swirl")));
+        nightSprite = Objects.requireNonNull(Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(new ResourceLocation("megabotany:block/spirit_portal_swirl_night")));
     }
 
     @Override
@@ -44,7 +46,7 @@ public class SpiritPortalBlockEntityRenderer implements BlockEntityRenderer<Spir
         } else {
             ms.translate(-1, 1, 0.3125);
         }
-        renderIcon(ms, buffers, this.portalSprite, 0, 0, 3, 3, alpha, overlay);
+        renderIcon(ms, buffers, portal.dayMode ? daySprite : nightSprite, 0, 0, 3, 3, alpha * portal.spriteAlpha, overlay);
         ms.popPose();
 
         ms.pushPose();
@@ -55,7 +57,7 @@ public class SpiritPortalBlockEntityRenderer implements BlockEntityRenderer<Spir
             ms.translate(2, 1, 0.6875);
         }
         ms.mulPose(VecHelper.rotateY(180));
-        renderIcon(ms, buffers, this.portalSprite, 0, 0, 3, 3, alpha, overlay);
+        renderIcon(ms, buffers, portal.dayMode ? daySprite : nightSprite, 0, 0, 3, 3, alpha * portal.spriteAlpha, overlay);
         ms.popPose();
     }
 

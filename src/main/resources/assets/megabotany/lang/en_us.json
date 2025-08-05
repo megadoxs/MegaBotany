@@ -169,5 +169,8 @@
   "block.megabotany.redstone_elven_spreader": "Pulse Elven Mana Spreader",
   "block.megabotany.redstone_gaia_spreader": "Pulse Gaia Mana Spreader",
 
-  "megabotany.category.spiritology": "Spiritology"
+  "megabotany.category.spiritology": "Spiritology",
+
+  "megabotany.jei.spirit_trade_day": "Day Spirit Trade",
+  "megabotany.jei.spirit_trade_night": "Night Spirit Trade"
 }

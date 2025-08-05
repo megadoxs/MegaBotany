@@ -5,15 +5,19 @@ import io.github.megadoxs.megabotany.common.block.MegaBotanyBlockEntities;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import io.github.megadoxs.megabotany.common.crafting.recipe.SpiritTradeRecipe;
 import io.github.megadoxs.megabotany.common.mixin.PylonBlockEntityAccessor;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.BlockGetter;
@@ -98,6 +102,7 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
     public static final int MANA_COST_OPENING = 200000;
     public static final int MIN_REQUIRED_PYLONS = 2;
     private static final String TAG_TICKS_OPEN = "ticksOpen";
+    private static final String TAG_MODE = "mode";
     private static final String TAG_TICKS_SINCE_LAST_ITEM = "ticksSinceLastItem";
     private static final String TAG_STACK_COUNT = "stackCount";
     private static final String TAG_STACK = "portalStack";
@@ -106,8 +111,17 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
     private final List<BlockPos> cachedPylonPositions = new ArrayList<>();
 
     public int ticksOpen = 0;
+    public boolean dayMode;
     private int ticksSinceLastItem = 0;
     private boolean closeNow = false;
+
+    //some of these probably need to be saved in nbt
+    public float spriteAlpha;
+
+    private int fadeTimer = 0;
+    private boolean shouldFade = false;
+    private static final int FADE_DURATION = 120;
+    private boolean hasSwitchedSprite = false;
 
     public SpiritPortalBlockEntity(BlockPos pos, BlockState state) {
         super(MegaBotanyBlockEntities.SPIRIT_PORTAL.get(), pos, state);
@@ -115,6 +129,8 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
 
     public static void commonTick(Level level, BlockPos worldPosition, BlockState blockState, SpiritPortalBlockEntity self) {
         AlfheimPortalState state = blockState.getValue(BotaniaStateProperties.ALFPORTAL_STATE);
+        float time = level.getDayTime() % 24000; //day = 0 && night = 13000
+
         if (state == AlfheimPortalState.OFF) {
             self.ticksOpen = 0;
             return;
@@ -122,6 +138,40 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
         AlfheimPortalState newState = self.getValidState(state);
 
         self.ticksOpen++;
+
+        if(self.ticksOpen == 1){
+            self.dayMode = time >= 13000;
+            self.spriteAlpha = 1;
+        }
+
+        if(self.ticksOpen > 0) {
+            if (time == 12940 || time == 23940 ){
+                self.shouldFade = true;
+                self.fadeTimer = 0;
+            }
+            else if(((time < 13000 && !self.dayMode) || (time >= 13000 && self.dayMode)) && !self.shouldFade){
+                self.dayMode = !self.dayMode;
+            }
+
+            if (self.shouldFade){
+                float progress = self.fadeTimer / (float) FADE_DURATION;
+                self.spriteAlpha = (float) (0.5 * (1 + Math.cos(progress * Math.PI)));
+
+                self.fadeTimer++;
+
+                if (!self.hasSwitchedSprite && progress >= 0.5f) {
+                    self.hasSwitchedSprite = true;
+                    self.dayMode = !self.dayMode;
+                }
+
+                if (self.fadeTimer >= FADE_DURATION) {
+                    self.shouldFade = false;
+                    self.fadeTimer = 0;
+                    self.hasSwitchedSprite = false;
+                    self.spriteAlpha = 1;
+                }
+            }
+        }
 
         AABB aabb = self.getPortalAABB(state);
 
@@ -236,7 +286,7 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
                 }
             }
 
-            for(ItemStack stack : recipe.get().getOutputs(level.isDay()))
+            for(ItemStack stack : recipe.get().getOutputs(dayMode))
                 spawnItem(stack);
         }
     }
@@ -277,12 +327,15 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
     @Override
     public void writePacketNBT(CompoundTag cmp) {
         cmp.putInt(TAG_TICKS_OPEN, ticksOpen);
+        cmp.putBoolean(TAG_MODE, dayMode);
         cmp.putInt(TAG_TICKS_SINCE_LAST_ITEM, ticksSinceLastItem);
     }
 
     @Override
     public void readPacketNBT(CompoundTag cmp) {
         ticksOpen = cmp.getInt(TAG_TICKS_OPEN);
+        dayMode = cmp.getBoolean(TAG_MODE);
+        spriteAlpha = 1;
         ticksSinceLastItem = cmp.getInt(TAG_TICKS_SINCE_LAST_ITEM);
     }
 
