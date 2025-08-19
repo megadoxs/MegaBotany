@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "obtain_earth_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:earth_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "botania:textures/block/dreamwood_log.png",
+    "description": {
+      "translate": "advancement.megabotany:root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:earth_essence"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:root"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_earth_essence"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

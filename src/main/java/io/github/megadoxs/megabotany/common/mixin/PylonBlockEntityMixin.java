@@ -2,30 +2,22 @@ package io.github.megadoxs.megabotany.common.mixin;
 
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.objectweb.asm.Opcodes;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import vazkii.botania.api.state.BotaniaStateProperties;
 import vazkii.botania.api.state.enums.AlfheimPortalState;
-import vazkii.botania.client.fx.SparkleParticleData;
 import vazkii.botania.client.fx.WispParticleData;
-import vazkii.botania.common.block.BotaniaBlocks;
-import vazkii.botania.common.block.BotaniaFlowerBlock;
 import vazkii.botania.common.block.PylonBlock;
 import vazkii.botania.common.block.block_entity.PylonBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
-import vazkii.botania.common.item.material.MysticalPetalItem;
 import vazkii.botania.xplat.BotaniaConfig;
 
 import java.util.Random;
@@ -38,7 +30,7 @@ public abstract class PylonBlockEntityMixin {
 
     @Inject(method = "commonTick", at = @At(value = "FIELD", target = "Lvazkii/botania/common/block/block_entity/PylonBlockEntity;ticks:I", opcode = Opcodes.PUTFIELD, shift = At.Shift.AFTER, ordinal = 0), remap = false)
     private static void commonTick(Level level, BlockPos worldPosition, BlockState state, PylonBlockEntity self, CallbackInfo ci) {
-        PylonBlock.Variant variant = ((PylonBlock)state.getBlock()).variant;
+        PylonBlock.Variant variant = ((PylonBlock) state.getBlock()).variant;
         if (variant == PylonBlock.Variant.GAIA && self instanceof PylonBlockEntityAccessor pylon && pylon.isActivated() && level.isClientSide && level.getBlockState(pylon.getCenterPos()).is(variant.getTargetBlock())) {
             if (pylon.callPortalOff() || !(level.getBlockState(worldPosition.below()).getBlock() instanceof ManaPoolBlock)) {
                 pylon.setActivated(false);
@@ -74,7 +66,7 @@ public abstract class PylonBlockEntityMixin {
     private void portalOff(CallbackInfoReturnable<Boolean> cir) {
         Level level = ((PylonBlockEntity) (Object) this).getLevel();
 
-        if(level.getBlockState(centerPos).is(MegaBotanyBlocks.SPIRIT_PORTAL.get()))
+        if (level.getBlockState(centerPos).is(MegaBotanyBlocks.SPIRIT_PORTAL.get()))
             cir.setReturnValue(level.getBlockState(centerPos).getValue(BotaniaStateProperties.ALFPORTAL_STATE) == AlfheimPortalState.OFF);
     }
 }

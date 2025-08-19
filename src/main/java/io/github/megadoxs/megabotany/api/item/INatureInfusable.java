@@ -3,7 +3,7 @@ package io.github.megadoxs.megabotany.api.item;
 import net.minecraft.world.item.ItemStack;
 import vazkii.botania.common.helper.ItemNBTHelper;
 
-// will add a bar of nature infusion to every item that implements this interface
+//TODO will be replace by pure / impure mana infusion instead
 public interface INatureInfusable {
     String TAG_INFUSION_RATE = "infusion_rate";
     String TAG_INFUSED = "infused";

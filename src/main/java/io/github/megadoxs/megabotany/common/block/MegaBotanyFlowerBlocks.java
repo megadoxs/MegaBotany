@@ -68,10 +68,6 @@ public class MegaBotanyFlowerBlocks {
     public static final Block reikarLilyFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, () -> MegaBotanyFlowerBlocks.REIKAR_LILY);
     public static final Block reikarLilyPotted = MegaBotanyBlocks.flowerPot(reikarLily, 0);
 
-    public static final Block stonesia = createSpecialFlowerBlock(BotaniaMobEffects.clear, 1, FLOWER_PROPS, () -> MegaBotanyFlowerBlocks.STONESIA);
-    public static final Block stonesiaFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, () -> MegaBotanyFlowerBlocks.STONESIA);
-    public static final Block stonesiaPotted = MegaBotanyBlocks.flowerPot(stonesia, 0);
-
     public static final Block geminiOrchid = createSpecialFlowerBlock(BotaniaMobEffects.clear, 1, FLOWER_PROPS, () -> MegaBotanyFlowerBlocks.GEMINI_ORCHID);
     public static final Block geminiOrchidFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, () -> MegaBotanyFlowerBlocks.GEMINI_ORCHID);
     public static final Block geminiOrchidPotted = MegaBotanyBlocks.flowerPot(geminiOrchid, 0);
@@ -110,7 +106,6 @@ public class MegaBotanyFlowerBlocks {
     public static final BlockEntityType<TinkleBlockEntity> TINKLE = ForgeXplatImpl.INSTANCE.createBlockEntityType(TinkleBlockEntity::new, tinkle, tinkleFloating);
     public static final BlockEntityType<BellFlowerBlockEntity> BELL_FLOWER = ForgeXplatImpl.INSTANCE.createBlockEntityType(BellFlowerBlockEntity::new, bellFlower, bellFlowerFloating);
     public static final BlockEntityType<ReikarLilyBlockEntity> REIKAR_LILY = ForgeXplatImpl.INSTANCE.createBlockEntityType(ReikarLilyBlockEntity::new, reikarLily, reikarLilyFloating);
-    public static final BlockEntityType<StonesiaBlockEntity> STONESIA = ForgeXplatImpl.INSTANCE.createBlockEntityType(StonesiaBlockEntity::new, stonesia, stonesiaFloating);
     public static final BlockEntityType<GeminiOrchidBlockEntity> GEMINI_ORCHID = ForgeXplatImpl.INSTANCE.createBlockEntityType(GeminiOrchidBlockEntity::new, geminiOrchid, geminiOrchidFloating);
     public static final BlockEntityType<EnchantedOrchidBlockEntity> ENCHANTED_ORCHID = ForgeXplatImpl.INSTANCE.createBlockEntityType(EnchantedOrchidBlockEntity::new, enchantedOrchid, enchantedOrchidFloating);
     public static final BlockEntityType<MirrortuniaBlockEntity> MIRRORTUNIA = ForgeXplatImpl.INSTANCE.createBlockEntityType(MirrortuniaBlockEntity::new, mirrortunia, mirrortuniaFloating);
@@ -173,10 +168,6 @@ public class MegaBotanyFlowerBlocks {
         r.accept(reikarLilyFloating, floating(new ResourceLocation("megabotany", "reikar_lily")));
         r.accept(reikarLilyPotted, potted(new ResourceLocation("megabotany", "reikar_lily")));
 
-        r.accept(stonesia, new ResourceLocation("megabotany", "stonesia"));
-        r.accept(stonesiaFloating, floating(new ResourceLocation("megabotany", "stonesia")));
-        r.accept(stonesiaPotted, potted(new ResourceLocation("megabotany", "stonesia")));
-
         r.accept(geminiOrchid, new ResourceLocation("megabotany", "gemini_orchid"));
         r.accept(geminiOrchidFloating, floating(new ResourceLocation("megabotany", "gemini_orchid")));
         r.accept(geminiOrchidPotted, potted(new ResourceLocation("megabotany", "gemini_orchid")));
@@ -217,7 +208,6 @@ public class MegaBotanyFlowerBlocks {
         r.accept(TINKLE, getId(tinkle));
         r.accept(BELL_FLOWER, getId(bellFlower));
         r.accept(REIKAR_LILY, getId(reikarLily));
-        r.accept(STONESIA, getId(stonesia));
         r.accept(GEMINI_ORCHID, getId(geminiOrchid));
         r.accept(ENCHANTED_ORCHID, getId(enchantedOrchid));
         r.accept(MIRRORTUNIA, getId(mirrortunia));
@@ -237,7 +227,6 @@ public class MegaBotanyFlowerBlocks {
         event.registerBlockEntityRenderer(TINKLE, SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(BELL_FLOWER, SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(REIKAR_LILY, SpecialFlowerBlockEntityRenderer::new);
-        event.registerBlockEntityRenderer(STONESIA, SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(GEMINI_ORCHID, SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ENCHANTED_ORCHID, SpecialFlowerBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(MIRRORTUNIA, SpecialFlowerBlockEntityRenderer::new);
@@ -275,9 +264,6 @@ public class MegaBotanyFlowerBlocks {
         r.accept(new SpecialFlowerBlockItem(reikarLily, props), getId(reikarLily));
         r.accept(new SpecialFlowerBlockItem(reikarLilyFloating, props), getId(reikarLilyFloating));
 
-        r.accept(new SpecialFlowerBlockItem(stonesia, props), getId(stonesia));
-        r.accept(new SpecialFlowerBlockItem(stonesiaFloating, props), getId(stonesiaFloating));
-
         r.accept(new SpecialFlowerBlockItem(geminiOrchid, props), getId(geminiOrchid));
         r.accept(new SpecialFlowerBlockItem(geminiOrchidFloating, props), getId(geminiOrchidFloating));
 
@@ -308,7 +294,7 @@ public class MegaBotanyFlowerBlocks {
 
     public static void registerWandHudCaps(BotaniaBlockEntities.BECapConsumer<WandHUD> consumer) {
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((GeneratingFlowerBlockEntity) be),
-                BLOODY_ENCHANTRESS, SUNSHINE_LILY, MOONLIGHT_LILY, OMNIVIOLET, EDELWEISS, TINKLE, BELL_FLOWER, REIKAR_LILY, STONESIA, GEMINI_ORCHID);
+                BLOODY_ENCHANTRESS, SUNSHINE_LILY, MOONLIGHT_LILY, OMNIVIOLET, EDELWEISS, TINKLE, BELL_FLOWER, REIKAR_LILY, GEMINI_ORCHID);
         consumer.accept(be -> new BindableSpecialFlowerBlockEntity.BindableFlowerWandHud<>((FunctionalFlowerBlockEntity) be),
                 ENCHANTED_ORCHID, MIRRORTUNIA, ANNOYING_FLOWER, NECROFLEUR, NECROFLEUR_CHIBI);
         consumer.accept(be -> new FlowerBindableFunctionalFlowerBlockEntity.WandHud<>((FlowerBindableFunctionalFlowerBlockEntity<? extends FunctionalFlowerBlockEntity>) be),

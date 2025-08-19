@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.wall_climb_amulet",
+  "category": "botania:baubles",
+  "icon": "megabotany:wall_climb_amulet",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.wall_climb_amulet0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.wall_climb_amulet1",
+      "recipe": "megabotany:wall_climb_amulet"
+    }
+  ]
+}

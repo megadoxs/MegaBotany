@@ -1,0 +1,33 @@
+{
+  "name": "megabotany.entry.femaleOrichalcosArmor",
+  "category": "botania:tools",
+  "icon": "megabotany:orichalcos_helmet_female",
+  "priority": true,
+  "advancement": "megabotany:obtain_orichalcos_ingot",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.orichalcosArmor0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.orichalcosArmor1",
+      "recipe": "megabotany:orichalcos_helmet_female"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.orichalcosArmor2",
+      "recipe": "megabotany:orichalcos_chestplate_female"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.orichalcosArmor3",
+      "recipe": "megabotany:orichalcos_leggings_female"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.orichalcosArmor4",
+      "recipe": "megabotany:orichalcos_boots_female"
+    }
+  ]
+}

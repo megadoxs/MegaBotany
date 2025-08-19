@@ -1,0 +1,30 @@
+{
+  "parent": "megabotany:root",
+  "criteria": {
+    "spirit_portal": {
+      "conditions": {},
+      "trigger": "botania:open_spirit_portal"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.megabotany:spirit_portal.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:spirit_portal"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:spirit_portal"
+    }
+  },
+  "requirements": [
+    [
+      "spirit_portal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

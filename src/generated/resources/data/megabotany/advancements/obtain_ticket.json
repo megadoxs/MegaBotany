@@ -1,0 +1,38 @@
+{
+  "parent": "megabotany:spirit_portal",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:ticket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.megabotany:obtain_ticket.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:ticket"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:obtain_ticket"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

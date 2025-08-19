@@ -15,7 +15,7 @@ import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.common.handler.BotaniaSounds;
 
-public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity {
+public class BloodyEnchantressBlockEntity extends GeneratingFlowerBlockEntity { //TODO rework
     private static final String TAG_BURN_TIME = "burnTime";
     private static final String TAG_MANA_GENERATION = "manaGeneration";
     private static final int RANGE = 0;

@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.frost_ring",
+  "category": "botania:baubles",
+  "icon": "megabotany:frost_ring",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.frost_ring0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.frost_ring1",
+      "recipe": "megabotany:frost_ring"
+    }
+  ]
+}

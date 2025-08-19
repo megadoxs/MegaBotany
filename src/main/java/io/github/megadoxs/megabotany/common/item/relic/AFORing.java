@@ -64,7 +64,7 @@ public class AFORing extends BaubleItem {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.ALL_FOR_ONE.getId().getPath()));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.ALL_FOR_ONE.getId().getPath()));
     }
 
     @Override

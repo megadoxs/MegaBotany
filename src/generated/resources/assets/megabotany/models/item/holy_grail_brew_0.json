@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "megabotany:item/holy_grail",
-    "layer1": "megabotany:item/holy_grail_brew_0"
-  }
-}

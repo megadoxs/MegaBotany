@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.omniviolet",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:omniviolet",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.omniviolet0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.omniviolet1",
+      "recipe": "megabotany:petal_apothecary/omniviolet"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:omniviolet": 1
+  }
+}

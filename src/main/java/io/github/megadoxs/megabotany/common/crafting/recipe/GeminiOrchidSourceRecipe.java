@@ -16,7 +16,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -89,11 +88,9 @@ public class GeminiOrchidSourceRecipe implements Recipe<Container> {
             String blockTag = GsonHelper.getAsString(pSerializedRecipe, "blockTag", "");
             if (!blockId.isEmpty())
                 blocks.add(ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockId)).asItem());
-                //TODO FIX LOL, return an empty list every time
             else if (!blockTag.isEmpty()) {
                 TagKey<Block> blockTagKey = TagKey.create(ForgeRegistries.BLOCKS.getRegistryKey(), new ResourceLocation(blockTag));
-
-                @NotNull ITag<Block> optional = ForgeRegistries.BLOCKS.tags().getTag(blockTagKey);
+                ITag<Block> optional = ForgeRegistries.BLOCKS.tags().getTag(blockTagKey);
                 blocks.addAll(optional.stream().map(Block::asItem).toList());
             }
 

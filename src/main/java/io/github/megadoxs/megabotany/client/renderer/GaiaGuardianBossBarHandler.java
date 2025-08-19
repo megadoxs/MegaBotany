@@ -32,7 +32,6 @@ public final class GaiaGuardianBossBarHandler {
         for (GaiaGuardianIII currentBoss : bosses) {
             if (currentBoss.getBossInfoUuid().equals(bossEvent.getId())) {
                 Minecraft mc = Minecraft.getInstance();
-                // todo boss_bar.png has textures for different colors, respect bossEvent's getColor()?
                 int frameU = 0, frameV = 0;
                 int frameWidth = 185, frameHeight = 15;
                 int healthU = 0, healthV = frameV + frameHeight;

@@ -19,7 +19,7 @@ import vazkii.botania.api.block_entity.RadiusDescriptor;
 import java.util.Optional;
 
 @Mod.EventBusSubscriber(modid = MegaBotany.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class MirrortuniaBlockEntity extends FunctionalFlowerBlockEntity {
+public class MirrortuniaBlockEntity extends FunctionalFlowerBlockEntity { //TODO rework do something with the cancel effect, also make it work with all livingEntities
     private static final int RANGE = 16;
     private static final int MANA_COST = 1000;
 

@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.enchanted_orchid",
+  "category": "botania:functional_flowers",
+  "icon": "megabotany:enchanted_orchid",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.enchanted_orchid0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.enchanted_orchid1",
+      "recipe": "megabotany:petal_apothecary/enchanted_orchid"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:enchanted_orchid": 1
+  }
+}

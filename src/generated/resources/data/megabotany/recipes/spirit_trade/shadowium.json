@@ -1,0 +1,22 @@
+{
+  "type": "megabotany:spirit_trade",
+  "day_output": [
+    {
+      "count": 0,
+      "item": "minecraft:air"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "botania:gaia_ingot"
+    },
+    {
+      "item": "megabotany:nightmare_fuel"
+    }
+  ],
+  "night_output": [
+    {
+      "item": "megabotany:shadowium_ingot"
+    }
+  ]
+}

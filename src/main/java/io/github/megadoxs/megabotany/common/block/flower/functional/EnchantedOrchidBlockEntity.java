@@ -15,7 +15,7 @@ import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.item.BlackLotusItem;
 
-public class EnchantedOrchidBlockEntity extends FunctionalFlowerBlockEntity {
+public class EnchantedOrchidBlockEntity extends FunctionalFlowerBlockEntity { //TODO rework add random delay
     private static final int MANA_COST = 10000;
 
     public EnchantedOrchidBlockEntity(BlockPos pos, BlockState state) {

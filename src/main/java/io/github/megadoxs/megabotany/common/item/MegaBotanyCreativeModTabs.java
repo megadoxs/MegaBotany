@@ -36,8 +36,6 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyFlowerBlocks.bellFlowerFloating);
                 output.accept(MegaBotanyFlowerBlocks.reikarLily);
                 output.accept(MegaBotanyFlowerBlocks.reikarLilyFloating);
-                output.accept(MegaBotanyFlowerBlocks.stonesia);
-                output.accept(MegaBotanyFlowerBlocks.stonesiaFloating);
                 output.accept(MegaBotanyFlowerBlocks.geminiOrchid);
                 output.accept(MegaBotanyFlowerBlocks.geminiOrchidFloating);
                 output.accept(MegaBotanyFlowerBlocks.enchantedOrchid);
@@ -62,8 +60,8 @@ public class MegaBotanyCreativeModTabs {
 
                 output.accept(MegaBotanyItems.PANDORA_BOX.get());
                 output.accept(MegaBotanyItems.FAILNAUGHT.get());
-                output.accept(MegaBotanyItems.EXCALIBER.get());
-                output.accept(MegaBotanyItems.ACHILLED_SHIELD.get());
+                output.accept(MegaBotanyItems.EXCALIBUR.get());
+                output.accept(MegaBotanyItems.ACHILLES_SHIELD.get());
                 output.accept(MegaBotanyItems.ALL_FOR_ONE.get());
                 output.accept(MegaBotanyItems.INFINITE_DRINK.get());
                 output.accept(MegaBotanyItems.ABSOLUTION_PENDANT.get());
@@ -84,11 +82,9 @@ public class MegaBotanyCreativeModTabs {
                 output.accept(MegaBotanyBlocks.SPIRIT_PORTAL.get());
                 output.accept(MegaBotanyBlocks.REDSTONE_ELVEN_SPREADER.get());
                 output.accept(MegaBotanyBlocks.REDSTONE_GAIA_SPREADER.get());
-                output.accept(MegaBotanyItems.FRIED_CHICKEN.get());
 
                 output.accept(MegaBotanyItems.WALL_JUMP_AMULET.get());
                 output.accept(MegaBotanyItems.WALL_CLIMB_AMULET.get());
-                output.accept(MegaBotanyItems.JUMP_AMULET.get());
                 output.accept(MegaBotanyItems.FROST_RING.get());
                 output.accept(MegaBotanyItems.MANA_DRIVE_RING.get());
                 output.accept(MegaBotanyItems.JINGWEI_FEATHER.get());

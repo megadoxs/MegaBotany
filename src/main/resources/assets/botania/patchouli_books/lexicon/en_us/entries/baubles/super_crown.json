@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.super_crown",
+  "category": "botania:baubles",
+  "icon": "megabotany:super_crown",
+  "advancement": "megabotany:obtain_orichalcos_ingot",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.super_crown0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.super_crown1",
+      "recipe": "megabotany:super_crown"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-26T21:42:18.8088911	Loot Tables
+// 1.20.1	2025-08-12T17:35:55.7078089	Loot Tables
 3057beb95f1e7a2234f47d985c1f54fc4da14425 data/megabotany/loot_tables/blocks/annoying_flower.json
 c94e2e20a1ce5127cfd91ec44723adccc99a3a4e data/megabotany/loot_tables/blocks/bell_flower.json
 7c34ce93aa2f7c260dff0caeb092897c00a95d77 data/megabotany/loot_tables/blocks/bloody_enchantress.json
@@ -18,7 +18,6 @@ e736ec502165379cb36e44feb16e689cbf195096 data/megabotany/loot_tables/blocks/floa
 97426057b24f62fd6a18a20237de06cd115adb24 data/megabotany/loot_tables/blocks/floating_omniviolet.json
 c7f2577ce0a4b8f2d5f205b589c54d941e839854 data/megabotany/loot_tables/blocks/floating_reikar_lily.json
 2df075b2d02d835182d6d8f7f6be416e770bc85a data/megabotany/loot_tables/blocks/floating_stardust_lotus.json
-288ed84cfd1d19c85fc4a335707955de580395e4 data/megabotany/loot_tables/blocks/floating_stonesia.json
 3c3852acf468aa4583d2375d4477d0f189d34476 data/megabotany/loot_tables/blocks/floating_sunshine_lily.json
 47bfc4f5d2b69e036ac2b70ad4d69e927e63f8ad data/megabotany/loot_tables/blocks/floating_tinkle.json
 670bab998369e02282cc22dfee30b0b087613199 data/megabotany/loot_tables/blocks/gemini_orchid.json
@@ -44,7 +43,6 @@ d70d76fd1e9f0c720d31c858d1fffc2dc8ee4592 data/megabotany/loot_tables/blocks/pott
 b15dd716006f7f35d5770dc871e2ce34c89d1446 data/megabotany/loot_tables/blocks/potted_omniviolet.json
 19eae34f3a5dd0b72d010ba77309ff0bffc7cead data/megabotany/loot_tables/blocks/potted_reikar_lily.json
 913708ee758f5f27be8c060305998cdff9bd3697 data/megabotany/loot_tables/blocks/potted_stardust_lotus.json
-f05ca69ea01de8d8f4e0256bf321a1eb29931492 data/megabotany/loot_tables/blocks/potted_stonesia.json
 7abaa7b5e71bba5e9aca74a3e553b7d4d05ce1f1 data/megabotany/loot_tables/blocks/potted_sunshine_lily.json
 6ba3ee89ad47719a35c6fe4109f71e67a4640d8a data/megabotany/loot_tables/blocks/potted_tinkle.json
 63559d3acb9b96cd326aa2639f73973abc8db185 data/megabotany/loot_tables/blocks/redstone_elven_spreader.json
@@ -53,6 +51,5 @@ f0a6ef87e829c3a8b5213abbc7ff2521ad27245a data/megabotany/loot_tables/blocks/reik
 088520042dbf7a93e63a075b11596195f4ecfce0 data/megabotany/loot_tables/blocks/shadowium_block.json
 bd033160b5d26e232ec9a3839b4ca1015ca503b7 data/megabotany/loot_tables/blocks/spirit_portal.json
 161eca29276b82cec6c02049f5d3b9351acdf9f2 data/megabotany/loot_tables/blocks/stardust_lotus.json
-488c44b346f5883c9136aae02811e06930d1346e data/megabotany/loot_tables/blocks/stonesia.json
 4f117cc6231a2a9bb9b980ab8959adb604d11a4a data/megabotany/loot_tables/blocks/sunshine_lily.json
 2e5d47c23c8093dcf44a7b76d031d0a203f5bbab data/megabotany/loot_tables/blocks/tinkle.json

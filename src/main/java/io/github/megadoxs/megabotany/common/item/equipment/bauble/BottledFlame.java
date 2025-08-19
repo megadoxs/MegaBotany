@@ -1,6 +1,5 @@
 package io.github.megadoxs.megabotany.common.item.equipment.bauble;
 
-import io.github.megadoxs.megabotany.api.item.INatureInfusable;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,7 +9,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -24,7 +22,7 @@ import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 
 import java.util.List;
 
-public class BottledFlame extends BaubleItem implements INatureInfusable {
+public class BottledFlame extends BaubleItem { //TODO display either in chat or in action bar the new mode when switching
     public static String TAG_MODE = "mode";
     public static String TAG_SIDE = "side";
 
@@ -41,15 +39,12 @@ public class BottledFlame extends BaubleItem implements INatureInfusable {
 
             if (world.getMaxLocalRawBrightness(pos) < 4) {
                 ItemStack stackAt = ItemStack.EMPTY;
-                if (isInfused(stack))
-                    stackAt = new ItemStack(Items.TORCH);
-                else
-                    for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
-                        if (player.getInventory().getItem(i).getDescriptionId().contains("torch")) {
-                            stackAt = player.getInventory().getItem(i);
-                            break;
-                        }
+                for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+                    if (player.getInventory().getItem(i).getDescriptionId().contains("torch")) {
+                        stackAt = player.getInventory().getItem(i);
+                        break;
                     }
+                }
 
                 // right clockwise, left counterClockWise
                 // 0 = right-left, 1 = right, 2 = left, 3 bottom, 4 = any
@@ -130,10 +125,5 @@ public class BottledFlame extends BaubleItem implements INatureInfusable {
     public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag flags) {
         super.appendHoverText(stack, world, tooltip, flags);
         tooltip.add(Component.translatable("misc.megabotany.mode").append(": ").append(Component.translatable("misc.megabotany.bottled_flame.mode." + ItemNBTHelper.getInt(stack, TAG_MODE, 0))));
-    }
-
-    @Override
-    public int getMaxInfusionRate() {
-        return 10000;
     }
 }

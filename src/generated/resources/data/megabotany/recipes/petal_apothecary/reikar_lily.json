@@ -1,0 +1,35 @@
+{
+  "type": "botania:petal_apothecary",
+  "ingredients": [
+    {
+      "item": "botania:rune_mana"
+    },
+    {
+      "item": "botania:rune_greed"
+    },
+    {
+      "tag": "botania:petals/blue"
+    },
+    {
+      "tag": "botania:petals/blue"
+    },
+    {
+      "tag": "botania:petals/light_blue"
+    },
+    {
+      "tag": "botania:petals/light_blue"
+    },
+    {
+      "tag": "botania:petals/white"
+    },
+    {
+      "item": "botania:pixie_dust"
+    }
+  ],
+  "output": {
+    "item": "megabotany:reikar_lily"
+  },
+  "reagent": {
+    "tag": "botania:seed_apothecary_reagent"
+  }
+}

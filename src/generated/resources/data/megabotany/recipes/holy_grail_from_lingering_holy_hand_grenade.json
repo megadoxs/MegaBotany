@@ -1,0 +1,12 @@
+{
+  "type": "megabotany:relic",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "megabotany:lingering_holy_hand_grenade"
+    }
+  ],
+  "result": {
+    "item": "megabotany:holy_grail"
+  }
+}

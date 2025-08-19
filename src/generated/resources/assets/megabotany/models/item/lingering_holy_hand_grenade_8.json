@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "megabotany:item/lingering_holy_hand_grenade",
+    "layer1": "megabotany:item/holy_hand_grenade_brew_8"
+  }
+}

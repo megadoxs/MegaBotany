@@ -40,16 +40,6 @@ public class MegaBotanyRecipeGenerator extends RecipeProvider implements ICondit
                 .unlockedBy(getHasName(BotaniaItems.manaSteel), has(BotaniaItems.manaSteel))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MegaBotanyItems.JUMP_AMULET.get())
-                .pattern("PM ")
-                .pattern("M M")
-                .pattern(" ME")
-                .define('P', Items.RABBIT_FOOT)
-                .define('M', BotaniaItems.manaSteel)
-                .define('E', BotaniaItems.runeEarth)
-                .unlockedBy(getHasName(BotaniaItems.manaSteel), has(BotaniaItems.manaSteel))
-                .save(consumer);
-
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MegaBotanyItems.WALL_CLIMB_AMULET.get())
                 .pattern("VM ")
                 .pattern("M M")
@@ -107,18 +97,20 @@ public class MegaBotanyRecipeGenerator extends RecipeProvider implements ICondit
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MegaBotanyItems.PURE_DAISY_PENDANT.get())
-                .pattern("EME")
+                .pattern("DMD")
                 .pattern("MPM")
                 .pattern("PMP")
                 .define('P', BotaniaFlowerBlocks.pureDaisy)
-                .define('E', BotaniaItems.elementium)
+                .define('D', BotaniaItems.pixieDust)
                 .define('M', BotaniaItems.manaString)
                 .unlockedBy(getHasName(BotaniaItems.elementium), has(BotaniaItems.elementium))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, MegaBotanyItems.SUPER_CROWN.get())
+                .pattern("F F")
                 .pattern("GOG")
                 .pattern("GPG")
+                .define('F', BotaniaItems.pinkPetal)
                 .define('P', BotaniaItems.runePride)
                 .define('G', Items.GOLD_INGOT)
                 .define('O', MegaBotanyItems.ORICHALCOS_INGOT.get())

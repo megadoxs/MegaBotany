@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.manalinkium",
+  "category": "botania:functional_flowers",
+  "icon": "megabotany:manalinkium",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.manalinkium0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.manalinkium1",
+      "recipe": "megabotany:petal_apothecary/manalinkium"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:manalinkium": 1
+  }
+}

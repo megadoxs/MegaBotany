@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.jingwei_feather",
+  "category": "botania:baubles",
+  "icon": "megabotany:jingwei_feather",
+  "advancement": "megabotany:obtain_orichalcos_ingot",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.jingwei_feather0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.jingwei_feather1",
+      "recipe": "megabotany:jingwei_feather"
+    }
+  ]
+}

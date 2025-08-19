@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.pure_daisy_pendant",
+  "category": "botania:baubles",
+  "icon": "megabotany:pure_daisy_pendant",
+  "advancement": "botania:main/elf_lexicon_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.pure_daisy_pendant0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.pure_daisy_pendant1",
+      "recipe": "megabotany:pure_daisy_pendant"
+    }
+  ]
+}

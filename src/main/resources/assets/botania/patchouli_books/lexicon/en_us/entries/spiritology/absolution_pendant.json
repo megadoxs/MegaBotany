@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.absolution_pendant",
+  "category": "botania:spiritology",
+  "icon": "megabotany:absolution_pendant",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:absolution_pendant",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.absolution_pendant0"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:absolution_pendant": 0
+  }
+}

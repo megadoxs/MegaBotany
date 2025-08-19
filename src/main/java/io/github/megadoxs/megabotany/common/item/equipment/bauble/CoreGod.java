@@ -1,20 +1,15 @@
 package io.github.megadoxs.megabotany.common.item.equipment.bauble;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
@@ -29,6 +24,7 @@ import vazkii.botania.client.render.AccessoryRenderer;
 import vazkii.botania.common.handler.BotaniaSounds;
 import vazkii.botania.common.handler.EquipmentHandler;
 import vazkii.botania.common.helper.ItemNBTHelper;
+import vazkii.botania.common.helper.StringObfuscator;
 import vazkii.botania.common.helper.VecHelper;
 import vazkii.botania.common.item.CustomCreativeTabContents;
 import vazkii.botania.common.item.equipment.bauble.BaubleItem;
@@ -42,27 +38,24 @@ import java.util.List;
 import static vazkii.botania.common.item.equipment.bauble.FlugelTiaraItem.getVariant;
 
 public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
-
-    private static final ResourceLocation textureHud = new ResourceLocation("botania:textures/gui/hud_icons.png");
-    public static final ResourceLocation textureHalo = new ResourceLocation("botania:textures/misc/halo.png");
     private static final String TAG_VARIANT = "variant";
-    private static final String TAG_FLYING = "flying";
-    private static final String TAG_GLIDING = "gliding";
-    private static final String TAG_TIME_LEFT = "timeLeft";
-    private static final String TAG_INFINITE_FLIGHT = "infiniteFlight";
-    private static final String TAG_DASH_COOLDOWN = "dashCooldown";
-    private static final String TAG_IS_SPRINTING = "isSprinting";
-    private static final String TAG_BOOST_PENDING = "boostPending";
     private static final List<String> playersWithFlight = Collections.synchronizedList(new ArrayList<>());
-    private static final int COST = 35;
-    private static final int COST_OVERKILL = 105;
-    private static final int SUBTYPES = 13;
     public static final int WING_TYPES = 14;
     private static final String SUPER_AWESOME_HASH = "4D0F274C5E3001C95640B5E88A821422C8B1E132264492C043A3D746B705C025";
 
     public CoreGod(Properties props) {
         super(props);
         Proxy.INSTANCE.runOnClient(() -> () -> AccessoryRenderRegistry.register(this, new Renderer()));
+    }
+
+    @Override
+    public void onEquipped(ItemStack stack, LivingEntity living) {
+        super.onEquipped(stack, living);
+        int variant = getVariant(stack);
+        if (variant != 9 && StringObfuscator.matchesHash(stack.getHoverName().getString(), SUPER_AWESOME_HASH)) {
+            ItemNBTHelper.setInt(stack, TAG_VARIANT, 9);
+            stack.resetHoverName();
+        }
     }
 
     @Override
@@ -346,7 +339,6 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
             ms.popPose();
         }
 
-        // yo can someone kill me please
         private static void renderElf(HumanoidModel<?> bipedModel, ItemStack stack, PoseStack ms, MultiBufferSource buffers, int light, float flap) {
             ms.pushPose();
             bipedModel.body.translateAndRotate(ms);
@@ -396,7 +388,7 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                     if (meta < 10)
                         model = MiscellaneousModels.INSTANCE.tiaraWingIcons[meta - 1];
                     else
-                        model = MiscellaneousModels.INSTANCE.tiaraWingIcons[0]; // grrrrr
+                        model = MiscellaneousModels.INSTANCE.tiaraWingIcons[0];
                     if (living instanceof Player player) {
                         if (player.getAbilities().flying) {
                             var10000 = true;
@@ -465,64 +457,6 @@ public class CoreGod extends BaubleItem implements CustomCreativeTabContents {
                 }
 
             }
-        }
-    }
-
-    public static class ClientLogic {
-        public ClientLogic() {
-        }
-
-        @SuppressWarnings("deprecation")
-        private static int estimateAdditionalNumRowsRendered(Player player) {
-            if (!player.isEyeInFluid(FluidTags.WATER) && player.getAirSupply() >= player.getMaxAirSupply()) {
-                Entity playerVehicle = player.getVehicle();
-                if (playerVehicle instanceof LivingEntity vehicle) {
-                    if (vehicle.showVehicleHealth()) {
-                        return (Math.min(30, (int) ((double) vehicle.getMaxHealth() + 0.5) / 2) - 1) / 10;
-                    }
-                }
-
-                return 0;
-            } else {
-                return 1;
-            }
-        }
-
-        public static void renderHUD(GuiGraphics gui, Player player, ItemStack stack) {
-            int u = Math.max(1, FlugelTiaraItem.getVariant(stack)) * 9 - 9;
-            int v = 0;
-            Minecraft mc = Minecraft.getInstance();
-            int xo = mc.getWindow().getGuiScaledWidth() / 2 + 10;
-            int y = mc.getWindow().getGuiScaledHeight() - 10 * estimateAdditionalNumRowsRendered(player) - 49;
-            int left = ItemNBTHelper.getInt(stack, "timeLeft", 1200);
-            int segTime = 120;
-            int segs = left / segTime + 1;
-            int last = left % segTime;
-
-            int width;
-            for (width = 0; width < segs; ++width) {
-                float trans = 1.0F;
-                if (width == segs - 1) {
-                    trans = (float) last / (float) segTime;
-                    RenderSystem.enableBlend();
-                    RenderSystem.blendFunc(770, 771);
-                }
-
-                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, trans);
-                RenderHelper.drawTexturedModalRect(gui, textureHud, xo + 8 * width, y, u, v, 9, 9);
-            }
-
-            if (player.getAbilities().flying) {
-                width = ItemNBTHelper.getInt(stack, "dashCooldown", 0);
-                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-                if (width > 0) {
-                    gui.fill(xo, y - 2, xo + 80, y - 1, -2013265920);
-                }
-
-                gui.fill(xo, y - 2, xo + width, y - 1, -1);
-            }
-
-            RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         }
     }
 }

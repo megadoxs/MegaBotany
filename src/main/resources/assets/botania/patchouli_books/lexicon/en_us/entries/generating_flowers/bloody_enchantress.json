@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.bloody_enchantress",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:bloody_enchantress",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.bloody_enchantress0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.bloody_enchantress1",
+      "recipe": "megabotany:petal_apothecary/bloody_enchantress"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:bloody_enchantress": 1
+  }
+}

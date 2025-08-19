@@ -60,6 +60,6 @@ public class InfiniteDrink extends Item implements BrewContainer {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.INFINITE_DRINK.getId().getPath()));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.INFINITE_DRINK.getId().getPath()));
     }
 }

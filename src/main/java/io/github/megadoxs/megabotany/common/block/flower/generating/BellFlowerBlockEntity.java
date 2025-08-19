@@ -9,7 +9,7 @@ import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
 
-public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity {
+public class BellFlowerBlockEntity extends GeneratingFlowerBlockEntity { //TODO make this flower generate mana from sound and transfer its current ability to a new flower
     public static final int RANGE = 5;
 
     private int passiveDecayTicks;

@@ -1,0 +1,38 @@
+{
+  "name": "megabotany.entry.elfResources",
+  "category": "botania:spiritology",
+  "icon": "megabotany:spirit_fuel",
+  "entry_color": "aa00",
+  "priority": true,
+  "advancement": "megabotany:spirit_portal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.spirit_resources0"
+    },
+    {
+      "type": "botania:spirit_trade",
+      "text": "megabotany.page.spirit_resources1",
+      "recipes": "megabotany:spirit_trade/fuel",
+      "is_day": true
+    },
+    {
+      "type": "botania:spirit_trade",
+      "text": "megabotany.page.spirit_resources2",
+      "recipes": "megabotany:spirit_trade/fuel",
+      "is_day": false
+    },
+    {
+      "type": "botania:spirit_trade",
+      "text": "megabotany.page.spirit_resources3",
+      "recipes": "megabotany:spirit_trade/photonium",
+      "is_day": true
+    },
+    {
+      "type": "botania:spirit_trade",
+      "text": "megabotany.page.spirit_resources4",
+      "recipes": "megabotany:spirit_trade/shadowium",
+      "is_day": false
+    }
+  ]
+}

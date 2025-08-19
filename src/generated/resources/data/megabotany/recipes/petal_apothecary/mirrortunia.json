@@ -1,0 +1,32 @@
+{
+  "type": "botania:petal_apothecary",
+  "ingredients": [
+    {
+      "item": "botania:rune_envy"
+    },
+    {
+      "item": "botania:rune_air"
+    },
+    {
+      "tag": "botania:petals/white"
+    },
+    {
+      "tag": "botania:petals/white"
+    },
+    {
+      "tag": "botania:petals/light_blue"
+    },
+    {
+      "tag": "botania:petals/light_blue"
+    },
+    {
+      "item": "botania:redstone_root"
+    }
+  ],
+  "output": {
+    "item": "megabotany:mirrortunia"
+  },
+  "reagent": {
+    "tag": "botania:seed_apothecary_reagent"
+  }
+}

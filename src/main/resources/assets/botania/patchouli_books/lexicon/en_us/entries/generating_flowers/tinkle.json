@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.tinkle",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:tinkle",
+  "advancement": "botania:main/pure_daisy_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.tinkle0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.tinkle1",
+      "recipe": "megabotany:petal_apothecary/tinkle"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:tinkle": 1
+  }
+}

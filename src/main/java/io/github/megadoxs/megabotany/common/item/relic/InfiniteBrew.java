@@ -2,7 +2,6 @@ package io.github.megadoxs.megabotany.common.item.relic;
 
 import io.github.megadoxs.megabotany.api.item.InfiniteBrewItem;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
-import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

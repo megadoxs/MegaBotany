@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.mirrortunia",
+  "category": "botania:functional_flowers",
+  "icon": "megabotany:mirrortunia",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.mirrortunia0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.mirrortunia1",
+      "recipe": "megabotany:petal_apothecary/mirrortunia"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:mirrortunia": 1
+  }
+}

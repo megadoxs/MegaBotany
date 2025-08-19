@@ -52,7 +52,7 @@ public class InfiniteSplashBrew extends Item implements BrewItem, BrewContainer,
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         var relic = XplatAbstractions.INSTANCE.findRelic(itemstack);
-        if (ItemNBTHelper.getFloat(itemstack, TAG_CHARGE, 1) == 1 && relic != null && relic.isRightPlayer(pPlayer)) {
+        if (ItemNBTHelper.getFloat(itemstack, TAG_CHARGE, 1) >= 1 && relic != null && relic.isRightPlayer(pPlayer)) {
             if (!pLevel.isClientSide) {
                 ThrownBrew thrownBrew = new ThrownBrew(pLevel, pPlayer);
                 thrownBrew.setItem(itemstack);

@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.gemini_orchid",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:gemini_orchid",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.gemini_orchid0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.gemini_orchid1",
+      "recipe": "megabotany:petal_apothecary/gemini_orchid"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:gemini_orchid": 1
+  }
+}

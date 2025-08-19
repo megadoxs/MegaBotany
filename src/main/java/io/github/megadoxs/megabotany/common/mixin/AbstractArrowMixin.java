@@ -1,6 +1,6 @@
 package io.github.megadoxs.megabotany.common.mixin;
 
-import io.github.megadoxs.megabotany.common.item.relic.AchilledShield;
+import io.github.megadoxs.megabotany.common.item.relic.AchillesShield;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -36,7 +36,7 @@ public abstract class AbstractArrowMixin {
             }
         }
 
-        if (entity instanceof LivingEntity living && living.getUseItem().getItem() instanceof AchilledShield && living.isDamageSourceBlocked(damagesource) && living.getUseItem().getUseDuration() - living.getUseItemRemainingTicks() >= 5) {
+        if (entity instanceof LivingEntity living && living.getUseItem().getItem() instanceof AchillesShield && living.isDamageSourceBlocked(damagesource) && living.getUseItem().getUseDuration() - living.getUseItemRemainingTicks() >= 5) {
             if (!self.level().isClientSide && self.getDeltaMovement().lengthSqr() < 1.0E-7D) {
                 if (self.pickup == AbstractArrow.Pickup.ALLOWED) {
                     self.spawnAtLocation(getPickupItem(), 0.1F);

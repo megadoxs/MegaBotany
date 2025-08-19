@@ -54,7 +54,7 @@ public class JEIMegaBotanyPlugin implements IModPlugin {
     }
 
     @Override
-    public void registerRecipeCatalysts(IRecipeCatalystRegistration registry){
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registry) {
         registry.addRecipeCatalyst(new ItemStack(MegaBotanyBlocks.SPIRIT_PORTAL.get()), DaySpiritTradeRecipeCategory.TYPE);
         registry.addRecipeCatalyst(new ItemStack(MegaBotanyBlocks.SPIRIT_PORTAL.get()), NightSpiritTradeRecipeCategory.TYPE);
     }

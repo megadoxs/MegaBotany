@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.sunshine_lily",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:sunshine_lily",
+  "advancement": "botania:main/pure_daisy_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.sunshine_lily0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.sunshine_lily1",
+      "recipe": "megabotany:petal_apothecary/sunshine_lily"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:sunshine_lily": 1
+  }
+}

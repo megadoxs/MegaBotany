@@ -37,8 +37,8 @@ public class PandoraBox extends RelicItem {
 
     public static final Supplier<List<ItemStack>> RELIC_STACKS = Suppliers.memoize(() -> List.of(
                     new ItemStack(MegaBotanyItems.INFINITE_DRINK.get()),
-                    new ItemStack(MegaBotanyItems.EXCALIBER.get()),
-                    new ItemStack(MegaBotanyItems.ACHILLED_SHIELD.get()),
+                    new ItemStack(MegaBotanyItems.EXCALIBUR.get()),
+                    new ItemStack(MegaBotanyItems.ACHILLES_SHIELD.get()),
                     new ItemStack(MegaBotanyItems.ALL_FOR_ONE.get()),
                     new ItemStack(MegaBotanyItems.FAILNAUGHT.get()),
                     new ItemStack(MegaBotanyItems.ABSOLUTION_PENDANT.get())

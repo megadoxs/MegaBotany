@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.reikar_lily",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:reikar_lily",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.reikar_lily0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.reikar_lily1",
+      "recipe": "megabotany:petal_apothecary/reikar_lily"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:reikar_lily": 1
+  }
+}

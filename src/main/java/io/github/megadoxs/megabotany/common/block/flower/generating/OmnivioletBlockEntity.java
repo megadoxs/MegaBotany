@@ -53,7 +53,7 @@ public class OmnivioletBlockEntity extends GeneratingFlowerBlockEntity {
                         efficiency += 0.5F * getLevel().getBlockState(getBlockPos().offset(blockpos)).getEnchantPowerBonus(getLevel(), getBlockPos().offset(blockpos));
                     }
                 }
-                // needs balancing
+                //TODO needs balancing
                 manaGeneration = EnchantmentHelper.getEnchantments(item.getItem()).values().stream().mapToInt(integer -> (int) (integer * efficiency)).sum() / 2;
                 item.getItem().shrink(1);
 

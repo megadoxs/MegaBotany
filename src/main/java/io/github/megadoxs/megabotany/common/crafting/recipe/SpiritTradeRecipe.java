@@ -10,15 +10,20 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.crafting.CraftingHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SpiritTradeRecipe implements Recipe<Container> {
+//TODO eventually this should be made into two different recipe, one evil Spirit Trade and one good Spirit Trade
+public class SpiritTradeRecipe implements Recipe<Container> { //TODO do this class the same way botania do recipe class, getResultItem being null throws an error
     private final ResourceLocation id;
     private final NonNullList<Ingredient> inputs;
     private final ImmutableList<ItemStack> dayOutputs;
@@ -70,8 +75,7 @@ public class SpiritTradeRecipe implements Recipe<Container> {
     public List<ItemStack> getOutputs(boolean isDaytime) {
         if (isDaytime) {
             return dayOutputs;
-        }
-        else {
+        } else {
             return nightOutputs;
         }
     }
@@ -127,21 +131,21 @@ public class SpiritTradeRecipe implements Recipe<Container> {
             if (dayOutput.isJsonArray()) {
                 for (JsonElement e : dayOutput.getAsJsonArray()) {
                     JsonObject o = GsonHelper.convertToJsonObject(e, "day output stack");
-                    dayOutputStacks.add(ShapedRecipe.itemStackFromJson(o));
+                    dayOutputStacks.add(CraftingHelper.getItemStack(o, true, false));
                 }
             } else {
                 JsonObject o = GsonHelper.convertToJsonObject(dayOutput, "day output stack");
-                dayOutputStacks.add(ShapedRecipe.itemStackFromJson(o));
+                dayOutputStacks.add(CraftingHelper.getItemStack(o, true, false));
             }
 
             if (nightOutput.isJsonArray()) {
                 for (JsonElement e : nightOutput.getAsJsonArray()) {
                     JsonObject o = GsonHelper.convertToJsonObject(e, "night output stack");
-                    nightOutputStacks.add(ShapedRecipe.itemStackFromJson(o));
+                    nightOutputStacks.add(CraftingHelper.getItemStack(o, true, false));
                 }
             } else {
                 JsonObject o = GsonHelper.convertToJsonObject(nightOutput, "night output stack");
-                nightOutputStacks.add(ShapedRecipe.itemStackFromJson(o));
+                nightOutputStacks.add(CraftingHelper.getItemStack(o, true, false));
             }
 
             List<Ingredient> inputs = new ArrayList<>();

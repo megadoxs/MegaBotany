@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.mana_drive_ring",
+  "category": "botania:baubles",
+  "icon": "megabotany:mana_drive_ring",
+  "advancement": "botania:main/elf_lexicon_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.mana_drive_ring0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.mana_drive_ring1",
+      "recipe": "megabotany:mana_drive_ring"
+    }
+  ]
+}

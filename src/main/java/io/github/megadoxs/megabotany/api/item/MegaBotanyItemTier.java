@@ -11,7 +11,8 @@ import java.util.function.Supplier;
 public enum MegaBotanyItemTier implements Tier {
     SHADOWIUM(2800, 10, 5, 5, 30, MegaBotanyItems.SHADOWIUM_INGOT),
     PHOTONIUM(2800, 10, 5, 5, 30, MegaBotanyItems.PHOTONIUM_INGOT),
-    RELIC(2800, 10, 5, 5, 30, ItemStack.EMPTY::getItem),;
+    RELIC(2800, 10, 5, 5, 30, ItemStack.EMPTY::getItem),
+    ;
 
     private final int maxUses;
     private final float efficiency;

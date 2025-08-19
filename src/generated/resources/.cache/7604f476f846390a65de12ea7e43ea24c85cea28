@@ -1,4 +1,4 @@
-// 1.20.1	2025-01-18T21:23:57.6625313	MegaBotany: Floating Flower Models
+// 1.20.1	2025-08-12T17:35:55.7098092	MegaBotany: Floating Flower Models
 8b489acb43f1d198b07c16182329c49be36e3f6d assets/megabotany/models/block/floating_annoying_flower.json
 1c652ea3b143a0248d04e96b0196197434428b16 assets/megabotany/models/block/floating_bell_flower.json
 24b3cde7393b007a9485d7bbc52fd7d68184ef78 assets/megabotany/models/block/floating_bloody_enchantress.json
@@ -13,7 +13,6 @@ a49a5aa4229e2d700631a2a2baf5a3e86c3698a0 assets/megabotany/models/block/floating
 3af2da1345214bcb7f0e5427883fe3836241bd41 assets/megabotany/models/block/floating_omniviolet.json
 ad1139036c26afa114ab0d3ef7f662c143edb1a3 assets/megabotany/models/block/floating_reikar_lily.json
 eb6a4e59c322379ce69f37d4928dbd8f825acdad assets/megabotany/models/block/floating_stardust_lotus.json
-68b775bbee741e8eadc55770501298de712d21b2 assets/megabotany/models/block/floating_stonesia.json
 5b2c191849fe1819bad32d6e935c1386fd28f0ef assets/megabotany/models/block/floating_sunshine_lily.json
 af9b2a203b6d0a5fcf5b3f0f22e9dd5002aaa2b2 assets/megabotany/models/block/floating_tinkle.json
 8b489acb43f1d198b07c16182329c49be36e3f6d assets/megabotany/models/item/floating_annoying_flower.json
@@ -30,6 +29,5 @@ a49a5aa4229e2d700631a2a2baf5a3e86c3698a0 assets/megabotany/models/item/floating_
 3af2da1345214bcb7f0e5427883fe3836241bd41 assets/megabotany/models/item/floating_omniviolet.json
 ad1139036c26afa114ab0d3ef7f662c143edb1a3 assets/megabotany/models/item/floating_reikar_lily.json
 eb6a4e59c322379ce69f37d4928dbd8f825acdad assets/megabotany/models/item/floating_stardust_lotus.json
-68b775bbee741e8eadc55770501298de712d21b2 assets/megabotany/models/item/floating_stonesia.json
 5b2c191849fe1819bad32d6e935c1386fd28f0ef assets/megabotany/models/item/floating_sunshine_lily.json
 af9b2a203b6d0a5fcf5b3f0f22e9dd5002aaa2b2 assets/megabotany/models/item/floating_tinkle.json

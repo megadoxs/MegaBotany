@@ -112,7 +112,7 @@ public class Failnaught extends BowItem implements LensEffectItem {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.FAILNAUGHT.getId().getPath()));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.FAILNAUGHT.getId().getPath()));
     }
 
     @Override

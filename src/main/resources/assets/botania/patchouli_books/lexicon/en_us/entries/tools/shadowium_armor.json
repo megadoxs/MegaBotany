@@ -3,7 +3,7 @@
   "category": "botania:tools",
   "icon": "megabotany:shadowium_helmet",
   "priority": true,
-  "advancement": "megabotany:main/obtain_shadowium_ingot",
+  "advancement": "megabotany:spirit_portal",
   "pages": [
     {
       "type": "text",

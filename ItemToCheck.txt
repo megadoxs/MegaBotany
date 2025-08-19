@@ -1,17 +1,13 @@
 Don't work the way I want them to or would like them to
 
-RingOfCurse
-RingOfManaDrive
 MasterBandOfMana
 ElvenKingRing // only works with botania bauble
-SuperCrown
 
 Need new textures
 
 RingOfWallClimb
 RingOfWallJump
-RingOfParkour
-RingOfParkour2
+RingOfJump
 
 flowers will need balancing, day & night < Bell < Hydro < Tinkle < Reikar
 BloodyEnchantress should be more like a Gourmaryllis
@@ -20,8 +16,6 @@ bell flower texture and name are highly likely to change
 remove chunk loading from stardust and manalink
 optimise their use of the getBlock() & isValid() methods
 
-do I give achilled shield second's form from extrabotany?? change name also.
-
 Shield need some fixing on how the player see it being used
-infinite splash and absolution pendant are temporary names
-holy hand grenade, infinite splash and absolution pendant have not textures
+absolution pendant are temporary names
+absolution pendant have not textures

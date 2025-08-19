@@ -1,0 +1,21 @@
+{
+  "name": "megabotany.entry.failnaught",
+  "category": "botania:spiritology",
+  "icon": "megabotany:failnaught",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:failnaught",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.failnaught0"
+    },
+    {
+      "type": "text",
+      "text": "megabotany.page.failnaught1"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:failnaught": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.annoying_flower",
+  "category": "botania:functional_flowers",
+  "icon": "megabotany:annoying_flower",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.annoying_flower0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.annoying_flower1",
+      "recipe": "megabotany:petal_apothecary/annoying_flower"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:annoying_flower": 1
+  }
+}

@@ -18,14 +18,4 @@ public class MegaBotanyFoods {
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 500, 1), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.UNLUCK, 500, 1), 1f)
             .build();
-
-    // not sure about saturation modifiers
-//    public static final FoodProperties GILDED_MASHED_POTATO = new FoodProperties.Builder().nutrition(3).saturationMod(12f)
-//            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 3), 1f)
-//            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 3), 1f)
-//            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 600, 1), 1f)
-//            .build();
-
-    public static final FoodProperties FRIED_CHICKEN = new FoodProperties.Builder().nutrition(8).saturationMod(6f).meat().build();
-
 }

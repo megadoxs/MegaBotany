@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lingering_holy_hand_grenade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "megabotany:lingering_holy_hand_grenade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "megabotany:holy_grail_from_lingering_holy_hand_grenade"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_lingering_holy_hand_grenade",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "megabotany:holy_grail_from_lingering_holy_hand_grenade"
+    ]
+  },
+  "sends_telemetry_event": false
+}

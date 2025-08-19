@@ -11,10 +11,10 @@ import vazkii.botania.common.block.PylonBlock;
 @Mixin(PylonBlock.Variant.class)
 public abstract class PylonBlockVariantMixin {
     @Inject(method = "getTargetBlock", at = @At("HEAD"), cancellable = true, remap = false)
-    private void getTargetBlock(CallbackInfoReturnable<Block> cir){
+    private void getTargetBlock(CallbackInfoReturnable<Block> cir) {
         PylonBlock.Variant variant = (PylonBlock.Variant) (Object) this;
 
-        if(variant == PylonBlock.Variant.GAIA)
+        if (variant == PylonBlock.Variant.GAIA)
             cir.setReturnValue(MegaBotanyBlocks.SPIRIT_PORTAL.get());
     }
 }

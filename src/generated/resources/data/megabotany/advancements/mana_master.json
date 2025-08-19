@@ -1,0 +1,29 @@
+{
+  "parent": "megabotany:obtain_orichalcos_ingot",
+  "criteria": {
+    "code_triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.megabotany:mana_master.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:master_band_of_mana"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:mana_master"
+    }
+  },
+  "requirements": [
+    [
+      "code_triggered"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

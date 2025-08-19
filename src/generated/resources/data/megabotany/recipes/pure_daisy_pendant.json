@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": {
-      "item": "botania:elementium_ingot"
+    "D": {
+      "item": "botania:pixie_dust"
     },
     "M": {
       "item": "botania:mana_string"
@@ -13,7 +13,7 @@
     }
   },
   "pattern": [
-    "EME",
+    "DMD",
     "MPM",
     "PMP"
   ],

@@ -2,7 +2,6 @@ package io.github.megadoxs.megabotany.common.block;
 
 import io.github.megadoxs.megabotany.api.RedstoneSpreader;
 import io.github.megadoxs.megabotany.common.MegaBotany;
-//import io.github.megadoxs.megabotany.common.block.block_entity.MortarBlock;
 import io.github.megadoxs.megabotany.common.block.block_entity.PedestalBlock;
 import io.github.megadoxs.megabotany.common.block.block_entity.SpiritPortalBlock;
 import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;

@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.master_band_of_mana",
+  "category": "botania:baubles",
+  "icon": "megabotany:master_band_of_mana",
+  "advancement": "megabotany:obtain_orichalcos_ingot",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.master_band_of_mana0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.master_band_of_mana1",
+      "recipe": "megabotany:master_band_of_mana"
+    }
+  ]
+}

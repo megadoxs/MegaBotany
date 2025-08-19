@@ -1,0 +1,29 @@
+{
+  "type": "botania:petal_apothecary",
+  "ingredients": [
+    {
+      "item": "botania:rune_gluttony"
+    },
+    {
+      "item": "botania:rune_sloth"
+    },
+    {
+      "tag": "botania:petals/red"
+    },
+    {
+      "tag": "botania:petals/red"
+    },
+    {
+      "tag": "botania:petals/red"
+    },
+    {
+      "item": "botania:redstone_root"
+    }
+  ],
+  "output": {
+    "item": "megabotany:bloody_enchantress"
+  },
+  "reagent": {
+    "tag": "botania:seed_apothecary_reagent"
+  }
+}

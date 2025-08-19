@@ -19,18 +19,17 @@ public class NightSpiritTradeRecipeCategory extends DaySpiritTradeRecipeCategory
 
     public NightSpiritTradeRecipeCategory(IGuiHelper guiHelper) {
         icon = new DrawableStack(guiHelper.createDrawableItemStack(new ItemStack(MegaBotanyBlocks.SPIRIT_PORTAL.get())), new ScaledDrawableResource(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/moon.png"), 0, 0, 8, 8, 8, 0, 8, 0, 323, 317));
-        background = new ColorDrawable(145, 95, 32, 0, 80, 255);
+        background = guiHelper.createBlankDrawable(145, 95);
         overlay = guiHelper.createDrawable(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/spirit_trade_overlay.png"), 0, 15, 140, 90);
-        tooltipIcon = new ScaledDrawableResource(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/moon.png"), 0, 0, 16, 16, 0, 0, 0, 0, 470, 470);
+        tooltipIcon = new ScaledDrawableResource(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/moon.png"), 0, 0, 16, 16, 0, 0, 0, 0, 323, 317);
         sprite = new ResourceLocation(MegaBotany.MOD_ID, "block/spirit_portal_swirl_night");
     }
 
     @Override
     public List<Component> getTooltipStrings(SpiritTradeRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        if(mouseX >= 93 && mouseX <= 109 && mouseY >= 10 && mouseY <= 26){
-            return List.of(Component.literal("This recipe must be done at night when the portal is purple.")); //TODO make into a translatable
-        }
-        else
+        if (mouseX >= 93 && mouseX <= 109 && mouseY >= 10 && mouseY <= 26) {
+            return List.of(Component.literal("This trade can only be done during the night.")); //TODO make into a translatable
+        } else
             return List.of();
     }
 

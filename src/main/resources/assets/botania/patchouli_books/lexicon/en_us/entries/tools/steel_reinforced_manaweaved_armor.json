@@ -1,0 +1,33 @@
+{
+  "name": "megabotany.entry.steelReinforcedManaweavedArmor",
+  "category": "botania:tools",
+  "icon": "megabotany:manaweavedsteel_helmet",
+  "priority": true,
+  "advancement": "megabotany:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.manaweavedsteelArmor0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.manaweavedsteelArmor1",
+      "recipe": "megabotany:manaweavedsteel_helmet"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.manaweavedsteelArmor2",
+      "recipe": "megabotany:manaweavedsteel_chestplate"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.manaweavedsteelArmor3",
+      "recipe": "megabotany:manaweavedsteel_leggings"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.manaweavedsteelArmor4",
+      "recipe": "megabotany:manaweavedsteel_boots"
+    }
+  ]
+}

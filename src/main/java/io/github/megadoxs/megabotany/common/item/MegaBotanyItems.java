@@ -40,13 +40,13 @@ public class MegaBotanyItems {
 
     //relics
     public static final RegistryObject<Item> FAILNAUGHT = ITEMS.register("failnaught", () -> new Failnaught(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
-    public static final RegistryObject<Item> EXCALIBER = ITEMS.register("excaliber", () -> new Excaliber(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
-    public static final RegistryObject<Item> ACHILLED_SHIELD = ITEMS.register("achilled_shield", () -> new AchilledShield(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final RegistryObject<Item> EXCALIBUR = ITEMS.register("excalibur", () -> new Excalibur(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final RegistryObject<Item> ACHILLES_SHIELD = ITEMS.register("achilles_shield", () -> new AchillesShield(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
     public static final RegistryObject<Item> ALL_FOR_ONE = ITEMS.register("all_for_one", () -> new AFORing(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
     public static final RegistryObject<Item> INFINITE_DRINK = ITEMS.register("holy_grail", () -> new InfiniteDrink(new Item.Properties()));
     public static final RegistryObject<Item> INFINITE_BREW = ITEMS.register("holy_grail_brew", () -> new InfiniteBrew(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> INFINITE_SPLASH_BREW = ITEMS.register("holy_hand_grenade", () -> new InfiniteSplashBrew(new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> INFINITE_LINGERING_BREW = ITEMS.register("infinite_lingering_brew", () -> new InfiniteLingeringBrew(new Item.Properties().stacksTo(1))); //placeholder name
+    public static final RegistryObject<Item> INFINITE_LINGERING_BREW = ITEMS.register("lingering_holy_hand_grenade", () -> new InfiniteLingeringBrew(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> ABSOLUTION_PENDANT = ITEMS.register("absolution_pendant", () -> new DamageNullification(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1))); //placeholder name
     public static final RegistryObject<Item> PANDORA_BOX = ITEMS.register("pandora_box", () -> new PandoraBox(new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
 
@@ -57,7 +57,6 @@ public class MegaBotanyItems {
     public static final RegistryObject<Item> FROST_RING = ITEMS.register("frost_ring", () -> new RingOfFrost(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> WALL_JUMP_AMULET = ITEMS.register("wall_jump_amulet", () -> new WallJumpAmulet(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> WALL_CLIMB_AMULET = ITEMS.register("wall_climb_amulet", () -> new WallClimbAmulet(new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> JUMP_AMULET = ITEMS.register("jump_amulet", () -> new JumpAmulet(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> MANA_DRIVE_RING = ITEMS.register("mana_drive_ring", () -> new ManaDriveRing(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> GOD_CORE = ITEMS.register("god_core", () -> new CoreGod(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> JINGWEI_FEATHER = ITEMS.register("jingwei_feather", () -> new JingweiFeather(new Item.Properties().stacksTo(1)));
@@ -89,7 +88,6 @@ public class MegaBotanyItems {
 
     public static final RegistryObject<Item> SPIRIT_FUEL = ITEMS.register("spirit_fuel", () -> new ManaFuel(new Item.Properties().food(MegaBotanyFoods.SPIRIT_FUEL)));
     public static final RegistryObject<Item> NIGHTMARE_FUEL = ITEMS.register("nightmare_fuel", () -> new ManaFuel(new Item.Properties().food(MegaBotanyFoods.NIGHTMARE_FUEL)));
-    public static final RegistryObject<Item> FRIED_CHICKEN = ITEMS.register("fried_chicken", () -> new Item(new Item.Properties().food(MegaBotanyFoods.FRIED_CHICKEN)));
 
     public static final RegistryObject<Item> ORICHALCOS_INGOT = ITEMS.register("orichalcos_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SHADOWIUM_INGOT = ITEMS.register("shadowium_ingot", () -> new Item(new Item.Properties()));

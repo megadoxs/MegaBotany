@@ -20,7 +20,7 @@ import vazkii.botania.common.item.relic.RelicImpl;
 @Mod.EventBusSubscriber(modid = "megabotany", bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class DamageNullification extends RelicBaubleItem {
     private static final String TAG_COOLDOWN = "cooldown";
-    private static final int MAX_COOLDOWN = 1200; //placeHolder values
+    private static final int MAX_COOLDOWN = 1200;
     private static final int MANA_COST = 10000;
 
     public DamageNullification(Properties props) {
@@ -49,6 +49,6 @@ public class DamageNullification extends RelicBaubleItem {
     }
 
     public static Relic makeRelic(ItemStack stack) {
-        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, "main/" + MegaBotanyItems.ABSOLUTION_PENDANT.getId().getPath()));
+        return new RelicImpl(stack, new ResourceLocation(MegaBotany.MOD_ID, MegaBotanyItems.ABSOLUTION_PENDANT.getId().getPath()));
     }
 }

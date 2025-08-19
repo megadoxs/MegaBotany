@@ -1,7 +1,6 @@
 package io.github.megadoxs.megabotany.common.block;
 
 import io.github.megadoxs.megabotany.common.MegaBotany;
-//import io.github.megadoxs.megabotany.common.block.block_entity.MortarBlockEntity;
 import io.github.megadoxs.megabotany.common.block.block_entity.PedestalBlockEntity;
 import io.github.megadoxs.megabotany.common.block.block_entity.SpiritPortalBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;

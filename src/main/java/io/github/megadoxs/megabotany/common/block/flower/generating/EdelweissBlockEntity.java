@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
 
-public class EdelweissBlockEntity extends GeneratingFlowerBlockEntity {
+public class EdelweissBlockEntity extends GeneratingFlowerBlockEntity { //TODO change to produce mana from cold in general, should be the opposite of thermalily
     private static final String TAG_BURN_TIME = "burnTime";
     private static final int RANGE = 1;
 

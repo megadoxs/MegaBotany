@@ -1,0 +1,29 @@
+{
+  "type": "botania:petal_apothecary",
+  "ingredients": [
+    {
+      "item": "botania:rune_fire"
+    },
+    {
+      "item": "botania:rune_water"
+    },
+    {
+      "tag": "botania:petals/orange"
+    },
+    {
+      "tag": "botania:petals/orange"
+    },
+    {
+      "tag": "botania:petals/light_blue"
+    },
+    {
+      "tag": "botania:petals/light_blue"
+    }
+  ],
+  "output": {
+    "item": "megabotany:gemini_orchid"
+  },
+  "reagent": {
+    "tag": "botania:seed_apothecary_reagent"
+  }
+}

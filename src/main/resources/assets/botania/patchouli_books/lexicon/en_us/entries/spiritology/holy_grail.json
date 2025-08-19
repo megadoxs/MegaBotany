@@ -1,0 +1,21 @@
+{
+  "name": "megabotany.entry.holy_grail",
+  "category": "botania:spiritology",
+  "icon": "megabotany:holy_grail",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:holy_grail",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.holy_grail0"
+    },
+    {
+      "type": "text",
+      "text": "megabotany.page.holy_grail1"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:holy_grail": 0
+  }
+}

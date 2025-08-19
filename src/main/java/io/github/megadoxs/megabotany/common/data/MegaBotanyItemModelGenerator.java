@@ -23,13 +23,11 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(MegaBotanyItems.SPIRIT_FUEL);
         simpleItem(MegaBotanyItems.NIGHTMARE_FUEL);
-        simpleItem(MegaBotanyItems.FRIED_CHICKEN);
         simpleItem(MegaBotanyItems.NATURE_ORB);
         simpleItem(MegaBotanyItems.MASTER_BAND_OF_MANA);
         simpleItem(MegaBotanyItems.FROST_RING);
         simpleItem(MegaBotanyItems.WALL_JUMP_AMULET);
         simpleItem(MegaBotanyItems.WALL_CLIMB_AMULET);
-        simpleItem(MegaBotanyItems.JUMP_AMULET);
         simpleItem(MegaBotanyItems.MANA_DRIVE_RING);
         simpleItem(MegaBotanyItems.JINGWEI_FEATHER);
         simpleItem(MegaBotanyItems.PURE_DAISY_PENDANT);
@@ -40,13 +38,14 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
 
         handheldItem(MegaBotanyItems.WALKING_CANE);
 
-        handheldItem(MegaBotanyItems.EXCALIBER);
+        handheldItem(MegaBotanyItems.EXCALIBUR);
         simpleItem(MegaBotanyItems.ALL_FOR_ONE);
         simpleItem(MegaBotanyItems.INFINITE_DRINK);
 
-        // all these items will need the same kind of model as the first one
-        potionItem(MegaBotanyItems.INFINITE_BREW.getId().getPath(), new ResourceLocation(MegaBotany.MOD_ID, "charge"), 0, 1, 0.1f, MegaBotanyItems.INFINITE_DRINK.getId().getPath(), MegaBotanyItems.INFINITE_BREW.getId().getPath());
-        simpleItem(MegaBotanyItems.INFINITE_SPLASH_BREW);
+        brewItem(MegaBotanyItems.INFINITE_BREW.getId().getPath(), MegaBotanyItems.INFINITE_DRINK.getKey().location(), MegaBotanyItems.INFINITE_BREW.getId());
+        brewItem(MegaBotanyItems.INFINITE_SPLASH_BREW.getId().getPath(), MegaBotanyItems.INFINITE_SPLASH_BREW.getId(), new ResourceLocation(MegaBotanyItems.INFINITE_SPLASH_BREW.getId() + "_brew"));
+        brewItem(MegaBotanyItems.INFINITE_LINGERING_BREW.getId().getPath(), MegaBotanyItems.INFINITE_LINGERING_BREW.getId(), new ResourceLocation(MegaBotanyItems.INFINITE_SPLASH_BREW.getId() + "_brew"));
+
         simpleItem(MegaBotanyItems.PANDORA_BOX);
 
         simpleItem(MegaBotanyItems.PHOTONIUM_INGOT);
@@ -88,34 +87,27 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
         }
     }
 
-    private ItemModelBuilder potionItem(String item, ResourceLocation predicate, float min, float max, float increment, String... textures) {
+    private void brewItem(String item, ResourceLocation container, ResourceLocation brew) {
         ItemModelBuilder itemModelBuilder = withExistingParent(item, new ResourceLocation("item/generated"));
+        float increment = 0.1f;
 
-        for (int i = 0; i < textures.length; i++) {
-            itemModelBuilder.texture("layer" + i, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[i]));
-        }
+        itemModelBuilder.texture("layer0", new ResourceLocation(container.getNamespace(), "item/" + container.getPath()));
 
-        for (float i = min; Math.floor(i * 10.0) / 10.0 < max; i += increment) {
+        for (float i = increment; (int) (i * 10) / 10f <= 1; i += increment) {
             String modelPath = item + "_" + (int) (i / increment);
             ItemModelBuilder model = withExistingParent(modelPath, new ResourceLocation("item/generated"));
-            for (int j = 0; j < textures.length; j++) {
-                if (j == textures.length - 1)
-                    model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j] + "_" + (int) ((Math.floor(i * 10.0) / 10.0) / increment)));
-                else
-                    model.texture("layer" + j, new ResourceLocation(MegaBotany.MOD_ID, "item/" + textures[j]));
-            }
-            itemModelBuilder.override().predicate(predicate, (float) (Math.floor(i * 10.0) / 10.0)).model(new ModelFile.ExistingModelFile(new ResourceLocation(MegaBotany.MOD_ID, "item/" + modelPath), existingFileHelper));
+            model.texture("layer0", new ResourceLocation(container.getNamespace(), "item/" + container.getPath()));
+            model.texture("layer1", new ResourceLocation(brew.getNamespace(), "item/" + brew.getPath() + "_" + Math.round(i / increment)));
+            itemModelBuilder.override().predicate(new ResourceLocation(MegaBotany.MOD_ID, "charge"), (int) (i * 10) / 10f).model(new ModelFile.ExistingModelFile(new ResourceLocation(MegaBotany.MOD_ID, "item/" + modelPath), existingFileHelper));
         }
-
-        return itemModelBuilder;
     }
 
-    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
+    private void simpleItem(RegistryObject<Item> item) {
+        withExistingParent(item.getId().getPath(), new ResourceLocation("item/generated")).texture("layer0", new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
-        return withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld")).texture("layer0", new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
+    private void handheldItem(RegistryObject<Item> item) {
+        withExistingParent(item.getId().getPath(), new ResourceLocation("item/handheld")).texture("layer0", new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
@@ -124,8 +116,8 @@ public class MegaBotanyItemModelGenerator extends ItemModelProvider {
                 new ResourceLocation(MegaBotany.MOD_ID, "item/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleBlockItemBlockTexture(Block item) {
-        return withExistingParent(ForgeRegistries.BLOCKS.getKey(item).getPath(),
+    private void simpleBlockItemBlockTexture(Block item) {
+        withExistingParent(ForgeRegistries.BLOCKS.getKey(item).getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MegaBotany.MOD_ID, "block/" + ForgeRegistries.BLOCKS.getKey(item).getPath()));
     }

@@ -1,0 +1,36 @@
+{
+  "name": "megabotany.entry.god_core",
+  "category": "botania:baubles",
+  "icon": "megabotany:god_core",
+  "advancement": "megabotany:obtain_orichalcos_ingot",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.god_core0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.god_core1",
+      "recipe": "megabotany:god_core_0"
+    },
+    {
+      "type": "botania:crafting_multi",
+      "text": "botania.page.flightTiara3",
+      "recipes": [
+        "megabotany:god_core_1",
+        "megabotany:god_core_2",
+        "megabotany:god_core_3",
+        "megabotany:god_core_4",
+        "megabotany:god_core_5",
+        "megabotany:god_core_6",
+        "megabotany:god_core_7",
+        "megabotany:god_core_8",
+        "megabotany:god_core_10",
+        "megabotany:god_core_11",
+        "megabotany:god_core_12",
+        "megabotany:god_core_13",
+        "megabotany:god_core_14"
+      ]
+    }
+  ]
+}

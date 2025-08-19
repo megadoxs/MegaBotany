@@ -9,9 +9,7 @@ import com.mojang.serialization.Dynamic;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
@@ -29,26 +27,20 @@ public class AddItemModifier extends LootModifier {
     public static final Codec<LootItemFunction[]> LOOT_FUNCTIONS_CODEC = Codec.PASSTHROUGH.flatXmap(
             d ->
             {
-                try
-                {
+                try {
                     LootItemFunction[] functions = LootModifierManager.GSON_INSTANCE.fromJson(IGlobalLootModifier.getJson(d), LootItemFunction[].class);
                     return DataResult.success(functions);
-                }
-                catch (JsonSyntaxException e)
-                {
+                } catch (JsonSyntaxException e) {
                     LootModifierManager.LOGGER.warn("Unable to decode loot functions", e);
                     return DataResult.error(e::getMessage);
                 }
             },
             functions ->
             {
-                try
-                {
+                try {
                     JsonElement element = LootModifierManager.GSON_INSTANCE.toJsonTree(functions);
                     return DataResult.success(new Dynamic<>(JsonOps.INSTANCE, element));
-                }
-                catch (JsonSyntaxException e)
-                {
+                } catch (JsonSyntaxException e) {
                     LootModifierManager.LOGGER.warn("Unable to encode loot functions", e);
                     return DataResult.error(e::getMessage);
                 }
@@ -73,8 +65,8 @@ public class AddItemModifier extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        for(LootItemCondition condition : conditions) {
-            if(!condition.test(context)) {
+        for (LootItemCondition condition : conditions) {
+            if (!condition.test(context)) {
                 return generatedLoot;
             }
         }

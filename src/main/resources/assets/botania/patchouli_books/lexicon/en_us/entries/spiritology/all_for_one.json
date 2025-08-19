@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.all_for_one",
+  "category": "botania:spiritology",
+  "icon": "megabotany:all_for_one",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:all_for_one",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.all_for_one0"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:all_for_one": 0
+  }
+}

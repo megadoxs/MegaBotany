@@ -7,10 +7,12 @@ import io.github.megadoxs.megabotany.client.model.MegaBotanyLayerDefinition;
 import io.github.megadoxs.megabotany.client.renderer.GaiaGuardianBossBarHandler;
 import io.github.megadoxs.megabotany.client.renderer.GaiaGuardianIIIRenderer;
 import io.github.megadoxs.megabotany.client.renderer.LandMineRenderer;
+import io.github.megadoxs.megabotany.common.advancements.MegaBotanyCriteriaTriggers;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlockEntities;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyFlowerBlocks;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyPOITypes;
+import io.github.megadoxs.megabotany.common.block.block_entity.SpiritPortalBlockEntity;
 import io.github.megadoxs.megabotany.common.crafting.MegaBotanyRecipes;
 import io.github.megadoxs.megabotany.common.effect.MegaBotanyEffects;
 import io.github.megadoxs.megabotany.common.entity.MegaBotanyEntities;
@@ -31,6 +33,7 @@ import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -77,6 +80,7 @@ import vazkii.botania.common.PlayerAccess;
 import vazkii.botania.common.helper.ItemNBTHelper;
 import vazkii.botania.common.item.WandOfTheForestItem;
 import vazkii.botania.forge.CapabilityUtil;
+import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.*;
 import java.util.function.BiConsumer;
@@ -115,6 +119,7 @@ public class MegaBotany {
         MegaBotanyEntities.register(modEventBus);
 
         MegaBotanyRecipes.register(modEventBus);
+        MegaBotanyCriteriaTriggers.init();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -138,6 +143,9 @@ public class MegaBotany {
 
         bus.addGenericListener(BlockEntity.class, this::attachBeCaps);
         bus.addGenericListener(ItemStack.class, this::attachItemCaps);
+
+        PatchouliAPI.get().registerMultiblock(BuiltInRegistries.BLOCK.getKey(MegaBotanyBlocks.SPIRIT_PORTAL.get()), SpiritPortalBlockEntity.MULTIBLOCK.get());
+
         // will be removed in 1.21.+ when my PR about AncientWillContainer is merged
         bus.addListener(EventPriority.LOW, (CriticalHitEvent e) -> {
             Event.Result result = e.getResult();
@@ -191,8 +199,8 @@ public class MegaBotany {
 
     private static final Supplier<Map<Item, Function<ItemStack, Relic>>> RELIC = Suppliers.memoize(() -> Map.of(
             MegaBotanyItems.FAILNAUGHT.get(), Failnaught::makeRelic,
-            MegaBotanyItems.EXCALIBER.get(), Excaliber::makeRelic,
-            MegaBotanyItems.ACHILLED_SHIELD.get(), AchilledShield::makeRelic,
+            MegaBotanyItems.EXCALIBUR.get(), Excalibur::makeRelic,
+            MegaBotanyItems.ACHILLES_SHIELD.get(), AchillesShield::makeRelic,
             MegaBotanyItems.ALL_FOR_ONE.get(), AFORing::makeRelic,
             MegaBotanyItems.INFINITE_DRINK.get(), InfiniteDrink::makeRelic,
             MegaBotanyItems.INFINITE_BREW.get(), InfiniteBrew::makeRelic,

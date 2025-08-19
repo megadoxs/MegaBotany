@@ -1,6 +1,5 @@
 package io.github.megadoxs.megabotany.client.integration.jei;
 
-import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -42,13 +41,14 @@ public class DaySpiritTradeRecipeCategory implements IRecipeCategory<SpiritTrade
 
     public DaySpiritTradeRecipeCategory(IGuiHelper guiHelper) {
         icon = new DrawableStack(guiHelper.createDrawableItemStack(new ItemStack(MegaBotanyBlocks.SPIRIT_PORTAL.get())), new ScaledDrawableResource(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/sun.png"), 0, 0, 8, 8, 8, 0, 8, 0, 470, 470));
-        background = new ColorDrawable(145, 95, 255, 255, 0, 255);
+        background = guiHelper.createBlankDrawable(145, 95);
         overlay = guiHelper.createDrawable(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/spirit_trade_overlay.png"), 0, 15, 140, 90);
         tooltipIcon = new ScaledDrawableResource(new ResourceLocation(MegaBotany.MOD_ID, "textures/gui/sun.png"), 0, 0, 16, 16, 0, 0, 0, 0, 470, 470);
         sprite = new ResourceLocation(MegaBotany.MOD_ID, "block/spirit_portal_swirl");
     }
 
-    public DaySpiritTradeRecipeCategory(){}
+    public DaySpiritTradeRecipeCategory() {
+    }
 
     @NotNull
     @Override
@@ -74,7 +74,7 @@ public class DaySpiritTradeRecipeCategory implements IRecipeCategory<SpiritTrade
         return icon;
     }
 
-    @Override // TODO add moon / sun icon in every crafting recipe and hover text to tell when the item should be thrown
+    @Override
     public void draw(@NotNull SpiritTradeRecipe recipe, @NotNull IRecipeSlotsView slotsView, @NotNull GuiGraphics gui, double mouseX, double mouseY) {
         PoseStack matrices = gui.pose();
         RenderSystem.enableBlend();
@@ -101,27 +101,30 @@ public class DaySpiritTradeRecipeCategory implements IRecipeCategory<SpiritTrade
 
     @Override
     public List<Component> getTooltipStrings(SpiritTradeRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        if(mouseX >= 93 && mouseX <= 109 && mouseY >= 10 && mouseY <= 26){
-            return List.of(Component.literal("This recipe must be done during the day when the portal is pink.")); //TODO make into a translatable
-        }
-        else
+        if (mouseX >= 93 && mouseX <= 109 && mouseY >= 10 && mouseY <= 26) {
+            return List.of(Component.literal("This trade can only be done during the day.")); //TODO make into a translatable
+        } else
             return List.of();
     }
 
     @Override
     public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull SpiritTradeRecipe recipe, @NotNull IFocusGroup focusGroup) {
+        List<ItemStack> outputs = getOutputs(recipe);
+        if (outputs.stream().anyMatch(ItemStack::isEmpty))
+            return;
+
+        int outIdx = 0;
+        for (var stack : outputs) {
+            builder.addSlot(RecipeIngredientRole.OUTPUT, 93 + outIdx % 2 * 20, 41 + outIdx / 2 * 20)
+                    .addItemStack(stack);
+            outIdx++;
+        }
+
         int posX = 42;
         for (var ingr : recipe.getIngredients()) {
             builder.addSlot(RecipeIngredientRole.INPUT, posX, 0)
                     .addIngredients(ingr);
             posX += 18;
-        }
-
-        int outIdx = 0;
-        for (var stack : getOutputs(recipe)) {
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 93 + outIdx % 2 * 20, 41 + outIdx / 2 * 20)
-                    .addItemStack(stack);
-            outIdx++;
         }
     }
 

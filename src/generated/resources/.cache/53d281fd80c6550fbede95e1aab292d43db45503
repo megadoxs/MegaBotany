@@ -1,2 +1,4 @@
-// 1.20.1	2025-04-29T21:57:39.2544466	MegaBotany spirit trade recipes
+// 1.20.1	2025-08-12T03:02:15.4118175	MegaBotany spirit trade recipes
 f0bddc2058964020a74a4ab9edb2ea0cc056c564 data/megabotany/recipes/spirit_trade/fuel.json
+26ba96dc84e8c0439419d55b74f5701e49a27056 data/megabotany/recipes/spirit_trade/photonium.json
+3dc94a1c19cd2735b41d315125eca9667cf51ddd data/megabotany/recipes/spirit_trade/shadowium.json

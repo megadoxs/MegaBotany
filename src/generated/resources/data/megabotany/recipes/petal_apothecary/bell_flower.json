@@ -1,0 +1,26 @@
+{
+  "type": "botania:petal_apothecary",
+  "ingredients": [
+    {
+      "item": "botania:rune_air"
+    },
+    {
+      "tag": "botania:petals/yellow"
+    },
+    {
+      "tag": "botania:petals/yellow"
+    },
+    {
+      "tag": "botania:petals/green"
+    },
+    {
+      "tag": "botania:petals/green"
+    }
+  ],
+  "output": {
+    "item": "megabotany:bell_flower"
+  },
+  "reagent": {
+    "tag": "botania:seed_apothecary_reagent"
+  }
+}

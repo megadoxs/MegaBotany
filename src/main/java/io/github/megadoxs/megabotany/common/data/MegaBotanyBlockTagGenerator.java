@@ -32,7 +32,6 @@ public class MegaBotanyBlockTagGenerator extends BlockTagsProvider {
                 MegaBotanyFlowerBlocks.tinkle,
                 MegaBotanyFlowerBlocks.bellFlower,
                 MegaBotanyFlowerBlocks.reikarLily,
-                MegaBotanyFlowerBlocks.stonesia,
                 MegaBotanyFlowerBlocks.geminiOrchid
         );
 
@@ -59,7 +58,25 @@ public class MegaBotanyBlockTagGenerator extends BlockTagsProvider {
                 MegaBotanyFlowerBlocks.tinkleFloating,
                 MegaBotanyFlowerBlocks.bellFlowerFloating,
                 MegaBotanyFlowerBlocks.reikarLilyFloating,
-                MegaBotanyFlowerBlocks.stonesiaFloating,
+                MegaBotanyFlowerBlocks.geminiOrchidFloating,
+                MegaBotanyFlowerBlocks.enchantedOrchidFloating,
+                MegaBotanyFlowerBlocks.mirrortuniaFloating,
+                MegaBotanyFlowerBlocks.annoyingFlowerFloating,
+                MegaBotanyFlowerBlocks.necrofleurFloating,
+                MegaBotanyFlowerBlocks.necrofleurChibiFloating,
+                MegaBotanyFlowerBlocks.stardustLotusFloating,
+                MegaBotanyFlowerBlocks.manalinkiumFloating
+        );
+
+        this.tag(BotaniaTags.Blocks.FLOATING_FLOWERS).add(
+                MegaBotanyFlowerBlocks.bloodyEnchantressFloating,
+                MegaBotanyFlowerBlocks.sunshineLilyFloating,
+                MegaBotanyFlowerBlocks.moonlightLilyFloating,
+                MegaBotanyFlowerBlocks.omnivioletFloating,
+                MegaBotanyFlowerBlocks.edelweissFloating,
+                MegaBotanyFlowerBlocks.tinkleFloating,
+                MegaBotanyFlowerBlocks.bellFlowerFloating,
+                MegaBotanyFlowerBlocks.reikarLilyFloating,
                 MegaBotanyFlowerBlocks.geminiOrchidFloating,
                 MegaBotanyFlowerBlocks.enchantedOrchidFloating,
                 MegaBotanyFlowerBlocks.mirrortuniaFloating,
@@ -79,7 +96,6 @@ public class MegaBotanyBlockTagGenerator extends BlockTagsProvider {
                 MegaBotanyFlowerBlocks.tinklePotted,
                 MegaBotanyFlowerBlocks.bellFlowerPotted,
                 MegaBotanyFlowerBlocks.reikarLilyPotted,
-                MegaBotanyFlowerBlocks.stonesiaPotted,
                 MegaBotanyFlowerBlocks.geminiOrchidPotted,
                 MegaBotanyFlowerBlocks.enchantedOrchidPotted,
                 MegaBotanyFlowerBlocks.mirrortuniaPotted,
@@ -98,7 +114,6 @@ public class MegaBotanyBlockTagGenerator extends BlockTagsProvider {
                 MegaBotanyFlowerBlocks.tinkleFloating,
                 MegaBotanyFlowerBlocks.bellFlowerFloating,
                 MegaBotanyFlowerBlocks.reikarLilyFloating,
-                MegaBotanyFlowerBlocks.stonesiaFloating,
                 MegaBotanyFlowerBlocks.geminiOrchidFloating,
                 MegaBotanyFlowerBlocks.enchantedOrchidFloating,
                 MegaBotanyFlowerBlocks.mirrortuniaFloating,

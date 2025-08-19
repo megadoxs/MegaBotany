@@ -12,6 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import org.jetbrains.annotations.Nullable;
 import vazkii.botania.common.helper.ItemNBTHelper;
+import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.data.recipes.BotaniaRecipeProvider;
 
 import java.util.Arrays;
@@ -28,6 +29,8 @@ public class SpiritTradeRecipeGenerator extends BotaniaRecipeProvider {
     @Override
     protected void buildRecipes(Consumer<net.minecraft.data.recipes.FinishedRecipe> consumer) {
         consumer.accept(new FinishedRecipe(id("fuel"), new ItemStack(MegaBotanyItems.SPIRIT_FUEL.get()), new ItemStack(MegaBotanyItems.NIGHTMARE_FUEL.get()), Ingredient.of(Items.COAL)));
+        consumer.accept(new FinishedRecipe(id("photonium"), new ItemStack(MegaBotanyItems.PHOTONIUM_INGOT.get()), ItemStack.EMPTY, Ingredient.of(BotaniaItems.gaiaIngot), Ingredient.of(MegaBotanyItems.SPIRIT_FUEL.get())));
+        consumer.accept(new FinishedRecipe(id("shadowium"), ItemStack.EMPTY, new ItemStack(MegaBotanyItems.SHADOWIUM_INGOT.get()), Ingredient.of(BotaniaItems.gaiaIngot), Ingredient.of(MegaBotanyItems.NIGHTMARE_FUEL.get())));
     }
 
     @Override

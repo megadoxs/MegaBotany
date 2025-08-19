@@ -1,0 +1,33 @@
+{
+  "name": "megabotany.entry.photoniumArmor",
+  "category": "botania:tools",
+  "icon": "megabotany:photonium_helmet",
+  "priority": true,
+  "advancement": "megabotany:spirit_portal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.photoniumArmor0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.photoniumArmor1",
+      "recipe": "megabotany:photonium_helmet"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.photoniumArmor2",
+      "recipe": "megabotany:photonium_chestplate"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.photoniumArmor3",
+      "recipe": "megabotany:photonium_leggings"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.photoniumArmor4",
+      "recipe": "megabotany:photonium_boots"
+    }
+  ]
+}

@@ -2,12 +2,6 @@
   "parent": "minecraft:item/generated",
   "overrides": [
     {
-      "model": "megabotany:item/holy_grail_brew_0",
-      "predicate": {
-        "megabotany:charge": 0.0
-      }
-    },
-    {
       "model": "megabotany:item/holy_grail_brew_1",
       "predicate": {
         "megabotany:charge": 0.1
@@ -60,10 +54,15 @@
       "predicate": {
         "megabotany:charge": 0.9
       }
+    },
+    {
+      "model": "megabotany:item/holy_grail_brew_10",
+      "predicate": {
+        "megabotany:charge": 1.0
+      }
     }
   ],
   "textures": {
-    "layer0": "megabotany:item/holy_grail",
-    "layer1": "megabotany:item/holy_grail_brew"
+    "layer0": "megabotany:item/holy_grail"
   }
 }

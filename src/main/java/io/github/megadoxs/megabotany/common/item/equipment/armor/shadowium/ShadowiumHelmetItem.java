@@ -7,6 +7,7 @@ import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetHealthPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -30,6 +31,7 @@ import vazkii.botania.api.mana.ManaDiscountArmor;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.BotaniaDamageTypes;
 import vazkii.botania.common.helper.ItemNBTHelper;
+import vazkii.botania.common.helper.PlayerHelper;
 
 import java.util.List;
 import java.util.Locale;
@@ -131,22 +133,26 @@ public class ShadowiumHelmetItem extends ShadowiumArmorItem implements ManaDisco
 
     @SubscribeEvent
     public static void onEquipmentChange(LivingEquipmentChangeEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player && event.getSlot().getType() == EquipmentSlot.Type.ARMOR && event.getFrom().getItem() instanceof ShadowiumArmorItem item && !item.hasArmorSet(player)) {
-            AttributeMap attributes = player.getAttributes();
-            Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();
-            if (attributes.hasModifier(Attributes.ARMOR, BOOST_UUID))
-                attributeModifiers.put(Attributes.ARMOR, NIGHT_ARMOR_BOOST);
-            if (attributes.hasModifier(Attributes.ATTACK_DAMAGE, BOOST_UUID))
-                attributeModifiers.put(Attributes.ATTACK_DAMAGE, NIGHT_ATTACK_BOOST);
-            if (attributes.hasModifier(Attributes.MOVEMENT_SPEED, BOOST_UUID))
-                attributeModifiers.put(Attributes.MOVEMENT_SPEED, NIGHT_SPEED_BOOST);
-            if (attributes.hasModifier(Attributes.MAX_HEALTH, BOOST_UUID))
-                attributeModifiers.put(Attributes.MAX_HEALTH, NIGHT_HEALTH_BOOST);
+        if (event.getEntity() instanceof ServerPlayer player && event.getSlot().getType() == EquipmentSlot.Type.ARMOR) {
+            if (!(event.getTo().getItem() instanceof ShadowiumArmorItem item)) {
+                AttributeMap attributes = player.getAttributes();
+                Multimap<Attribute, AttributeModifier> attributeModifiers = HashMultimap.create();
+                if (attributes.hasModifier(Attributes.ARMOR, BOOST_UUID))
+                    attributeModifiers.put(Attributes.ARMOR, NIGHT_ARMOR_BOOST);
+                if (attributes.hasModifier(Attributes.ATTACK_DAMAGE, BOOST_UUID))
+                    attributeModifiers.put(Attributes.ATTACK_DAMAGE, NIGHT_ATTACK_BOOST);
+                if (attributes.hasModifier(Attributes.MOVEMENT_SPEED, BOOST_UUID))
+                    attributeModifiers.put(Attributes.MOVEMENT_SPEED, NIGHT_SPEED_BOOST);
+                if (attributes.hasModifier(Attributes.MAX_HEALTH, BOOST_UUID))
+                    attributeModifiers.put(Attributes.MAX_HEALTH, NIGHT_HEALTH_BOOST);
 
-            float health = player.getHealth() / player.getMaxHealth();
-            attributes.removeAttributeModifiers(attributeModifiers);
-            player.setHealth(health * player.getMaxHealth());
-            player.connection.send(new ClientboundSetHealthPacket(health * player.getMaxHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
+                float health = player.getHealth() / player.getMaxHealth();
+                attributes.removeAttributeModifiers(attributeModifiers);
+                player.setHealth(health * player.getMaxHealth());
+                player.connection.send(new ClientboundSetHealthPacket(health * player.getMaxHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));
+            } else if (item.hasArmorSet(player)) {
+                PlayerHelper.grantCriterion(player, new ResourceLocation(MegaBotany.MOD_ID, "shadowium_set"), "code_triggered");
+            }
         }
     }
 

@@ -14,9 +14,7 @@ import net.minecraftforge.event.ForgeEventFactory;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 
-import java.util.Iterator;
-
-public class RingOfFrost extends BaubleItem {
+public class RingOfFrost extends BaubleItem { //TODO make into snowflake Pendant upgrade
 
     public static final int RADIUS = 6;
 
@@ -28,10 +26,8 @@ public class RingOfFrost extends BaubleItem {
     public void onWornTick(ItemStack stack, LivingEntity entity) {
         if (entity.onGround() && entity instanceof Player player) {
             BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
-            Iterator var7 = BlockPos.betweenClosed(entity.blockPosition().offset(-RADIUS, -1, -RADIUS), entity.blockPosition().offset(RADIUS, -1, RADIUS)).iterator();
 
-            while (var7.hasNext()) {
-                BlockPos blockpos = (BlockPos) var7.next();
+            for (BlockPos blockpos : BlockPos.betweenClosed(entity.blockPosition().offset(-RADIUS, -1, -RADIUS), entity.blockPosition().offset(RADIUS, -1, RADIUS))) {
                 if (blockpos.closerToCenterThan(entity.position(), RADIUS)) {
                     blockpos$mutableblockpos.set(blockpos.getX(), blockpos.getY() + 1, blockpos.getZ());
                     BlockState blockstate1 = entity.level().getBlockState(blockpos$mutableblockpos);

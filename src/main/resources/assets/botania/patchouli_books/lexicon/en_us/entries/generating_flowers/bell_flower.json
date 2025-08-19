@@ -1,0 +1,20 @@
+{
+  "name": "megabotany.entry.bell_flower",
+  "category": "botania:generating_flowers",
+  "icon": "megabotany:bell_flower",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.bell_flower0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "text": "megabotany.page.bell_flower1",
+      "recipe": "megabotany:petal_apothecary/bell_flower"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:bell_flower": 1
+  }
+}

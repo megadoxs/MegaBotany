@@ -1,0 +1,68 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_1",
+      "predicate": {
+        "megabotany:charge": 0.1
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_2",
+      "predicate": {
+        "megabotany:charge": 0.2
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_3",
+      "predicate": {
+        "megabotany:charge": 0.3
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_4",
+      "predicate": {
+        "megabotany:charge": 0.4
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_5",
+      "predicate": {
+        "megabotany:charge": 0.5
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_6",
+      "predicate": {
+        "megabotany:charge": 0.6
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_7",
+      "predicate": {
+        "megabotany:charge": 0.7
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_8",
+      "predicate": {
+        "megabotany:charge": 0.8
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_9",
+      "predicate": {
+        "megabotany:charge": 0.9
+      }
+    },
+    {
+      "model": "megabotany:item/lingering_holy_hand_grenade_10",
+      "predicate": {
+        "megabotany:charge": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "megabotany:item/lingering_holy_hand_grenade"
+  }
+}

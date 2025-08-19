@@ -2,9 +2,6 @@
   "item.megabotany.manasteel_shield": "Manasteel Shield",
   "item.megabotany.elementium_shield": "Elementium Shield",
   "item.megabotany.terrasteel_shield": "Terrasteel Shield",
-  "item.megabotany.manasteel_hammer": "Manasteel Hammer",
-  "item.megabotany.elementium_hammer": "Elementium Hammer",
-  "item.megabotany.terrasteel_hammer": "Terrasteel Hammer",
   "item.megabotany.walking_cane": "Walking Cane",
   "item.megabotany.medal_of_heroism": "Medal of Heroism",
   "item.megabotany.pandora_box": "Pandora's Box",
@@ -12,10 +9,10 @@
   "item.megabotany.holy_grail": "Holy Grail",
   "item.megabotany.holy_grail_brew": "Holy Grail of %s",
   "item.megabotany.holy_hand_grenade": "Holy Hand Grenade of %s",
-  "item.megabotany.infinite_lingering_brew": "Infinite Lingering Brew of %s",
+  "item.megabotany.lingering_holy_hand_grenade": "Lingering Holy Hand Grenade of %s",
   "item.megabotany.failnaught": "Failnaught",
-  "item.megabotany.excaliber": "Excaliber",
-  "item.megabotany.achilled_shield": "Achilled Shield",
+  "item.megabotany.excalibur": "Excalibur",
+  "item.megabotany.achilles_shield": "Achilles' Shield",
   "item.megabotany.all_for_one": "All For One",
   "item.megabotany.spirit_fragment": "Spirit Fragment",
   "item.megabotany.spirit_fuel": "Spirit Fuel",
@@ -37,10 +34,10 @@
   "item.megabotany.ticket": "Ticket",
   "item.megabotany.god_core": "God's Core",
   "item.megabotany.wall_jump_amulet": "Wall Jump Amulet",
-  "item.megabotany.wall_climb_amulet": "Wall climb Amulet",
+  "item.megabotany.wall_climb_amulet": "Wall Climb Amulet",
   "item.megabotany.jump_amulet": "Jump Amulet",
   "item.megabotany.mana_drive_ring": "Mana Drive Ring",
-  "item.megabotany.jingwei_feather": "Jinggwei Feather",
+  "item.megabotany.jingwei_feather": "Jingwei's Feather",
   "item.megabotany.pure_daisy_pendant": "Pure Daisy Pendant",
   "item.megabotany.super_crown": "Super Crown",
   "item.megabotany.bottled_flame": "Flame in a Bottle",
@@ -62,12 +59,15 @@
   "item.megabotany.manaweavedsteel_chestplate": "Starry Idol Suit",
   "item.megabotany.manaweavedsteel_leggings": "Starry Idol Skirt",
   "item.megabotany.manaweavedsteel_boots": "Starry Idol Boots",
+
   "block.megabotany.photonium_block": "Block of Photonium",
   "block.megabotany.shadowium_block": "Block of Shadowium",
   "block.megabotany.orichalcos_block": "Block of Orichalcos",
   "block.megabotany.mortar": "Mortar",
   "block.megabotany.pedestal": "Pedestal",
+
   "effect.megabotany.blood_deficiency": "Blood Deficiency",
+
   "armor.megabotany.orichalcos_female.name": "Pleiades Combat Maid Suit",
   "armor.megabotany.orichalcos_male.name": "",
   "armor.megabotany.orichalcos.desc0": "40% less Mana Cost on Mana Tools and Rods",
@@ -84,6 +84,7 @@
   "armor.megabotany.photonium.set_bonus": "When worn as a full set during the day:",
   "armor.megabotany.manaweavedsteel.name": "Starry Idol",
   "armor.megabotany.manaweavedsteel.desc0": "50% less Mana Cost on Mana Tools and Rods",
+
   "misc.megabotany.natural_breath": "Nature's Breath",
   "misc.megabotany.nature_orb_effect1": "Blessing Of Mana",
   "misc.megabotany.nature_orb_effect2": "Blessing Of Regeneration",
@@ -113,7 +114,9 @@
   "misc.megabotany.wings12": "Wings: Rainbow",
   "misc.megabotany.wings13": "Wings: Steampunk",
   "misc.megabotany.wings14": "Wings: Jim",
+
   "creativetab.megabotany_tab": "MegaBotany",
+
   "entity.megabotany.gaia_guardian_iii": "Gaia Guardian III",
   "block.megabotany.annoying_flower": "Annoying Flower",
   "block.megabotany.floating_annoying_flower": "Floating Annoying Flower",
@@ -156,9 +159,6 @@
   "block.megabotany.reikar_lily": "Reikar Lily",
   "block.megabotany.floating_reikar_lily": "Floating Reikar Lily",
   "block.megabotany.potted_reikar_lily": "Potted Reikar Lily",
-  "block.megabotany.stonesia": "Stonesia",
-  "block.megabotany.floating_stonesia": "Floating Stonesia",
-  "block.megabotany.potted_stonesia": "Potted Stonesia",
   "block.megabotany.sunshine_lily": "Sunshine Lily",
   "block.megabotany.floating_sunshine_lily": "Floating Sunshine Lily",
   "block.megabotany.potted_sunshine_lily": "Potted Sunshine Lily",
@@ -169,8 +169,134 @@
   "block.megabotany.redstone_elven_spreader": "Pulse Elven Mana Spreader",
   "block.megabotany.redstone_gaia_spreader": "Pulse Gaia Mana Spreader",
 
+
+
+
   "megabotany.category.spiritology": "Spiritology",
 
-  "megabotany.jei.spirit_trade_day": "Day Spirit Trade",
-  "megabotany.jei.spirit_trade_night": "Night Spirit Trade"
+
+  "megabotany.entry.bottled_flame": "Flame in a Bottle",
+  "megabotany.page.bottled_flame0": "The $(item)Flame in a Bottle$(0) is a $(thing)Trinket$(0) that once equipped, places torches automatically when the light level around the wearer becomes to low for a small amount of $(thing)Mana$(0).",
+  "megabotany.page.bottled_flame1":  "Useful when mining underground",
+
+  "megabotany.entry.frost_ring": "Jack Frost's Ring",
+  "megabotany.page.frost_ring0": "$(item)Jack Frost's Ring$(0) is a $(thing)Trinket$(0) that uses $(thing)Mana$(0) to freezes anything that can be frozen under the user's feet once equipped.$(p)This item is much more powerful than the $(item)Snowflake Pendant$(0), it can freeze things that are really hot and anything frozen by it will stay permanently frozen.",
+  "megabotany.page.frost_ring1": "My balls are freezin!",
+
+  "megabotany.entry.god_core": "God's Core",
+  "megabotany.page.god_core0": "The $(item)God's Core$(0) is a the upgraded version of the $(item)Flügel Tiara$(0). This new version allows for the user to fly an infinite amount of time as long as they have enough mana to sustain the increased $(thing)Mana$(0) demand.$(p)5 new wings are available as well as the ones available for the $(item)Flügel Tiara$(3)",
+  "megabotany.page.god_core1": "The person with that knowledge wins",
+
+  "megabotany.entry.jingwei_feather": "Jingwei's Feather",
+  "megabotany.page.jingwei_feather0": "$(item)Jingwei's Feather$(0) allows the user to fire $(thing)Mana Bursts$(0) when equipped. Theses bursts can be shot by the user by left clicking while holding nothing in his hand. Once shot, the $(thing)Mana$(0) burst will go in a straight line util it runs out of $(thing)Mana$(0) hits an entity damaging it.",
+  "megabotany.page.jingwei_feather1": "A million years would not be enough to fill the sea with stones",
+
+  "megabotany.entry.jump_amulet": "Jump Amulet",
+  "megabotany.page.jump_amulet0": "The $(item)Jump Amulet$(0) is the upgraded version of the $(item)Cirrus Amulet$ allowing the user to $(thing)triple-jump$(0) when worn.",
+  "megabotany.page.jump_amulet1": "Equal and opposite reactions",
+
+  "megabotany.entry.mana_drive_ring": "Mana Drive Ring",
+  "megabotany.page.mana_drive_ring0": "The $(item)Mana Drive Ring$(0) Releases the user's mana in the air. This allows for nearby $(thing)functional flowers$ to be filled by the user's $(thing) mana.",
+  "megabotany.page.mana_drive_ring1": "Spirit circuits are all around the world",
+
+  "megabotany.entry.master_band_of_mana": "Master Band of Mana",
+  "megabotany.page.master_band_of_mana0": "The $(item)Master Band of Mana$(0) is the final evolution of the $(item)band of mana$. This ring is capable of storing an amount of $(thing)Mana$ so big that you probably will never be able to completely fill it.",
+  "megabotany.page.master_band_of_mana1": "Unlimited Power",
+
+  "megabotany.entry.pure_daisy_pendant": "Pure Daisy Pendant",
+  "megabotany.page.pure_daisy_pendant0": "The $(item)Pure Daisy Pendant$(0) is a $(thing)Trinket$(0) that allows its user when worn to use the concentrate the energy of pure daisies to purify blocks. The user needs to hold Left Click on a block to purify, the time taken for its purification is much shorter than a pure daisy flower would take, but only one block can be purified at a time using the pendant.",
+  "megabotany.page.pure_daisy_pendant1": "Time is but a human construct",
+
+  "megabotany.entry.super_crown": "Super Crown",
+  "megabotany.page.super_crown0": "The $(item)Super Crown$(0) is a $(thing)Trinket$(0) that once worn reduces incoming damage by 10%. It is capable of doing so because it also makes the user's size be 10% bigger than normal.",
+  "megabotany.page.super_crown1": "Here We Go!",
+
+  "megabotany.entry.wall_climb_amulet": "Wall Climb Amulet",
+  "megabotany.page.wall_climb_amulet0": "The $(item)Wall Climb Amulet$(0) is a $(thing)Trinket$(0) that once worn allows it's user to climb any wall like a spider would.",
+  "megabotany.page.wall_climb_amulet1": "The not so itsy bitsy spider",
+
+  "megabotany.entry.wall_jump_amulet": "Wall Jump Amulet",
+  "megabotany.page.wall_jump_amulet0": "The $(item)Wall Jump Amulet$(0) is a $(thing)Trinket$(0) that once worn allows it's user to defy gravity by doing parkour to climb wall. It essentially allow it's user to jump against the side of any block he is colliding with.",
+  "megabotany.page.wall_jump_amulet1": "The most efficient way",
+
+  "megabotany.entry.annoying_flower": "Annoying Flower",
+  "megabotany.page.annoying_flower0": "Any good fisherman knows that patience is the key to get a good catch. The $(item)Annoying Flower$(0) will do all the waiting and fishing making sure to give all the junk it can find to the fisherman.",
+  "megabotany.page.annoying_flower1": "Just give me something useful",
+
+  "megabotany.entry.enchanted_orchid": "Enchanted Orchid",
+  "megabotany.page.enchanted_orchid0": "The $(item)Enchanted Orchid$(0) after some time, converts the $(item)Grass$(0) that is under it to $(item)Enchanted Soil$(0) for a hefty amount of mana.",
+  "megabotany.page.enchanted_orchid1": "it's just a matter of time",
+
+  "megabotany.entry.manalinkium": "Manalinkium",
+  "megabotany.page.manalinkium0": "Every adventurer has at some point wished for a way to send $(thing)Mana$(0) across large distance or even dimensions. When two (item)Manalinkium$(0) are connected together, they bend space-time allowing them to share mana between each other. $(p) This mechanic only works if both flower are within loaded chunks because of the $(thing)axiom of chunkloading$(0).",
+  "megabotany.page.manalinkium1": "Does this prove parallel universes?",
+
+  "megabotany.entry.mirrortunia": "Mirrortunia",
+  "megabotany.page.mirrortunia0": "The $(item)Mirrortunia$(0) is a greedy flower that uses $(thing)Mana$(0) to absorbs any effects that would be applied to an entity within its reach and does WIP with it.",
+  "megabotany.page.mirrortunia1": "no u",
+
+  "megabotany.entry.necrofleur": "Necrofleur",
+  "megabotany.page.necrofleur0": "The $(item)Necrofleur$(0) is a simple flower that uses $(thing)Mana$(0) prevents any nearby entity from being able to heal.",
+  "megabotany.page.necrofleur1": "Why should I suffer alone?",
+
+  "megabotany.entry.stardust_lotus": "Stardust Lotus",
+  "megabotany.page.stardust_lotus0": "Every adventurer has at some point wished for a way to travel across long distance or even dimensions instantly. When two (item)Stardust Lotus(0) are connected together, they bend space-time allowing for an entity to travel between them. $(p) This mechanic only works if both flower are within loaded chunks because of the $(thing)axiom of chunkloading$(0).",
+  "megabotany.page.stardust_lotus1": "Is it still me?",
+
+  "megabotany.entry.bell_flower": "Bell Flower",
+  "megabotany.page.bell_flower0": "WIP",
+  "megabotany.page.bell_flower1": "Can you stop making so much noise?",
+
+  "megabotany.entry.bloody_enchantress": "Bloody Enchantress",
+  "megabotany.page.bloody_enchantress0": "WIP",
+  "megabotany.page.bloody_enchantress1": "Say that again and I'll kill you",
+
+  "megabotany.entry.edelweiss": "Edelweiss",
+  "megabotany.page.edelweiss0": "WIP",
+  "megabotany.page.edelweiss1": "Nothing burns like the cold",
+
+  "megabotany.entry.gemini_orchid": "Gemini Orchid",
+  "megabotany.page.gemini_orchid0": "The $(item)Gemini Orchid$(0) generates $(thing)Mana$ from the heat difference between blocks or liquids near it. The greater that heat difference heat is the more $(thing)Mana$(0) it generates and vice-versa.",
+  "megabotany.page.gemini_orchid1": "Where fire meets ice, magic awakens",
+
+  "megabotany.entry.moonlight_lily": "Moonlight Lily",
+  "megabotany.page.moonlight_lily0": "The $(item)Moonlight lily$(0) is a flower that generates small amount of $(thing)Mana$(0) by absorbing the light from the moon.",
+  "megabotany.page.moonlight_lily1": "Au clair de la lune",
+
+  "megabotany.entry.omniviolet": "Omniviolet",
+  "megabotany.page.omniviolet0": "The $(item)Omniviolet$(0) in it's infinite quest of knowledge will take any enchanted book and generate $(thing)Mana$ for it. The higher the level of the enchantment is the more $(thing)Mana$(0) it will generate in return.",
+  "megabotany.page.omniviolet1": "I have nothing worth 10,000 books from another world",
+
+  "megabotany.entry.reikar_lily": "Reikar Lily",
+  "megabotany.page.reikar_lily0": "The $(item)Reikar Lily$(0) is a mystical flower that is somehow capable of attracting lighting to it during storms and of harvesting the energy it contains to produce large amounts of $(thing)Mana$(0).",
+  "megabotany.page.reikar_lily1": "lightning never strikes the same place twice, Right?",
+
+  "megabotany.entry.sunshine_lily": "Sunshine Lily",
+  "megabotany.page.sunshine_lily0": "The $(item)Sunshine Lily$(0) is a flower that generates small amount of $(thing)Mana$(0) by absorbing the light from the sun.",
+  "megabotany.page.sunshine_lily1": "The sun's gift is life itself",
+
+  "megabotany.entry.tinkle": "Tinkle",
+  "megabotany.page.tinkle0": "The $(item)Tinkle$(0) is a flower that generate a very small amount of $(thing)Mana$(0) when someone dances around it.",
+  "megabotany.page.tinkle1": "Dance your heart out",
+
+  "megabotany.entry.absolution_pendant": "Absolution Pendant",
+  "megabotany.page.absolution_pendant0": "The $(item)Absolution Pendant$(0) is a powerful relics that is capable of blocking any damage the user receives using $(thing)Mana$(0). Once it blocks an damage for it's user, it goes on a one minute cooldown.",
+
+  "megabotany.entry.achilles_shield": "Achilles' Shield",
+  "megabotany.page.achilles_shield0": "$(item)Achilles' Shield$(0) is a mythical relic left behind by the great hero Achilles. This powerful relic of the past reflects any projectile aimed at it back towards it's sender and pushes away any entity attacking it doing 20% of the negated damage back to them.",
+
+  "megabotany.entry.all_for_one": "All For One",
+  "megabotany.page.all_for_one0": "The relic known as $(item)All For One$(0) is a mysterious relic that seems to be capable of absorbing the power of $(thing)Trinkets$(0). Once equipped, it gives it's user access to all the power it contains if it has absorbed any, otherwise it is completely useless.",
+
+  "megabotany.entry.excalibur": "Excalibur",
+  "megabotany.page.excalibur0": "The legendary sword of King Arthur also known as $(item)excalibur$(0) is a relic that gives it's wielder unimaginable power. This sword allows it wielder to shoot burst of mana that will automatically aim towards the nearest living entity and damage them if collided with.$(p)Only those it deems worthy of it can wield it",
+
+  "megabotany.entry.failnaught": "Failnaught",
+  "megabotany.page.failnaught0": "The last elven king's bow known as $(item)Failnaught$(0) is said to be a relic that never fails its wielder. Rumors has it that it does not even uses arrow but instead mana to shoot burst of mana which go faster and do more damage than any arrow could possibly.",
+
+  "megabotany.entry.holy_grail": "Holy Grail",
+  "megabotany.page.holy_grail0": "The $(item)Holy Grail$(0) is a legendary relic that nobody seems to rely know what it looks like. Some says that it is in the shape of a cup you could drink from, other says that it doesn't have a physical form and can transform in anything the user could need an infinite drink for.$(p) While it may be infinite, apparently, the more it is used in a day, the more many it consumes to fill back up.",
+
+  "megabotany.jei.spirit_trade_day": "Seraphs Trade",
+  "megabotany.jei.spirit_trade_night": "Wraiths Trade"
 }

@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.bottled_flame",
+  "category": "botania:baubles",
+  "icon": "megabotany:bottled_flame",
+  "advancement": "botania:main/mana_pool_pickup_lexicon",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.bottled_flame0"
+    },
+    {
+      "type": "crafting",
+      "text": "megabotany.page.bottled_flame1",
+      "recipe": "megabotany:bottled_flame"
+    }
+  ]
+}

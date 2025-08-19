@@ -7,6 +7,7 @@ import io.github.megadoxs.megabotany.common.item.MegaBotanyItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetHealthPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,6 +33,7 @@ import vazkii.botania.api.mana.ManaDiscountArmor;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.BotaniaDamageTypes;
 import vazkii.botania.common.helper.ItemNBTHelper;
+import vazkii.botania.common.helper.PlayerHelper;
 
 import java.util.List;
 import java.util.Locale;
@@ -121,6 +123,7 @@ public class OrichalcosHelmetItem extends OrichalcosArmorItem implements ManaDis
                     attributeModifiers.put(Attributes.MAX_HEALTH, HEALTH_BOOST);
 
                 if (!attributeModifiers.isEmpty()) {
+                    PlayerHelper.grantCriterion(player, new ResourceLocation(MegaBotany.MOD_ID, "female_orichalcos_set"), "code_triggered");
                     attributes.addTransientAttributeModifiers(attributeModifiers);
                     player.heal(20);
                     player.connection.send(new ClientboundSetHealthPacket(player.getHealth(), player.getFoodData().getFoodLevel(), player.getFoodData().getSaturationLevel()));

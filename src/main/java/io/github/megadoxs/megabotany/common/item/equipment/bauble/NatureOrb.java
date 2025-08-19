@@ -17,7 +17,7 @@ import vazkii.botania.common.item.equipment.bauble.BaubleItem;
 
 import java.util.List;
 
-public class NatureOrb extends BaubleItem implements CustomCreativeTabContents, INatureInfusable {
+public class NatureOrb extends BaubleItem implements CustomCreativeTabContents, INatureInfusable { //TODO rename to spirit orb and make the orb change color depending on the purity of the mana inside the orb
 
     private static final String TAG_NATURAL_BREATH = "natural_breath";
     private static final int MAX_NATURAL_BREATH = 500000;

@@ -1,0 +1,21 @@
+{
+  "name": "megabotany.entry.pandora_box",
+  "category": "botania:spiritology",
+  "icon": "megabotany:pandora_box",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:kill_gaia_iii",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.pandora_box0"
+    },
+    {
+      "type": "text",
+      "text": "megabotany.page.pandora_box1"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:pandora_box": 0
+  }
+}

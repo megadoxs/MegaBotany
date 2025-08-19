@@ -1,0 +1,17 @@
+{
+  "name": "megabotany.entry.achilles_shield",
+  "category": "botania:spiritology",
+  "icon": "megabotany:achilles_shield",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:achilles_shield",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.achilles_shield0"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:achilles_shield": 0
+  }
+}

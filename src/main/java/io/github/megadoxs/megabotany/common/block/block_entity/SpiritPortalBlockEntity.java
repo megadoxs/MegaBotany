@@ -1,25 +1,24 @@
 package io.github.megadoxs.megabotany.common.block.block_entity;
 
 import com.google.common.base.Suppliers;
+import io.github.megadoxs.megabotany.common.advancements.SpiritPortalTrigger;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlockEntities;
 import io.github.megadoxs.megabotany.common.block.MegaBotanyBlocks;
 import io.github.megadoxs.megabotany.common.crafting.recipe.SpiritTradeRecipe;
 import io.github.megadoxs.megabotany.common.mixin.PylonBlockEntityAccessor;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -39,6 +38,7 @@ import vazkii.botania.common.block.BotaniaBlocks;
 import vazkii.botania.common.block.block_entity.BotaniaBlockEntity;
 import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
+import vazkii.botania.common.crafting.BotaniaRecipeTypes;
 import vazkii.botania.common.lib.BotaniaTags;
 import vazkii.botania.xplat.BotaniaConfig;
 import vazkii.botania.xplat.XplatAbstractions;
@@ -47,7 +47,9 @@ import vazkii.patchouli.api.IStateMatcher;
 import vazkii.patchouli.api.PatchouliAPI;
 import vazkii.patchouli.api.TriPredicate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.StreamSupport;
 
@@ -83,12 +85,12 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
         var verticalGlimmer = new Matcher(BotaniaTags.Blocks.DREAMWOOD_LOGS_GLIMMERING, Direction.Axis.Y, BotaniaBlocks.dreamwoodLogGlimmering);
 
         return PatchouliAPI.get().makeMultiblock(
-                new String[][] {
-                        { "_", "w", "g", "w", "_" },
-                        { "W", " ", " ", " ", "W" },
-                        { "G", " ", " ", " ", "G" },
-                        { "W", " ", " ", " ", "W" },
-                        { "_", "w", "0", "w", "_" }
+                new String[][]{
+                        {"_", "w", "g", "w", "_"},
+                        {"W", " ", " ", " ", "W"},
+                        {"G", " ", " ", " ", "G"},
+                        {"W", " ", " ", " ", "W"},
+                        {"_", "w", "0", "w", "_"}
                 },
                 'W', vertical,
                 'w', horizontal,
@@ -139,21 +141,20 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
 
         self.ticksOpen++;
 
-        if(self.ticksOpen == 1){
+        if (self.ticksOpen == 1) {
             self.dayMode = time >= 13000;
             self.spriteAlpha = 1;
         }
 
-        if(self.ticksOpen > 0) {
-            if (time == 12940 || time == 23940 ){
+        if (self.ticksOpen > 0) {
+            if (time == 12940 || time == 23940) {
                 self.shouldFade = true;
                 self.fadeTimer = 0;
-            }
-            else if(((time < 13000 && !self.dayMode) || (time >= 13000 && self.dayMode)) && !self.shouldFade){
+            } else if (((time < 13000 && !self.dayMode) || (time >= 13000 && self.dayMode)) && !self.shouldFade) {
                 self.dayMode = !self.dayMode;
             }
 
-            if (self.shouldFade){
+            if (self.shouldFade) {
                 float progress = self.fadeTimer / (float) FADE_DURATION;
                 self.spriteAlpha = (float) (0.5 * (1 + Math.cos(progress * Math.PI)));
 
@@ -189,7 +190,7 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
                     }
 
                     ItemStack stack = item.getItem();
-                    if (XplatAbstractions.INSTANCE.itemFlagsComponent(item).elvenPortalSpawned) { //TODO need to take a look
+                    if (XplatAbstractions.INSTANCE.itemFlagsComponent(item).elvenPortalSpawned) {
                         continue;
                     }
 
@@ -228,9 +229,13 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
     }
 
     private boolean validateItemUsage(ItemEntity entity) {
-        SimpleContainer container = new SimpleContainer(entity.getItem());
-        Optional<SpiritTradeRecipe> recipe = getLevel().getRecipeManager().getRecipeFor(SpiritTradeRecipe.Type.INSTANCE, container, getLevel());
-        return recipe.isPresent();
+        ItemStack inputStack = entity.getItem();
+        for (Recipe<?> recipe : BotaniaRecipeTypes.getRecipes(level, SpiritTradeRecipe.Type.INSTANCE).values()) {
+            if (recipe instanceof SpiritTradeRecipe tradeRecipe && tradeRecipe.getIngredients().stream().anyMatch(ingredient -> ingredient.test(inputStack))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void blockParticle(AlfheimPortalState state) {
@@ -253,6 +258,9 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
             AlfheimPortalState newState = getValidState(state);
             if (newState != AlfheimPortalState.OFF) {
                 level.setBlockAndUpdate(getBlockPos(), getBlockState().setValue(BotaniaStateProperties.ALFPORTAL_STATE, newState));
+                if (player instanceof ServerPlayer serverPlayer) {
+                    SpiritPortalTrigger.INSTANCE.trigger(serverPlayer, serverPlayer.serverLevel(), getBlockPos(), stack);
+                }
                 return true;
             }
         }
@@ -279,21 +287,28 @@ public class SpiritPortalBlockEntity extends BotaniaBlockEntity implements Wanda
         SimpleContainer container = new SimpleContainer(stacksIn.toArray(ItemStack[]::new));
 
         Optional<SpiritTradeRecipe> recipe = level.getRecipeManager().getRecipeFor(SpiritTradeRecipe.Type.INSTANCE, container, level);
-        if (recipe.isPresent() && consumeMana(pylons, MANA_COST, false)) {
+        if (recipe.isPresent() && consumeMana(pylons, MANA_COST * recipe.get().getIngredients().size(), false)) {
             for (Ingredient ingredient : recipe.get().getIngredients()) {
                 for (ItemStack ingredientStack : ingredient.getItems()) {
                     stacksIn.removeIf(stack -> ItemStack.isSameItem(stack, ingredientStack));
                 }
             }
 
-            for(ItemStack stack : recipe.get().getOutputs(dayMode))
+            if (recipe.get().getOutputs(dayMode).stream().anyMatch(ItemStack::isEmpty)) {
+                level.setBlockAndUpdate(worldPosition, MegaBotanyBlocks.SPIRIT_PORTAL.get().defaultBlockState());
+                level.explode(null, worldPosition.getX() + .5, worldPosition.getY() + 2.0, worldPosition.getZ() + .5, 3f, Level.ExplosionInteraction.NONE);
+                return;
+            }
+
+            for (ItemStack stack : recipe.get().getOutputs(dayMode)) {
                 spawnItem(stack);
+            }
         }
     }
 
     private void spawnItem(ItemStack stack) {
         ItemEntity item = new ItemEntity(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1.5, worldPosition.getZ() + 0.5, stack);
-        XplatAbstractions.INSTANCE.itemFlagsComponent(item).elvenPortalSpawned = true; //TODO need to take a look
+        XplatAbstractions.INSTANCE.itemFlagsComponent(item).elvenPortalSpawned = true;
         level.addFreshEntity(item);
         ticksSinceLastItem = 0;
     }

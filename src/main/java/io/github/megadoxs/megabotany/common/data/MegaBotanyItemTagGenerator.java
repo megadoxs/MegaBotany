@@ -35,17 +35,36 @@ public class MegaBotanyItemTagGenerator extends ItemTagsProvider {
                 MegaBotanyFlowerBlocks.tinkle.asItem(),
                 MegaBotanyFlowerBlocks.bellFlower.asItem(),
                 MegaBotanyFlowerBlocks.reikarLily.asItem(),
-                MegaBotanyFlowerBlocks.stonesia.asItem()
+                MegaBotanyFlowerBlocks.geminiOrchid.asItem()
         );
 
         this.tag(BotaniaTags.Items.FUNCTIONAL_SPECIAL_FLOWERS).add(
-                MegaBotanyFlowerBlocks.geminiOrchid.asItem(),
+                MegaBotanyFlowerBlocks.enchantedOrchid.asItem(),
                 MegaBotanyFlowerBlocks.mirrortunia.asItem(),
                 MegaBotanyFlowerBlocks.annoyingFlower.asItem(),
                 MegaBotanyFlowerBlocks.necrofleur.asItem(),
                 MegaBotanyFlowerBlocks.necrofleurChibi.asItem(),
                 MegaBotanyFlowerBlocks.stardustLotus.asItem(),
                 MegaBotanyFlowerBlocks.manalinkium.asItem()
+        );
+
+        this.tag(BotaniaTags.Items.FLOATING_FLOWERS).add(
+                MegaBotanyFlowerBlocks.bloodyEnchantressFloating.asItem(),
+                MegaBotanyFlowerBlocks.sunshineLilyFloating.asItem(),
+                MegaBotanyFlowerBlocks.moonlightLilyFloating.asItem(),
+                MegaBotanyFlowerBlocks.omnivioletFloating.asItem(),
+                MegaBotanyFlowerBlocks.edelweissFloating.asItem(),
+                MegaBotanyFlowerBlocks.tinkleFloating.asItem(),
+                MegaBotanyFlowerBlocks.bellFlowerFloating.asItem(),
+                MegaBotanyFlowerBlocks.reikarLilyFloating.asItem(),
+                MegaBotanyFlowerBlocks.geminiOrchidFloating.asItem(),
+                MegaBotanyFlowerBlocks.enchantedOrchidFloating.asItem(),
+                MegaBotanyFlowerBlocks.mirrortuniaFloating.asItem(),
+                MegaBotanyFlowerBlocks.annoyingFlowerFloating.asItem(),
+                MegaBotanyFlowerBlocks.necrofleurFloating.asItem(),
+                MegaBotanyFlowerBlocks.necrofleurChibiFloating.asItem(),
+                MegaBotanyFlowerBlocks.stardustLotusFloating.asItem(),
+                MegaBotanyFlowerBlocks.manalinkiumFloating.asItem()
         );
 
         this.tag(BotaniaTags.Items.MINI_FLOWERS).add(
@@ -72,7 +91,6 @@ public class MegaBotanyItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.create(new ResourceLocation("curios", "necklace"))).add(
                 MegaBotanyItems.WALL_JUMP_AMULET.get(),
                 MegaBotanyItems.WALL_CLIMB_AMULET.get(),
-                MegaBotanyItems.JUMP_AMULET.get(),
                 MegaBotanyItems.PURE_DAISY_PENDANT.get(),
                 MegaBotanyItems.ABSOLUTION_PENDANT.get()
         );

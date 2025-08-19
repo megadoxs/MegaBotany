@@ -1,0 +1,21 @@
+{
+  "name": "megabotany.entry.excalibur",
+  "category": "botania:spiritology",
+  "icon": "megabotany:excalibur",
+  "entry_color": "aa00aa",
+  "advancement": "megabotany:excalibur",
+  "flag": "botania:relics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "megabotany.page.excalibur0"
+    },
+    {
+      "type": "text",
+      "text": "megabotany.page.excalibur1"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "megabotany:excalibur": 0
+  }
+}

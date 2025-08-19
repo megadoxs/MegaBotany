@@ -1,0 +1,37 @@
+{
+  "parent": "megabotany:kill_gaia_iii",
+  "criteria": {
+    "relic": {
+      "conditions": {
+        "relic": {
+          "items": [
+            "megabotany:excalibur"
+          ]
+        }
+      },
+      "trigger": "botania:relic_bind"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.megabotany:excalibur.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "megabotany:excalibur",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.megabotany:excalibur"
+    }
+  },
+  "requirements": [
+    [
+      "relic"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
