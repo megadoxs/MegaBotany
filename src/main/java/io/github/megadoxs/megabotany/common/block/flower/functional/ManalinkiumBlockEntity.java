@@ -34,8 +34,7 @@ import vazkii.botania.api.mana.ManaReceiver;
 import vazkii.botania.client.core.helper.RenderHelper;
 import vazkii.botania.common.block.BotaniaBlocks;
 
-//TODO find a way to remove the wandBindable without the WandOfTheForest complaining
-public class ManalinkiumBlockEntity extends SpecialFlowerBlockEntity implements DimensionalFlowerWandBindable, WandBindable, ManaReceiver, KeyLocked {
+public class ManalinkiumBlockEntity extends SpecialFlowerBlockEntity implements DimensionalFlowerWandBindable, ManaReceiver, KeyLocked {
     private static final String TAG_FLOWER_BINDING = "flowerBinding";
     private static final String TAG_DIMENSION_ID = "dimensionId";
     private static final String TAG_VALID_BINDING = "validBinding";
@@ -332,24 +331,6 @@ public class ManalinkiumBlockEntity extends SpecialFlowerBlockEntity implements 
             outputKey = cmp.getString(TAG_OUTPUT_KEY);
         }
     }
-
-    //-------------------------------------------------------------------------------------
-    // aren't used only here for the wand of the forest to not complain
-    @Override
-    public boolean canSelect(Player player, ItemStack wand, BlockPos pos, Direction side) {
-        return true;
-    }
-
-    @Override
-    public boolean bindTo(Player player, ItemStack wand, BlockPos pos, Direction side) {
-        return false;
-    }
-
-    @Override
-    public @Nullable BlockPos getBinding() {
-        return null;
-    }
-    //-------------------------------------------------------------------------------------
 
     @Override
     public Level getManaReceiverLevel() {
